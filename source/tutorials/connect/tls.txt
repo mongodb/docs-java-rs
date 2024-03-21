@@ -145,7 +145,7 @@ A typical application will also need to set several JVM system
 properties to ensure that the client *presents* a TLS/SSL client
 certificate to the MongoDB server:
 
-- ``javax.net.ssl.keyStore`: the path to a key store containing the
+- ``javax.net.ssl.keyStore``: the path to a key store containing the
   clients TLS/SSL certificates
 - ``javax.net.ssl.keyStorePassword``: the password to access this key
   store
