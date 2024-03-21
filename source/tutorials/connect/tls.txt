@@ -78,10 +78,55 @@ To specify the ``javax.net.ssl.SSLContext`` with
 .. code-block:: java
    
    SSLContext sslContext = ...
-       MongoClientSettings settings = MongoClientSettings.builder()
+   MongoClientSettings settings = MongoClientSettings.builder()
        .applyToSslSettings(builder -> builder.enabled(true).context(sslContext))
        .build();
    MongoClient client = new MongoClient(settings);
+
+Customize TLS/SSL Configuration through the Netty SslContext
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Include the following import statements:
+
+.. code-block:: java
+   :copyable: true
+
+   import com.mongodb.MongoClientSettings;
+   import com.mongodb.client.MongoClients;
+   import com.mongodb.client.MongoClient;
+   import io.netty.handler.ssl.SslContext;
+   import io.netty.handler.ssl.SslContextBuilder;
+   import io.netty.handler.ssl.SslProvider;
+
+.. note::
+
+   The driver tests with Netty version ``io.netty:netty-all:4.1.87.Final``
+
+To instruct the driver to use
+`io.netty.handler.ssl.SslContext <https://netty.io/4.1/api/io/netty/handler/ssl/SslContext.html>`__,
+configure
+`NettyTransportSettings <{+api+}/apidocs/mongodb-driver-core/com/mongodb/connection/NettyTransportSettings.html>`__
+when you define your ``MongoClientSettings``.
+
+Use ``MongoClientSettings.Builder.transportSettings()``
+and ``NettyTransportSettings.Builder.sslContext()`` to build your settings:
+
+.. code-block:: java
+
+   SslContext sslContext = SslContextBuilder.forClient()
+           .sslProvider(SslProvider.OPENSSL)
+           .build();
+   MongoClientSettings settings = MongoClientSettings.builder()
+           .applyToSslSettings(builder -> builder.enabled(true))
+           .transportSettings(TransportSettings.nettyBuilder()
+                              .sslContext(sslContext)
+                              .build())
+           .build();
+   MongoClient client = MongoClients.create(settings);
+
+For more details about the ``io.netty.handler.ssl.SslProvider``, see the `Netty
+documentation
+<https://netty.io/4.1/api/io/netty/handler/ssl/SslProvider.html>`__
 
 Disable Hostname Verification
 -----------------------------
