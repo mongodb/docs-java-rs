@@ -130,7 +130,7 @@ Disable Hostname Verification
 -----------------------------
 
 By default, the driver ensures that the hostname included in the
-servers SSL certificate matches the hostname provided when
+server's SSL certificate matches the hostname provided when
 constructing a ``MongoClient``.
 
 If your application needs to disable hostname verification, you must
