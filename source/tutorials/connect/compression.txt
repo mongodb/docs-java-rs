@@ -44,28 +44,32 @@ The following code specifies the Snappy compression algorithm:
 
 .. code-block:: java
 
-   ConnectionString connectionString = new ConnectionString("mongodb://localhost/?compressors=snappy");
+   ConnectionString connectionString =
+       new ConnectionString("mongodb://localhost/?compressors=snappy");
    MongoClient mongoClient = MongoClients.create(connectionString);
 
 The following code specifies the Zlib compression algorithm:
 
 .. code-block:: java
 
-   ConnectionString connectionString = new ConnectionString("mongodb://localhost/?compressors=zlib");
+   ConnectionString connectionString =
+       new ConnectionString("mongodb://localhost/?compressors=zlib");
    MongoClient mongoClient = MongoClients.create(connectionString);
 
 The following code specifies the Zstandard compression algorithm:
 
 .. code-block:: java
 
-   ConnectionString connectionString = new ConnectionString("mongodb://localhost/?compressors=zstd");
+   ConnectionString connectionString =
+       new ConnectionString("mongodb://localhost/?compressors=zstd");
    MongoClient mongoClient = MongoClients.create(connectionString);
 
 The following code specifies multiple compression algorithms:
 
 .. code-block:: java
 
-   ConnectionString connectionString = new ConnectionString("mongodb://localhost/?compressors=snappy,zlib,zstd");
+   ConnectionString connectionString =
+       new ConnectionString("mongodb://localhost/?compressors=snappy,zlib,zstd");
    MongoClient mongoClient = MongoClients.create(connectionString);
 
 In all cases, the driver uses the first compressor in the list for which
