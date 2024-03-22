@@ -17,7 +17,7 @@ MongoDB Java Reactive Streams
    /tutorials/
    /reference/
    View the Source <https://github.com/mongodb/mongo-java-driver>
-   API Documentation <{+java-api+}/mongodb-driver-reactivestreams/>
+   API Documentation <{+api+}/mongodb-driver-reactivestreams/>
 
 Introduction
 ------------
@@ -37,7 +37,7 @@ runnable project by following one of the tutorials.
 
 - `Driver Source GitHub Repository <https://github.com/mongodb/mongo-java-driver>`__
 
-- `API Documentation <{+java-api+}/apidocs/mongodb-driver-reactivestreams/>`__
+- `API Documentation <{+api+}/apidocs/mongodb-driver-reactivestreams/>`__
 
 If you need to make synchronous calls between your application and MongoDB, use
 the :driver:`MongoDB Java Driver </java/sync/current/>` instead of the
