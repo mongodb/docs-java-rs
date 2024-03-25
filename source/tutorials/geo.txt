@@ -4,6 +4,13 @@
 Geospatial Search
 =================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, search coordinates, location
+
 .. contents:: On this page
    :local:
    :backlinks: none

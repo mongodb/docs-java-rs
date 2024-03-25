@@ -4,6 +4,13 @@
 Read Operations
 ===============
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, access data, modify results
+
 .. contents:: On this page
    :local:
    :backlinks: none

@@ -4,6 +4,13 @@
 Quick Start
 ===========
 
+.. facet::
+   :name: genre
+   :values: tutorial
+
+.. meta::
+   :keywords: code example, get started, connect, change data
+
 .. contents:: On this page
    :local:
    :backlinks: none

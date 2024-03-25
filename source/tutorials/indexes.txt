@@ -4,6 +4,13 @@
 Create Indexes
 ==============
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, optimize, covered query
+
 .. contents:: On this page
    :local:
    :backlinks: none

@@ -4,6 +4,13 @@
 Write Operations
 ================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, insert data, change data
+
 .. toctree::
    
    /tutorials/bulk-writes/

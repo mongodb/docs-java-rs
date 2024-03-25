@@ -4,6 +4,13 @@
 Client-Side Encryption
 ======================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, encrypt data, decrypt data
+
 .. contents:: On this page
    :local:
    :backlinks: none

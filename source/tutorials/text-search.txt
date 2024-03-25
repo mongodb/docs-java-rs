@@ -4,6 +4,13 @@
 Text Search
 ===========
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, Atlas full text search, phrases
+
 .. contents:: On this page
    :local:
    :backlinks: none

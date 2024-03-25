@@ -4,6 +4,13 @@
 Change Streams
 ==============
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, watch for changes
+
 .. contents:: On this page
    :local:
    :backlinks: none

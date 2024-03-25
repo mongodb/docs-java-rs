@@ -4,6 +4,13 @@
 Aggregation Framework
 =====================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, create insights, change data
+
 .. contents:: On this page
    :local:
    :backlinks: none
@@ -19,14 +26,7 @@ To learn more about aggregation, see :manual:`Aggregation Pipeline
 Prerequisites
 -------------
 
-You must set up the following components to run the code examples in
-this guide:
-
-- A ``test.restaurants`` collection populated with documents from the
-  ``restaurants.json`` file in the `documentation assets GitHub
-  <https://raw.githubusercontent.com/mongodb/docs-assets/drivers/restaurants.json>`__.
-
-- The following import statements:
+.. literalinclude:: /includes/prereq-restaurants.rst
 
   .. code-block:: java
   
