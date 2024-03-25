@@ -25,10 +25,7 @@ operations:
    the errors. Unordered bulk operations do not guarantee an order of
    execution.
 
-.. important::
-
-   This guide uses the ``Subscriber`` implementations, which are
-   described in the :ref:`Quick Start Primer <javars-primer>`.
+.. include:: /includes/subscriber-note.rst
 
 The following code provides examples using ordered and unordered
 operations:

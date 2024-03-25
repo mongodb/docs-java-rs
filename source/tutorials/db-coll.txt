@@ -38,10 +38,7 @@ code examples in this guide:
    import com.mongodb.client.model.CreateCollectionOptions;
    import com.mongodb.client.model.ValidationOptions;
 
-.. important::
-
-   This guide uses the ``Subscriber`` implementations, which are
-   described in the :ref:`Quick Start Primer <javars-primer>`.
+.. include:: /includes/subscriber-note.rst
 
 Connect to a MongoDB Deployment
 -------------------------------

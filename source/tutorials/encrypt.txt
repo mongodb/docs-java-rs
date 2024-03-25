@@ -27,10 +27,7 @@ level encryption supports workloads where applications must guarantee
 that unauthorized parties, including server administrators, cannot
 read the encrypted data.
 
-.. important::
-
-   This guide uses the ``Subscriber`` implementations, which are
-   described in the :ref:`Quick Start Primer <javars-primer>`.
+.. include:: /includes/subscriber-note.rst
 
 Installation
 ------------
