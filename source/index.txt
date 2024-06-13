@@ -30,17 +30,17 @@ official driver for asynchronous Java applications. Download
 the driver by following the :ref:`javars-install` guide, then set up a
 runnable project by following one of the tutorials.
 
-- :ref:`javars-install`
+.. - :ref:`javars-install`
 
-- :ref:`javars-get-started`
+.. - :ref:`javars-get-started`
 
-- :ref:`javars-whats-new`
+.. - :ref:`javars-whats-new`
 
-- :ref:`javars-tutorials`
+.. - :ref:`javars-tutorials`
 
-- :ref:`javars-reference`
+.. - :ref:`javars-reference`
 
-- `Driver Source GitHub Repository <https://github.com/mongodb/mongo-java-driver>`__
+- `Source Code <https://github.com/mongodb/mongo-java-driver>`__
 
 - `API Documentation <{+api+}/mongodb-driver-reactivestreams/>`__
 
@@ -50,35 +50,35 @@ If you need to make synchronous calls between your application and MongoDB, use
 the :driver:`MongoDB Java Driver </java/sync/current/>` instead of the
 {+driver-short+}.
 
-Compatibility
--------------
+.. Compatibility
+.. -------------
 
-MongoDB Compatibility
-~~~~~~~~~~~~~~~~~~~~~
+.. MongoDB Compatibility
+.. ~~~~~~~~~~~~~~~~~~~~~
 
-The following compatibility table specifies the recommended version or versions
-of the MongoDB Reactive Streams driver for use with a specific version of MongoDB.
+.. The following compatibility table specifies the recommended version or versions
+.. of the MongoDB Reactive Streams driver for use with a specific version of MongoDB.
 
-The first column lists the driver version.
+.. The first column lists the driver version.
 
-.. sharedinclude:: dbx/lifecycle-schedule-callout.rst
+.. .. sharedinclude:: dbx/lifecycle-schedule-callout.rst
 
-.. include:: /includes/mongodb-compatibility-table-java-rs.rst
+.. .. include:: /includes/mongodb-compatibility-table-java-rs.rst
 
-The driver does not support older versions of MongoDB.
+.. The driver does not support older versions of MongoDB.
 
-Language Compatibility
-~~~~~~~~~~~~~~~~~~~~~~
+.. Language Compatibility
+.. ~~~~~~~~~~~~~~~~~~~~~~
 
-The following compatibility table specifies the recommended version or versions
-of the MongoDB Reactive Streams driver for use with a specific version of Java.
+.. The following compatibility table specifies the recommended version or versions
+.. of the MongoDB Reactive Streams driver for use with a specific version of Java.
 
-The first column lists the driver version.
+.. The first column lists the driver version.
 
-.. include:: /includes/language-compatibility-table-java-rs.rst
+.. .. include:: /includes/language-compatibility-table-java-rs.rst
 
-For more information on how to read the compatibility tables, see our guide on
-:driver:`MongoDB Compatibility Tables </about-compatibility/>`.
+.. For more information on how to read the compatibility tables, see our guide on
+.. :driver:`MongoDB Compatibility Tables </about-compatibility/>`.
 
 How To Get Help
 ---------------
