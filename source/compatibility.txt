@@ -17,7 +17,6 @@ Compatibility
 .. meta::
    :keywords: backwards compatibility, versions, upgrade 
 
-
 MongoDB Compatibility
 ----------------------
 
