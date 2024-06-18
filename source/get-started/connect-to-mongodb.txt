@@ -16,6 +16,8 @@ Connect to MongoDB
       and subscription. The following code is our implementation of six
       different ``Subscriber`` types used in your {+driver-short+} application. 
 
+    .. LA LA LA
+
       Copy and paste the following code 
       into the ``SubscriberHelpers`` file:
       
