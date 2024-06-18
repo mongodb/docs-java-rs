@@ -26,7 +26,7 @@ Download and Install
       <https://guides.gradle.org/creating-new-gradle-builds/>`_
       for more information about how to set up your project.
 
-   .. step:: Install {+driver-short+}
+   .. step:: Install the {+driver-short+}
 
       Open a new Maven or Gradle project in your IDE. 
 
@@ -52,7 +52,7 @@ Download and Install
             implementation 'org.mongodb:mongodb-driver-reactivestreams:{+full-version+}'
           }
       
-      Once you configure your dependencies, ensure they are available to your
+      After you configure your dependencies, ensure they are available to your
       project by running your dependency manager and refreshing
       the project in your IDE.
       
