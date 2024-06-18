@@ -4,20 +4,23 @@
 Connect to MongoDB
 ==================
 
+.. TODO: 
+.. Add this sentence after the last sentence in the paragraph for implementing reactive streams subscribers. 
+.. To learn more about the Java Reactive Streams API, see link here.
+
 .. procedure::
    :style: connected
 
     .. step:: Implement Reactive Streams Subscribers
 
       Create a folder within the Java folder in your Maven or Gradle project named ``helpers``.
-      In the ``helpers`` folder, create a Java file named ``SubscriberHelpers``. The
-      Java Reactive Streams driver is an implementation of the Reactive
-      Streams API, which consists of three components: publisher, subscriber,
-      and subscription. The following code is our implementation of six
-      different ``Subscriber`` types used in your {+driver-short+} application. 
-
-    .. TODO: 
-    .. To learn more about the Java Reactive Streams API, see link here.
+      In the ``helpers`` folder, create a Java file named ``SubscriberHelpers``.
+      The Java Reactive Streams driver is an implementation of the Reactive
+      Streams API, which consists of three components: Publisher, Subscriber,
+      and Subscription. 
+      
+      The following code is an implementation of six
+      different ``Subscriber`` types used in your {+driver-short+} application.
 
       Copy and paste the following code 
       into the ``SubscriberHelpers`` file:
