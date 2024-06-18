@@ -47,7 +47,7 @@ query your Atlas database.
 
    .. step:: Assign the Connection String
 
-      Replace the ``<connection string URI>`` placeholder with the 
+      Replace the ``<connection string>`` placeholder with the 
       connection string that you copied from the :ref:`java-rs-get-started-connection-string`
       step of this guide.
 
