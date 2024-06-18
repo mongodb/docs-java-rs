@@ -1,0 +1,67 @@
+.. _java-rs-get-started-connect-to-mongodb:
+
+==================
+Connect to MongoDB
+==================
+
+.. procedure::
+   :style: connected
+
+    .. step:: Implement Reactive Streams Subscribers
+      
+      Create a folder within the Java folder in your Maven or Gradle project named ``helpers``.
+      In the ``helpers`` folder, create a Java file named ``SubscriberHelpers``. The
+      Java Reactive Streams driver is an implementation of the Reactive
+      Streams API, which consists of three components: publisher, subscriber,
+      and subscription. The following code is our implementation of six
+      different ``Subscriber`` types used in your {+driver-short+} application. 
+
+..   TODO:
+..   To learn more about the reactive streams specification, see [LINK HERE]
+
+      Copy and paste the following code 
+      into the ``SubscriberHelpers`` file:
+      
+      .. literalinclude:: /includes/get-started/subscriber-helpers.java
+         :language: java
+         :copyable:
+
+   .. step:: Create your {+driver-short+} Application
+      
+      Create a folder within the Java folder in your Maven or Gradle project named ``org.example``.
+      In the ``org.example`` folder, create a Java file named ``QuickStart``. Copy and paste the following code 
+      into the ``QuickStart`` file:
+      
+      .. literalinclude:: /includes/get-started/connect-and-query.java
+         :language: java
+         :copyable:
+
+   .. step:: Assign the Connection String
+
+      Replace the ``<connection string URI>`` placeholder with the 
+      connection string that you copied from the :ref:`java-rs-get-started-connection-string`
+      step of this guide.
+
+   .. step:: Run your Application
+
+      Run your application, either in your IDE or in your shell. The output
+      shows that you have connected to MongoDB.
+
+      .. code-block:: none
+
+        Pinged your deployment. You successfully connected to MongoDB!
+
+      .. tip::
+
+         If you encounter an error, check whether you specified the
+         proper connection string. The ``Logging is disabled`` error 
+         is standard and does not block your query.
+
+After you complete these steps, you have a working application that
+uses the driver to connect to your MongoDB deployment, pings the deployment,
+and prints out the result.
+
+.. include:: /includes/get-started/quickstart-troubleshoot.rst
+
+.. button:: Query your Database
+   :uri: /get-started/query-your-database/
