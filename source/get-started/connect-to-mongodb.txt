@@ -32,7 +32,7 @@ Connect to MongoDB
       In the ``org.example`` folder, create a Java file named ``QuickStart``. Copy and paste the following code 
       into the ``QuickStart`` file:
       
-      .. literalinclude:: /includes/get-started/connect-and-query.java
+      .. literalinclude:: /includes/get-started/connect-and-ping.java
          :language: java
          :copyable:
 
