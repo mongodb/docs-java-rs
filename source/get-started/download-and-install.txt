@@ -61,5 +61,5 @@ and the driver dependencies installed.
 
 .. include:: /includes/get-started/quickstart-troubleshoot.rst
 
-.. button:: Next: Create a MongoDB Deployment
+.. button:: Create a MongoDB Deployment
    :uri: /get-started/create-a-deployment/
