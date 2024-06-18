@@ -1,0 +1,22 @@
+.. _java-rs-getting-started:
+
+===========
+Get Started
+===========
+
+.. toctree::
+
+   /get-started/download-and-install/
+   /get-started/create-a-deployment/
+   /get-started/create-a-connection-string/
+   /get-started/connect-to-mongodb/
+   /get-started/query-your-database/
+   /get-started/next-steps/
+
+- :ref:`java-rs-get-started-download-and-install`
+- :ref:`java-rs-get-started-create-deployment`
+- :ref:`java-rs-get-started-connection-string`
+- :ref:`java-rs-get-started-connect-to-mongodb`
+- :ref:`java-rs-get-started-query-your-database`
+- :ref:`java-rs-get-started-next-steps`
+
