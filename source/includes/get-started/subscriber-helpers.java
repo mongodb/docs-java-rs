@@ -1,4 +1,3 @@
-
 package helpers;
 
 import com.mongodb.MongoTimeoutException;
@@ -15,7 +14,7 @@ import java.util.function.Consumer;
 import static com.mongodb.internal.thread.InterruptionUtil.interruptAndCreateMongoInterruptedException;
 
 /**
- *  Subscriber helper implementations for the Quick Tour.
+ *  Subscriber helper implementations for the tutorial.
  */
 public final class SubscriberHelpers {
 
@@ -174,30 +173,6 @@ public final class SubscriberHelpers {
     }
 
     /**
-     * A Subscriber that prints a message including the received items on completion
-     *
-     * @param <T> The publishers result type
-     */
-    public static class PrintSubscriber<T> extends OperationSubscriber<T> {
-        private final String message;
-
-        /**
-         * A Subscriber that outputs a message onComplete.
-         *
-         * @param message the message to output onComplete
-         */
-        public PrintSubscriber(final String message) {
-            this.message = message;
-        }
-
-        @Override
-        public void onComplete() {
-            System.out.printf((message) + "%n", getReceived());
-            super.onComplete();
-        }
-    }
-
-    /**
      * A Subscriber that prints the json version of each document
      */
     public static class PrintDocumentSubscriber extends ConsumerSubscriber<Document> {
@@ -206,19 +181,6 @@ public final class SubscriberHelpers {
          */
         public PrintDocumentSubscriber() {
             super(t -> System.out.println(t.toJson()));
-        }
-    }
-
-    /**
-     * A Subscriber that prints the toString version of each element
-     * @param <T> the type of the element
-     */
-    public static class PrintToStringSubscriber<T> extends ConsumerSubscriber<T> {
-        /**
-         * Construct a new instance
-         */
-        public PrintToStringSubscriber() {
-            super(System.out::println);
         }
     }
 

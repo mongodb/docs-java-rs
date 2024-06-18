@@ -8,18 +8,27 @@ Connect to MongoDB
 .. Add this sentence after the last sentence in the paragraph for implementing reactive streams subscribers. 
 .. To learn more about the Java Reactive Streams API, see link here.
 
+The Java Reactive Streams driver is an implementation of the Reactive Streams API, which consists of three components: 
+
+- Publisher
+- Subscriber
+- Subscription
+
+In this tutorial, you must implement Java Reactive Streams Subscribers to
+query your Atlas database.
+
 .. procedure::
    :style: connected
 
     .. step:: Implement Reactive Streams Subscribers
 
-      Create a folder within the Java folder in your Maven or Gradle project named ``helpers``.
-      In the ``helpers`` folder, create a Java file named ``SubscriberHelpers``.
-      The Java Reactive Streams driver is an implementation of the Reactive
-      Streams API, which consists of three components: Publisher, Subscriber,
-      and Subscription. 
+      In your project, create a package called ``helpers`` within the existing
+      ``java`` package. Then, create a new Java file in the ``helpers`` package
+      named ``SubscriberHelpers``. The Java Reactive Streams driver is an 
+      implementation of the Reactive Streams API, which consists of three 
+      components: Publisher, Subscriber, and Subscription. 
       
-      The following code is an implementation of six
+      The following code is an implementation of five
       different ``Subscriber`` types used in your {+driver-short+} application.
 
       Copy and paste the following code 
@@ -31,11 +40,10 @@ Connect to MongoDB
 
    .. step:: Create your {+driver-short+} Application
       
-      Create a folder within the Java folder in your Maven or Gradle project named ``org.example``.
-      In the ``org.example`` folder, create a Java file named ``QuickStart``. Copy and paste the following code 
-      into the ``QuickStart`` file:
+      In your project, create a new Java file in the ``Java`` package named 
+      ``QueryDatabase`` . Copy and paste the following code into the ``QueryDatabase`` file:
       
-      .. literalinclude:: /includes/get-started/connect-and-ping.java
+      .. literalinclude:: /includes/get-started/query-database.java
          :language: java
          :copyable:
 
@@ -57,14 +65,13 @@ Connect to MongoDB
       .. tip::
 
          If you encounter an error, check whether you specified the
-         proper connection string. The ``Logging is disabled`` error 
-         is standard and does not block your query.
+         proper connection string, and that you loaded the sample data.
 
 After you complete these steps, you have a working application that
-uses the driver to connect to your MongoDB deployment, pings the deployment,
+uses the driver to connect to your MongoDB deployment, queries the database,
 and prints out the result.
 
 .. include:: /includes/get-started/quickstart-troubleshoot.rst
 
-.. button:: Query your Database
-   :uri: /get-started/query-your-database/
+.. button:: Next Steps
+   :uri: /get-started/next-steps

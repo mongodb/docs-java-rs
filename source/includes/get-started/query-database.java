@@ -2,7 +2,8 @@ package org.query;
 
 import com.mongodb.*;
 import com.mongodb.reactivestreams.client.MongoCollection;
-import helpers.SubscriberHelpers;
+import helpers.SubscriberHelpers.ObservableSubscriber;
+import helpers.SubscriberHelpers.PrintDocumentSubscriber;
 import org.bson.Document;
 
 import com.mongodb.reactivestreams.client.MongoClient;
@@ -37,8 +38,7 @@ public class QueryDatabase {
 
            try {
                 // Create a subscriber and query the database
-             SubscriberHelpers.ObservableSubscriber<Document> documentSubscriber = new SubscriberHelpers.PrintDocumentSubscriber();
-             documentSubscriber = new SubscriberHelpers.PrintDocumentSubscriber();
+             ObservableSubscriber<Document> documentSubscriber = new PrintDocumentSubscriber();
              movies.find(eq("title", "Back to the Future")).subscribe(documentSubscriber);
              documentSubscriber.await();
 

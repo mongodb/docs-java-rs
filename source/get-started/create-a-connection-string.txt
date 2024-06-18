@@ -47,7 +47,7 @@ when applicable, and connection options.
    .. step:: Update the Placeholders
 
       Paste this connection string into a file in your preferred text editor
-      and replace the``<password>`` placeholder with
+      and replace the ``<password>`` placeholder with
       your database user's password.
       
       Save this file to a safe location for use in the next step.

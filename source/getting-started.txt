@@ -27,19 +27,12 @@ Get Started
    /get-started/query-your-database/
    /get-started/next-steps/
 
-- :ref:`java-rs-get-started-download-and-install`
-- :ref:`java-rs-get-started-create-deployment`
-- :ref:`java-rs-get-started-connection-string`
-- :ref:`java-rs-get-started-connect-to-mongodb`
-- :ref:`java-rs-get-started-query-your-database`
-- :ref:`java-rs-get-started-next-steps`
-
 Overview
 --------
 
-{+driver-short+} is a Java package that you can use to connect
+The {+driver-short+} is an asynchronous API that you can use to connect
 to and communicate with MongoDB. This guide shows you how to create an
-application that uses {+driver-short+} to connect to a MongoDB cluster hosted on
+application that uses the {+driver-short+} to connect to a MongoDB cluster hosted on
 MongoDB Atlas.
 
 .. tip:: 
@@ -48,7 +41,7 @@ MongoDB Atlas.
    deployments. You can create your own free (no credit card required) MongoDB Atlas 
    deployment by following the steps in this guide.
 
-Follow this guide to connect a sample Java Reactive Strings application to a MongoDB Atlas
+Follow this guide to connect a sample {+java-rs+} application to a MongoDB Atlas
 deployment. If you prefer to connect to MongoDB using a different driver or
 programming language, see our :driver:`list of official drivers <>`.
 
