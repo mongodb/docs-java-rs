@@ -1,8 +1,8 @@
 .. _java-rs-get-started-query-your-database:
 
-==================
+====================
 Query your Database
-==================
+====================
 
 .. procedure::
    :style: connected
