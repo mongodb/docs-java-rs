@@ -24,9 +24,7 @@ query your Atlas database.
 
       In your project, create a package called ``helpers`` within the existing
       ``java`` package. Then, create a new Java file in the ``helpers`` package
-      named ``SubscriberHelpers``. The Java Reactive Streams driver is an 
-      implementation of the Reactive Streams API, which consists of three 
-      components: Publisher, Subscriber, and Subscription. 
+      named ``SubscriberHelpers``.
       
       The following code is an implementation of five
       different ``Subscriber`` types used in your {+driver-short+} application.
@@ -60,7 +58,15 @@ query your Atlas database.
 
       .. code-block:: none
 
-        Pinged your deployment. You successfully connected to MongoDB!
+        {
+           _id: ...,
+           plot: 'A young man is accidentally sent 30 years into the past...',
+           genres: [ 'Adventure', 'Comedy', 'Sci-Fi' ],
+           ...
+           title: 'Back to the Future',
+           ...
+         }
+
 
       .. tip::
 
