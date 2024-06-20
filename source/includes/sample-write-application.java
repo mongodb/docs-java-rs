@@ -40,7 +40,6 @@ public class updateDocument {
                 // Start example code here
 
                 // End example code here
-
             } catch (MongoException me) {
                 System.err.println(me);
             }

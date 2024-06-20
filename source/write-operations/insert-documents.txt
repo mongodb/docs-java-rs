@@ -64,7 +64,7 @@ the relevant values for your MongoDB deployment.
    :language: Java
    :copyable:
    :linenos:
-   :emphasize-lines: 46-48
+   :emphasize-lines: 40-42
 
 The ``_id`` Field
 -----------------
