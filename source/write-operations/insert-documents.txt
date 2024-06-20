@@ -88,7 +88,7 @@ letting the driver automatically generate ``_id`` values.
 
    Duplicate ``_id`` values violate unique index constraints, which
    causes the driver to return a ``WriteError`` from
-   ``insert_one()`` or a ``BulkWriteError`` from ``insert_many()``.
+   ``insertOne()`` or a ``BulkWriteError`` from ``insertMany()``.
 
 To learn more about the ``_id`` field, see the
 :manual:`Unique Indexes </core/index-unique/>` guide in the {+mdb-server+} manual.
