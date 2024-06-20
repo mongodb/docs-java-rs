@@ -14,7 +14,6 @@ import com.mongodb.reactivestreams.client.MongoDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class updateDocument {
     public static void main(String[] args) {
         // Replace the placeholder with your Atlas connection string
