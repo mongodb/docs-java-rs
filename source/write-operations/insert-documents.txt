@@ -91,10 +91,10 @@ letting the driver automatically generate ``_id`` values.
    ``insertOne()`` or a ``BulkWriteError`` from ``insertMany()``.
 
 To learn more about the ``_id`` field, see the
-:manual:`Unique Indexes </core/index-unique/>` guide in the {+mdb-server+} manual.
+:manual:`Unique Indexes </core/index-unique/>` guide in the {+mdb-server+}manual.
 
 To learn more about document structure and rules, see the
-:manual:`Documents </core/document>` guide in the {+mdb-server+} manual.
+:manual:`Documents </core/document>` guide in the {+mdb-server+}manual.
 
 Insert One Document
 -------------------
