@@ -42,6 +42,9 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 
 .. include:: /includes/subscriber-note.rst
 
+.. TODO:
+.. Change link in includes subscriber note to get started page instead of quick start primer
+
 Sample Application
 ~~~~~~~~~~~~~~~~~~~~
 
