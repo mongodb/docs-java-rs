@@ -45,27 +45,6 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 .. TODO:
 .. Change link in includes subscriber note to get started page instead of quick start primer
 
-Sample Application
-~~~~~~~~~~~~~~~~~~~~
-
-On this page, you can see copyable code examples that show common
-methods you can use to write data to MongoDB with the {+driver-short+}.
-
-To use an example from this page, copy the code example into the
-:ref:`sample application <java-rs-write-sample>` or your own application.
-Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
-the relevant values for your MongoDB deployment.
-
-.. _java-rs-write-sample:
-
-.. include:: /includes/usage-example-write.rst
-
-.. literalinclude:: /includes/sample-write-application.java
-   :language: Java
-   :copyable:
-   :linenos:
-   :emphasize-lines: 39-41
-
 The ``_id`` Field
 -----------------
 
