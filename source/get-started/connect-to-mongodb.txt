@@ -8,14 +8,14 @@ Connect to MongoDB
 .. Add this sentence after the last sentence in the paragraph for implementing reactive streams subscribers. 
 .. To learn more about the Java Reactive Streams API, see link here.
 
-The Java Reactive Streams driver is an implementation of the Reactive Streams API, which consists of three components: 
+The {+driver-short+} is an implementation of the Reactive Streams API, which consists of three components: 
 
 - Publisher
 - Subscriber
 - Subscription
 
-In this tutorial, you must implement Java Reactive Streams Subscribers to
-query your Atlas database.
+In this tutorial, you must implement {+java-rs+} Subscribers to
+query your database.
 
 .. procedure::
    :style: connected
@@ -26,7 +26,7 @@ query your Atlas database.
       ``java`` package. Then, create a new Java file in the ``helpers`` package
       named ``SubscriberHelpers``.
       
-      The following code is an implementation of five
+      The following code is an implementation of multiple
       different ``Subscriber`` types used in your {+driver-short+} application.
 
       Copy and paste the following code 
