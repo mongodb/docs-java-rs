@@ -39,7 +39,7 @@ query your database.
    .. step:: Create your {+driver-short+} Application
       
       In your project, create a new Java file in the ``Java`` package named 
-      ``QueryDatabase`` . Copy and paste the following code into the ``QueryDatabase`` file:
+      ``QueryDatabase``. Copy and paste the following code into the ``QueryDatabase`` file:
       
       .. literalinclude:: /includes/get-started/query-database.java
          :language: java
