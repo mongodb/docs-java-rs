@@ -20,18 +20,15 @@ public class updateDocument {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string>";
 
-
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
                 .build();
 
-
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString(uri))
                 .serverApi(serverApi)
                 .build();
-
 
         // Create a new client and connect to the server
         try (MongoClient mongoClient = MongoClients.create(settings))
