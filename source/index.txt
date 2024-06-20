@@ -41,6 +41,8 @@ runnable project by following one of the tutorials.
 
 .. - :ref:`javars-reference`
 
+- :ref:`java-rs-write-insert`
+
 - `Source Code <https://github.com/mongodb/mongo-java-driver>`__
 
 - `API Documentation <{+api+}/mongodb-driver-reactivestreams/>`__
