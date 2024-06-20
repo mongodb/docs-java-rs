@@ -1,6 +1,3 @@
-Sample Application
-~~~~~~~~~~~~~~~~~~
-
 .. TODO: change link from quick start primer to get started page
 
 You can use the following sample application to test the code examples on this
