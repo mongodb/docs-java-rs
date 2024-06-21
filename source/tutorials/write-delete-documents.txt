@@ -78,7 +78,7 @@ Delete Multiple Documents
 -------------------------
 
 To delete multiple documents from a MongoDB collection, call the ``deleteMany()``
-method and pass a list of documents you want to delete. After you call the
+method and pass in your query filter. After you call the
 ``deleteMany()`` method, chain the ``subscribe()`` method and pass in a subscriber.
 
 The following example removes all documents in the ``restaurants`` collection with a ``borough`` value of ``"Brooklyn"``:
