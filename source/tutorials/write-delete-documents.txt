@@ -20,8 +20,8 @@ Delete Documents
 Overview
 --------
 
-In this guide, you can learn how to use the {+driver-short+} to add
-documents to a MongoDB collection by performing delete operations.
+In this guide, you can learn how to use the {+driver-short+} to delete
+documents from a MongoDB collection by performing delete operations.
 
 A delete operation deletes one or more documents from a MongoDB collection.
 You can perform a delete operation by using the ``deleteOne()`` or
