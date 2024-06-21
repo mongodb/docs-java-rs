@@ -120,8 +120,8 @@ to modify a delete method. All methods are optional.
      - | Gets or sets the index to scan for documents. 
          For more information, see the :manual:`hint statement </reference/command/delete/#std-label-deletes-array-hint>`
          in the MongoDB Server manual.
-  
-    * - ``hint (String hint)``
+
+   * - ``hint (String hint)``
      - | Gets or sets the index to scan for documents. 
          For more information, see the :manual:`hint statement </reference/command/delete/#std-label-deletes-array-hint>`
          in the MongoDB Server manual.
@@ -156,7 +156,6 @@ It also uses the ``comment`` method to add a comment to the operation:
     ObservableSubscriber <DeleteResult> deleteManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
     restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants")).subscribe(deleteManySubscriber);
     deleteManySubscriber.await();
-
 
 .. Additional Information
 ----------------------
