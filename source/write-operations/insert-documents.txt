@@ -20,7 +20,7 @@ Insert Documents
 Overview
 --------
 
-In this guide, you can learn how to use {+driver-short+} to add
+In this guide, you can learn how to use the {+driver-short+} to add
 documents to a MongoDB collection by performing insert operations.
 
 An insert operation inserts one or more documents into a MongoDB collection.
