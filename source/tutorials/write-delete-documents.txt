@@ -40,31 +40,9 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 .. free MongoDB Atlas cluster and load the sample datasets, see the
 .. :ref:`<java-rs-getting-started>` tutorial.
 
-.. include:: /includes/subscriber-note.rst
-
-.. TODO:
-.. Change link in includes subscriber note to get started page instead of quick start primer
-
+.. TODO: When write insert methods merged in, add subscriber methods section includes within subscriber methods section
 Subscriber Methods
 ~~~~~~~~~~~~~~~~~~~~
-
-The examples in this guide use the ``Subscriber`` implementations described in
-the :ref:`Quick Start Primer <javars-primer>`. The {+driver-short+} extends the
-Java Reactive Streams API, which consists of the following components:
-
-.. TODO:
-.. Change link from quick start primer to get started page instead of quick start primer
-
-* Publisher
-
-* Subscriber
-
-* Subscription
-
-.. TODO: change LINK HERE to link with information about publishers and subscribers.
-
-.. To learn more about how these components work and how to create your own
-   Subscriber implementations, see LINK HERE.
 
 Delete Operations
 -----------------
@@ -196,8 +174,13 @@ guide, see the following API documentation:
 - `deleteOne() <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#deleteOne(com.mongodb.reactivestreams.client.ClientSession,org.bson.conversions.Bson)>`__
 - `deleteMany()
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#deleteMany(com.mongodb.reactivestreams.client.ClientSession,org.bson.conversions.Bson)>`__
-- `DeleteOptions <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/DeleteOptions.html>`__
-- `BsonValue <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
+- `DeleteOptions
+  <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/DeleteOptions.html>`__
+- `BsonValue
+  <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
+- `Collation
+  <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/Collation.html>`__
+
 
 
 
