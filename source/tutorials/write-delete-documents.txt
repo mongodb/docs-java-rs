@@ -1,0 +1,207 @@
+.. _java-rs-write-delete-docs:
+
+================
+Delete Documents
+================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code examples, write, remove
+
+Overview
+--------
+
+In this guide, you can learn how to use {+driver-short+} to add
+documents to a MongoDB collection by performing delete operations.
+
+A delete operation deletes one or more documents from a MongoDB collection.
+You can perform a delete operation by using the ``deleteOne()`` or
+``deleteMany()`` methods.
+
+Sample Data
+~~~~~~~~~~~
+
+The examples in this guide use the ``sample_restaurants.restaurants`` collection
+from the :atlas:`Atlas sample datasets </sample-data>`. 
+
+.. TODO:
+.. Once get started ticket merged in, link the get started tutorial below
+
+.. To learn how to create a
+.. free MongoDB Atlas cluster and load the sample datasets, see the
+.. :ref:`<java-rs-getting-started>` tutorial.
+
+.. include:: /includes/subscriber-note.rst
+
+.. TODO:
+.. Change link in includes subscriber note to get started page instead of quick start primer
+
+The ``_id`` Field
+-----------------
+
+In a MongoDB collection, each document *must* contain an ``_id`` field
+with a unique field value.
+
+MongoDB allows you to manage this field in two ways:
+
+- You can set this field for each document yourself, ensuring each
+  ``_id`` field value is unique.
+- You can let the driver automatically generate unique ``ObjectId``
+  values for each document ``_id``. If you do not manually set an
+  ``_id`` value for a document, the driver populates the field
+  with an ``ObjectId``.
+
+Unless you can guarantee uniqueness, we recommend
+letting the driver automatically generate ``_id`` values.
+
+.. note::
+
+   Duplicate ``_id`` values violate unique index constraints, which
+   causes the driver to return a ``WriteError`` from
+   ``insertOne()`` or a ``BulkWriteError`` from ``insertMany()``.
+
+To learn more about the ``_id`` field, see the
+:manual:`Unique Indexes </core/index-unique/>` guide in the MongoDB Server manual.
+
+To learn more about document structure and rules, see the
+:manual:`Documents </core/document>` guide in the MongoDB Server manual.
+
+Insert One Document
+-------------------
+
+To add a single document to a MongoDB collection, call the ``insertOne()``
+method and pass the document you want to add along with the subscribe method
+
+The following example inserts a document into the ``restaurants`` collection:
+
+.. code-block:: java
+   :copyable: true
+
+    Document document = new Document("name", "Mongo's Burgers");
+    ObservableSubscriber<InsertOneResult> insertOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
+    restaurants.insertOne(document).subscribe(insertOneSubscriber);
+    insertOneSubscriber.await();
+
+Insert Multiple Documents
+-------------------------
+
+To add multiple documents to a MongoDB collection, call the ``insertMany()``
+method and pass a list of documents you want to add. Use 
+
+The following example inserts a list of documents into the ``restaurants`` collection:
+
+.. code-block:: java
+   :copyable: true
+
+    Document doc1 = new Document("name", "Mongo's Pizza");
+    Document doc2 = new Document("name", "Mongo's Coffee");
+
+    List<Document> documents = new ArrayList<Document>();
+
+    documents.add(doc1);
+    documents.add(doc2);
+
+    ObservableSubscriber<InsertManyResult> insertManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
+    restaurants.insertMany(documents).subscribe(insertManySubscriber);
+    insertManySubscriber.await();
+
+Modify Insert Behavior
+----------------------
+
+To modify insert behavior, use the ``InsertOneOptions()`` and
+``InsertManyOptions()`` optional methods,
+which represent options you can use to configure the insert operation.
+If you don't specify any additional parameters, the driver does
+not customize the insert.
+
+The ``InsertOneOptions()`` method accepts the following optional parameters:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Property
+     - Description
+
+   * - ``bypassDocumentValidation``
+     - | If set to ``True``, allows the write to opt out of
+         :manual:`document-level validation </core/schema-validation>`. 
+       | Defaults to ``False``.
+
+   * - ``toString``
+     - | If used, returns a string representation of the object.
+
+   * - ``comment``
+     - | A comment to attach to the operation. For more information, see the :manual:`insert command
+         fields </reference/command/insert/#command-fields>` guide in the
+         MongoDB Server manual for more information.
+
+The ``InsertManyOptions()`` method accepts the preceding optional parameters,
+as well as the optional ``ordered`` property:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Property
+     - Description
+
+   * - ``ordered``
+     - | If set to ``True``, the driver sends documents to the
+         server in the order provided. If an error occurs, the driver
+         and server cancel all remaining insert operations.
+       | Defaults to ``True``. 
+
+Example
+~~~~~~~
+
+The following code uses the ``insertMany()`` method as well as the
+``InsertManyOptions()`` method to insert three new
+documents into a collection. Because the argument is
+``bypassDocumentValidation(true)``, this insert operation bypasses 
+document-level validation.
+
+.. code-block:: java
+
+   Document doc1 = new Document("name", "Mongo's Burgers");
+   Document doc2 = new Document("name", "Mongo's Pizza");
+   Document doc3 = new Document("name", "Mongo's Coffee");
+
+   List<Document> documents = new ArrayList<Document>();
+
+   documents.add(doc1);
+   documents.add(doc2);
+   documents.add(doc3);
+
+   ObservableSubscriber<InsertManyResult> insertManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
+   restaurants.insertMany(documents, new InsertManyOptions().bypassDocumentValidation(true)).subscribe(insertManySubscriber);
+   InsertManyOptions.await();
+
+.. Additional Information
+----------------------
+
+.. TODO:
+.. For runnable code examples of inserting documents with {+driver-short+}, see
+.. :ref: ADD HERE
+
+API Documentation
+~~~~~~~~~~~~~~~~~
+
+To learn more about any of the methods or types discussed in this
+guide, see the following API Documentation:
+
+- `insertOne() <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#insertOne(com.mongodb.reactivestreams.client.ClientSession,TDocument)>`__
+- `insertMany()
+  <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#insertMany(com.mongodb.reactivestreams.client.ClientSession,java.util.List)>`__
+- `InsertOneOptions <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/InsertOneOptions.html>`__
+- `InsertManyOptions <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/InsertManyOptions.html>`__
+
