@@ -41,8 +41,9 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 .. :ref:`<java-rs-getting-started>` tutorial.
 
 .. TODO: When write insert methods merged in, add subscriber methods section includes within subscriber methods section
-Subscriber Methods
-~~~~~~~~~~~~~~~~~~~~
+
+.. Subscriber Methods
+.. ~~~~~~~~~~~~~~~~~~~~
 
 Delete Operations
 -----------------
