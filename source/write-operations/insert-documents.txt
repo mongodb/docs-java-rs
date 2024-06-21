@@ -63,7 +63,7 @@ Java Reactive Streams API, which consists of the following components:
 
 .. TODO: change LINK HERE to link with information about publishers and subscribers.
 
-To learn more about how these components work and how to create your own
+.. To learn more about how these components work and how to create your own
 Subscriber implementations, see LINK HERE.
 
 The ``_id`` Field
