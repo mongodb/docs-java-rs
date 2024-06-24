@@ -43,7 +43,7 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 .. TODO: When write insert methods merged in, add subscriber methods section includes within subscriber methods section
 
 .. Subscriber Methods
-.. ~~~~~~~~~~~~~~~~~~~~
+.. ~~~~~~~~~~~~~~~~~~~
 
 Delete Operations
 -----------------
@@ -62,7 +62,7 @@ the MongoDB Server manual.
 Delete One Document
 -------------------
 
-To delete a single document to a MongoDB collection, call the ``DeleteOne()``
+To delete a single document to a MongoDB collection, call the ``deleteOne()``
 method and pass in your query filter. After you call the
 ``insertOne()`` method, chain the ``subscribe()`` method and pass in a subscriber.
 
