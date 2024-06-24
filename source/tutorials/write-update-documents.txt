@@ -251,6 +251,7 @@ object. The ``UpdateResult`` type contains the following properties:
    * - ``wasAcknowledged()``
      - | Returns true if the update was acknowledged.
 
+
 .. Additional Information
 ----------------------
 
