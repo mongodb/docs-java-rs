@@ -223,7 +223,7 @@ match any existing documents.
     updateManySubscriber.await();
 
 Return Value
-~~~~~~~~~~~~
+------------
 
 The ``updateOne()`` and ``updateMany()`` methods each return an ``UpdateResult`` 
 object. The ``UpdateResult`` type contains the following properties:
