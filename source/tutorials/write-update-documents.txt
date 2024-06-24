@@ -65,7 +65,7 @@ Each update method requires the following parameters:
 .. _java-rs-update-filters:
 
 Filters
-~~~~~~~~
+~~~~~~~
 
 Each update method requires a **query filter**, which specifies the
 search criteria that determine which documents to select for updates. To facilitate the creation of filter objects, the
