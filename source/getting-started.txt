@@ -15,7 +15,7 @@ Get Started
    :values: tutorial
  
 .. meta::
-   :description: Learn how to create an app to connect to MongoDB deployment by using the Java Reactive Strings driver.
+   :description: Learn how to create an app to connect to MongoDB deployment by using the Java Reactive Streams driver.
    :keywords: quick start, tutorial, basics, Java
 
 .. toctree::
