@@ -24,7 +24,11 @@ Download and Install
       or
       `Creating New Gradle Builds
       <https://guides.gradle.org/creating-new-gradle-builds/>`_
-      for more information about how to set up your project.
+      for more information about how to set up your project. See `The MongoDB
+      Reactive Streams Driver
+      <https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-reactivestreams>`__
+      to download the driver
+      and dependencies directly from Maven. 
 
    .. step:: Install the {+driver-short+}
 
