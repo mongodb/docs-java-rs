@@ -112,9 +112,6 @@ the name ``2 Bagels 2 Buns``.
     Bagels 2 Buns)).subscribe(updateOneSubscriber);
     updateOneSubscriber.await();
 
-Specifically, the operation uses the following methods:
-- ``Updates.set()`` to set the ``name`` field to ``2 Bagels 2 Buns``.
-
 Update Multiple Documents
 -------------------------
 
@@ -154,44 +151,44 @@ to modify an update method. All methods are optional.
    * - Property
      - Description
 
-    * - ``array_filters (List<? extends Bson> arrayFilters)``
-      - | A list of filters that specifies which array elements an update applies
+   * - ``array_filters (List<? extends Bson> arrayFilters)``
+     - | A list of filters that specifies which array elements an update applies
          to.
 
-     * - ``bypass_document_validation (Boolean bypass_document_validation)``
-      - | Specifies whether the update operation bypasses document validation. This lets you 
+   * - ``bypass_document_validation (Boolean bypass_document_validation)``
+     - | Specifies whether the update operation bypasses document validation. This lets you 
          update documents that don't meet the schema validation requirements, if any 
          exist. For more information about schema validation, see :manual:`Schema
          Validation </core/schema-validation/#schema-validation>` in the MongoDB
          Server manual.
       
-    * - ``collation (Collation collation)``
-      - | Specifies the kind of language collation to use when sorting
+   * - ``collation (Collation collation)``
+     - | Specifies the kind of language collation to use when sorting
          results. For more information, see :manual:`Collation </reference/collation/#std-label-collation>`
          in the {+mdb-server+} manual.  
 
-    * - ``comment (Bson comment)``
-      - | A comment to attach to the operation. For more information, see the :manual:`insert command
+   * - ``comment (Bson comment)``
+     - | A comment to attach to the operation. For more information, see the :manual:`insert command
          fields </reference/command/insert/#command-fields>` guide in the
          {+mdb-server+} manual for more information.  
 
-    * - ``comment (String comment)``
-      - | A comment to attach to the operation. For more information, see the :manual:`insert command
+   * - ``comment (String comment)``
+     - | A comment to attach to the operation. For more information, see the :manual:`insert command
          fields </reference/command/insert/#command-fields>` guide in the
          {+mdb-server+} manual for more information.  
 
-    * - ``hint (Bson hint)``
-      - | Gets or sets the index to scan for documents. 
+   * - ``hint (Bson hint)``
+     - | Gets or sets the index to scan for documents. 
          For more information, see the :manual:`hint statement </reference/command/update/#std-label-update-command-hint>`
          in the {+mdb-server+} manual.
 
-    * - ``hint (String hint)``
-      - | Gets or sets the index to scan for documents. 
+   * - ``hint (String hint)``
+     - | Gets or sets the index to scan for documents. 
          For more information, see the :manual:`hint statement </reference/command/update/#std-label-update-command-hint>`
          in the {+mdb-server+} manual.
 
-    * - ``let (Bson variables)``
-      - | A Map of parameter names and values. Values must be constant or closed
+   * - ``let (Bson variables)``
+     - | A Map of parameter names and values. Values must be constant or closed
          expressions that don't reference document fields. For more information,
          see the :manual:`let statement
          </reference/command/update/#std-label-update-let-syntax>` in the
