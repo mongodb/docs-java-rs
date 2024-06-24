@@ -152,7 +152,7 @@ to modify an update method. All methods are optional.
    :widths: 30 70
    :header-rows: 1
 
-   * - Property
+   * - Method
      - Description
 
    * - ``array_filters (List<? extends Bson> arrayFilters)``
