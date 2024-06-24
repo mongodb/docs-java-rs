@@ -222,6 +222,35 @@ match any existing documents.
     (north)"), new UpdateOptions().upsert(true)).subscribe(updateManySubscriber);
     updateManySubscriber.await();
 
+Return Value
+~~~~~~~~~~~~
+
+The ``updateOne()`` and ``updateMany()`` methods each return an ``UpdateResult`` 
+object. The ``UpdateResult`` type contains the following properties:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Property
+     - Description
+
+   * - ``getMatchedCount()``
+     - | The number of documents that matched the query filter, regardless of
+         how many were updated.
+
+   * - ``getModifiedCount()`
+     - | The number of documents modified by the update operation. If an updated
+         document is identical to the original, it is not included in this
+         count.
+
+   * - ``getUpsertedId()`
+     - | The ID of the document that was upserted in the database, if the driver
+         performed an upsert. Otherwise ``null``.
+         
+   * - ``wasAcknowledged()``
+     - | Returns true if the update was acknowledged.
+
 .. Additional Information
 ----------------------
 
