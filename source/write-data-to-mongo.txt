@@ -75,7 +75,7 @@ Insert Multiple
 .. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-insert-multiple
    :end-before: end-insert-multiple
-   :language: python
+   :language: java
    :copyable:
 
 .. TODO: replace link
@@ -98,7 +98,7 @@ Update One
 Update Multiple
 ---------------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-update-multiple
    :end-before: end-update-multiple
    :language: java
@@ -111,7 +111,7 @@ Update Multiple
 Replace One
 -----------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-replace-one
    :end-before: end-replace-one
    :language: java
@@ -124,7 +124,7 @@ Replace One
 Delete One
 ----------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-delete-one
    :end-before: end-delete-one
    :language: java
@@ -137,7 +137,7 @@ Delete One
 Delete Multiple
 ---------------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-delete-multiple
    :end-before: end-delete-multiple
    :language: java
@@ -150,7 +150,7 @@ Delete Multiple
 Bulk Write
 ----------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-bulk-write
    :end-before: end-bulk-write
    :language: java
