@@ -1,4 +1,6 @@
 import com.mongodb.*;
+import com.mongodb.bulk.BulkWriteResult;
+import com.mongodb.client.model.*;
 import com.mongodb.client.model.DeleteOptions;
 import com.mongodb.client.model.InsertManyOptions;
 import com.mongodb.client.model.InsertOneOptions;
@@ -20,6 +22,7 @@ import com.mongodb.reactivestreams.client.MongoClients;
 import com.mongodb.reactivestreams.client.MongoDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -45,8 +48,8 @@ public class updateDocument {
         // Create a new client and connect to the server
         try (MongoClient mongoClient = MongoClients.create(settings))
         {
-            MongoDatabase sample_restaurants = mongoClient.getDatabase("sample_restaurants");
-            MongoCollection<Document> restaurants = sample_restaurants.getCollection("restaurants");
+            MongoDatabase database = mongoClient.getDatabase("<database name>");
+            MongoCollection<Document> collection = sample_restaurants.getCollection("<collection name>");
 
             try {
                 // Start example code here

@@ -59,38 +59,41 @@ the relevant values for your MongoDB deployment.
 Insert One
 ----------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-insert-one
    :end-before: end-insert-one
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents
-<pymongo-write-insert>` guide.
+.. TODO: replace link
+.. To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents
+<java-rs-write-insert>` guide.
 
 Insert Multiple
 ---------------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-insert-multiple
    :end-before: end-insert-multiple
    :language: python
    :copyable:
 
+.. TODO: replace link
 To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
-<pymongo-write-insert>` guide.
+<java-rs-write-insert>` guide.
 
 Update One
 ----------
 
-.. literalinclude:: /includes/usage-examples/write-code-examples.py
+.. literalinclude:: /includes/usage-examples/write-code-examples.java
    :start-after: start-update-one
    :end-before: end-update-one
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``updateOne()`` method, see the
-:ref:`Update Documents <pymongo-write-update>` guide.
+.. TODO: replace link
+.. To learn more about the ``updateOne()`` method, see the
+:ref:`Update Documents <java-rs-write-update>` guide.
 
 Update Multiple
 ---------------
@@ -98,11 +101,12 @@ Update Multiple
 .. literalinclude:: /includes/usage-examples/write-code-examples.py
    :start-after: start-update-multiple
    :end-before: end-update-multiple
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``updateMany()`` method, see the
-:ref:`Update Documents <pymongo-write-update>` guide.
+.. TODO: replace link
+.. To learn more about the ``updateMany()`` method, see the
+:ref:`Update Documents <java-rs-write-update>` guide.
 
 Replace One
 -----------
@@ -110,11 +114,12 @@ Replace One
 .. literalinclude:: /includes/usage-examples/write-code-examples.py
    :start-after: start-replace-one
    :end-before: end-replace-one
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``replaceOne()`` method, see the
-:ref:`Replace Documents <pymongo-write-replace>` guide.
+.. TODO: replace link
+.. To learn more about the ``replaceOne()`` method, see the
+:ref:`Replace Documents <java-rs-write-replace>` guide.
 
 Delete One
 ----------
@@ -122,11 +127,12 @@ Delete One
 .. literalinclude:: /includes/usage-examples/write-code-examples.py
    :start-after: start-delete-one
    :end-before: end-delete-one
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``deleteOne()`` method, see the
-:ref:`Delete Documents <pymongo-write-delete>` guide.
+.. TODO: replace link
+.. To learn more about the ``deleteOne()`` method, see the
+:ref:`Delete Documents <java-rs-write-delete>` guide.
 
 Delete Multiple
 ---------------
@@ -134,11 +140,12 @@ Delete Multiple
 .. literalinclude:: /includes/usage-examples/write-code-examples.py
    :start-after: start-delete-multiple
    :end-before: end-delete-multiple
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``deleteMany()`` method, see the
-:ref:`Delete Documents <pymongo-write-delete>` guide.
+.. TODO: replace link
+.. To learn more about the ``deleteMany()`` method, see the
+:ref:`Delete Documents <java-rs-write-delete>` guide.
 
 Bulk Write
 ----------
@@ -146,8 +153,9 @@ Bulk Write
 .. literalinclude:: /includes/usage-examples/write-code-examples.py
    :start-after: start-bulk-write
    :end-before: end-bulk-write
-   :language: python
+   :language: java
    :copyable:
 
-To learn more about the ``bulkWrite()`` method, see the
-:ref:`Bulk Write <pymongo-bulk-write>` guide.
+.. TODO: replace link
+.. To learn more about the ``bulkWrite()`` method, see the
+:ref:`Bulk Write <java-rs-bulk-write>` guide.
