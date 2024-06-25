@@ -88,7 +88,7 @@ The following example removes all documents in the ``restaurants`` collection wi
    :copyable: true
 
     ObservableSubscriber<DeleteResult> deleteManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.deleteMany(eq("borough", "Brooklyn").subscribe(deleteManySubscriber);
+    restaurants.deleteMany(eq("borough", "Brooklyn")).subscribe(deleteManySubscriber);
     deleteManySubscriber.await();
 
 Customize the Delete Operation
