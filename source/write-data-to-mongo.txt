@@ -67,7 +67,7 @@ Insert One
 
 .. TODO: replace link
 .. To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents
-<java-rs-write-insert>` guide.
+   <java-rs-write-insert>` guide.
 
 Insert Multiple
 ---------------
@@ -80,7 +80,7 @@ Insert Multiple
 
 .. TODO: replace link
 To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
-<java-rs-write-insert>` guide.
+   <java-rs-write-insert>` guide.
 
 Update One
 ----------
@@ -93,7 +93,7 @@ Update One
 
 .. TODO: replace link
 .. To learn more about the ``updateOne()`` method, see the
-:ref:`Update Documents <java-rs-write-update>` guide.
+   :ref:`Update Documents <java-rs-write-update>` guide.
 
 Update Multiple
 ---------------
@@ -106,7 +106,7 @@ Update Multiple
 
 .. TODO: replace link
 .. To learn more about the ``updateMany()`` method, see the
-:ref:`Update Documents <java-rs-write-update>` guide.
+   :ref:`Update Documents <java-rs-write-update>` guide.
 
 Replace One
 -----------
@@ -119,7 +119,7 @@ Replace One
 
 .. TODO: replace link
 .. To learn more about the ``replaceOne()`` method, see the
-:ref:`Replace Documents <java-rs-write-replace>` guide.
+   :ref:`Replace Documents <java-rs-write-replace>` guide.
 
 Delete One
 ----------
@@ -132,7 +132,7 @@ Delete One
 
 .. TODO: replace link
 .. To learn more about the ``deleteOne()`` method, see the
-:ref:`Delete Documents <java-rs-write-delete>` guide.
+   :ref:`Delete Documents <java-rs-write-delete>` guide.
 
 Delete Multiple
 ---------------
@@ -145,7 +145,7 @@ Delete Multiple
 
 .. TODO: replace link
 .. To learn more about the ``deleteMany()`` method, see the
-:ref:`Delete Documents <java-rs-write-delete>` guide.
+   :ref:`Delete Documents <java-rs-write-delete>` guide.
 
 Bulk Write
 ----------
@@ -158,4 +158,4 @@ Bulk Write
 
 .. TODO: replace link
 .. To learn more about the ``bulkWrite()`` method, see the
-:ref:`Bulk Write <java-rs-bulk-write>` guide.
+   :ref:`Bulk Write <java-rs-bulk-write>` guide.
