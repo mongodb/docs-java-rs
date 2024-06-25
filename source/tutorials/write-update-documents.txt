@@ -254,8 +254,8 @@ object. The ``UpdateResult`` type contains the following instance methods:
    * - ``wasAcknowledged()``
      - | Returns true if the update was acknowledged.
 
- Additional Information
-------------------------
+Additional Information
+-----------------------
 
 For additional information about update operators, see :manual:`Update Operators
 </reference/operator/update>` in the MongoDB Server manual.
