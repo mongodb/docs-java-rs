@@ -56,11 +56,13 @@ You can perform update operations in MongoDB by using the following methods:
 Each update method requires the following parameters:
 
 - A query filter document, which determines which documents to update. For more
-  information about using query filters, see :ref:`Filters <java-rs-update-filters>`.
+  information about using query filters, see the :ref:`Filters
+  <java-rs-update-filters>` section.
 
 - An update document, which specifies the update operator (the kind of update to
   perform) and the fields and values that should change. For more information
-  about update documents, see :ref:`Update Operators <java-rs-update-operators>`.
+  about update documents, see the :ref:`Update Operators
+  <java-rs-update-operators>` section.
 
 .. _java-rs-update-filters:
 
@@ -69,7 +71,7 @@ Filters
 
 Each update method requires a **query filter**, which specifies the
 search criteria that determine which documents to select for updates. To facilitate the creation of filter objects, the
-driver provides the ``Filters``class that provides filter condition helper
+driver provides the ``Filters`` class that provides filter condition helper
 methods. 
 
 To view a list of ``Filters`` helpers, see the `Filters
@@ -85,10 +87,7 @@ Update Operators
 
 To change a field in a document, MongoDB provides update operators.
 To specify the modification to perform using the update operators,
-create an update document. To learn more about update operators, see
-:manual:`Update Operators </reference/operator/update/>` in the Server manual.
-
-To facilitate the creation of update documents, the driver
+create an update document. To facilitate the creation of update documents, the driver
 provides the ``Updates`` helper class.
 
 .. important::
@@ -96,17 +95,20 @@ provides the ``Updates`` helper class.
    The ``id`` field is immutable, so you cannot change the value of the
    ``id`` field in a document.
 
+To learn more about update operators, see
+:manual:`Update Operators </reference/operator/update/>` in the Server manual.
+
 Update One Document
 -------------------
 
 To update a single document from a MongoDB collection, call the ``updateOne()``
-method and pass in your query filter as the first argument. Then, pass in your
+method and pass your query filter as the first argument. Then, pass your
 update operators as the second argument to the ``updateOne()`` method. After you call the
-``updateOne()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+``updateOne()`` method, chain the ``subscribe()`` method and pass a subscriber
+as an argument.
 
-The following example uses ``Updates.set()`` to update a document in the
-``restaurants`` collection with a ``name`` value of ``Bagels N Buns`` to have
-the name ``2 Bagels 2 Buns``.
+The following example uses ``Updates.set()`` to update a document the ``name``
+value of a matching document from ``Bagels N Buns`` to ``2 Bagels 2 Buns``:
 
 .. code-block:: java
    :copyable: true
@@ -120,12 +122,13 @@ Update Multiple Documents
 -------------------------
 
 To update multiple documents from a MongoDB collection, call the ``updateMany()``
-method and pass in your query filter. Then, pass in your
+method and pass your query filter. Then, pass your
 update operators as the second argument to the ``updateMany()`` method. After you call the
-``updateMany()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+``updateMany()`` method, chain the ``subscribe()`` method and pass a subscriber
+as an argument.
 
-The following example updates all documents in the ``restaurants`` collection
-with a ``borough`` value of ``"Brooklyn"`` to have a star value of 4:
+The following example updates all documents with a ``cuisine`` value of
+``Pizza`` to have a ``cuisine`` value of ``Pasta``:
 
 .. code-block:: java
    :copyable: true
@@ -145,8 +148,8 @@ To modify the behavior of the update operation, pass the class instance and
 chained method calls as the second argument to the
 ``updateOne()`` or ``updateMany()`` method.
 
-You can use the following methods in the ``updateOptions`` class
-to modify an update method. All methods are optional.
+You can use the following optional methods in the ``updateOptions`` class
+to modify an update method:
 
 .. list-table::
    :widths: 30 70
@@ -155,50 +158,50 @@ to modify an update method. All methods are optional.
    * - Method
      - Description
 
-   * - ``array_filters (List<? extends Bson> arrayFilters)``
+   * - ``arrayFilters(List<? extends Bson> arrayFilters)``
      - | A list of filters that specifies which array elements an update applies
          to.
 
-   * - ``bypass_document_validation (Boolean bypass_document_validation)``
+   * - ``bypassDocumentValidation(Boolean bypassDocumentValidation)``
      - | Specifies whether the update operation bypasses document validation. This lets you 
          update documents that don't meet the schema validation requirements, if any 
          exist. For more information about schema validation, see :manual:`Schema
          Validation </core/schema-validation/#schema-validation>` in the MongoDB
          Server manual.
       
-   * - ``collation (Collation collation)``
+   * - ``collation(Collation collation)``
      - | Specifies the kind of language collation to use when sorting
          results. For more information, see :manual:`Collation </reference/collation/#std-label-collation>`
          in the MongoDB Server manual.  
 
-   * - ``comment (Bson comment)``
-     - | A comment to attach to the operation. For more information, see the :manual:`insert command
+   * - ``comment(Bson comment)``
+     - | A ``Bson`` comment to attach to the operation. For more information, see the :manual:`insert command
          fields </reference/command/insert/#command-fields>` guide in the
          MongoDB Server manual.  
 
-   * - ``comment (String comment)``
-     - | A comment to attach to the operation. For more information, see the :manual:`insert command
+   * - ``comment(String comment)``
+     - | A ``String`` comment to attach to the operation. For more information, see the :manual:`insert command
          fields </reference/command/insert/#command-fields>` guide in the
          MongoDB Server manual.  
 
-   * - ``hint (Bson hint)``
-     - | Gets or sets the index to scan for documents. 
+   * - ``hint(Bson hint)``
+     - | Sets the index for the operation as a ``Bson`` value. 
          For more information, see the :manual:`hint statement </reference/command/update/#std-label-update-command-hint>`
          in the MongoDB Server manual.
 
-   * - ``hint (String hint)``
-     - | Gets or sets the index to scan for documents. 
+   * - ``hint(String hint)``
+     - | Sets the index for the operation as a ``String`` value.
          For more information, see the :manual:`hint statement </reference/command/update/#std-label-update-command-hint>`
          in the MongoDB Server manual.
 
-   * - ``let (Bson variables)``
+   * - ``let(Bson variables)``
      - | A Map of parameter names and values. Values must be constant or closed
          expressions that don't reference document fields. For more information,
          see the :manual:`let statement
          </reference/command/update/#std-label-update-let-syntax>` in the
          MongoDB Server manual.
 
-   * - ``upsert (Boolean upsert)``
+   * - ``upsert(Boolean upsert)``
      - | Specifies whether the update operation performs an upsert operation if no 
          documents match the query filter. For more information, see the :manual:`upsert
          statement </reference/command/update/#std-label-update-command-upsert>`
@@ -226,13 +229,13 @@ Return Value
 ------------
 
 The ``updateOne()`` and ``updateMany()`` methods each return an ``UpdateResult`` 
-object. The ``UpdateResult`` type contains the following properties:
+object. The ``UpdateResult`` type contains the following instance methods:
 
 .. list-table::
    :widths: 30 70
    :header-rows: 1
 
-   * - Property
+   * - Method
      - Description
 
    * - ``getMatchedCount()``
@@ -251,8 +254,11 @@ object. The ``UpdateResult`` type contains the following properties:
    * - ``wasAcknowledged()``
      - | Returns true if the update was acknowledged.
 
-.. Additional Information
-----------------------
+ Additional Information
+------------------------
+
+For additional information about update operators, see :manual:`Update Operators
+</reference/operator/update>` in the MongoDB Server manual.
 
 .. TODO:
 .. For runnable code examples of inserting documents with {+driver-short+}, see
@@ -269,6 +275,7 @@ guide, see the following API documentation:
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#updateMany(com.mongodb.reactivestreams.client.ClientSession,org.bson.conversions.Bson,java.util.List)>`__
 - `UpdateOptions
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/UpdateOptions.html>`__
+- `UpdateResult <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/result/UpdateResult.html>`__
 - `BsonValue
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
 - `Collation
