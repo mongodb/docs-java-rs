@@ -1,0 +1,153 @@
+.. _java-rs-write:
+
+=====================
+Write Data to MongoDB
+=====================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+ 
+.. meta::
+   :description: Learn how to use the {+driver-short+} to write data to MongoDB.
+   :keywords: usage examples, save, crud, create, code example
+
+.. TODO: change toctree links when other pages are merged in.
+.. .. toctree::
+..    :titlesonly:
+..    :maxdepth: 1
+
+..    /write/insert
+..    /write/update
+..    /write/replace
+..    /write/delete
+..    /write/bulk-write
+..    /write/gridfs
+
+Overview
+--------
+
+On this page, you can see copyable code examples that show common
+methods you can use to write data to MongoDB with the {+driver-short+}.
+
+.. tip::
+
+  To learn more about any of the methods shown on this page, see the link
+  provided in each section.
+
+To use an example from this page, copy the code example into the
+:ref:`sample application <java-rs-write-sample>` or your own application.
+Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
+the relevant values for your MongoDB deployment.
+
+.. _java-rs-write-sample:
+
+.. include:: /includes/usage-examples/sample-app-intro.rst
+
+.. literalinclude:: /includes/usage-examples/sample-write-application.java
+   :language: java
+   :copyable:
+   :linenos:
+   :emphasize-lines: 52-54
+
+Insert One
+----------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-insert-one
+   :end-before: end-insert-one
+   :language: python
+   :copyable:
+
+To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents
+<pymongo-write-insert>` guide.
+
+Insert Multiple
+---------------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-insert-multiple
+   :end-before: end-insert-multiple
+   :language: python
+   :copyable:
+
+To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
+<pymongo-write-insert>` guide.
+
+Update One
+----------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-update-one
+   :end-before: end-update-one
+   :language: python
+   :copyable:
+
+To learn more about the ``updateOne()`` method, see the
+:ref:`Update Documents <pymongo-write-update>` guide.
+
+Update Multiple
+---------------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-update-multiple
+   :end-before: end-update-multiple
+   :language: python
+   :copyable:
+
+To learn more about the ``updateMany()`` method, see the
+:ref:`Update Documents <pymongo-write-update>` guide.
+
+Replace One
+-----------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-replace-one
+   :end-before: end-replace-one
+   :language: python
+   :copyable:
+
+To learn more about the ``replaceOne()`` method, see the
+:ref:`Replace Documents <pymongo-write-replace>` guide.
+
+Delete One
+----------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-delete-one
+   :end-before: end-delete-one
+   :language: python
+   :copyable:
+
+To learn more about the ``deleteOne()`` method, see the
+:ref:`Delete Documents <pymongo-write-delete>` guide.
+
+Delete Multiple
+---------------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-delete-multiple
+   :end-before: end-delete-multiple
+   :language: python
+   :copyable:
+
+To learn more about the ``deleteMany()`` method, see the
+:ref:`Delete Documents <pymongo-write-delete>` guide.
+
+Bulk Write
+----------
+
+.. literalinclude:: /includes/usage-examples/write-code-examples.py
+   :start-after: start-bulk-write
+   :end-before: end-bulk-write
+   :language: python
+   :copyable:
+
+To learn more about the ``bulkWrite()`` method, see the
+:ref:`Bulk Write <pymongo-bulk-write>` guide.
