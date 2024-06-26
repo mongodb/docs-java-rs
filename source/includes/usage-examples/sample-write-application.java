@@ -14,7 +14,6 @@ import com.mongodb.reactivestreams.client.MongoCollection;
 
 import helpers.SubscriberHelpers;
 import helpers.SubscriberHelpers.ObservableSubscriber;
-import helpers.SubscriberHelpers.PrintDocumentSubscriber;
 import org.bson.Document;
 
 import com.mongodb.reactivestreams.client.MongoClient;
@@ -26,9 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Filters.regex;
 import static com.mongodb.client.model.Updates.set;
-import static com.mongodb.client.model.Updates.combine;
 
 public class updateDocument {
     public static void main(String[] args) {
@@ -49,7 +46,7 @@ public class updateDocument {
         try (MongoClient mongoClient = MongoClients.create(settings))
         {
             MongoDatabase database = mongoClient.getDatabase("<database name>");
-            MongoCollection<Document> collection = sample_restaurants.getCollection("<collection name>");
+            MongoCollection<Document> collection = database.getCollection("<collection name>");
 
             try {
                 // Start example code here
