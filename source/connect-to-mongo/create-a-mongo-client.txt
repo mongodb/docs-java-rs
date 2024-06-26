@@ -49,7 +49,7 @@ A standard connection string includes the following components:
 
    * - ``mongodb://``
 
-     - Required. A prefix that identifies this as a string in the
+     - Required. A prefix that identifies the URI as a string in the
        standard connection format.
 
    * - ``username:password``
@@ -95,11 +95,15 @@ instance on port ``27017`` of ``localhost``:
 
 .. code-block:: java
 
-   import com.mongodb.reactivestreams.client.MongoClients;
-   import com.mongodb.reactivestreams.client.MongoClient;
-   
-   String uri = "mongodb://localhost:27017/";
-   MongoClient Client = MongoClients.create(uri);
+import com.mongodb.reactivestreams.client.MongoClients;
+import com.mongodb.reactivestreams.client.MongoClient;
+
+public class MongoConnection {
+    public static void main(String[] args) {
+        String uri = "mongodb://localhost:27017/";
+        MongoClient Client = MongoClients.create(uri);
+    }
+}
 
 .. tip:: Reusing Your Client
 
