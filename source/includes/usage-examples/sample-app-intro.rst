@@ -7,11 +7,11 @@ page. To use the sample application, perform the following steps:
 #. Create a new Java project in your IDE.
 #. Create a package called ``helpers`` within the existing ``java`` package in
    your project.
-#. Create a new Java file in the ``helpers`` package
-   named ``SubscriberHelpers``. Implement the ``Subscriber`` implementations, which are
-   described in the :ref:`Quick Start Primer <javars-primer>`, in the
-   ``SubscriberHelpers`` file.
-#. Copy the following code and paste it into a new ``.java`` file named ``updateDocument``.
+#. Create a new Java file named ``SubscriberHelpers`` in the ``helpers``
+   package. 
+#. In the ``SubscriberHelpers`` file, copy and paste the ``Subscriber`` implementations, which are
+   described in the :ref:`Quick Start Primer <javars-primer>`. 
+#. Copy the following code and paste it into a new Java file named ``updateDocument``.
 #. Copy a code example from this page and paste it on the specified lines in the
    file.
 
