@@ -56,10 +56,10 @@ A standard connection string includes the following components:
 
      - Optional. Authentication credentials. If you include these, the client
        authenticates the user against the database specified in ``authSource``.
-       
-.. TODO: uncomment out when java-rs-auth page made
-.. For more information about the ``authSource`` connection option, see
-.. :ref:`java-rs-auth`. 
+
+    .. TODO: uncomment out when java-rs-auth page made
+    .. For more information about the ``authSource`` connection option, see
+    .. :ref:`java-rs-auth`. 
 
    * - ``host[:port]``
 
@@ -77,9 +77,9 @@ A standard connection string includes the following components:
 
      - Optional. A query string that specifies connection-specific
        options as ``<name>=<value>`` pairs. 
-..    TODO: uncomment out when connection options page made
-..    See :ref:`java-rs-connection-options` for a full description of
-..    these options.
+    ..    TODO: uncomment out when connection options page made
+    ..    See :ref:`java-rs-connection-options` for a full description of
+    ..    these options.
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the
