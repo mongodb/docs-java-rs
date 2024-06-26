@@ -3,7 +3,7 @@
 You can use the following sample application to test the code examples on this
 page. To use the sample application, perform the following steps:
 
-1. Ensure you have {+driver-short+} installed.
+1. Ensure you have the {+driver-short+} installed.
 #. Create a new Java project in your IDE.
 #. Create a package called ``helpers`` within the existing ``java`` package in
    your project.

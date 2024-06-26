@@ -34,7 +34,7 @@ Overview
 --------
 
 On this page, you can see copyable code examples that show common
-methods you can use to write data to MongoDB with the {+driver-short+}.
+methods to write data to MongoDB with the {+driver-short+}.
 
 .. tip::
 
@@ -54,7 +54,7 @@ the relevant values for your MongoDB deployment.
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 55-57
+   :emphasize-lines: 52-54
 
 Insert One
 ----------
@@ -79,7 +79,7 @@ Insert Multiple
    :copyable:
 
 .. TODO: replace link
-To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
+.. To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
    <java-rs-write-insert>` guide.
 
 Update One
