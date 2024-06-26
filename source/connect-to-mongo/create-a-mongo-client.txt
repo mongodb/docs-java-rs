@@ -9,12 +9,12 @@ Create a MongoClient
    :values: reference
 
 .. meta::
-   :keywords: connection string, URI, server, Atlas, settings, client
+   :keywords: connection string, URI, server, settings, client
 
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 2
+   :depth: 1
    :class: singlecol
 
 Overview
@@ -101,7 +101,7 @@ instance on port ``27017`` of ``localhost``:
     public class MongoConnection {
         public static void main(String[] args) {
             String uri = "mongodb://localhost:27017/";
-            MongoClient Client = MongoClients.create(uri);
+            MongoClient client = MongoClients.create(uri);
         }
     }
 
@@ -109,10 +109,9 @@ instance on port ``27017`` of ``localhost``:
 
    Because each ``MongoClient`` instance represents a pool of connections to the
    database, most applications require only a single instance of
-   ``MongoClient``, even across multiple requests. However, if you fork
-   a process, the child process *does* need its own ``MongoClient`` instance.
+   ``MongoClient``, even across multiple requests. 
 .. TODO: comment out when java-rs-faq page is created
-.. To learn more, see the :ref:`FAQ <java-rs-faq>` page.
+.. To learn more about connection pools, see the :ref:`FAQ <java-rs-faq>` page.
 
 API Documentation
 -----------------
