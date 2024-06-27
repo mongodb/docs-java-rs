@@ -102,7 +102,7 @@ instance on port ``27017`` of ``localhost``:
         public static void main(String[] args) {
             String uri = "mongodb://localhost:27017/";
             try (MongoClient client = MongoClients.create(uri)) {
-                client.close();
+                // use `client` here
             }
         }
     }
