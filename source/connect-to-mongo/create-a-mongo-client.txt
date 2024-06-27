@@ -24,7 +24,7 @@ To connect to a MongoDB deployment, you need two things:
 
 - A **connection URI**, also known as a *connection string*, which tells the {+driver-short+}
   which MongoDB deployment to connect to.
-- A **MongoClient** instance, which creates the connection to the MongoDB deployment
+- A **MongoClient** instance, which creates connections to the MongoDB deployment
   and lets you perform operations on it.
 
 You can also use either of these components to customize the way the {+driver-short+} behaves
@@ -89,7 +89,7 @@ MongoClient
 -----------
 
 To create a connection to MongoDB, pass a connection URI as a string to the
-``MongoClient`` constructor. In the 
+method constructing a ``MongoClient`` object. In the 
 following example, the driver uses a sample connection URI to connect to a MongoDB 
 instance on port ``27017`` of ``localhost``: 
 
@@ -101,13 +101,15 @@ instance on port ``27017`` of ``localhost``:
     public class MongoConnection {
         public static void main(String[] args) {
             String uri = "mongodb://localhost:27017/";
-            MongoClient client = MongoClients.create(uri);
+            try (MongoClient client = MongoClients.create(uri)) {
+                client.close();
+            }
         }
     }
 
 .. tip:: Reusing Your Client
 
-   Because each ``MongoClient`` instance represents a pool of connections to the
+   Because each ``MongoClient`` instance pools connections to the
    database, most applications require only a single instance of
    ``MongoClient``, even across multiple requests. 
 .. TODO: comment out when java-rs-faq page is created
@@ -119,4 +121,4 @@ API Documentation
 To learn more about creating a ``MongoClient`` instance in the {+driver-short+},
 see the following API documentation:
 
-- `MongoClient <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClient.html>`__ 
+- `MongoClient <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClients.html>`__ 
