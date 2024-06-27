@@ -122,7 +122,7 @@ option to ``True``. You can do this in the following ways:
          :end-before: end-arg-constructor
          :language: java
          :copyable:
-         :emphasize-lines: 36
+         :emphasize-lines: 7
 
    .. tab:: Connection String
       :tabid: connectionstring
@@ -132,7 +132,7 @@ option to ``True``. You can do this in the following ways:
          :end-before: end-parameter-string
          :language: java
          :copyable:
-         :emphasize-lines: 49
+         :emphasize-lines: 6
 
 API Documentation
 -----------------
