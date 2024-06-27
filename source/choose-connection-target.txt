@@ -20,7 +20,7 @@ Choose a Connection Target
 Overview
 --------
 
-In this guide, you can learn how to use a connection string and ``MongoClient`` object
+In this guide, you can learn how to use a connection string and a ``MongoClient`` object
 to connect to different types of MongoDB deployments.
 
 Atlas
@@ -33,7 +33,7 @@ in your connection string:
 - MongoDB username
 - MongoDB password
 
-Then, pass your connection string to the ``MongoClient`` constructor.
+Then, pass your connection string to the method constructing a ``MongoClient`` object.
 
 .. tip::
 
@@ -46,7 +46,7 @@ To learn more about the Stable API feature, see :manual:`Stable API
 </reference/stable-api>` in the MongoDB Server manual.
 
 The following code shows how to use the {+driver-short+} to connect to an Atlas cluster. The
-code also uses the ``server_api`` option to specify a Stable API version.
+code also uses the ``serverApi`` option to specify a Stable API version.
 
 .. literalinclude:: /includes/connect/atlas_connection.java
    :language: java
@@ -110,11 +110,11 @@ hosts, including ``host1``:
 
 .. note::
 
-   The ``MongoClient`` constructor is *non-blocking*.
-   When you connect to a replica set, the constructor returns immediately while the
+   The method constructing a ``MongoClient`` is *non-blocking*.
+   When you connect to a replica set, the method returns immediately while the
    client uses background threads to connect to the replica set.
    
-   If you construct a ``MongoClient`` and immediately print the string representation
+   If you create a ``MongoClient`` and immediately print the string representation
    of its ``nodes`` attribute, the list might be empty while the client connects to
    the replica-set members.
 
