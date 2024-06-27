@@ -69,7 +69,9 @@ deployment:
     public class MongoConnection {
         public static void main(String[] args) {
             String uri = "mongodb://localhost:27017/";
-            MongoClient client = MongoClients.create(uri);
+            try (MongoClient client = MongoClients.create(uri)) {
+                // use `client` here
+            }
         }
     }
 
@@ -94,13 +96,15 @@ hosts, including ``host1``:
 
 .. code-block:: java
 
-   import com.mongodb.reactivestreams.client.MongoClients;
-   import com.mongodb.reactivestreams.client.MongoClient;
+    import com.mongodb.reactivestreams.client.MongoClients;
+    import com.mongodb.reactivestreams.client.MongoClient;
 
     public class MongoConnection {
         public static void main(String[] args) {
             String uri = "mongodb://localhost:27017/?replicaSet=sampleRS";
-            MongoClient client = MongoClients.create(uri);
+            try (MongoClient client = MongoClients.create(uri)) {
+                // use `client` here
+            }
         }
     }
 
@@ -135,8 +139,10 @@ option to ``True``. You can do this in two ways: by passing an argument to the
 
          public class MongoConnection {
             public static void main(String[] args) {
-                MongoClient client = MongoClients.create("mongodb://<hostname>:<port>",
-                directConnection=True);
+                try (MongoClient client = MongoClients.create("mongodb://<hostname>:<port>",
+                directConnection=True)){
+                    // use `client` here
+                }
             }
          }
 
@@ -152,14 +158,11 @@ option to ``True``. You can do this in two ways: by passing an argument to the
          public class MongoConnection {
             public static void main(String[] args) {
                 String uri = "mongodb://<hostname>:<port>/?directConnection=true";
-                MongoClient client = MongoClients.create(uri);
+                try (MongoClient client = MongoClients.create(uri)){
+                    // use `client` here
+                }
             }
          }
-
-Troubleshooting
----------------
-
-.. include:: /includes/troubleshooting/connection-targets.rst
 
 API Documentation
 -----------------
