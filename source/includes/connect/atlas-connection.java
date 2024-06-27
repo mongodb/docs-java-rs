@@ -1,20 +1,5 @@
 import com.mongodb.*;
-import com.mongodb.bulk.BulkWriteResult;
-import com.mongodb.client.model.*;
-import com.mongodb.client.model.DeleteOptions;
-import com.mongodb.client.model.InsertManyOptions;
-import com.mongodb.client.model.InsertOneOptions;
-import com.mongodb.client.model.UpdateOptions;
-import com.mongodb.client.model.Updates;
-import com.mongodb.client.result.UpdateResult;
-import com.mongodb.client.result.DeleteResult;
-import com.mongodb.client.result.InsertManyResult;
-import com.mongodb.client.result.InsertOneResult;
 import com.mongodb.reactivestreams.client.MongoCollection;
-
-import helpers.SubscriberHelpers;
-import helpers.SubscriberHelpers.ObservableSubscriber;
-import org.bson.Document;
 
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
@@ -25,13 +10,6 @@ import com.mongodb.reactivestreams.client.MongoClients;
 import com.mongodb.reactivestreams.client.MongoDatabase;
 import org.bson.conversions.Bson;
 import org.reactivestreams.Publisher;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.mongodb.client.model.Filters.eq;
-import static com.mongodb.client.model.Updates.set;
 
 public class updateDocument {
     public static void main(String[] args) {
@@ -56,7 +34,7 @@ public class updateDocument {
 
             try {
                 Bson command = new BsonDocument("ping", new BsonInt64(1));
-                Publisher<Document> commandResult = sample_restaurants.runCommand(command);
+                Publisher<Document> commandResult = database.runCommand(command);
                 System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
             } catch (MongoException me) {
                 System.err.println(me);
