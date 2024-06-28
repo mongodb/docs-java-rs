@@ -33,7 +33,7 @@ in your connection string:
 - MongoDB username
 - MongoDB password
 
-Then, pass your connection string to the `create()` method constructing a ``MongoClient`` object.
+Then, pass your connection string to the ``create()`` method constructing a ``MongoClient`` object.
 
 .. tip::
 
@@ -67,7 +67,6 @@ deployment:
    :language: java
    :copyable:
 
-
 Replica Sets
 ------------
 
@@ -93,7 +92,7 @@ hosts, including ``host1``:
    :language: java
    :copyable:
 
-.. note:: Empty String Representation
+.. note:: create() is Non-Blocking
 
    The ``create()`` method constructing a ``MongoClient`` is *non-blocking*.
    When you connect to a replica set, the method returns immediately while the
@@ -109,6 +108,7 @@ Initialization
 To initialize a replica set, you must connect directly to a single member. To do so,
 set the ``directConnection`` connection
 option to ``True``. You can do this in the following ways:
+
 - Passing an argument to the ``create()`` method constructing a ``MongoClient``
 - Setting the parameter in your connection string.
 

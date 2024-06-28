@@ -32,8 +32,8 @@ import com.mongodb.reactivestreams.client.MongoClient;
 
 public class MongoConnection {
 public static void main(String[] args) {
-    try (MongoClient client = MongoClients.create("mongodb://<hostname>:<port>",
-    directConnection=True)){
+    try (MongoClient client = 
+    MongoClients.create("mongodb://<hostname>:<port>", directConnection=True)){
             // use `client` here
         }
     }
