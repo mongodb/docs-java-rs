@@ -1,17 +1,18 @@
-import com.mongodb.*;
-import com.mongodb.reactivestreams.client.MongoCollection;
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.ServerApi;
+import com.mongodb.ServerApiVersion;
 
 import org.bson.BsonDocument;
 import org.bson.BsonInt64;
-import org.bson.Document;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
 import com.mongodb.reactivestreams.client.MongoDatabase;
 import org.bson.conversions.Bson;
-import org.reactivestreams.Publisher;
+import reactor.core.publisher.Mono;
 
-public class updateDocument {
+public class testing {
     public static void main(String[] args) {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string>";
@@ -30,15 +31,11 @@ public class updateDocument {
         try (MongoClient mongoClient = MongoClients.create(settings))
         {
             MongoDatabase database = mongoClient.getDatabase("<database name>");
-            MongoCollection<Document> collection = database.getCollection("<collection name>");
-
-            try {
-                Bson command = new BsonDocument("ping", new BsonInt64(1));
-                Publisher<Document> commandResult = database.runCommand(command);
-                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
-            } catch (MongoException me) {
-                System.err.println(me);
-            }
+            Bson command = new BsonDocument("ping", new BsonInt64(1));
+            Mono.from(database.runCommand(command))
+                    .doOnSuccess(x -> System.out.println("Pinged your deployment. You successfully connected to MongoDB!"))
+                    .doOnError(err -> System.out.println("Error: " + err.getMessage()))
+                    .block();
         }
     }
 }
