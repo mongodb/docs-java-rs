@@ -15,7 +15,7 @@ Specify Connection Options
    :values: reference
 
 .. meta::
-   :keywords: connection string, URI, server, Atlas, settings, configure
+   :keywords: connection string, URI, server, settings, configure
 
 Overview
 --------
