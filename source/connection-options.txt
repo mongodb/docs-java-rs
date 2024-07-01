@@ -572,7 +572,7 @@ Write Concern Configuration
        | **MongoClient Example**: ``journal=True``
        | **Connection URI Example**: ``journal=true``
 
-   * - **w=wValue**
+   * - **w**
      - | If set, the driver adds { w : wValue } to all write commands. If set,
        | implies that safe=True.
        |
