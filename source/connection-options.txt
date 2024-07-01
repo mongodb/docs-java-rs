@@ -87,8 +87,8 @@ Authentication
      - Description
 
    * - **authMechanism**
-     - | Sets the mechanism the {+driver-short+} uses to authenticate the application. Valid
-       | options are defined in `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+     - | Sets the mechanism the {+driver-short+} uses to authenticate the
+       | application. Valid options are defined in `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"SCRAM-SHA-256"`` when connecting to MongoDB v4.0 or later.
