@@ -71,10 +71,8 @@ connection options:
 Connection Options
 ------------------
 
-The following sections describe the connection options available in the {+driver-short+}.
-If a ``MongoClient`` parameter maps to more than one
-option in the connection string, the **Connection URI Example** shows all
-relevant options.
+The following sections describe the connection options available in the
+{+driver-short+}.
 
 Authentication
 ~~~~~~~~~~~~~~
