@@ -526,7 +526,7 @@ SRV Configuration
 
    * - Connection Option
      - Description
-     
+
    * - **srvServiceName**
      - | Sets the SRV service name. See
        | `ClusterSettings.getSrvServiceName()<https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/connection/ClusterSettings.html#getSrvServiceName()>`__
