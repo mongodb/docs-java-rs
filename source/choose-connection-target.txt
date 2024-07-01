@@ -48,7 +48,7 @@ To learn more about the Stable API feature, see :manual:`Stable API
 The following code shows how to use the {+driver-short+} to connect to an Atlas cluster. The
 code uses the ``serverApi`` option to specify a Stable API version. 
 
-.. include:: /includes/connect/connect-reactor.rst
+.. literalinclude:: /includes/connect/connect-reactor.rst
 
 .. literalinclude:: /includes/connect/atlas-connection.java
    :language: java
