@@ -88,7 +88,7 @@ Authentication
 
    * - **authMechanism**
      - | Sets the mechanism the {+driver-short+} uses to authenticate the application. Valid
-       | options are defined in `Class ConnectionString. <{+api-root+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | options are defined in `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"SCRAM-SHA-256"`` when connecting to MongoDB v4.0 or later.
@@ -350,8 +350,7 @@ General Configuration
 
    * - **uuidRepresentation**
      - | Sets the mechanism the {+driver-short+} uses to encode instances of
-       | UUID. See `Uuid Representation
-       <{+api+}/bson/org/bson/UuidRepresentation.html>`__ for a list of all valid options.
+       | UUID. See `Uuid Representation <{+api+}/bson/org/bson/UuidRepresentation.html>`__ for a list of all valid options.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``unspecified``
@@ -398,7 +397,7 @@ Proxy Configuration
    * - **proxyPassword**
      - | Sets the password for authenticating with the proxy server. Required if proxyPassword is specified.
        |
-       | **Data Type**: {+string-data-tyupe+}
+       | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
        | **MongoClient Example**: ``proxyPassword = "password"``
        | **Connection URI Example**: ``proxyPassword=password``
@@ -427,7 +426,7 @@ Read Preference Configuration
        | colon-separated key-value pairs, e.g. "dc:ny,rack:1". 
        | Spaces are stripped from beginning and end of all keys and values. To
        | specify a list of tag sets, use multiple readPreferenceTags, separated
-       | by semicolons. To learn more about readPreferenceTags, see `Class ConnectionString. <{+api-root+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | by semicolons. To learn more about readPreferenceTags, see `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
@@ -436,7 +435,7 @@ Read Preference Configuration
 
    * - **maxStalenessSeconds**
      - | Sets the maximum staleness in seconds. To learn more about staleness,
-       | see `Class ConnectionString. <{+api-root+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | see `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
