@@ -40,7 +40,7 @@ and the ``tls`` option with a value of ``true``:
     public static void main(String[] args) {
         String uri = "mongodb://<hostname>:<port>/?connectTimeoutMS=60000&tls=true";
         try (MongoClient client = MongoClients.create(uri)) {
-
+                //use client here
             }
         }
     }
@@ -63,7 +63,7 @@ connection options:
         public static void main(String[] args) {
             String uri = "mongodb://<hostname>:<port>";
             try (MongoClient client = MongoClients.create(uri, connectTimeoutMS=60000, tls=True) {
-            
+                //use client here
             }
         }
     }
