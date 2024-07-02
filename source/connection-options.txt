@@ -104,8 +104,8 @@ Authentication
 
    * - **authSource**
      - | Sets the source of authentication credentials. The source is typically a
-         database. This option is only respected when ``authMechanism`` is set
-         to ``MONGO-CR``.
+       | database. This option is only respected when ``authMechanism`` is set
+       | to ``MONGO-CR``.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: The database in the connection URI, or ``"admin"`` if none is provided
@@ -195,7 +195,7 @@ Connection Configuration
        | **Connection URI Example**: ``sslInvalidHostNameAllowed=true``
   
    * - **tls**
-     - | Sets whether to connect using TLS. Supersedes SSL option.
+     - | Sets whether to connect using TLS. Supersedes the ``ssl`` option.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
@@ -203,7 +203,7 @@ Connection Configuration
        | **Connection URI Example**: ``tls=true``
   
    * - **tlsAllowInvalidHostnames**
-     - | Allows invalid host names for TLS connections. Supersedes
+     - | Allows invalid host names for TLS connections. Supersedes the
        | ``sslInvalidHostNameAllowed`` option.
        |
        | **Data Type**: {+bool+}
@@ -337,7 +337,7 @@ General Configuration
 
    * - **retryReads**
      - | Sets whether or not the driver retries supported read operations if
-       | they fail due to network error.
+       | they fail due to a network error.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``True``
@@ -540,7 +540,7 @@ SRV Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``srvMaxHosts = 5``
+       | **MongoClient Example**: ``srvMaxHosts=5``
        | **Connection URI Example**: ``srvMaxHosts=5``
 
 Write Concern Configuration
@@ -583,7 +583,7 @@ Write Concern Configuration
 
    * - **wtimeoutMS**
      - | If set, The driver adds ``{ wtimeout : ms }`` to all write commands. If
-       | set, implies ``safe=true``. This option is used in combination with w.
+       | set, implies ``safe=true``. This option is used in combination with ``w``.
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
