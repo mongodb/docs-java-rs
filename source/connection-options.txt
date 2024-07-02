@@ -7,7 +7,7 @@ Specify Connection Options
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
    :class: singlecol
 
 .. facet::
@@ -40,7 +40,7 @@ and the ``tls`` option with a value of ``true``:
     public static void main(String[] args) {
         String uri = "mongodb://<hostname>:<port>/?connectTimeoutMS=60000&tls=true";
         try (MongoClient client = MongoClients.create(uri)) {
-                //use client here
+                // Use client here
             }
         }
     }
@@ -63,7 +63,7 @@ connection options:
         public static void main(String[] args) {
             String uri = "mongodb://<hostname>:<port>";
             try (MongoClient client = MongoClients.create(uri, connectTimeoutMS=60000, tls=True) {
-                //use client here
+                // Use client here
             }
         }
     }
@@ -86,7 +86,8 @@ Authentication
 
    * - **authMechanism**
      - | Sets the mechanism the {+driver-short+} uses to authenticate the
-       | application. Valid options are defined in `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | application. Valid options are defined in the `Class ConnectionString
+       <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__ API documentation.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"SCRAM-SHA-256"`` when connecting to MongoDB v4.0 or later.
@@ -95,8 +96,7 @@ Authentication
        | **Connection URI Example**: ``authMechanism=MONGODB-X509``
   
    * - **authMechanismProperties**
-     - | Allows you to set authentication mechanism properties on the connection
-       | string.
+     - | Sets options specific to the authentication mechanism.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``""``
@@ -161,7 +161,7 @@ Connection Configuration
        | **Connection URI Example**: ``maxIdleTimeMS=6000``
 
    * - **maxLifeTimeMS**
-     - | Sets the maximum life time in milliseconds of a pooled connection. If an
+     - | Sets the maximum lifetime in milliseconds of a pooled connection. If an
        | operation doesn't finish in the specified time, the {+driver-short+}
        | closes the connection.
        |
@@ -180,7 +180,7 @@ Connection Configuration
        | **Connection URI Example**: ``socketTimeoutMS=6000``
 
    * - **ssl**
-     - | Sets whether to connect using TLS.
+     - | Sets whether to connect using TLS/SSL.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
@@ -188,7 +188,7 @@ Connection Configuration
        | **Connection URI Example**: ``ssl=true``
 
    * - **sslInvalidHostNameAllowed**
-     - | Allows invalid host names for TLS connections.
+     - | Allows invalid host names for TLS/SSL connections.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
@@ -310,8 +310,7 @@ General Configuration
      - Description
 
    * - **directConnection**
-     - | Sets whether or not the driver sets the connection as a direct
-       | connection to the host.
+     - | Sets whether the driver connects directly to the host.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
@@ -320,7 +319,7 @@ General Configuration
 
    * - **loadBalanced**
      - | Sets whether or not the driver is connecting to MongoDB using a load
-       | balancer. If true, the driver assumes that it is connecting through a
+       | balancer. If ``true``, the driver assumes that it is connecting through a
        | load balancer.
        |
        | **Data Type**: {+bool+}
@@ -330,7 +329,7 @@ General Configuration
 
    * - **retryWrites**
      - | Sets whether or not the driver retries supported write operations if
-       | they fail due to network error.
+       | they fail due to a network error.
        |
        | **Data Type**: {+bool+}
        | **Default**: ``True``
@@ -348,7 +347,8 @@ General Configuration
 
    * - **uuidRepresentation**
      - | Sets the mechanism the {+driver-short+} uses to encode instances of
-       | UUID. See `Uuid Representation <{+api+}/bson/org/bson/UuidRepresentation.html>`__ for a list of all valid options.
+       | UUID. See the `Uuid Representation <{+api+}/bson/org/bson/UuidRepresentation.html>`__ API documentation for a list of all
+       | valid options.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``unspecified``
@@ -369,7 +369,7 @@ Proxy Configuration
      - | Establishes the SOCKS5 proxy host to establish a connection through.
        | The value of the ``proxyHost`` can be a valid IPv4 address, IPv6
        | address, or a domain name. 
-       | Required if either proxyPassword, proxyUsername or proxyPort are specified.
+       | Required if either ``proxyPassword``, ``proxyUsername`` or ``proxyPort`` are specified.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
@@ -377,7 +377,7 @@ Proxy Configuration
        | **Connection URI Example**: ``proxyHost=example.com``
 
    * - **proxyPort**
-     - | The port number for the SOCKS5 proxy server. Must be a non-negative integer.
+     - | Sets the port number for the SOCKS5 proxy server. Must be a non-negative integer.
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
@@ -385,7 +385,7 @@ Proxy Configuration
        | **Connection URI Example**: ``proxyPort=27``
 
    * - **proxyUsername**
-     - | Sets the username for authenticating with the proxy server. Required if proxyPassword is specified.
+     - | Sets the username for authenticating with the proxy server. Required if ``proxyPassword`` is specified.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
@@ -393,7 +393,8 @@ Proxy Configuration
        | **Connection URI Example**: ``proxyUsername=example``
 
    * - **proxyPassword**
-     - | Sets the password for authenticating with the proxy server. Required if proxyPassword is specified.
+     - | Sets the password for authenticating with the proxy server. Required if
+       | ``proxyPassword`` is specified.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
@@ -412,7 +413,7 @@ Read Preference Configuration
 
    * - **readPreference**
      - | Sets the read preference for this connection. Enumerated values are:
-       | primary, primaryPreferred, secondary, secondaryPreferred, and nearest.
+       | ``primary``, ``primaryPreferred``, ``secondary``, ``secondaryPreferred``, and ``nearest``.
        |
        | **Data Type**: ``Enum``
        | **Default**: ``primary``
@@ -420,11 +421,11 @@ Read Preference Configuration
        | **Connection URI Example**: ``readPreference.primary``
 
    * - **readPreferenceTags**
-     - | A representation of a tag set as a comma-separated list of
-       | colon-separated key-value pairs, e.g. "dc:ny,rack:1". 
+     - | Specifies a tag set as a comma-separated list of
+       | colon-separated key-value pairs, e.g. ``dc:ny,rack:1``. 
        | Spaces are stripped from beginning and end of all keys and values. To
-       | specify a list of tag sets, use multiple readPreferenceTags, separated
-       | by semicolons. To learn more about readPreferenceTags, see `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | specify a list of tag sets, use multiple ``readPreferenceTags``, separated
+       | by semicolons. To learn more about ``readPreferenceTags``, see the `Class ConnectionString <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__ API documentation.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
@@ -433,11 +434,11 @@ Read Preference Configuration
 
    * - **maxStalenessSeconds**
      - | Sets the maximum staleness in seconds. To learn more about staleness,
-       | see `Class ConnectionString. <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+       | see the `Class ConnectionString <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__ API documentation.
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxStalenessSeconds = 60``
+       | **MongoClient Example**: ``maxStalenessSeconds=60``
        | **Connection URI Example**: ``maxStalenessSeconds=60``
 
 Replica Set Configuration
@@ -499,8 +500,8 @@ Server Configuration
        | **Connection URI Example**: ``localThresholdMS=6000``
 
    * - **serverMonitoringMode**
-     - | Sets the server monitoring mode, which which defines the monitoring
-         protocol to use. The enumerated values are: stream, poll, and auto.
+     - | Sets the server monitoring mode, which defines the monitoring
+         protocol to use. The enumerated values are: ``stream``, ``poll``, and ``auto``.
        |
        | **Data Type**: ``Enum``
        | **Default**: ``auto``
@@ -527,8 +528,8 @@ SRV Configuration
 
    * - **srvServiceName**
      - | Sets the SRV service name. See
-       | `ClusterSettings.getSrvServiceName() <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/connection/ClusterSettings.html#getSrvServiceName()>`__
-       | to learn more.
+       | the `ClusterSettings.getSrvServiceName() <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/connection/ClusterSettings.html#getSrvServiceName()>`__
+       | API documentation to learn more.
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"mongodb"``
@@ -564,15 +565,17 @@ Write Concern Configuration
        | **Connection URI Example**: ``safe=true``
 
    * - **journal**
-     - | Sets whether the driver waits for the server to group commit to the journal file on disk.
+     - | Sets whether the driver waits for the server to group commit to the
+       | journal file on disk.
+       |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
        | **MongoClient Example**: ``journal=True``
        | **Connection URI Example**: ``journal=true``
 
    * - **w**
-     - | If set, the driver adds { w : wValue } to all write commands. If set,
-       | implies that safe=True.
+     - | If set, the driver adds ``{ w : wValue }`` to all write commands. If set,
+       | implies that ``safe=True``.
        |
        | **Data Type**: ``Integer`` or {+string-data-type+}
        | **Default**: ``null``
@@ -580,8 +583,8 @@ Write Concern Configuration
        | **Connection URI Example**: ``w=60``
 
    * - **wtimeoutMS**
-     - | If set, The driver adds { wtimeout : ms } to all write commands. If
-       |  set, implies safe=true. This option is used in combination with w.
+     - | If set, The driver adds ``{ wtimeout : ms }`` to all write commands. If
+       | set, implies ``safe=true``. This option is used in combination with w.
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
