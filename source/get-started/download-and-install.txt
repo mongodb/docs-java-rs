@@ -28,13 +28,52 @@ Download and Install
       Reactive Streams Driver
       <https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-reactivestreams>`__
       to download the driver
-      and dependencies directly from Maven. 
+      and dependencies directly from Maven.
+
+  .. step:: Install the Project Reactor Library
+      This guide uses methods from the Reactor Library, a library based on the
+      Reactive Streams specification. 
+      
+      Open a new Maven or Gradle project in your IDE. If you are using `Maven <https://maven.apache.org/>`__, add the 
+      following snippet to your ``pom.xml``:
+
+      .. code-block:: xml
+
+        <dependencyManagement> 
+            <dependencies>
+                <dependency>
+                    <groupId>io.projectreactor</groupId>
+                    <artifactId>reactor-bom</artifactId>
+                    <version>2023.0.7</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+        </dependencyManagement>
+
+      Then, add the following to your ``pom.xml`` dependencies list:
+
+        .. code-block:: xml
+
+          <dependencies>
+              <dependency>
+                  <groupId>io.projectreactor</groupId>
+                  <artifactId>reactor-core</artifactId> 
+              </dependency>
+              <dependency>
+                  <groupId>io.projectreactor</groupId>
+                  <artifactId>reactor-test</artifactId> 
+                  <scope>test</scope>
+              </dependency>
+          </dependencies>
+      
+      To install Reactor using `Gradle <https://gradle.org/>`__, see `Getting Reactor
+      <https://projectreactor.io/docs/core/release/reference/#getting>`__ in the
+      Project Reactor documentation. 
 
    .. step:: Install the {+driver-short+}
 
-      Open a new Maven or Gradle project in your IDE. 
-
-      If you are using `Maven <https://maven.apache.org/>`__, add the following to
+      In your project, if you are using `Maven <https://maven.apache.org/>`__, add the following to
       your ``pom.xml`` dependencies list:
 
       .. code-block:: xml

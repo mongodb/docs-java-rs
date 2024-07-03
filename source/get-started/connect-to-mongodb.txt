@@ -20,22 +20,6 @@ query your database.
 .. procedure::
    :style: connected
 
-    .. step:: Implement Reactive Streams Subscribers
-
-      In your project, create a package called ``helpers`` within the existing
-      ``java`` package. Then, create a new Java file in the ``helpers`` package
-      named ``SubscriberHelpers``.
-      
-      The following code is an implementation of multiple
-      different ``Subscriber`` types used in your {+driver-short+} application.
-
-      Copy and paste the following code 
-      into the ``SubscriberHelpers`` file:
-      
-      .. literalinclude:: /includes/get-started/subscriber-helpers.java
-         :language: java
-         :copyable:
-
    .. step:: Create your {+driver-short+} Application
       
       In your project, create a new Java file in the ``Java`` package named 
@@ -54,7 +38,7 @@ query your database.
    .. step:: Run your Application
 
       Run your application, either in your IDE or in your shell. The output
-      shows that you have connected to MongoDB.
+      shows that you have connected to MongoDB and queried the database.
 
       .. code-block:: none
 

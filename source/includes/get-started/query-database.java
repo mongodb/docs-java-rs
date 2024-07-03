@@ -1,8 +1,8 @@
 import com.mongodb.*;
 import com.mongodb.reactivestreams.client.MongoCollection;
-import helpers.SubscriberHelpers.ObservableSubscriber;
-import helpers.SubscriberHelpers.PrintDocumentSubscriber;
 import org.bson.Document;
+
+import reactor.core.publisher.Mono;
 
 import com.mongodb.reactivestreams.client.MongoClient;
 import com.mongodb.reactivestreams.client.MongoClients;
@@ -30,16 +30,10 @@ public class QueryDatabase {
         {
             MongoDatabase database = mongoClient.getDatabase("sample_mflix");
             MongoCollection<Document> movies = database.getCollection("movies");
-
-           try {
-                // Create a subscriber and query the database
-             ObservableSubscriber<Document> documentSubscriber = new PrintDocumentSubscriber();
-             movies.find(eq("title", "Back to the Future")).subscribe(documentSubscriber);
-             documentSubscriber.await();
-
-          } catch (MongoException me) {
-               System.err.println(me);
-          }
+            Mono.from(movies.find(eq("title", "Back to the Future")))                   
+                    .doOnSuccess(i -> System.out.println(i))                            
+                    .doOnError(err -> System.out.println("Error: " + err.getMessage())) 
+                    .block();                                                           
         }
     }
 }
