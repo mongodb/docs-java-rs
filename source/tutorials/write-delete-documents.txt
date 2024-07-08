@@ -33,6 +33,8 @@ Sample Data
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. 
 
+.. include:: /includes/reactor-note.rst
+
 .. TODO:
 .. Once get started ticket merged in, link the get started tutorial below
 
@@ -62,34 +64,32 @@ the MongoDB Server manual.
 Delete One Document
 -------------------
 
-To delete a single document from a MongoDB collection, call the ``deleteOne()``
-method and pass in your query filter. After you call the
-``insertOne()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+To delete a single document from a MongoDB collection, use the static
+``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteOne()``
+method and pass in your query filter. 
 
-The following example deletes a document from the ``restaurants`` collection:
+The following example deletes a document from the ``restaurants`` collection
+with a ``name`` value of ``"Ready Penny Inn"``:
 
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber<DeleteResult> deleteOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.deleteOne(eq("name", "Ready Penny Inn")).subscribe(deleteOneSubscriber);
-    deleteOneSubscriber.await();
+    Mono.from(restaurants.deleteOne(eq("name", "Ready Penny Inn"))).block();
 
 Delete Multiple Documents
 -------------------------
 
-To delete multiple documents from a MongoDB collection, call the ``deleteMany()``
-method and pass in your query filter. After you call the
-``deleteMany()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+To delete a single document from a MongoDB collection, use the static
+``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteMany()``
+method and pass in your query filter. 
 
 The following example removes all documents in the ``restaurants`` collection with a ``borough`` value of ``"Brooklyn"``:
 
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber<DeleteResult> deleteManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.deleteMany(eq("borough", "Brooklyn")).subscribe(deleteManySubscriber);
-    deleteManySubscriber.await();
+    Mono.from(restaurants.deleteMany(eq("borough", "Brooklyn"))).block();
+
 
 Customize the Delete Operation
 ------------------------------
@@ -154,9 +154,7 @@ It also uses the ``comment`` method to add a comment to the operation:
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber <DeleteResult> deleteManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants")).subscribe(deleteManySubscriber);
-    deleteManySubscriber.await();
+    Mono.from(restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants"))).block();
 
 .. Additional Information
 ----------------------
