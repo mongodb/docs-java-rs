@@ -32,7 +32,7 @@ Download and Install
 
   .. step:: Install the Project Reactor Library
 
-      This guide uses methods from the Reactor Library, a library based on the
+      This guide uses methods from the Reactor library, a library based on the
       Reactive Streams specification. 
       
       Open a new Maven or Gradle project in your IDE. If you are using `Maven <https://maven.apache.org/>`__, add the 
