@@ -31,7 +31,7 @@ Download and Install
       and dependencies directly from Maven.
 
   .. step:: Install the Project Reactor Library
-    
+
       This guide uses methods from the Reactor Library, a library based on the
       Reactive Streams specification. 
       
@@ -70,7 +70,11 @@ Download and Install
       
       To install Reactor using `Gradle <https://gradle.org/>`__, see `Getting Reactor
       <https://projectreactor.io/docs/core/release/reference/#getting>`__ in the
-      Project Reactor documentation. 
+      Project Reactor documentation.
+
+      After you configure your dependencies, ensure they are available to your
+      project by running your dependency manager and refreshing
+      the project in your IDE.
 
   .. step:: Install the {+driver-short+}
 
