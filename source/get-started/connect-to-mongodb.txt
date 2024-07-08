@@ -10,14 +10,15 @@ Connect to MongoDB
 
 The {+driver-short+} is an implementation of the Reactive Streams API, which consists of three components: 
 
-- Publisher
-- Subscriber
-- Subscription
+- ``Publisher``
+- ``Subscriber``
+- ``Subscription``
 
-In this tutorial, you must implement {+java-rs+} Subscribers to
-query your database. This guide uses methods from the Reactor library, a library
+In this tutorial, you must implement {+java-rs+} ``Subscribers`` to
+query your database. You must also use an integrated development environment
+(IDE) to complete the tutorial. This guide uses methods from the Reactor library, a library
 based on the Reactive Streams specification to implement {+java-rs+}
-Subscribers. 
+``Subscribers``. 
 
 To learn more about the Reactor library, see `Getting Started
 <https://projectreactor.io/docs/core/release/reference/#getting-started>`__ in the
