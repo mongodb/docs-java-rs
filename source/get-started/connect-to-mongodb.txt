@@ -24,8 +24,7 @@ of ``Subscriber``. A ``Subscription`` represents a one-to-one lifecycle of a ``S
    the `Reactive Streams documentation <http://www.reactive-streams.org>`__.
 
 In this tutorial, you must implement {+java-rs+} ``Subscribers`` to
-query your database. You must also use an integrated development environment
-(IDE) to complete the tutorial. This guide uses methods from the Reactor library, a library
+query your database. This guide uses methods from the Reactor library, a library
 based on the Reactive Streams specification to implement {+java-rs+}
 ``Subscribers``. 
 
@@ -38,6 +37,7 @@ Project Reactor documentation.
 
    .. step:: Create your {+driver-short+} Application
       
+      You must use a project within an integrated development environment (IDE) to complete the following steps.
       In your project, create a new Java file in the ``Java`` package named 
       ``QueryDatabase``. Copy and paste the following code into the ``QueryDatabase`` file:
       
@@ -66,7 +66,6 @@ Project Reactor documentation.
            title: 'Back to the Future',
            ...
          }
-
 
       .. tip::
 

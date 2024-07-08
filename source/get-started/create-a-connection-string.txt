@@ -31,17 +31,18 @@ when applicable, and connection options.
       .. figure:: /includes/figures/atlas-connection-select-cluster-java-rs.png
          :alt: The connect button in the clusters section of the Atlas UI
 
-      Proceed to the :guilabel:`Connect your application` section and select
-      "Java" from the :guilabel:`Driver` selection menu. Then, select the version
-      that best matches the version you installed from the :guilabel:`Version`
-      selection menu.
+      Select your database user from the :guilabel:`Select database user` menu.
+      Then, select :guilabel:`Drivers` from the :guilabel:`Select client
+      category` menu. Select "Java" from the :guilabel:`Driver` selection menu.
+      Finally, select the version that best matches the version you installed 
+      from the :guilabel:`Version` selection menu.
 
    .. step:: Copy your Connection String
 
       Click the copy icon on the right of the connection string to copy it to
       your clipboard as shown in the following screenshot:
 
-      .. figure:: /includes/figures/atlas_connection_copy_string_java_rs.png
+      .. figure:: /includes/figures/atlas-connection-string-copy.png
          :alt: The connection string copy button in the Atlas UI
 
    .. step:: Update the Placeholders
