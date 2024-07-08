@@ -74,7 +74,7 @@ with a ``name`` value of ``"Ready Penny Inn"``:
 .. code-block:: java
    :copyable: true
 
-    Mono.from(restaurants.deleteOne(eq("name", "Ready Penny Inn"))).block();
+   Mono.from(restaurants.deleteOne(eq("name", "Ready Penny Inn"))).block();
 
 Delete Multiple Documents
 -------------------------
@@ -88,7 +88,7 @@ The following example removes all documents in the ``restaurants`` collection wi
 .. code-block:: java
    :copyable: true
 
-    Mono.from(restaurants.deleteMany(eq("borough", "Brooklyn"))).block();
+   Mono.from(restaurants.deleteMany(eq("borough", "Brooklyn"))).block();
 
 
 Customize the Delete Operation
@@ -154,7 +154,7 @@ It also uses the ``comment`` method to add a comment to the operation:
 .. code-block:: java
    :copyable: true
 
-    Mono.from(restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants"))).block();
+   Mono.from(restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants"))).block();
 
 .. Additional Information
 ----------------------
