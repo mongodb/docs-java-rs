@@ -14,6 +14,15 @@ The {+driver-short+} is an implementation of the Reactive Streams API, which con
 - ``Subscriber``
 - ``Subscription``
 
+A ``Publisher`` is a provider of an unbounded number of sequenced elements, published
+according to the demand received from its ``Subscriber`` or multiple instances
+of ``Subscriber``. A ``Subscription`` represents a one-to-one lifecycle of a ``Subscriber`` subscribing to a ``Publisher``.
+
+.. tip::
+
+   To learn more about reactive streams, visit
+   the `Reactive Streams documentation <http://www.reactive-streams.org>`__.
+
 In this tutorial, you must implement {+java-rs+} ``Subscribers`` to
 query your database. You must also use an integrated development environment
 (IDE) to complete the tutorial. This guide uses methods from the Reactor library, a library
