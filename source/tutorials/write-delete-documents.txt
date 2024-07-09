@@ -83,7 +83,7 @@ with a ``name`` value of ``"Ready Penny Inn"``:
 Delete Multiple Documents
 -------------------------
 
-To delete a single document from a MongoDB collection, use the static
+To delete multiple documents from a MongoDB collection, use the static
 ``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteMany()``
 method and pass in your query filter. The ``Mono`` ``Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. To learn more
