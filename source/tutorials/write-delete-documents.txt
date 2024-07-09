@@ -66,7 +66,11 @@ Delete One Document
 
 To delete a single document from a MongoDB collection, use the static
 ``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteOne()``
-method and pass in your query filter. 
+method and pass in your query filter. The ``Mono`` ``Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. To learn more
+about ``Mono``, see `Mono
+<https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
 The following example deletes a document from the ``restaurants`` collection
 with a ``name`` value of ``"Ready Penny Inn"``:
@@ -81,7 +85,11 @@ Delete Multiple Documents
 
 To delete a single document from a MongoDB collection, use the static
 ``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteMany()``
-method and pass in your query filter. 
+method and pass in your query filter. The ``Mono`` ``Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. To learn more
+about ``Mono``, see `Mono
+<https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
 The following example removes all documents in the ``restaurants`` collection with a ``borough`` value of ``"Brooklyn"``:
 
