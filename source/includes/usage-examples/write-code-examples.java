@@ -5,7 +5,16 @@ collection.insertOne(document).subscribe(insertOneSubscriber);
 
 ObservableSubscriber<InsertOneResult> result = insertOneSubscriber.await();
 
-System.out.println(result.first().wasAcknowledged());
+System.out.println(result.first().wasAcknowledged());u
+
+Document document = new Document("name", "Angela's chicken");
+Mono<InsertOneResult> result = Mono.from(restaurants.insertOne(document));
+result.doOnNext(i -> System.out.println(i.wasAcknowledged()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
+
+
 # end-insert-one
 
 # start-insert-multiple
