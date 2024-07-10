@@ -73,9 +73,7 @@ Insert One
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents
-   <java-rs-write-insert>` guide.
+To learn more about the ``insertOne()`` method, see the :ref:`Insert Documents <java-rs-write-insert>` guide.
 
 Insert Multiple
 ---------------
@@ -86,9 +84,7 @@ Insert Multiple
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents
-   <java-rs-write-insert>` guide.
+To learn more about the ``insertMany()`` method, see the :ref:`Insert Documents <java-rs-write-insert>` guide.
 
 Update One
 ----------
