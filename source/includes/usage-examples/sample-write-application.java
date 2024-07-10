@@ -54,9 +54,9 @@ public class updateDocument {
         try {
             MongoDatabase sample_restaurants = mongoClient.getDatabase("sample_restaurants");
             MongoCollection<Document> restaurants = sample_restaurants.getCollection("restaurants");
-                // Start example code here
+            // Start example code here
 
-                // End example code here
+            // End example code here
         } catch (MongoException e) {
                     System.err.println(e);
                     mongoClient.close();
