@@ -62,7 +62,7 @@ the relevant values for your MongoDB deployment.
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 60-62
+   :emphasize-lines: 57-59
 
 Insert One
 ----------
@@ -99,9 +99,7 @@ Update One
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``updateOne()`` method, see the
-   :ref:`Update Documents <java-rs-write-update>` guide.
+To learn more about the ``updateOne()`` method, see the :ref:`Update Documents <java-rs-write-update-docs>` guide.
 
 Update Multiple
 ---------------
@@ -112,9 +110,8 @@ Update Multiple
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``updateMany()`` method, see the
-   :ref:`Update Documents <java-rs-write-update>` guide.
+
+To learn more about the ``updateMany()`` method, see the :ref:`Update Documents <java-rs-write-update-docs>` guide.
 
 Replace One
 -----------

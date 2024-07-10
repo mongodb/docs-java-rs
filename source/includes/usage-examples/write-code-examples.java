@@ -1,20 +1,11 @@
 # start-insert-one
 Document document = new Document("<field name>", "<value>");
-ObservableSubscriber<InsertOneResult> insertOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.insertOne(document).subscribe(insertOneSubscriber);
+Mono<InsertOneResult> result = Mono.from(collection.insertOne(document));
 
-ObservableSubscriber<InsertOneResult> result = insertOneSubscriber.await();
-
-System.out.println(result.first().wasAcknowledged());u
-
-Document document = new Document("name", "Angela's chicken");
-Mono<InsertOneResult> result = Mono.from(restaurants.insertOne(document));
 result.doOnNext(i -> System.out.println(i.wasAcknowledged()))
       .doOnError(e -> e.printStackTrace())
       .doOnTerminate(mongoClient::close)
       .subscribe();
-
-
 # end-insert-one
 
 # start-insert-multiple
@@ -26,72 +17,71 @@ List<Document> documents = new ArrayList<Document>();
 documents.add(doc1);
 documents.add(doc2);
 
-ObservableSubscriber<InsertManyResult> insertManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.insertMany(documents).subscribe(insertManySubscriber);
+Mono<InsertManyResult> result = Mono.from(collection.insertMany(documents));
 
-ObservableSubscriber<InsertManyResult> result = insertManySubscriber.await();
-
-System.out.println(result.first().wasAcknowledged());
+result.doOnNext(i -> System.out.println(i.wasAcknowledged()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-insert-multiple
 
 # start-update-one
-ObservableSubscriber<UpdateResult> updateOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.updateOne(eq("<field name>", "<value>"), set("<field name>", "<value>")).subscribe(updateOneSubscriber);
+Mono<UpdateResult> result = Mono.from(collection.updateOne(eq("<field name>", "<value>"), set("<field name>", "<value>")));
 
-ObservableSubscriber<UpdateResult> result = updateOneSubscriber.await();
-
-System.out.println(result.first().getModifiedCount());
+result.doOnNext(i -> System.out.println(i.getModifiedCount()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-update-one
 
 # start-update-multiple
-ObservableSubscriber<UpdateResult> updateManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.updateMany(eq("<field name>", "<value>"), set("<field name>", "<value>")).subscribe(updateManySubscriber);
+Mono<UpdateResult> result = Mono.from(collection.updateMany(eq("<field name>", "<value>"), set("<field name>", "<value>")));
 
-ObservableSubscriber<UpdateResult> result = updateManySubscriber.await();
-
-System.out.println(result.first().getModifiedCount());
+result.doOnNext(i -> System.out.println(i.getModifiedCount()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-update-multiple
 
 # start-replace-one
-ObservableSubscriber<UpdateResult> replaceOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.replaceOne(eq("<field name>", "<value>"), new Document().append("<field name>", "<value>").append("<field name>", "<value>")).subscribe(replaceOneSubscriber);
+Mono<UpdateResult> result = Mono.from(collection.replaceOne(eq("<field name>", "<value>"), new Document().append("<field name>", "<value>").append("<field name>", "<value>")));
 
-ObservableSubscriber<UpdateResult> result = replaceOneSubscriber.await();
-
-System.out.println(result.first().getModifiedCount());
+result.doOnNext(i -> System.out.println(i.getModifiedCount()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-replace-one
 
 # start-delete-one
-ObservableSubscriber<DeleteResult> deleteOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.deleteOne(eq("<field name>", "<value>")).subscribe(deleteOneSubscriber);
+Mono<DeleteResult> result = Mono.from(collection.deleteOne(eq("<field name>", "<value>")));
 
-ObservableSubscriber<DeleteResult> result = deleteOneSubscriber.await();
-
-System.out.println(result.first().getDeletedCount())
+result.doOnNext(i -> System.out.println(i.getDeletedCount()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-delete-one
 
 # start-delete-multiple
-ObservableSubscriber<DeleteResult> deleteManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.deleteMany(eq("<field name>", "<value>")).subscribe(deleteManySubscriber);
+Mono<DeleteResult> result = Mono.from(collection.deleteMany(eq("<field name>", "<value>")));
 
-ObservableSubscriber<DeleteResult> result = deleteManySubscriber.await();
-
-System.out.println(result.first().getDeletedCount());
+result.doOnNext(i -> System.out.println(i.getDeletedCount()))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-delete-multiple
 
 # start-bulk-write
-ObservableSubscriber<BulkWriteResult> bulkWriteSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-collection.bulkWrite(
+Mono<BulkWriteResult> result = Mono.from(collection.bulkWrite(
     Arrays.asList(new InsertOneModel<>(new Document("<field name>", "<value>")),
         new InsertOneModel<>(new Document("<field name>", "<value>")),
         new UpdateOneModel<>(new Document("<field name>", "<value>"),
                              new Document("$set", new Document("<field name>", "<value>"))),
         new DeleteOneModel<>(new Document("<field name>", "<value>")),
         new ReplaceOneModel<>(new Document("<field name>", "<value>"),
-                              new Document("<field name>", "<value>").append("<field name>", "<value>"))))
-.subscribe(bulkWriteSubscriber);
+                              new Document("<field name>", "<value>").append("<field name>", "<value>")))));
 
-ObservableSubscriber<BulkWriteResult> result = bulkWriteSubscriber.await();
-
-System.out.println(result);
+result.doOnNext(i -> System.out.println(i))
+      .doOnError(e -> e.printStackTrace())
+      .doOnTerminate(mongoClient::close)
+      .subscribe();
 # end-bulk-write

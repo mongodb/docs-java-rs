@@ -48,20 +48,18 @@ public class updateDocument {
                 .applyConnectionString(new ConnectionString(uri))
                 .serverApi(serverApi)
                 .build();
-
+        
         // Create a new client and connect to the server
-        try (MongoClient mongoClient = MongoClients.create(settings))
-        {
-            MongoDatabase database = mongoClient.getDatabase("<database name>");
-            MongoCollection<Document> collection = database.getCollection("<collection name>");
-
-            try {
+        MongoClient mongoClient = MongoClients.create(settings);
+        try {
+            MongoDatabase sample_restaurants = mongoClient.getDatabase("sample_restaurants");
+            MongoCollection<Document> restaurants = sample_restaurants.getCollection("restaurants");
                 // Start example code here
 
                 // End example code here
-            } catch (MongoException me) {
-                System.err.println(me);
-            }
+        } catch (MongoException e) {
+                    System.err.println(e);
+                    mongoClient.close();
         }
     }
 }
