@@ -35,11 +35,6 @@ The 5.1.2 driver patch release includes the following changes:
   decoding concrete classes that extend generic base classes, in cases
   that you specify the base class as the generic type of the ``MongoCollection`` instance.
 
-- You can validate signatures of the driver artifacts published on
-  GitHub.
-
-.. TODO DOCSP-39555 To learn how to validate these signatures, see the :ref:`` guide.
-
 .. _javars-version-5.1.1:
 
 What's New in 5.1.1
