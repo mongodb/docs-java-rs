@@ -1,8 +1,8 @@
 .. _java-rs-connection-options:
 
-==========================
-Specify Connection Options
-==========================
+==============================
+Specify Connection URI Options
+==============================
 
 .. contents:: On this page
    :local:
@@ -21,8 +21,12 @@ Overview
 --------
 
 This section describes the MongoDB connection and authentication options
-available in the {+driver-short+}. You can configure your connection using either
-the connection URI or arguments to the ``MongoClient`` constructor.
+available in the {+driver-short+} as parameters of the connection URI. 
+
+..  TODO:
+You can configure your connection using either the connection URI or arguments
+to the ``MongoClient`` constructor. To learn about configuring your connection
+using a ``MongoClient``, see :ref:`java-rs-mongoclient-connection`.
 
 .. _java-rs-connection-uri:
 
@@ -45,34 +49,12 @@ and the ``tls`` option with a value of ``true``:
         }
     }
 
-.. _java-rs-mongo-client-settings:
-
-Using a ``MongoClient``
-~~~~~~~~~~~~~~~~~~~~~~~
-
-You can pass connection options as arguments to the ``MongoClient`` constructor
-instead of including them in your connection URI.
-Configuring the connection this way makes it easier to
-change settings at runtime and helps you catch errors during compilation.
-The following example shows how to use the ``MongoClient`` constructor to set
-connection options:
-
-.. code-block:: java
-
-    public class MongoConnection {
-        public static void main(String[] args) {
-            String uri = "mongodb://<hostname>:<port>";
-            try (MongoClient client = MongoClients.create(uri, connectTimeoutMS=60000, tls=True) {
-                // Use client here
-            }
-        }
-    }
-
 Connection Options
 ------------------
 
 The following sections describe the connection options available in the
-{+driver-short+}.
+{+driver-short+}. You can pass these options in as parameters of the connection
+URI to specify the behavior of the client. 
 
 Authentication
 ~~~~~~~~~~~~~~
@@ -91,7 +73,6 @@ Authentication
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"SCRAM-SHA-256"`` when connecting to MongoDB v4.0 or later.
        | ``"SCRAM-SHA-1"`` when connecting to MongoDB v3.0 through v3.13.
-       | **MongoClient Example**: ``authMechanism = "MONGODB-X509"``
        | **Connection URI Example**: ``authMechanism=MONGODB-X509``
   
    * - **authMechanismProperties**
@@ -99,7 +80,6 @@ Authentication
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``""``
-       | **MongoClient Example**: ``authMechanismProperties = "AWS_SESSION_TOKEN:12345"``
        | **Connection URI Example**: ``authMechanismProperties=AWS_SESSION_TOKEN:12435``
 
    * - **authSource**
@@ -109,7 +89,6 @@ Authentication
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: The database in the connection URI, or ``"admin"`` if none is provided
-       | **MongoClient Example**: ``authSource = "admin"``
        | **Connection URI Example**: ``authSource=admin``
 
    * - **username**
@@ -118,7 +97,6 @@ Authentication
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``""``
-       | **MongoClient Example**: ``username = "my user"``
        | **Connection URI Example**: ``username=my+user``
 
    * - **password**
@@ -127,7 +105,6 @@ Authentication
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``""``
-       | **MongoClient Example**: ``password = "strong password"``
        | **Connection URI Example**: ``password=strong+password``
 
 Connection Configuration
@@ -146,7 +123,6 @@ Connection Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``connectTimeoutMS=6000``
        | **Connection URI Example**: ``connectTimeoutMS=6000``
 
    * - **maxIdleTimeMS**
@@ -156,7 +132,6 @@ Connection Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxIdleTimeMS=6000``
        | **Connection URI Example**: ``maxIdleTimeMS=6000``
 
    * - **maxLifeTimeMS**
@@ -166,7 +141,6 @@ Connection Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxLifeTimeMS=6000``
        | **Connection URI Example**: ``maxLifeTimeMS=6000``
 
    * - **socketTimeoutMS**
@@ -175,7 +149,6 @@ Connection Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``socketTimeoutMS=6000``
        | **Connection URI Example**: ``socketTimeoutMS=6000``
 
    * - **ssl**
@@ -183,7 +156,6 @@ Connection Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``ssl=True``
        | **Connection URI Example**: ``ssl=true``
 
    * - **sslInvalidHostNameAllowed**
@@ -191,7 +163,6 @@ Connection Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``sslInvalidHostNameAllowed=True``
        | **Connection URI Example**: ``sslInvalidHostNameAllowed=true``
   
    * - **tls**
@@ -199,7 +170,6 @@ Connection Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``tls=True``
        | **Connection URI Example**: ``tls=true``
   
    * - **tlsAllowInvalidHostnames**
@@ -208,7 +178,6 @@ Connection Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``tlsAllowInvalidHostnames=True``
        | **Connection URI Example**: ``tlsAllowInvalidHostnames=true``
 
    * - **tlsInsecure**
@@ -216,7 +185,6 @@ Connection Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``tlsInsecure=True``
        | **Connection URI Example**: ``tlsInsecure=true``
 
 Connection Pool Configuration
@@ -234,7 +202,6 @@ Connection Pool Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxConnecting=5``
        | **Connection URI Example**: ``maxConnecting=5``
 
    * - **maxPoolSize**
@@ -242,7 +209,6 @@ Connection Pool Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxPoolSize=5``
        | **Connection URI Example**: ``maxPoolSize=5``
 
    * - **minPoolSize**
@@ -250,7 +216,6 @@ Connection Pool Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``minPoolSize=3``
        | **Connection URI Example**: ``minPoolSize=3``
 
    * - **waitQueueTimeoutMS**
@@ -260,7 +225,6 @@ Connection Pool Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``waitQueueTimeoutMS=6000``
        | **Connection URI Example**: ``waitQueueTimeoutMS=6000``
 
 Compressor Configuration
@@ -281,7 +245,6 @@ Compressor Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``compressors = "snappy,zstd,zlib"``
        | **Connection URI Example**: ``compressors=snappy,zstd,zlib``
 
    * - **zlibCompressionLevel**
@@ -295,7 +258,6 @@ Compressor Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``-1``
-       | **MongoClient Example**: ``zLibCompressionLevel=3``
        | **Connection URI Example**: ``zLibCompressionLevel=3``
 
 General Configuration
@@ -313,7 +275,6 @@ General Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``directConnection=True``
        | **Connection URI Example**: ``directConnection=true``
 
    * - **loadBalanced**
@@ -323,7 +284,6 @@ General Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``directConnection=True``
        | **Connection URI Example**: ``directConnection=true``
 
    * - **retryWrites**
@@ -332,7 +292,6 @@ General Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``True``
-       | **MongoClient Example**: ``retryWrites=True``
        | **Connection URI Example**: ``retryWrites=true``
 
    * - **retryReads**
@@ -341,7 +300,6 @@ General Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``True``
-       | **MongoClient Example**: ``retryReads=True``
        | **Connection URI Example**: ``retryReads=true``
 
    * - **uuidRepresentation**
@@ -351,7 +309,6 @@ General Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``unspecified``
-       | **MongoClient Example**: ``uuidRepresentation= "unspecified"``
        | **Connection URI Example**: ``uuidRepresentation=unspecified``
 
 Proxy Configuration
@@ -372,7 +329,6 @@ Proxy Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``proxyHost = "example.com"``
        | **Connection URI Example**: ``proxyHost=example.com``
 
    * - **proxyPort**
@@ -380,7 +336,6 @@ Proxy Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``proxyPort=27``
        | **Connection URI Example**: ``proxyPort=27``
 
    * - **proxyUsername**
@@ -388,7 +343,6 @@ Proxy Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``proxyUsername = "example"``
        | **Connection URI Example**: ``proxyUsername=example``
 
    * - **proxyPassword**
@@ -397,7 +351,6 @@ Proxy Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``proxyPassword = "password"``
        | **Connection URI Example**: ``proxyPassword=password``
 
 Read Preference Configuration
@@ -416,7 +369,6 @@ Read Preference Configuration
        |
        | **Data Type**: ``Enum``
        | **Default**: ``primary``
-       | **MongoClient Example**: ``readPreference.primary``
        | **Connection URI Example**: ``readPreference.primary``
 
    * - **readPreferenceTags**
@@ -428,7 +380,6 @@ Read Preference Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``readPreferenceTags = "dc:ny"``
        | **Connection URI Example**: ``readPreferenceTags=dc:ny``
 
    * - **maxStalenessSeconds**
@@ -437,7 +388,6 @@ Read Preference Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``maxStalenessSeconds=60``
        | **Connection URI Example**: ``maxStalenessSeconds=60``
 
 Replica Set Configuration
@@ -455,7 +405,6 @@ Replica Set Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``replicaSet = "replicaSet"``
        | **Connection URI Example**: ``replicaSet=replicaSet``
 
 Server Configuration
@@ -476,7 +425,6 @@ Server Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``appName = "name"``
        | **Connection URI Example**: ``appName=name``
 
    * - **heartbeatFrequencyMS**
@@ -484,7 +432,6 @@ Server Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``heartbeatFrequencyMS=6000``
        | **Connection URI Example**: ``heartbeatFrequencyMS=6000``
 
    * - **localThresholdMS**
@@ -495,7 +442,6 @@ Server Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``localThresholdMS=6000``
        | **Connection URI Example**: ``localThresholdMS=6000``
 
    * - **serverMonitoringMode**
@@ -504,7 +450,6 @@ Server Configuration
        |
        | **Data Type**: ``Enum``
        | **Default**: ``auto``
-       | **MongoClient Example**: ``serverMonitoringMode.auto``
        | **Connection URI Example**: ``serverMonitoringMode.auto``
 
    * - **serverSelectionTimeoutMS**
@@ -512,7 +457,6 @@ Server Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``serverSelectionTimeoutMS=6000``
        | **Connection URI Example**: ``serverSelectionTimeoutMS=6000``
 
 SRV Configuration
@@ -532,7 +476,6 @@ SRV Configuration
        |
        | **Data Type**: {+string-data-type+}
        | **Default**: ``"mongodb"``
-       | **MongoClient Example**: ``srvServiceName = "mongodb"``
        | **Connection URI Example**: ``srvServiceName=mongodb``
 
    * - **srvMaxHosts**
@@ -540,7 +483,6 @@ SRV Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``srvMaxHosts=5``
        | **Connection URI Example**: ``srvMaxHosts=5``
 
 Write Concern Configuration
@@ -560,7 +502,6 @@ Write Concern Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``safe=True``
        | **Connection URI Example**: ``safe=true``
 
    * - **journal**
@@ -569,7 +510,6 @@ Write Concern Configuration
        |
        | **Data Type**: {+bool+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``journal=True``
        | **Connection URI Example**: ``journal=true``
 
    * - **w**
@@ -578,7 +518,6 @@ Write Concern Configuration
        |
        | **Data Type**: ``Integer`` or {+string-data-type+}
        | **Default**: ``null``
-       | **MongoClient Example**: ``w=60``
        | **Connection URI Example**: ``w=60``
 
    * - **wtimeoutMS**
@@ -587,7 +526,6 @@ Write Concern Configuration
        |
        | **Data Type**: ``Integer``
        | **Default**: ``null``
-       | **MongoClient Example**: ``wtimeoutMS=6000``
        | **Connection URI Example**: ``wtimeoutMS=6000``
 
 .. TODO: change link when made
