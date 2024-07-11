@@ -26,8 +26,7 @@ public class QueryDatabase {
                 .build();
 
         // Create a new client and connect to the server
-        try (MongoClient mongoClient = MongoClients.create(settings))
-        {
+        try (MongoClient mongoClient = MongoClients.create(settings)) {
             MongoDatabase database = mongoClient.getDatabase("sample_mflix");
             MongoCollection<Document> movies = database.getCollection("movies");
             Mono.from(movies.find(eq("title", "Back to the Future")))                   
