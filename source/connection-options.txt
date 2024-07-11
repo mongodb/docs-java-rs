@@ -20,13 +20,13 @@ Specify Connection URI Options
 Overview
 --------
 
-This section describes the MongoDB connection and authentication options
-available in the {+driver-short+} as parameters of the connection URI. 
+This section describes the MongoDB connection and authentication options you can
+pass in as parameters of the connection URI in the {+driver-short+}.
 
 ..  TODO:
-You can configure your connection using either the connection URI or arguments
-to the ``MongoClient`` constructor. To learn about configuring your connection
-using a ``MongoClient``, see :ref:`java-rs-mongoclient-connection`.
+.. You can configure your connection using either the connection URI or arguments
+.. to the ``MongoClient`` constructor. To learn about configuring your connection
+.. using a ``MongoClient``, see :ref:`java-rs-mongoclient-connection`.
 
 .. _java-rs-connection-uri:
 
