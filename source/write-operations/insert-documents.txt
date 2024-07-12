@@ -33,17 +33,10 @@ Sample Data
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. 
 
-.. TODO:
-.. Once get started ticket merged in, link the get started tutorial below
+To learn how to create a free MongoDB Atlas cluster and load the sample
+datasets, see the :ref:`<java-rs-getting-started>` tutorial.
 
-.. To learn how to create a
-.. free MongoDB Atlas cluster and load the sample datasets, see the
-.. :ref:`<java-rs-getting-started>` tutorial.
-
-Subscriber Methods
-~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /includes/subscriber-methods-section.rst
+.. include:: /includes/reactor-note.rst
 
 The ``_id`` Field
 -----------------
@@ -78,26 +71,31 @@ To learn more about document structure and rules, see the
 Insert One Document
 -------------------
 
-To add a single document to a MongoDB collection, call the ``insertOne()``
-method and pass the document you want to add. After you call the
-``insertOne()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+To add a single document from a MongoDB collection, use the static
+``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``insertOne()``
+method and pass the document you want to add. The ``Mono`` ``Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
-The following example inserts a document into the ``restaurants`` collection:
+The following example inserts a document with a ``name`` value of ``"Mongo's
+Burgers"`` into the ``restaurants`` collection:
 
 .. code-block:: java
    :copyable: true
 
     Document document = new Document("name", "Mongo's Burgers");
-    ObservableSubscriber<InsertOneResult> insertOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.insertOne(document).subscribe(insertOneSubscriber);
-    insertOneSubscriber.await();
+    Mono.from(restaurants.insertOne(document)).block();
 
 Insert Multiple Documents
 -------------------------
 
-To add multiple documents to a MongoDB collection, call the ``insertMany()``
-method and pass a list of documents you want to add. After you call the
-``insertMany()`` method, chain the ``subscribe()`` method and pass in a subscriber.
+To add multiple documents to a MongoDB collection, use the static
+``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``insertMany()``
+method and pass a list of documents you want to add. The ``Mono`` ``Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
 The following example inserts a list of documents into the ``restaurants`` collection:
 
@@ -112,9 +110,7 @@ The following example inserts a list of documents into the ``restaurants`` colle
     documents.add(doc1);
     documents.add(doc2);
 
-    ObservableSubscriber<InsertManyResult> insertManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.insertMany(documents).subscribe(insertManySubscriber);
-    insertManySubscriber.await();
+    Mono.from(restaurants.insertMany(documents)).block();
 
 Modify Insert Behavior
 ----------------------
@@ -189,9 +185,7 @@ to bypass document-level validation.
    documents.add(doc2);
    documents.add(doc3);
 
-   ObservableSubscriber<InsertManyResult> insertManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-   restaurants.insertMany(documents, new InsertManyOptions().bypassDocumentValidation(true)).subscribe(insertManySubscriber);
-   insertManySubscriber.await();
+   Mono.from(restaurants.insertMany(documents, new InsertManyOptions().bypassDocumentValidation(true))).block();
 
 .. Additional Information
 ----------------------
