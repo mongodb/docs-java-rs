@@ -91,7 +91,7 @@ Burgers"`` into the ``restaurants`` collection:
 Insert Multiple Documents
 -------------------------
 
-To add multiple documents to a MongoDB collection, all the insertMany() method
+To add multiple documents to a MongoDB collection, call the insertMany() method
 and pass a list of documents you want to add. Then, pass the insertMany() method to the static
 ``Mono.from()`` method from the ``Mono Publisher``. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
