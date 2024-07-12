@@ -71,7 +71,7 @@ To learn more about document structure and rules, see the
 Insert One Document
 -------------------
 
-To add a single document from a MongoDB collection, use the static
+To add a single document to a MongoDB collection, use the static
 ``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``insertOne()``
 method and pass the document you want to add. The ``Mono`` ``Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. To learn more
