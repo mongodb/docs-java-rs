@@ -95,15 +95,14 @@ Update One Document
 -------------------
 
 To update a single document in a MongoDB collection, call the ``updateOne()``
-method and pass your query filter as the first argument. Then, pass your
-update operators as the second argument to the ``updateOne()`` method. Finally,
-pass the ``updateOne()`` method to the static ``Mono.from()`` method from the
-``Mono Publisher``. In {+java-rs+}, you must use ``Publisher`` implementations to control how data
-is transmitted in your application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
+method and pass your query filter and update operators. Then, pass the ``updateOne()`` method to the static ``Mono.from()`` method from the
+``Mono Publisher``. The ``Mono Publisher`` is a ``Publisher`` implementation
+from the Project Reactor library. In {+java-rs+}, you must use ``Publisher``
+implementations to control how data is transmitted in your application. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
-The following example uses ``Updates.set()`` to update the ``name``
+The following example uses the ``updateOne()`` method to update the ``name``
 value of a matching document from ``"Bagels N Buns"`` to ``"2 Bagels 2 Buns"``:
 
 .. code-block:: java
@@ -115,11 +114,10 @@ Update Multiple Documents
 -------------------------
 
 To update multiple documents in a MongoDB collection, call the ``updateMany()``
-method and pass your query filter as the first argument. Then, pass your
-update operators as the second argument to the ``updateMany()`` method. Finally,
-pass the ``updateMany()`` method to the static ``Mono.from`` method from the
-``Mono Publisher``. In {+java-rs+}, you must use ``Publisher`` implementations to control how data
-is transmitted in your application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
+method and pass your query filter and update operators. Then, pass the ``updateMany()`` method to the static ``Mono.from`` method from the
+``Mono Publisher``. The ``Mono Publisher`` is a ``Publisher`` implementation
+from the Project Reactor library. In {+java-rs+}, you must use ``Publisher``
+implementations to control how data is transmitted in your application. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
@@ -214,7 +212,7 @@ match any existing documents.
    :copyable: true
 
     Mono.from(restaurants.updateMany(eq("borough", "Manhattan"), set("borough",
-    "Manhattan (north)"), new UpdateOptions().upsert(true))).block();
+      "Manhattan (north)"), new UpdateOptions().upsert(true))).block();
 
 Return Value
 ------------
