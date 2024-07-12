@@ -121,7 +121,7 @@ implementations to control how data is transmitted in your application. To learn
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
-The following example updates all documents that have a ``cuisine`` value of
+The following example uses the ``updateMany()`` method to update all documents that have a ``cuisine`` value of
 ``"Pizza"`` to have a ``cuisine`` value of ``"Pasta"``:
 
 .. code-block:: java
