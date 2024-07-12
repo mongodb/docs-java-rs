@@ -99,7 +99,7 @@ method and pass your query filter as the first argument. Then, pass your
 update operators as the second argument to the ``updateOne()`` method. Finally,
 pass the ``updateOne()`` method to the static ``Mono.from()`` method from the
 ``Mono Publisher``. In {+java-rs+}, you must use ``Publisher`` implementations to control how data
-is transmitted in your application. The``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
+is transmitted in your application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
@@ -119,7 +119,7 @@ method and pass your query filter as the first argument. Then, pass your
 update operators as the second argument to the ``updateMany()`` method. Finally,
 pass the ``updateMany()`` method to the static ``Mono.from`` method from the
 ``Mono Publisher``. In {+java-rs+}, you must use ``Publisher`` implementations to control how data
-is transmitted in your application. The``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
+is transmitted in your application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
