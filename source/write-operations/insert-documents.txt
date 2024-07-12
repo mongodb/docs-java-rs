@@ -71,15 +71,15 @@ To learn more about document structure and rules, see the
 Insert One Document
 -------------------
 
-To add a single document to a MongoDB collection, call the insertOne() method
-and pass the document you want to add. Then, pass the insertOne() method to the static
-``Mono.from()`` method from the ``Mono Publisher``. In {+java-rs+}, you must use
+To add a single document to a MongoDB collection, call the ``insertOne()`` method
+and pass the document you want to add. Then, pass the ``insertOne()`` method to the static
+``Mono.from()`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
-application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
-about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+application. To learn more about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
-The following example inserts a document in which the ``name`` value is ``"Mongo's
+The following example uses the ``insertOne()`` method to insert a document in which the ``name`` value is ``"Mongo's
 Burgers"`` into the ``restaurants`` collection:
 
 .. code-block:: java
@@ -91,15 +91,15 @@ Burgers"`` into the ``restaurants`` collection:
 Insert Multiple Documents
 -------------------------
 
-To add multiple documents to a MongoDB collection, call the insertMany() method
-and pass a list of documents you want to add. Then, pass the insertMany() method to the static
-``Mono.from()`` method from the ``Mono Publisher``. In {+java-rs+}, you must use
+To add multiple documents to a MongoDB collection, call the ``insertMany()`` method
+and pass a list of documents you want to add. Then, pass the ``insertMany()`` method to the static
+``Mono.from()`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
+``Publisher`` implementation from the Project Reactor library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
-application. The ``Mono Publisher`` is a ``Publisher`` implementation from the Project Reactor library. To learn more
-about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+application. To learn more about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
-The following example inserts a list of documents into the ``restaurants`` collection:
+The following example uses the ``insertMany()`` method to insert a list of documents into the ``restaurants`` collection:
 
 .. code-block:: java
    :copyable: true
@@ -170,8 +170,8 @@ as well as the following ``ordered()`` method:
 Example
 ~~~~~~~
 
-The following code uses the ``insertMany()`` method to insert three new
-documents into the ``restaurants`` collection. It also uses the ``InsertManyOptions().bypassDocumentValidation(true)`` option
+The following code uses the ``insertMany()`` method to insert new
+documents into the ``restaurants`` collection. It also sets the ``bypassDocumentValidation(true)`` option
 to bypass document-level validation.
 
 .. code-block:: java
