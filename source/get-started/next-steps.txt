@@ -1,0 +1,17 @@
+.. _java-rs-get-started-next-steps:
+
+==========
+Next Steps
+==========
+
+Congratulations on completing the tutorial!
+
+In this tutorial, you created a {+java-rs+} application that
+connects to a MongoDB deployment hosted on MongoDB Atlas
+and retrieves a document that matches a query. 
+
+.. Learn more about {+driver-short+} from the following resources:
+
+.. TODO: add links for java-rs-read and write
+.. - Learn how to perform read operations in the :ref:`<java-rs-read>` section.
+.. - Learn how to perform write operations in the :ref:`<java-rs-write>` section.
