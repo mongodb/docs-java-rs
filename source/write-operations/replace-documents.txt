@@ -83,7 +83,7 @@ value of ``"Mongo's Pizza"``.
       .append("cuisine", "Pizza"))).block();
 
 Modify Replace Behavior
-----------------------
+-----------------------
 
 The ``ReplaceOptions`` class contains methods that modify
 the behavior of the ``replaceOne()`` method. To use the ``ReplaceOptions``
