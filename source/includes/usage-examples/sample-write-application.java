@@ -52,7 +52,7 @@ class updateDocument {
         // Create a new client and connect to the server
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             MongoDatabase database = mongoClient.getDatabase("<database name>");
-            MongoCollection<Document> restaurants = database.getCollection("<collection name>");
+            MongoCollection<Document> collection = database.getCollection("<collection name>");
             // Start example code here
 
             // End example code here
