@@ -170,7 +170,7 @@ Return Value
 ~~~~~~~~~~~~
 
 The ``replaceOne()`` method returns an ``UpdateResult`` 
-object. The ``UpdateResult`` type contains the following properties:
+object. The ``UpdateResult`` type contains the following instance methods:
 
 .. list-table::
    :widths: 30 70
