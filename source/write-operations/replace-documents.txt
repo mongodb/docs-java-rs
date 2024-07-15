@@ -152,17 +152,47 @@ Example
 ~~~~~~~
 
 The following code uses the ``replaceOne()`` method to replace a document in the
-``restaurants`` collection. It also sets the ``bypassDocumentValidation(true)`` option
-to bypass document-level validation.
+``restaurants`` collection. It also sets the ``upsert(true)`` option
+to bypass document-level validation. Because the ``upsert`` option is
+set to ``true``, the driver inserts a new document if the query filter doesn't 
+match any existing documents.
 
 .. code-block:: java
 
     Mono.from(restaurants.replaceOne(
-      eq("name", "Pizza Town"),
-      new Document().append("name", "Mongo's Pizza")
-      .append("cuisine", "Pizza"),
-      new ReplaceOptions().bypassDocumentValidation(true))).block();
+      eq("name", "Food Town"),
+      new Document().append("name", "Food World")
+      .append("cuisine", "Mixed"),
+      new ReplaceOptions().upsert(true))).block();
 
+Return Value
+~~~~~~~~~~~~
+
+The ``replaceOne()`` method returns an ``UpdateResult`` 
+object. The ``UpdateResult`` type contains the following properties:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Property
+     - Description
+
+   * - ``getMatchedCount()``
+     - | The number of documents that matched the query filter, regardless of
+         how many were updated.
+
+   * - ``getModifiedCount()``
+     - | The number of documents modified by the update operation. If an updated
+         document is identical to the original, it is not included in this
+         count.
+
+   * - ``getUpsertedId()``
+     - | The ID of the document that was upserted in the database, if the driver
+         performed an upsert. Otherwise ``null``.
+         
+   * - ``wasAcknowledged()``
+     - | Returns true if the update was acknowledged.
 
 .. Additional Information
 ----------------------
@@ -177,6 +207,6 @@ API Documentation
 To learn more about any of the methods or types discussed in this
 guide, see the following API documentation:
 
-- `replaceOne() <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#replaceOne(org.bson.conversions.Bson,TDocument)>`__
-- `ReplaceOptions <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/ReplaceOptions.html>`__
-- `BsonValue <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
+- `replaceOne() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#replaceOne(org.bson.conversions.Bson,TDocument)>`__
+- `ReplaceOptions <{+api+}/mongodb-driver-core/com/mongodb/client/model/ReplaceOptions.html>`__
+- `BsonValue <{+api+}/bson/org/bson/BsonValue.html>`__
