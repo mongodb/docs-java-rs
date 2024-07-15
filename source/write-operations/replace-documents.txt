@@ -183,7 +183,7 @@ object. The ``UpdateResult`` type contains the following properties:
          how many were replaced.
 
    * - ``getModifiedCount()``
-     - | The number of documents modified by the replace operation. If an updated
+     - | The number of documents modified by the replace operation. If a replaced
          document is identical to the original, it is not included in this
          count.
 
