@@ -8,7 +8,7 @@ page. To use the sample application, perform the following steps:
 #. Install the `Project Reactor library
    <https://projectreactor.io/docs/core/release/reference/#getting>`__ in your
    Java project.
-#. Copy the following code and paste it into a new Java file named ``updateDocument.java``.
+#. Copy the following code and paste it into a new Java file named ``writeOperations.java``.
 #. Copy a code example from this page and paste it on the specified lines in the
    file.
 
