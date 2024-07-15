@@ -108,7 +108,8 @@ value of a matching document from ``"Bagels N Buns"`` to ``"2 Bagels 2 Buns"``:
 .. code-block:: java
    :copyable: true
 
-    Mono.from(restaurants.updateOne(eq("name", "Bagels N Buns"), set("name", "2 Bagels 2 Buns"))).block();
+    Mono.from(restaurants.updateOne(eq("name", "Bagels N Buns"),
+      set("name", "2 Bagels 2 Buns"))).block();
 
 Update Multiple Documents
 -------------------------
@@ -127,7 +128,8 @@ The following example uses the ``updateMany()`` method to update all documents t
 .. code-block:: java
    :copyable: true
 
-    Mono.from(restaurants.updateMany(eq("cuisine", "Pizza"), set("cuisine", "Pasta"))).block();
+    Mono.from(restaurants.updateMany(eq("cuisine", "Pizza"),
+      set("cuisine", "Pasta"))).block();
     
 Customize the Update Operation
 ------------------------------
