@@ -21,10 +21,13 @@ Overview
 --------
 
 In this guide, you can learn how to use the {+driver-short+} to replace
-a document in a MongoDB collection by performing replace operations.
+a document in a MongoDB collection by performing a **replace operation**.
 
-A replace operation replaces one document in a MongoDB collection.
-You can perform a replace operation by using the ``replaceOne()`` method.
+A replace operation replaces one document in a MongoDB collection with new
+fields and values that you specify. You can perform a replace operation by using
+the ``replaceOne()`` method.
+
+.. include:: /includes/reactor-note.rst
 
 Sample Data
 ~~~~~~~~~~~
@@ -35,66 +38,65 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 To learn how to create a free MongoDB Atlas cluster and load the sample
 datasets, see the :ref:`<java-rs-getting-started>` tutorial.
 
-.. include:: /includes/reactor-note.rst
-
 Replace Operation
 -----------------
 
-You can perform a replace operation in MongoDB by using the ``replaceOne()``
-method. This method removes all fields except the ``_id`` field from the first
-document that matches the search criteria. It then inserts the fields and values
-you specify into the document.
+You can perform a replace operation by using the ``replaceOne()``
+method on a ``MongoCollection`` instance. This method removes all fields except the ``_id`` field from the first
+document that matches the search criteria, then adds the fields and values
+you specify to the empty document.
 
 Required Parameters
 ~~~~~~~~~~~~~~~~~~~
 
 The ``replaceOne()`` method requires the following parameters:
 
-- A **query filter** document, which determines which documents to replace. For
-  more information about query filters, see the 
-  :manual:`Query Filter Documents section </core/document/#query-filter-documents>` in
-  the MongoDB Server manual. 
+- **Query filter** document, which determines which documents to replace.
 
-- A **replace** document, which specifies the fields and values to insert in the new 
+
+.. TODO: add link to read query filters 
+.. For more information about query filters, see :ref: <java-rs-query-filters>.
+
+- **Replace** document, which specifies the fields and values to insert in the new 
   document.
 
-Replace One
------------
+Replace Example
+---------------
 
 To replace a single document in a MongoDB collection, call the ``replaceOne()`` method
 and pass the document you want to add. Then, pass the ``replaceOne()`` method to the static
-``Mono.from()`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
-``Publisher`` implementation from the Project Reactor library. In {+java-rs+}, you must use
+``Mono.from()`` method from the ``Mono Publisher`` class. The ``Mono Publisher`` is a
+``Publisher`` implementation from the {+pr+} library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
-application. To learn more about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
-Reactor documentation.
+application. To learn more about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the {+pr+} documentation.
 
 The following example uses the ``replaceOne()`` method to replace the fields and values of a
 document with a ``name`` field value of ``"Pizza Town"``. The ``replaceOne()``
 method replaces the original document with a document that has a ``name`` field
-value of ``"Mongo's Pizza"``.
+value of ``"Mongo's Pizza"`` and a ``cuisine`` field value of ``"Pizza"``.
 
 .. code-block:: java
    :copyable: true
 
     Mono.from(restaurants.replaceOne(
-      eq("name", "Pizza Town"),
-      new Document().append("name", "Mongo's Pizza")
-      .append("cuisine", "Pizza"))).block();
+            eq("name", "Pizza Town"),
+            new Document().append("name", "Mongo's Pizza")
+                .append("cuisine", "Pizza"))).block();
 
 Modify Replace Behavior
 -----------------------
 
-The ``ReplaceOptions`` class contains methods that modify
+You can optionally modify the behavior of the ``replaceOne()`` method by calling
+an options method. The ``ReplaceOptions`` class provides methods that modify
 the behavior of the ``replaceOne()`` method. To use the ``ReplaceOptions``
 class, construct a new instance of the class, then call one or more of its methods
 to modify the replace operation. You can chain these method calls together.
 To modify the behavior of the replace operation, pass the class instance and
-chained method calls as the second argument to the
+chained method calls as the last argument to the
 ``replaceOne()`` method.
 
 You can use the following methods in the ``ReplaceOptions`` class
-to modify the ``replaceOne()`` method. All methods are optional.
+to modify the ``replaceOne()`` method.
 
 .. list-table::
    :widths: 30 70
@@ -148,22 +150,21 @@ to modify the ``replaceOne()`` method. All methods are optional.
          statement </reference/command/update/#std-label-update-command-upsert>`
          in the MongoDB Server manual.
 
-Example
-~~~~~~~
+Modify Replace Example
+~~~~~~~~~~~~~~~~~~~~~~
 
 The following code uses the ``replaceOne()`` method to replace a document in the
 ``restaurants`` collection. It also sets the ``upsert(true)`` option
-to bypass document-level validation. Because the ``upsert`` option is
-set to ``true``, the driver inserts a new document if the query filter doesn't 
+so that the driver inserts a new document if the query filter doesn't 
 match any existing documents.
 
 .. code-block:: java
 
     Mono.from(restaurants.replaceOne(
-      eq("name", "Food Town"),
-      new Document().append("name", "Food World")
-      .append("cuisine", "Mixed"),
-      new ReplaceOptions().upsert(true))).block();
+            eq("name", "Food Town"),
+            new Document().append("name", "Food World")
+                .append("cuisine", "Mixed"),
+            new ReplaceOptions().upsert(true))).block();
 
 Return Value
 ~~~~~~~~~~~~
@@ -188,11 +189,11 @@ object. The ``UpdateResult`` type contains the following properties:
          count.
 
    * - ``getUpsertedId()``
-     - | The ID of the document that was upserted in the database, if the driver
-         performed an upsert. Otherwise ``null``.
+     - | The ID of the document that was inserted into the database, if the driver
+         performed an upsert. If no document was inserted, this value is ``null``.
          
    * - ``wasAcknowledged()``
-     - | Returns true if the replacement was acknowledged.
+     - | An acknowledgement of the replacement.
 
 .. Additional Information
 ----------------------
