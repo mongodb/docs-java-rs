@@ -88,8 +88,8 @@ Modify Replace Behavior
 The ``ReplaceOptions`` class contains methods that modify
 the behavior of the ``replaceOne()`` method. To use the ``ReplaceOptions``
 class, construct a new instance of the class, then call one or more of its methods
-to modify the insert operation. You can chain these method calls together.
-To modify the behavior of the insert operation, pass the class instance and
+to modify the replace operation. You can chain these method calls together.
+To modify the behavior of the replace operation, pass the class instance and
 chained method calls as the second argument to the
 ``replaceOne()`` method.
 
@@ -198,7 +198,7 @@ object. The ``UpdateResult`` type contains the following properties:
 ----------------------
 
 .. TODO:
-.. For runnable code examples of inserting documents with {+driver-short+}, see
+.. For runnable code examples of replacing documents with {+driver-short+}, see
 .. :ref: ADD HERE
 
 API Documentation
