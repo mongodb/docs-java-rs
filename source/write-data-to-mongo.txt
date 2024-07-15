@@ -68,7 +68,7 @@ in the {+java-rs+} documentation.
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 57-59
+   :emphasize-lines: 56-58
 
 Insert One
 ----------

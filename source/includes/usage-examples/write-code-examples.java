@@ -2,7 +2,7 @@
 Document document = new Document("<field name>", "<value>");
 Mono<InsertOneResult> result = Mono.from(collection.insertOne(document));
 
-System.out.printf("Inserted a document with ID %s%n.", result.block().getInsertedId());
+System.out.printf("Inserted 1 document with ID %s%n.", result.block().getInsertedId());
 # end-insert-one
 
 # start-insert-multiple
@@ -44,13 +44,13 @@ System.out.printf("Replaced %s document with ID %s%n.", result.block().getModifi
 # start-delete-one
 Mono<DeleteResult> result = Mono.from(collection.deleteOne(eq("<field name>", "<value>")));
 
-System.out.printf("Deleted %s%n document.", result.block().getDeletedCount());
+System.out.printf("Deleted %s document.", result.block().getDeletedCount());
 # end-delete-one
 
 # start-delete-multiple
 Mono<DeleteResult> result = Mono.from(collection.deleteMany(eq("<field name>", "<value>")));
 
-System.out.printf("Deleted %s%n documents.", result.block().getDeletedCount());
+System.out.printf("Deleted %s documents.", result.block().getDeletedCount());
 # end-delete-multiple
 
 # start-bulk-write
@@ -63,5 +63,5 @@ Mono<BulkWriteResult> result = Mono.from(collection.bulkWrite(
         new ReplaceOneModel<>(new Document("<field name>", "<value>"),
                               new Document("<field name>", "<new value>").append("<new field name>", "<new value>")))));
 
-System.out.printf("Modified %s documents and deleted %sn documents.", result.block().getModifiedCount(), result.block().getDeletedCount);
+System.out.printf("Modified %s documents and deleted %s%n documents.", result.block().getModifiedCount(), result.block().getDeletedCount);
 # end-bulk-write
