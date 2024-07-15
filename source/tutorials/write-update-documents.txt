@@ -271,19 +271,3 @@ guide, see the following API documentation:
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
 - `Collation
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/Collation.html>`__
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
