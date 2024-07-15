@@ -20,8 +20,8 @@ Replace Documents
 Overview
 --------
 
-In this guide, you can learn how to use the {+driver-short+} to add
-documents to a MongoDB collection by performing replace operations.
+In this guide, you can learn how to use the {+driver-short+} to replace
+a document in a MongoDB collection by performing replace operations.
 
 A replace operation replaces one document in a MongoDB collection.
 You can perform a replace operation by using the ``replaceOne()`` method.
