@@ -34,8 +34,8 @@ import java.util.List;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.set;
 
-public class updateDocument {
-    public static void main(String[] args) {
+class updateDocument {
+    public static void main(String[] args) throws InterruptedException {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string>";
 
@@ -50,16 +50,12 @@ public class updateDocument {
                 .build();
         
         // Create a new client and connect to the server
-        MongoClient mongoClient = MongoClients.create(settings);
-        try {
-            MongoDatabase sample_restaurants = mongoClient.getDatabase("sample_restaurants");
-            MongoCollection<Document> restaurants = sample_restaurants.getCollection("restaurants");
+        try (MongoClient mongoClient = MongoClients.create(settings)) {
+            MongoDatabase database = mongoClient.getDatabase("<database name>");
+            MongoCollection<Document> restaurants = database.getCollection("<collection name>");
             // Start example code here
 
             // End example code here
-        } catch (MongoException e) {
-                    System.err.println(e);
-                    mongoClient.close();
         }
     }
 }
