@@ -1,9 +1,10 @@
 # start-insert-one
 Document document = new Document("<field name>", "<value>");
-Mono<InsertOneResult> result = Mono.from(collection.insertOne(document));
+Publisher<InsertOneResult> insertOnePublisher = collection.insertOne(document);
+InsertOneResult result = Mono.from(insertOnePublisher).block();
 
-System.out.printf("Inserted 1 document with ID %s%n.", 
-      result.block().getInsertedId());
+System.out.printf("Inserted 1 document with ID %s.", 
+      result.getInsertedId());
 # end-insert-one
 
 # start-insert-multiple
@@ -12,66 +13,72 @@ Document doc2 = new Document("<field name>", "<value>");
 
 List<Document> documents = Arrays.asList(doc1, doc2);
 
-Mono<InsertManyResult> result = Mono.from(collection.insertMany(documents));
+Publisher<InsertManyResult> insertManyPublisher = collection.insertMany(documents);
+InsertManyResult result = Mono.from(insertManyPublisher).block();
 
-System.out.printf("Inserted documents with IDs %s%n.",
-      result.block().getInsertedIds());
+System.out.printf("Inserted documents with IDs %s.",
+      result.getInsertedIds());
 # end-insert-multiple
 
 # start-update-one
-Mono<UpdateResult> result = Mono.from(collection.updateOne(
+Publisher<UpdateResult> updateOnePublisher = collection.updateOne(
       eq("<field name>", "<value>"),
-      set("<field name>", "<new value>")));
+      set("<field name>", "<new value>"));
+UpdateResult result = Mono.from(updateOnePublisher).block();
 
-System.out.printf("Updated 1 document with ID %s%n.",
-      result.block().getUpsertedId());
+System.out.printf("Updated %s document.",
+      result.getModifiedCount());
 # end-update-one
 
 # start-update-multiple
-Mono<UpdateResult> result = Mono.from(collection.updateMany(
-      eq("<field name>", "<value>"),
-      set("<field name>", "<new value>")));
+Publisher<UpdateResult> updateManyPublisher = collection.updateMany(
+        eq("<field name>", "<value>"),
+        set("<field name>", "<new value>"));
+UpdateResult result = Mono.from(updateManyPublisher).block();
 
-System.out.printf("Updated documents with ID %s%n.",
-      result.block().getUpsertedId());
+System.out.printf("Updated %s documents.",
+      result.getModifiedCount());
 # end-update-multiple
 
 # start-replace-one
-Mono<UpdateResult> result = Mono.from(collection.replaceOne(
-      eq("<field name>", "<value>"),
-      new Document().append("<field name>", "<new value>")
-      .append("<new field name>", "<new value>")));
+Publisher<UpdateResult> replaceOnePublisher = collection.replaceOne(
+        eq("<field name>", "<value>"),
+        new Document().append("<field name>", "<new value>")
+                .append("<new field name>", "<new value>"));
+UpdateResult result = Mono.from(replaceOnePublisher).block();
 
-System.out.printf("Replaced 1 document with ID %s%n.",
-      result.block().getUpsertedId());
+System.out.printf("Replaced %s document.",
+      result.getModifiedCount());
 # end-replace-one
 
 # start-delete-one
-Mono<DeleteResult> result = Mono.from(collection.deleteOne(
-      eq("<field name>", "<value>")));
+Publisher<DeleteResult> deleteOnePublisher = collection.deleteOne(
+        eq("<field name>", "<value>"));
+DeleteResult result = Mono.from(deleteOnePublisher).block();
 
 System.out.printf("Deleted %s document.", result.block().getDeletedCount());
 # end-delete-one
 
 # start-delete-multiple
-Mono<DeleteResult> result = Mono.from(collection.deleteMany(
-      eq("<field name>", "<value>")));
+Publisher<DeleteResult> deleteManyPublisher = collection.deleteMany(
+        eq("<field name>", "<value>"));
+DeleteResult result = Mono.from(deleteManyPublisher).block();
 
-System.out.printf("Deleted %s documents.", result.block().getDeletedCount());
+System.out.printf("Deleted %s documents.", result.getDeletedCount());
 # end-delete-multiple
 
 # start-bulk-write
-Mono<BulkWriteResult> result = Mono.from(collection.bulkWrite(
-    Arrays.asList(new InsertOneModel<>(new Document("<field name>", "<value>")),
-        new InsertOneModel<>(new Document("<field name>", "<value>")),
-        new UpdateOneModel<>(eq("<field name>", "<value>"),
-                  set("<field name>", "<new value>")),
-        new DeleteOneModel<>(eq("<field name>", "<value>")),
-        new ReplaceOneModel<>(new Document("<field name>", "<value>"),
-                  new Document("<field name>", "<new value>")
-                         .append("<new field name>", "<new value>")))));
+Publisher<BulkWriteResult> bulkWritePublisher = collection.bulkWrite(
+        Arrays.asList(new InsertOneModel<>(new Document("<field name>", "<value>")),
+                new InsertOneModel<>(new Document("<field name>", "<value>")),
+                new UpdateOneModel<>(eq("<field name>", "<value>"),
+                        set("<field name>", "<new value>")),
+                new DeleteOneModel<>(eq("<field name>", "<value>")),
+                new ReplaceOneModel<>(new Document("<field name>", "<value>"),
+                        new Document("<field name>", "<new value>")
+                                .append("<new field name>", "<new value>"))));
+BulkWriteResult result = Mono.from(bulkWritePublisher).block();
 
-BulkWriteResult blockedResult = result.block();
-System.out.printf("Modified %s documents and deleted %s%n documents.",
-      blockedResult.getModifiedCount(), blockedResult.getDeletedCount());
+System.out.printf("Modified %s documents and deleted %s documents.",
+      bulkResult.getModifiedCount(), bulkResult.getDeletedCount());
 # end-bulk-write
