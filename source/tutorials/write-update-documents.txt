@@ -107,6 +107,7 @@ value of a matching document from ``"Bagels N Buns"`` to ``"2 Bagels 2 Buns"``:
 
 .. code-block:: java
    :copyable: true
+
     Publisher<UpdateResult> updatePublisher = restaurants.updateOne(eq("name", "Bagels N Buns"),
             set("name", "2 Bagels 2 Buns"));
     Mono.from(updatePublisher).block();
@@ -127,6 +128,7 @@ The following example uses the ``updateMany()`` method to update all documents t
 
 .. code-block:: java
    :copyable: true
+
     Publisher<UpdateResult> updatePublisher = restaurants.updateMany(eq("cuisine", "Pizza"),
             set("cuisine", "Pasta"));
     Mono.from(updatePublisher).block();
@@ -212,6 +214,7 @@ match any existing documents.
 
 .. code-block:: java
    :copyable: true
+   
     Publisher<UpdateResult> updatePublisher = restaurants.updateMany(eq("borough", "Manhattan"),
             set("borough", "Manhattan (north)"),
             new UpdateOptions().upsert(true));
