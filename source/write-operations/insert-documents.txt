@@ -86,7 +86,8 @@ Burgers"`` into the ``restaurants`` collection:
    :copyable: true
 
     Document document = new Document("name", "Mongo's Burgers");
-    Mono.from(restaurants.insertOne(document)).block();
+    Publisher<InsertOneResult> insertPublisher = restaurants.insertOne(document);
+    Mono.from(insertPublisher).block();
 
 Insert Multiple Documents
 -------------------------
@@ -109,7 +110,8 @@ The following example uses the ``insertMany()`` method to insert a list of docum
 
     List<Document> documents = Arrays.asList(doc1, doc2);
 
-    Mono.from(restaurants.insertMany(documents)).block();
+    Publisher<InsertManyResult> insertPublisher = restaurants.insertMany(documents);
+    Mono.from(insertPublisher).block();
 
 Modify Insert Behavior
 ----------------------
@@ -177,17 +179,12 @@ to bypass document-level validation.
    Document doc2 = new Document("name", "Mongo's Pizza");
    Document doc3 = new Document("name", "Mongo's Coffee");
 
-   List<Document> documents = new ArrayList<Document>();
+   List<Document> documents = Arrays.asList(doc1, doc2, doc3);
 
-   documents.add(doc1);
-   documents.add(doc2);
-   documents.add(doc3);
-
-   Mono.from(
-        restaurants
-          .insertMany(documents,
-                      new InsertManyOptions().bypassDocumentValidation(true))
-   ).block();
+  Publisher<InsertManyResult> insertPublisher =
+          restaurants.insertMany(documents, new InsertManyOptions().bypassDocumentValidation(true));
+  
+   Mono.from(insertPublisher).block();
 
 .. Additional Information
 ----------------------
