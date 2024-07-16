@@ -138,9 +138,8 @@ Delete One
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``deleteOne()`` method, see the
-   :ref:`Delete Documents <java-rs-write-delete>` guide.
+
+To learn more about the ``deleteOne()`` method, see the :ref:`Delete Documents <java-rs-write-delete-docs>` guide.
 
 Delete Multiple
 ---------------
@@ -151,9 +150,7 @@ Delete Multiple
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``deleteMany()`` method, see the
-   :ref:`Delete Documents <java-rs-write-delete>` guide.
+To learn more about the ``deleteMany()`` method, see the :ref:`Delete Documents <java-rs-write-delete-docs>` guide.
 
 Bulk Write
 ----------
