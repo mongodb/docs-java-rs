@@ -72,7 +72,7 @@ Insert One Document
 -------------------
 
 To add a single document to a MongoDB collection, call the ``insertOne()`` method
-and pass the document you want to add. Then, pass the ``insertOne()`` method to the static
+and pass the document you want to add. Then, pass the ``insertOne()`` result to the static
 ``Mono.from()`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
@@ -93,7 +93,7 @@ Insert Multiple Documents
 -------------------------
 
 To add multiple documents to a MongoDB collection, call the ``insertMany()`` method
-and pass a list of documents you want to add. Then, pass the ``insertMany()`` method to the static
+and pass a list of documents you want to add. Then, pass the ``insertMany()`` result to the static
 ``Mono.from()`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
