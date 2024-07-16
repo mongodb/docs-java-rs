@@ -56,7 +56,7 @@ Publisher<DeleteResult> deleteOnePublisher = collection.deleteOne(
         eq("<field name>", "<value>"));
 DeleteResult result = Mono.from(deleteOnePublisher).block();
 
-System.out.printf("Deleted %s document.", result.block().getDeletedCount());
+System.out.printf("Deleted %s document.", result.getDeletedCount());
 # end-delete-one
 
 # start-delete-multiple
