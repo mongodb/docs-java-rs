@@ -23,8 +23,8 @@ Mono<UpdateResult> result = Mono.from(collection.updateOne(
       eq("<field name>", "<value>"),
       set("<field name>", "<new value>")));
 
-System.out.printf("Inserted %s document with ID %s%n.",
-      result.block().getModifiedCount(), result.block().getUpsertedId());
+System.out.printf("Updated 1 document with ID %s%n.",
+      result.block().getUpsertedId());
 # end-update-one
 
 # start-update-multiple
@@ -32,8 +32,8 @@ Mono<UpdateResult> result = Mono.from(collection.updateMany(
       eq("<field name>", "<value>"),
       set("<field name>", "<new value>")));
 
-System.out.printf("Inserted %s documents with ID %s%n.",
-      result.block().getModifiedCount(), result.block().getUpsertedId());
+System.out.printf("Updated documents with ID %s%n.",
+      result.block().getUpsertedId());
 # end-update-multiple
 
 # start-replace-one
@@ -42,8 +42,8 @@ Mono<UpdateResult> result = Mono.from(collection.replaceOne(
       new Document().append("<field name>", "<new value>")
       .append("<new field name>", "<new value>")));
 
-System.out.printf("Replaced %s document with ID %s%n.",
-      result.block().getModifiedCount(), result.block().getUpsertedId());
+System.out.printf("Replaced 1 document with ID %s%n.",
+      result.block().getUpsertedId());
 # end-replace-one
 
 # start-delete-one
@@ -64,14 +64,14 @@ System.out.printf("Deleted %s documents.", result.block().getDeletedCount());
 Mono<BulkWriteResult> result = Mono.from(collection.bulkWrite(
     Arrays.asList(new InsertOneModel<>(new Document("<field name>", "<value>")),
         new InsertOneModel<>(new Document("<field name>", "<value>")),
-        new UpdateOneModel<>(new Document("<field name>", "<value>"),
-                             new Document("$set",
-                             new Document("<field name>", "<new value>"))),
-        new DeleteOneModel<>(new Document("<field name>", "<value>")),
+        new UpdateOneModel<>(eq("<field name>", "<value>"),
+                  set("<field name>", "<new value>")),
+        new DeleteOneModel<>(eq("<field name>", "<value>")),
         new ReplaceOneModel<>(new Document("<field name>", "<value>"),
-                              new Document("<field name>", "<new value>")
-                              .append("<new field name>", "<new value>")))));
+                  new Document("<field name>", "<new value>")
+                         .append("<new field name>", "<new value>")))));
 
-System.out.printf("Modified %s documents and deleted %s%n documents."
-      result.block().getModifiedCount(), result.block().getDeletedCount);
+BulkWriteResult blockedResult = result.block();
+System.out.printf("Modified %s documents and deleted %s%n documents.",
+      blockedResult.getModifiedCount(), blockedResult.getDeletedCount());
 # end-bulk-write

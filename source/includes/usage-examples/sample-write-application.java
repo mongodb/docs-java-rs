@@ -34,7 +34,7 @@ import java.util.List;
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Updates.set;
 
-class writeOperations {
+class WriteOperations {
     public static void main(String[] args) throws InterruptedException {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string>";
