@@ -182,7 +182,8 @@ to bypass document-level validation.
    List<Document> documents = Arrays.asList(doc1, doc2, doc3);
 
   Publisher<InsertManyResult> insertPublisher =
-          restaurants.insertMany(documents, new InsertManyOptions().bypassDocumentValidation(true));
+          restaurants.insertMany(documents,
+                  new InsertManyOptions().bypassDocumentValidation(true));
   
    Mono.from(insertPublisher).block();
 
