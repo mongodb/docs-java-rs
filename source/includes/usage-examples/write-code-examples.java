@@ -69,7 +69,8 @@ System.out.printf("Deleted %s documents.", result.getDeletedCount());
 
 # start-bulk-write
 Publisher<BulkWriteResult> bulkWritePublisher = collection.bulkWrite(
-        Arrays.asList(new InsertOneModel<>(new Document("<field name>", "<value>")),
+        Arrays.asList(new InsertOneModel<>(
+                        new Document("<field name>", "<value>")),
                 new InsertOneModel<>(new Document("<field name>", "<value>")),
                 new UpdateOneModel<>(eq("<field name>", "<value>"),
                         set("<field name>", "<new value>")),
