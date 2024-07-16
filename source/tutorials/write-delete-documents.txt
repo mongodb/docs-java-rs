@@ -72,7 +72,7 @@ about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release
 Reactor documentation.
 
 The following example deletes a document from the ``restaurants`` collection
-with a ``name`` value of ``"Ready Penny Inn"``:
+that have a ``name`` value of ``"Ready Penny Inn"``:
 
 .. code-block:: java
    :copyable: true
@@ -92,7 +92,7 @@ about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release
 Reactor documentation.
 
 The following example removes all documents in the ``restaurants`` collection
-with a ``borough`` value of ``"Brooklyn"``:
+that have a ``borough`` value of ``"Brooklyn"``:
 
 .. code-block:: java
    :copyable: true
