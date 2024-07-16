@@ -56,7 +56,7 @@ the relevant values for your MongoDB deployment.
 
    In {+java-rs+}, all operations that return a ``Publisher`` are cold, which
    means that they do not execute unless you subscribe to the returned ``Publisher`` method. This guide uses the
-   `Mono.block()`` method from Reactor to subscribe to a ``Publisher`` and block the current
+   ``Mono.block()`` method from Reactor to subscribe to a ``Publisher`` and block the current
    thread until the ``Publisher`` reaches its terminal state. To learn more
    about {+java-rs+}, see `Reactive Streams <https://www.reactive-streams.org/>`__
    in the {+java-rs+} documentation.
