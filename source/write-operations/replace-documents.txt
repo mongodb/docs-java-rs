@@ -64,7 +64,7 @@ Replace Example
 ---------------
 
 To replace a single document in a MongoDB collection, call the ``replaceOne()`` method
-and pass the query filter document as well as the replace document. Then, pass the ``replaceOne()`` result to the static
+and pass the query filter document and the replace document as parameters. Then, pass the ``replaceOne()`` result to the static
 ``Mono.from()`` method from the ``Mono Publisher`` class. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the {+pr+} library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
@@ -106,7 +106,7 @@ to modify the ``replaceOne()`` method.
    * - Method
      - Description
 
-   * - ``bypassDocumentValidation(Boolean bypassDocumentValidation)``
+   * - ``bypassDocumentValidation(Boolean bypass)``
      - | Specifies whether the replace operation bypasses document validation. This lets you 
          update documents that don't meet the schema validation requirements, if any 
          exist. For more information about schema validation, see :manual:`Schema
@@ -169,10 +169,11 @@ match any existing documents.
     Mono.from(replacePublisher).block();
 
 Return Value
-~~~~~~~~~~~~
+------------
 
 The ``replaceOne()`` method returns an ``UpdateResult`` 
-object. The ``UpdateResult`` type contains the following instance methods:
+object. Use the following methods from the ``UpdateResult`` type to access
+the corresponding information:
 
 .. list-table::
    :widths: 30 70
@@ -197,7 +198,7 @@ object. The ``UpdateResult`` type contains the following instance methods:
    * - ``wasAcknowledged()``
      - | An acknowledgement of the replacement.
 
-.. Additional Information
+Additional Information
 ----------------------
 
 .. TODO:
