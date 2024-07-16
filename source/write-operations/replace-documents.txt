@@ -64,7 +64,7 @@ Replace Example
 ---------------
 
 To replace a single document in a MongoDB collection, call the ``replaceOne()`` method
-and pass the document you want to add. Then, pass the ``replaceOne()`` result to the static
+and pass the query filter document as well as the replace document. Then, pass the ``replaceOne()`` result to the static
 ``Mono.from()`` method from the ``Mono Publisher`` class. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the {+pr+} library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
