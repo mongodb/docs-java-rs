@@ -78,7 +78,8 @@ with a ``name`` value of ``"Ready Penny Inn"``:
 .. code-block:: java
    :copyable: true
 
-   Publisher<DeleteResult> deletePublisher = restaurants.deleteOne(eq("name", "Ready Penny Inn"));
+   Publisher<DeleteResult> deletePublisher = restaurants.deleteOne(
+           eq("name", "Ready Penny Inn"));
    Mono.from(deletePublisher).block();
 
 Delete Multiple Documents
@@ -97,7 +98,8 @@ The following example removes all documents in the ``restaurants`` collection wi
 .. code-block:: java
    :copyable: true
 
-   Publisher<DeleteResult> deletePublisher = restaurants.deleteMany(eq("borough", "Brooklyn"));
+   Publisher<DeleteResult> deletePublisher = restaurants.deleteMany(
+           eq("borough", "Brooklyn"));
    Mono.from(deletePublisher).block();
 
 Customize the Delete Operation
