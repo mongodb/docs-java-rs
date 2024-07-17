@@ -78,7 +78,8 @@ for (Document document : findResults) {
 
 # start-find-all
 FindPublisher<Document> findDocPublisher = fruits.find();
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+List<Document> findResults = Flux.from(findDocPublisher)
+        .collectList().block();
 for (Document document : findResults) {
     System.out.println(document);
 }
@@ -93,7 +94,8 @@ for (Document document : findResults) {
 # end-find-comparison
     
 # start-find-logical
-FindPublisher<Document> findDocPublisher = fruits.find(or(gt("qty", 5), eq("color", "yellow")));
+FindPublisher<Document> findDocPublisher = fruits.find(
+        or(gt("qty", 5), eq("color", "yellow")));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
 for (Document document : findResults) {
     System.out.println(document);

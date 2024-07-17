@@ -191,7 +191,10 @@ parameter to the ``find()`` method. The code returns all documents with a
 Element Operators
 -----------------
 
-Element operators query data based on the presence or type of a field.
+Element operators query data based on the presence or type of a field. The following is a list of available array operators:
+
+- ``exists``, which returns documents with the specified field
+- ``type``, which returns documents if a field is of the specified type
 
 To learn more about element operators, see the :manual:`Element Query Operators
 </reference/operator/query-element/>` guide in the {+mdb-server+} manual.
@@ -218,9 +221,7 @@ Evaluation Operators
 --------------------
 
 Evaluation operators return data based on evaluations of either individual
-fields or the entire collection's documents.
-
-The following is a list of common evaluation operators:
+fields or the entire collection's documents. The following is a list of common evaluation operators:
 
 - ``text``, which performs a text search on the documents
 - ``regex``, which returns documents that match a specified regular expression
