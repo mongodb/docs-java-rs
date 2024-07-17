@@ -52,7 +52,7 @@ the relevant values for your MongoDB deployment.
    :language: java
    :copyable: true
    :linenos:
-   :emphasize-lines: 20-22
+   :emphasize-lines: 17-19
 
 Connection
 ----------
