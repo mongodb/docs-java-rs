@@ -48,7 +48,7 @@ the relevant values for your MongoDB deployment.
 
 .. include:: /includes/connect/sample-connect-app-intro.rst
 
-.. literalinclude:: /includes/usage-examples/connect-sample-app.java
+.. literalinclude:: /includes/connect/sample-connect-app.java
    :language: java
    :copyable: true
    :linenos:
