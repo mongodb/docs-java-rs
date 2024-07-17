@@ -62,7 +62,7 @@ Local Deployment
 
 .. code-block:: java
 
-   String uri = "mongodb://localhost:27017/"
+   String uri = "mongodb://localhost:27017/";
 
    try (MongoClient mongoClient = MongoClients.create(uri))
 
@@ -72,7 +72,7 @@ Atlas
 
 .. code-block:: java
 
-   String uri = "<Atlas connection string>"
+   String uri = "<Atlas connection string>";
    
    ServerApi serverApi = ServerApi.builder()
                 .version(ServerApiVersion.V1)
@@ -90,7 +90,7 @@ Replica Set
 
 .. code-block:: java
    
-   String uri = "mongodb://<replica set member>:<port>/?replicaSet=<replica set name>"
+   String uri = "mongodb://<replica set member>:<port>/?replicaSet=<replica set name>";
    
    try (MongoClient mongoClient = MongoClients.create(uri))
 
