@@ -24,3 +24,4 @@ rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/r
 driver-source-gh = "https://github.com/mongodb/mongo-java-driver"
 string-data-type = "``String``"
 bool = "``boolean``"
+pr = "Project Reactor"
