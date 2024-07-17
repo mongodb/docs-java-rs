@@ -42,7 +42,7 @@ To use a connection example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<hostname>``, with
 the relevant values for your MongoDB deployment.
 
-..include: /includes/reactor-note.rst
+.. include:: /includes/reactor-note.rst
 
 .. _java-rs-connect-sample:
 
