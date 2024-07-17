@@ -44,11 +44,11 @@ the relevant values for your MongoDB deployment.
 
 ..include: /includes/reactor-note.rst
 
-.. _pymongo-connect-sample:
+.. _java-rs-connect-sample:
 
 .. include:: /includes/connect/sample-connect-app-intro.rst
 
-.. literalinclude:: /includes/usage-examples/connect-sample-app.py
+.. literalinclude:: /includes/usage-examples/connect-sample-app.java
    :language: java
    :copyable: true
    :linenos:
