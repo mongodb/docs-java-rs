@@ -46,13 +46,13 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
 the relevant values for your MongoDB deployment.
 
-This guide uses the Project Reactor library to consume ``Publisher``s returned
+This guide uses the Project Reactor library to consume ``Publishers`` returned
 by the {+driver-short+} methods. To learn more about the Project Reactor library
 and how to use it, see `Getting Started <https://projectreactor.io/docs/core/release/reference/#getting-started>`__
 in the Reactor documentation. 
 
-There are also other ways to consume ``Publisher``s. You can use one of many alternative libraries such as
-RxJava <https://github.com/ReactiveX/RxJava>__ to consume ``Publisher``s, or consume ``Publisher``s
+There are also other ways to consume ``Publishers``. You can use one of many alternative libraries such as
+RxJava <https://github.com/ReactiveX/RxJava>__ to consume ``Publishers``, or consume ``Publishers``
 by calling ``Publisher.subscribe()`` directly and passing your own
 implementation of a ``Subscriber``.
 
@@ -61,7 +61,7 @@ thread until the ``Publisher`` reaches its terminal state. To learn more about t
 
 .. important:: Publishers Returned are Cold
 
-   All ``Publisher``s returned by the {+driver-short+} methods are cold,
+   All ``Publishers`` returned by the {+driver-short+} methods are cold,
    which means that the corresponding operation does not happen unless you
    subscribe to the returned ``Publisher``. We recommend only subscribing to 
    the returned ``Publisher`` once, because subscribing more than once can lead
