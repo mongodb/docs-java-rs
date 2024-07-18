@@ -75,7 +75,7 @@ Publisher<BulkWriteResult> bulkWritePublisher = collection.bulkWrite(
                 new UpdateOneModel<>(eq("<field name>", "<value>"),
                         set("<field name>", "<new value>")),
                 new DeleteOneModel<>(eq("<field name>", "<value>")),
-                new ReplaceOneModel<>(new Document("<field name>", "<value>"),
+                new ReplaceOneModel<>(eq("<field name>", "<value>"),
                         new Document("<field name>", "<new value>")
                                 .append("<new field name>", "<new value>"))));
 BulkWriteResult result = Mono.from(bulkWritePublisher).block();
