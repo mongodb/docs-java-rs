@@ -59,6 +59,7 @@ public class QueryDatabase {
                     .append("qty", 3)
                     .append("rating", 5)
                     .append("color", "yellow");
+                    
             List<Document> documents = Arrays.asList(document1, document2, document3, document4);
 
             Publisher<InsertManyResult> insertPublisher = fruits.insertMany(documents);
