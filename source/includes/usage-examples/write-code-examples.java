@@ -78,7 +78,7 @@ Publisher<BulkWriteResult> bulkWritePublisher = collection.bulkWrite(
                 new ReplaceOneModel<>(eq("<field name>", "<value>"),
                         new Document("<field name>", "<new value>")
                                 .append("<new field name>", "<new value>"))));
-BulkWriteResult result = Mono.from(bulkWritePublisher).block();
+BulkWriteResult bulkResult = Mono.from(bulkWritePublisher).block();
 
 System.out.printf("Modified %s documents and deleted %s documents.",
       bulkResult.getModifiedCount(), bulkResult.getDeletedCount());

@@ -52,7 +52,7 @@ and how to use it, see `Getting Started <https://projectreactor.io/docs/core/rel
 in the Reactor documentation. 
 
 There are also other ways to consume ``Publishers``. You can use one of many alternative libraries such as
-RxJava <https://github.com/ReactiveX/RxJava>__ to consume ``Publishers``, or consume ``Publishers``
+`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publishers``, or consume ``Publishers``
 by calling ``Publisher.subscribe()`` directly and passing your own
 implementation of a ``Subscriber``.
 
