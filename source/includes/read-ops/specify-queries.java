@@ -71,6 +71,7 @@ public class QueryDatabase {
 # start-find-exact
 FindPublisher<Document> findDocPublisher = fruits.find(eq("color", "yellow"));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 }
@@ -80,6 +81,7 @@ for (Document document : findResults) {
 FindPublisher<Document> findDocPublisher = fruits.find();
 List<Document> findResults = Flux.from(findDocPublisher)
         .collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 }
@@ -88,6 +90,7 @@ for (Document document : findResults) {
 # start-find-comparison
 FindPublisher<Document> findDocPublisher = fruits.find(gt("rating", 2));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 }
@@ -97,6 +100,7 @@ for (Document document : findResults) {
 FindPublisher<Document> findDocPublisher = fruits.find(
         or(gt("qty", 5), eq("color", "yellow")));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 } 
@@ -105,6 +109,7 @@ for (Document document : findResults) {
 # start-find-array
 FindPublisher<Document> findDocPublisher = fruits.find(size("type", 2));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 } 
@@ -113,6 +118,7 @@ for (Document document : findResults) {
 # start-find-element
 FindPublisher<Document> findDocPublisher = fruits.find(exists("color", true));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 }
@@ -121,6 +127,7 @@ for (Document document : findResults) {
 # start-find-evaluation
 FindPublisher<Document> findDocPublisher = fruits.find(regex("name", "p{2,}"));
 List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
+
 for (Document document : findResults) {
     System.out.println(document);
 }
