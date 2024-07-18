@@ -114,7 +114,6 @@ the following example:
    List<Document> findResult = Flux.from(findDocPublisher).collectList().block();
    
    for (Document document : findResult) {
-   ...
    }
 
 .. note:: Find All Documents
