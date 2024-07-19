@@ -17,12 +17,12 @@ class ConnectionApp {
     public static void main(String[] args) {
         //start example code here
         
-        //end example code here
+        //end example code here        
         {
             Bson command = new BsonDocument("ping", new BsonInt64(1));
             MongoDatabase database = mongoClient.getDatabase("admin");
             Publisher<Document> MonoPublisher = database.runCommand(command);
-            
+
             Mono.from(MonoPublisher)
                     .doOnSuccess(x -> System.out.println("Pinged your deployment. You successfully connected to MongoDB!"))
                     .doOnError(err -> System.out.println("Error: " + err.getMessage()))
