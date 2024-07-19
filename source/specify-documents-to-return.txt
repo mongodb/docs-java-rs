@@ -32,7 +32,10 @@ Sample Data
 
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. To learn how to create a
-free MongoDB Atlas cluster and load the sample datasets, see the :ref:`<java-rs-getting-started>`.
+free MongoDB Atlas cluster and load the sample datasets, see the
+:ref:`<java-rs-getting-started>`.
+
+.. include:: includes/reactor-note.rst
 
 Limit
 -----
