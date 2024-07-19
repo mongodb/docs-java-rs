@@ -53,7 +53,7 @@ read operation:
    projection(fields(include("<field name>")))
 
 To use a projection, pass a query filter to the ``find()`` method. Then, chain
-the ``projection()`` method to the ``find()`` method. 
+the ``projection()`` method to the ``find()`` method call. 
 
 The following example uses the ``find()`` method to retrieve documents in which
 the ``name`` field value is ``"Emerald Pub"``. It then uses a projection to
@@ -108,10 +108,11 @@ read operation:
 
    projection(fields(exclude("<field name>")))
 
-To use a projection, pass your query filter to the ``find()`` method. Then,
-chain the ``projection()`` method to the ``find()`` method.  The following
-example uses the ``find()`` method to find all restaurants with
-the ``name`` field value of ``"Emerald Pub"``. It then uses a projection to
+To use a projection, pass a query filter to the ``find()`` method. Then,
+chain the ``projection()`` method to the ``find()`` method call.  
+
+The following Example uses the ``find()`` method to find all restaurants in which
+the ``name`` field value is ``"Emerald Pub"``. It then uses a projection to
 exclude the ``grades`` and ``address`` fields from the returned documents.
 
 .. io-code-block::
