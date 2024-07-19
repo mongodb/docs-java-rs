@@ -60,7 +60,6 @@ documents.
       :start-after: start-project-include
       :end-before: end-project-include
       :language: java
-      :emphasize-lines: 1
 
    .. output::
 
@@ -89,7 +88,6 @@ excludes the ``_id`` field from the projection:
       :start-after: start-project-include-without-id
       :end-before: end-project-include-without-id
       :language: java
-      :emphasize-lines: 1
 
    .. output::
 
@@ -115,7 +113,6 @@ exclude the ``grades`` and ``address`` fields from the returned documents:
       :start-after: start-project-exclude
       :end-before: end-project-exclude
       :language: java
-      :emphasize-lines: 1
 
    .. output:: 
 
