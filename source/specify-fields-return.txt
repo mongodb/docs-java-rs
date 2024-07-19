@@ -32,6 +32,8 @@ from the :atlas:`Atlas sample datasets </sample-data>`. To learn how to create a
 free MongoDB Atlas cluster and load the sample datasets, see the
 :ref:`<java-rs-getting-started>` guide.
 
+.. include:: /includes/reactor-note.rst
+
 Projection Types
 ----------------
 
