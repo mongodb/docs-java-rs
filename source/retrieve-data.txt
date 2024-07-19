@@ -99,7 +99,7 @@ the ``"cuisine"`` field has the value ``"Spanish"``:
 .. code-block:: java
    :copyable: true
 
-   Publisher<Document> findDocPublisher = restaurants.find(
+   FindPublisher<Document> findDocPublisher = restaurants.find(
            eq("cuisine", "Spanish"));
    List<Document> findResult = Flux.from(findDocPublisher).collectList().block();
 
