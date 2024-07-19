@@ -41,7 +41,7 @@ Limit
 -----
 
 To specify the maximum number of documents returned from a read operation,
-call the ``limit()`` method on a ``FindPublisher`` instance and pass the number
+chain the ``limit()`` method to a ``find()`` method and pass the number
 of documents you want to return.
 
 The following example finds all restaurants that have a ``cuisine`` field value
@@ -73,8 +73,9 @@ of ``"Italian"``, and limits the results to 5 documents:
 Sort
 ----
 
-To return documents in a specified order, call the ``sort()`` method on a ``FindPublisher`` instance. The ``sort()``
-method takes one parameter: a sort direction method. To specify the sort direction, pass either the ``ascending()`` or ``descending``
+To return documents in a specified order, chain the ``sort()`` method to a
+``find()`` method. The ``sort()`` method takes one parameter: a sort direction
+method. To specify the sort direction, pass either the ``ascending()`` or ``descending``
 method to the ``sort()`` method. Then, pass the field value you want to sort by.
 The ``ascending()`` method sorts values from lowest to highest, and
 the ``descending()`` method sorts them from highest to lowest. If you don't specify either
@@ -104,7 +105,7 @@ Skip
 ----
 
 To skip a specified number of documents before returning your query results,
-call the ``skip()`` method on a ``FindPublisher`` instance and pass the number of documents to skip. The
+chain the ``skip()`` method to a ``find()`` method and pass the number of documents to skip. The
 ``skip()`` method ignores the specified number of documents in your query
 results and returns the rest.
 
