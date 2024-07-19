@@ -101,7 +101,7 @@ Skip
 ----
 
 To skip a specified number of documents before returning your query results,
-call the ``skip()`` method and pass the number of documents to skip. The
+call the ``skip()`` method on a ``FindPublisher`` instance and pass the number of documents to skip. The
 ``skip()`` method ignores the specified number of documents in your query
 results and returns the rest.
 
