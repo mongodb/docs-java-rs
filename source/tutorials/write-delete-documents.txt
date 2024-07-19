@@ -64,40 +64,42 @@ the MongoDB Server manual.
 Delete One Document
 -------------------
 
-To delete a single document from a MongoDB collection, use the static
-``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteOne()``
-method and pass in your query filter. The ``Mono`` ``Publisher`` is a
+To delete a single document from a MongoDB collection, call the ``deleteOne()``
+method and pass in your query filter. Then, pass the ``deleteOne()`` result to the static
+``Mono.from`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. To learn more
-about ``Mono``, see `Mono
-<https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
 The following example deletes a document from the ``restaurants`` collection
-with a ``name`` value of ``"Ready Penny Inn"``:
+that have a ``name`` value of ``"Ready Penny Inn"``:
 
 .. code-block:: java
    :copyable: true
 
-   Mono.from(restaurants.deleteOne(eq("name", "Ready Penny Inn"))).block();
+   Publisher<DeleteResult> deletePublisher = restaurants.deleteOne(
+           eq("name", "Ready Penny Inn"));
+   Mono.from(deletePublisher).block();
 
 Delete Multiple Documents
 -------------------------
 
-To delete multiple documents from a MongoDB collection, use the static
-``Mono.from`` method from the ``Mono`` ``Publisher`` to call the ``deleteMany()``
-method and pass in your query filter. The ``Mono`` ``Publisher`` is a
+To delete multiple documents from a MongoDB collection, call the ``deleteMany()``
+method and pass in your query filter. Then, pass the ``deleteMany()`` result to the static
+``Mono.from`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
 ``Publisher`` implementation from the Project Reactor library. To learn more
-about ``Mono``, see `Mono
-<https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
-The following example removes all documents in the ``restaurants`` collection with a ``borough`` value of ``"Brooklyn"``:
+The following example removes all documents in the ``restaurants`` collection
+that have a ``borough`` value of ``"Brooklyn"``:
 
 .. code-block:: java
    :copyable: true
 
-   Mono.from(restaurants.deleteMany(eq("borough", "Brooklyn"))).block();
-
+   Publisher<DeleteResult> deletePublisher = restaurants.deleteMany(
+           eq("borough", "Brooklyn"));
+   Mono.from(deletePublisher).block();
 
 Customize the Delete Operation
 ------------------------------
@@ -162,7 +164,10 @@ It also uses the ``comment`` method to add a comment to the operation:
 .. code-block:: java
    :copyable: true
 
-   Mono.from(restaurants.deleteMany(regex("name", "Mongo"), new DeleteOptions().comment("Deleting Mongo restaurants"))).block();
+   Publisher<DeleteResult> deletePublisher = restaurants.deleteMany(
+           regex("name", "Mongo"),
+           new DeleteOptions().comment("Deleting Mongo restaurants"));
+   Mono.from(deletePublisher).block();
 
 .. Additional Information
 ----------------------
