@@ -5,7 +5,7 @@ List<Document> findResults = Flux.from(findPublisher)
         .collectList().block();
 
 for (Document document : findResults) {
-    System.out.println(document);
+    System.out.println(document.getString("name"));
 }
 # end-limit-method
 
