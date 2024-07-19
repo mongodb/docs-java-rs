@@ -123,7 +123,9 @@ the following example:
    .. code-block:: java
 
       Publisher<Document> findAllPublisher = restaurants.find();
-      List<Document> findResult = Flux.from(findAllPublisher).collectList().block();
+      List<Document> findResult =
+              Flux.from(findAllPublisher).collectList().block();
+      
 
 Modify Find Behavior
 ~~~~~~~~~~~~~~~~~~~~
