@@ -52,7 +52,7 @@ connection string>``, with the relevant values for your MongoDB deployment.
    :language: java
    :copyable: true
    :linenos:
-   :emphasize-lines: 17-19
+   :emphasize-lines: 18-20
 
 Connection
 ----------
