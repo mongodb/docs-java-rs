@@ -20,9 +20,9 @@ Specify Fields To Return
 Overview
 --------
 
-In this guide, you can learn how to specify which fields to return from a read
-operation by using a **projection**. A projection is a document that specifies
-which fields MongoDB returns from a query.
+In this guide, you can learn how to use the {+driver short+} to specify which fields to 
+return from a read operation. You can select these fields by using a
+**projection**, a document that specifies which fields MongoDB returns from a query.
 
 Sample Data
 ~~~~~~~~~~~
