@@ -37,10 +37,10 @@ free MongoDB Atlas cluster and load the sample datasets, see the
 Projection Types
 ----------------
 
-You can use a projection to specify which fields to include in a return
-document, or to specify which fields to exclude. You cannot combine inclusion and
-exclusion statements in a single projection, unless you are excluding the
-``_id`` field.
+You can use a projection to specify which fields to include and exclude in retrieved
+documents. By default, including certain fields excludes all other fields, so you cannot
+combine inclusion and exclusion statements in a single projection,
+unless you are excluding the ``_id`` field from results.
 
 Specify Fields to Include
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,9 +51,11 @@ Use the following syntax to specify the fields to include in the result:
 
    projection(fields(include("<field name>")))
 
-To use a projection, pass your query filter to the ``find()`` method. Then, chain the ``projection()`` method to the ``find()`` method. 
-The following example uses the ``find()`` method to find all restaurants with
-the ``name`` field value of ``"Emerald Pub"``. It then uses a projection to
+To use a projection, pass a query filter to the ``find()`` method. Then, chain
+the ``projection()`` method to the ``find()`` method. 
+
+The following example uses the ``find()`` method to retrieve documents in which
+the ``name`` field value is ``"Emerald Pub"``. It then uses a projection to
 include only the ``name``, ``cuisine``, and ``borough`` fields from the returned documents.
 
 .. io-code-block::
@@ -70,19 +72,18 @@ include only the ``name``, ``cuisine``, and ``borough`` fields from the returned
 
 When you use a projection to specify fields to include in the return
 document, the ``_id`` field is also included by default. All other fields are
-implicitly excluded. To remove the ``_id`` field from the return
-document, you must :ref:`explicitly exclude it <java-rs-project-remove-id>`.
+implicitly excluded. You must :ref:`explicitly exclude the _id field <java-rs-project-remove-id>`
+to omit it from the returned documents.
 
 .. _java-rs-project-remove-id:
 
 Exclude the ``_id`` Field
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When specifying fields to include, you can also exclude the ``_id`` field from
-the returned document.
+You can exclude the ``_id`` field from returned documents by using the ``excludeId()`` method.
 
-The following example performs the same query as the preceding example, but
-excludes the ``_id`` field from the projection:
+The following example performs the same query as in the preceding example, but also
+excludes the ``_id`` field in the returned documents:
 
 .. io-code-block::
     
@@ -121,23 +122,27 @@ exclude the ``grades`` and ``address`` fields from the returned documents.
    .. output:: 
 
       {'_id': ObjectId('...'), 'borough': 'Manhattan', 'cuisine': 'American', 'name': 'Emerald Pub', 'restaurant_id': '40367329'}
-      {'_id': ObjectId('...'), 'borough': 'Queens', 'cuisine': 'American',
-      'name': 'Emerald Pub', 'restaurant_id': '40668598'}
+      {'_id': ObjectId('...'), 'borough': 'Queens', 'cuisine': 'American', 'name': 'Emerald Pub', 'restaurant_id': '40668598'}
 
 When you use a projection to specify which fields to exclude,
 any unspecified fields are implicitly included in the return document.
 
-Troubleshooting
----------------
+Projection Errors
+-----------------
 
-The following sections describe errors you might see when using projections.
+The following sections describes an error you might encounter when using projections.
 
-'Cannot Do Exclusion on Field <field> in Inclusion Projection'
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Inclusion and Exclusion Error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The driver returns an ``OperationFailure`` with this message if you attempt to
-include and exclude fields in a single projection. Ensure that your
-projection specifies only fields to include or fields to exclude.
+The driver returns the following if you attempt to
+include and exclude fields in a single projection:
+
+.. code-block:: none
+   
+   OperationFailure: ... Cannot Do Exclusion on Field <field> in Inclusion Projection
+
+To resolve this error, ensure that your projection specifies only fields to include or only fields to exclude.
 
 Additional Information
 ----------------------
