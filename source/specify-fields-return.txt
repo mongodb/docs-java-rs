@@ -45,7 +45,8 @@ unless you are excluding the ``_id`` field from results.
 Specify Fields to Include
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the following syntax to specify the fields to include in the result:
+Use the following syntax to specify the fields to include in the result of a
+read operation:
 
 .. code-block:: java
 
@@ -100,7 +101,8 @@ excludes the ``_id`` field in the returned documents:
 Specify Fields to Exclude
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the following syntax to specify the fields to exclude from the result:
+Use the following syntax to specify the fields to exclude from the result of a
+read operation:
 
 .. code-block:: java
 
@@ -139,7 +141,7 @@ The driver returns the following if you attempt to
 include and exclude fields in a single projection:
 
 .. code-block:: none
-   
+
    OperationFailure: ... Cannot Do Exclusion on Field <field> in Inclusion Projection
 
 To resolve this error, ensure that your projection specifies only fields to include or only fields to exclude.
