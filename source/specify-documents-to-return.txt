@@ -126,7 +126,7 @@ Combine Limit, Sort, and Skip
 -----------------------------
 
 You can combine the ``limit()``, ``sort()``, and ``skip()`` methods in a single
-operation. This allows you to set a maximum number of sorted documents to
+operation by chaining them together. This allows you to set a maximum number of sorted documents to
 return, skipping a specified number of documents before returning.
 
 The following example returns ``5`` documents that have a ``cuisine`` value of
