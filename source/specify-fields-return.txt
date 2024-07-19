@@ -47,12 +47,12 @@ Use the following syntax to specify the fields to include in the result:
 
 .. code-block:: java
 
-   projection(fields(include("name", "cuisine", "borough")))
+   projection(fields(include("<field name>")))
 
+To use a projection, pass your query filter to the ``find()`` method. Then, chain the ``projection()`` method to the ``find()`` method. 
 The following example uses the ``find()`` method to find all restaurants with
 the ``name`` field value of ``"Emerald Pub"``. It then uses a projection to
-return only the ``name``, ``cuisine``, and ``borough`` fields in the returned
-documents.
+include only the ``name``, ``cuisine``, and ``borough`` fields from the returned documents.
 
 .. io-code-block::
     
@@ -101,11 +101,13 @@ Use the following syntax to specify the fields to exclude from the result:
 
 .. code-block:: java
 
-   projection(fields(exclude("grades", "address")))
+   projection(fields(exclude("<field name>")))
 
-The following example uses the ``find()`` method to find all restaurants with
+To use a projection, pass your query filter to the ``find()`` method. Then,
+chain the ``projection()`` method to the ``find()`` method.  The following
+example uses the ``find()`` method to find all restaurants with
 the ``name`` field value of ``"Emerald Pub"``. It then uses a projection to
-exclude the ``grades`` and ``address`` fields from the returned documents:
+exclude the ``grades`` and ``address`` fields from the returned documents.
 
 .. io-code-block::
     
