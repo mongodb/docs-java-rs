@@ -21,8 +21,7 @@ Overview
 --------
 
 In this guide, you can learn how to use the {+driver-long+} to retrieve
-data from a MongoDB collection by using read operations. You can call the
-``find()`` method to retrieve documents that match a set of criteria.
+data from a MongoDB collection by using read operations. 
 
 Sample Data
 ~~~~~~~~~~~
@@ -54,17 +53,16 @@ your query.
 Find One Document
 ~~~~~~~~~~~~~~~~~
 
-To find a single document in a collection, call the ``find()`` method and pass a query
-filter that specifies the criteria of the document you want to find. Then, chain
-the ``first()`` method to find a single document. If more than one document matches the query
-filter, this construct returns the *first* matching document from the retrieved
-results. If no documents match the query filter, the method returns
-``None``.
+To find a single document in a collection, chain the ``first()`` method to your
+``find()`` method call and pass a query filter to the ``find()`` method call
+that specifies the criteria of the document you want to find. If more than one document matches the query
+filter, the ``find().first()`` construct returns the *first* matching document from the retrieved
+results. If no documents match the query filter, the construct returns ``None``.
 
 .. tip::
    
    The ``find().first()`` construct is useful when you know there's only one matching document,
-   or you're only interested in the first match.  
+   or you're interested only in the first match.  
 
 The following example uses the ``find().first()`` construct to find the first document where
 the ``"cuisine"`` field has the value ``"Bakery"``:
@@ -78,9 +76,9 @@ the ``"cuisine"`` field has the value ``"Bakery"``:
    
 .. tip:: Sort Order
 
-   The ``find().first()`` construct returns the first document in 
+   If you do not specify a sort order, the ``find().first()`` construct returns the first document in 
    :manual:`natural order </reference/glossary/#std-term-natural-order>`
-   on disk if no sort criteria is specified.
+   on disk.
 
 .. TODO: uncomment when sort guide made
 .. To learn more about sorting, see the :ref:`sort guide <java-rs-sort>`.
@@ -103,7 +101,7 @@ the ``"cuisine"`` field has the value ``"Spanish"``:
            eq("cuisine", "Spanish"));
    List<Document> findResult = Flux.from(findDocPublisher).collectList().block();
 
-You can iterate over the documents you retrieved using the ``find()`` method by using a ``for`` loop, as shown in
+You can iterate over the documents you retrieved by using a ``for`` loop, as shown in
 the following example:
 
 .. code-block:: java
@@ -131,7 +129,7 @@ the following example:
 Modify Find Behavior
 ~~~~~~~~~~~~~~~~~~~~
 
-You can modify the behavior of the ``find()`` method by chaining methods
+You can modify the behavior of the ``find()`` method by chaining other methods
 to it. The following table describes commonly used methods:
 
 .. list-table::
@@ -142,10 +140,12 @@ to it. The following table describes commonly used methods:
      - Description
 
    * - ``batchSize(int batchSize)`` 
-     - | Limits the number of documents to hold in a cursor at a given time.
+     - | Limits the number of documents to hold in a cursor at a given time. To
+         learn more about cursors, see :manual:`cursor
+         </reference/glossary/#std-term-cursor>` in the MongoDB Server documentation.
 
    * - ``collation(Collation collation)`` 
-     - | Sets the collation options as an instance of the Collation class. 
+     - | Sets the collation options as an instance of the ``Collation`` class. 
 
    * - ``comment(String comment)`` 
      - | Attaches a string to the query. This can help you trace and interpret the
@@ -153,7 +153,9 @@ to it. The following table describes commonly used methods:
          see the :manual:`$comment </reference/operator/query/comment/>` page.
    
    * - ``hint(Bson hint)`` 
-     - | Sets an index to use for the query.
+     - | Gets or sets the index to scan for documents. 
+         For more information, see the :manual:`hint statement </reference/command/delete/#std-label-deletes-array-hint>`
+         in the MongoDB Server manual.
 
    * - ``maxTime(long maxTime, TimeUnit timeUnit)`` 
      - | Sets the maximum execution time on the server for this operation. If this time is
@@ -161,7 +163,7 @@ to it. The following table describes commonly used methods:
 
 The following example uses the ``find()`` method to find all documents where
 the ``"cuisine"`` field has the value ``"Italian"`` and sets a maximum execution
-time of 10 seconds (10,000 milliseconds):
+time of 10 seconds:
 
 .. code-block:: java
    :copyable: true
@@ -172,7 +174,7 @@ time of 10 seconds (10,000 milliseconds):
 
 For a full list of available arguments, see the
 `API documentation <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html>`__
-for the ``FindPublisher``.
+for the ``FindPublisher`` interface.
 
 .. _java-rs-retrieve-additional-information:
 
