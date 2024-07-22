@@ -78,8 +78,8 @@ to omit it from the returned documents.
 
 .. _java-rs-project-remove-id:
 
-Exclude the ``_id`` Field
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Exclude the _id Field
+~~~~~~~~~~~~~~~~~~~~~
 
 You can exclude the ``_id`` field from returned documents by using the ``excludeId()`` method.
 
@@ -133,7 +133,7 @@ any unspecified fields are implicitly included in the return document.
 Projection Errors
 -----------------
 
-The following sections describes an error you might encounter when using projections.
+The following section describes an error you might encounter when using projections.
 
 Inclusion and Exclusion Error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
