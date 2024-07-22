@@ -101,7 +101,7 @@ the ``"cuisine"`` field has the value ``"Spanish"``:
            eq("cuisine", "Spanish"));
    List<Document> findResult = Flux.from(findDocPublisher).collectList().block();
 
-You can iterate over the documents you retrieved by using a ``for`` loop, as shown in
+You can use a ``for`` loop to iterate over the documents you retrieved, as shown in
 the following example:
 
 .. code-block:: java
