@@ -98,7 +98,7 @@ To update a single document in a MongoDB collection, call the ``updateOne()``
 method and pass your query filter and update operators. Then, pass the
 ``updateOne()`` result to the static ``Mono.from()`` method from
 ``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
-the driver methods return cold ``Publisher``s, which means that the
+the driver methods return cold ``Publishers``, which means that the
 corresponding operation does not happen unless you subscribe to the returned
 ``publisher``. This guide uses the Project Reactor library to consume them.To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
@@ -121,7 +121,7 @@ Update Multiple Documents
 To update multiple documents in a MongoDB collection, call the ``updateMany()``
 method and pass your query filter and update operators. Then, pass the ``updateMany()`` result to the static ``Mono.from()`` method from
 ``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
-the driver methods return cold ``Publisher``s, which means that the
+the driver methods return cold ``Publishers``, which means that the
 corresponding operation does not happen unless you subscribe to the returned
 ``publisher``. This guide uses the Project Reactor library to consume them.To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
