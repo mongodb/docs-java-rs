@@ -65,6 +65,7 @@ include only the ``name``, ``cuisine``, and ``borough`` fields from the returned
       :start-after: start-project-include
       :end-before: end-project-include
       :language: java
+      :dedent:
 
    .. output::
 
@@ -92,6 +93,7 @@ excludes the ``_id`` field in the returned documents:
       :start-after: start-project-include-without-id
       :end-before: end-project-include-without-id
       :language: java
+      :dedent:
 
    .. output::
 
@@ -121,6 +123,7 @@ exclude the ``grades`` and ``address`` fields from the returned documents.
       :start-after: start-project-exclude
       :end-before: end-project-exclude
       :language: java
+      :dedent:
 
    .. output:: 
 
