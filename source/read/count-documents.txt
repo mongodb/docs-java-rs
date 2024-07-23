@@ -125,8 +125,9 @@ The following table describes the options you can set to customize ``countDocume
 Modify Count Example
 ~~~~~~~~~~~~~~~~~~~~
 
-The following code uses the ``countDocuments()`` method to count the documents in the
-``restaurants`` collection. It also attaches a ``String`` comment to the operation.
+The following code uses the ``countDocuments()`` method to count all the documents in the
+``restaurants`` collection with a ``cuisine`` value of ``"Italian"``. It also
+attaches a ``String`` comment to the operation.
 
 .. code-block:: java
 
