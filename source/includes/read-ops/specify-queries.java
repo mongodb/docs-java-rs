@@ -59,7 +59,7 @@ public class QueryDatabase {
                     .append("qty", 3)
                     .append("rating", 5)
                     .append("color", "yellow");
-                    
+
             List<Document> documents = Arrays.asList(document1, document2, document3, document4);
 
             Publisher<InsertManyResult> insertPublisher = fruits.insertMany(documents);
@@ -71,65 +71,50 @@ public class QueryDatabase {
 
 # start-find-exact
 FindPublisher<Document> findDocPublisher = fruits.find(eq("color", "yellow"));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-}
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-exact
 
 # start-find-all
 FindPublisher<Document> findDocPublisher = fruits.find();
-List<Document> findResults = Flux.from(findDocPublisher)
-        .collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-}
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-all
 
 # start-find-comparison
 FindPublisher<Document> findDocPublisher = fruits.find(gt("rating", 2));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-}
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-comparison
     
 # start-find-logical
 FindPublisher<Document> findDocPublisher = fruits.find(
         or(gt("qty", 5), eq("color", "yellow")));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-} 
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-logical
 
 # start-find-array
 FindPublisher<Document> findDocPublisher = fruits.find(size("type", 2));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-} 
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-array
 
 # start-find-element
 FindPublisher<Document> findDocPublisher = fruits.find(exists("color", true));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-}
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-element
 
 # start-find-evaluation
 FindPublisher<Document> findDocPublisher = fruits.find(regex("name", "p{2,}"));
-List<Document> findResults = Flux.from(findDocPublisher).collectList().block();
-
-for (Document document : findResults) {
-    System.out.println(document);
-}
+Document findResults = Flux.from(findDocPublisher)
+         .doOnNext(System.out::println)
+         .blockLast();
 # end-find-evaluation
