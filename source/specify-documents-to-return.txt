@@ -23,16 +23,16 @@ Overview
 In this guide, you can learn how to specify which documents to return from a read
 operation by using the following methods:
 
-- ``limit()``: Specifies the maximum number of documents to return from a query.
-- ``sort()``: Specifies the sort order for the returned documents.
-- ``skip()``: Specifies the number of documents to skip before returning query results.
+- ``limit()``: Specifies the maximum number of documents to return from a query
+- ``sort()``: Specifies the sort order for the returned documents
+- ``skip()``: Specifies the number of documents to skip before returning query results
 
 Sample Data
 ~~~~~~~~~~~
 
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. To learn how to create a
-free MongoDB Atlas cluster and load the sample datasets, see the
+free MongoDB Atlas cluster and load the sample datasets, see
 :ref:`<java-rs-getting-started>`.
 
 .. include:: includes/reactor-note.rst
@@ -45,7 +45,7 @@ chain the ``limit()`` method to a ``find()`` method and pass the number
 of documents you want to return.
 
 The following example finds all restaurants that have a ``cuisine`` field value
-of ``"Italian"``, and limits the results to 5 documents:
+of ``"Italian"``, and limits the results to ``5`` documents:
 
 .. io-code-block::
 
@@ -65,24 +65,25 @@ of ``"Italian"``, and limits the results to 5 documents:
 .. tip::
 
    The preceding example returns the first five documents returned by the query, in
-   no particular order. The following section describes how to return the documents
-   in a specified sort order.
+   :manual:`natural order </reference/glossary/#std-term-natural-order>`. The
+   following section describes how to return the documents. The following
+   section describes how to return the documents in a specified sort order.
 
 .. _java-rs-sort:
 
 Sort
 ----
 
-To return documents in a specified order, chain the ``sort()`` method to a
-``find()`` method. The ``sort()`` method takes one parameter: a sort direction
-method. To specify the sort direction, pass either the ``ascending()`` or ``descending``
+To return documents in a specified order, chain the ``sort()`` method to the
+``find()`` method. The ``sort()`` method takes the sort direction
+method as a parameter. To specify the sort direction, pass either the ``ascending()`` or ``descending()``
 method to the ``sort()`` method. Then, pass the field value you want to sort by.
 The ``ascending()`` method sorts values from lowest to highest, and
 the ``descending()`` method sorts them from highest to lowest. If you don't specify either
-direction, the method defaults to sorting in ascending order.
+direction, the ``sort`` method returns the results in ascending order.
 
 The following example returns all documents with the ``cuisine`` value of
-``"Italian"``, sorted in ascending order:
+``"Italian"``, sorted by the ``name`` field in ascending order:
 
 .. io-code-block::
 
@@ -105,12 +106,12 @@ Skip
 ----
 
 To skip a specified number of documents before returning your query results,
-chain the ``skip()`` method to a ``find()`` method and pass the number of documents to skip. The
+chain the ``skip()`` method to the ``find()`` method and pass the number of documents to skip. The
 ``skip()`` method ignores the specified number of documents in your query
 results and returns the rest.
 
 The following example returns all documents that have a ``borough`` field value
-of ``"Manhattan"``, and skips the first 10 documents:
+of ``"Manhattan"``, and skips the first ``10`` documents:
 
 .. io-code-block::
 
@@ -170,10 +171,10 @@ API Documentation
 ~~~~~~~~~~~~~~~~~
 
 To learn more about any of the methods or types discussed in this
-guide, see the following API Documentation:
+guide, see the following API documentation:
 
-- `find() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#find()>`__
 - `FindPublisher <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html>`__
+- `find() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#find()>`__
 - `limit() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html#limit(int)>`__
 - `sort() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html#sort(org.bson.conversions.Bson)>`__
 - `skip() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html#skip(int)>`__
