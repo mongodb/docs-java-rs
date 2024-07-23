@@ -73,8 +73,8 @@ the ``"cuisine"`` field has the value ``"Bakery"``:
    Publisher<Document> findDocPublisher = restaurants.find(
        eq("cuisine", "Bakery")).first();
    Flux.from(findDocPublisher)
-            .doOnNext(System.out::println)
-            .blockLast();
+           .doOnNext(System.out::println)
+           .blockLast();
    
 .. tip:: Sort Order
 
@@ -102,8 +102,8 @@ the ``"cuisine"`` field has the value ``"Spanish"``:
    FindPublisher<Document> findDocPublisher = restaurants.find(
            eq("cuisine", "Spanish"));
    Flux.from(findDocPublisher)
-            .doOnNext(System.out::println)
-            .blockLast();   
+           .doOnNext(System.out::println)
+           .blockLast();   
 
 .. note:: Find All Documents
 
@@ -112,9 +112,9 @@ the ``"cuisine"`` field has the value ``"Spanish"``:
    .. code-block:: java
 
       Publisher<Document> findAllPublisher = restaurants.find();
-         Flux.from(findAllPublisher)
-            .doOnNext(System.out::println)
-            .blockLast();
+      Flux.from(findAllPublisher)
+              .doOnNext(System.out::println)
+              .blockLast();
       
 
 Modify Find Behavior
@@ -162,8 +162,8 @@ time of 10 seconds:
    FindPublisher<Document> findDocPublisher = restaurants.find(
            eq("cuisine", "Italian")).maxTime(10L, TimeUnit.SECONDS);
    Flux.from(findDocPublisher)
-            .doOnNext(System.out::println)
-            .blockLast();
+           .doOnNext(System.out::println)
+           .blockLast();
 
 For a full list of available arguments, see the
 `API documentation <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/FindPublisher.html>`__
