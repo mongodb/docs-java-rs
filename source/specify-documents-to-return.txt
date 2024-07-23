@@ -65,8 +65,7 @@ of ``"Italian"``, and limits the results to ``5`` documents:
 .. tip::
 
    The preceding example returns the first five documents returned by the query, in
-   :manual:`natural order </reference/glossary/#std-term-natural-order>`. The
-   following section describes how to return the documents. The following
+   :manual:`natural order </reference/glossary/#std-term-natural-order>`. The following
    section describes how to return the documents in a specified sort order.
 
 .. _java-rs-sort:
