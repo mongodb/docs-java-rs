@@ -55,7 +55,7 @@ There are also other ways to consume ``Publishers``. You can use one of many alt
 by calling ``Publisher.subscribe()`` directly and passing your own
 implementation of a ``Subscriber``.
 
-This guide uses the ``Flux.block()`` and ``Flux.blockLast()`` methods from Reactor to subscribe to a ``Publisher`` and block the current
+This guide uses the ``Flux.blockLast()`` method from Reactor to subscribe to a ``Publisher`` and block the current
 thread until the ``Publisher`` reaches its terminal state. To learn more about the Reactive Streams initiative, see `Reactive Streams <https://www.reactive-streams.org/>`__.
 
 .. important:: Publishers Returned are Cold
@@ -74,7 +74,7 @@ thread until the ``Publisher`` reaches its terminal state. To learn more about t
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 41-43
+   :emphasize-lines: 44-46
 
 Find One
 --------
@@ -85,7 +85,8 @@ Find One
    :language: java
    :copyable:
 
-To learn more about the ``find().first()`` construct, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+.. TODO:
+.. To learn more about the ``find().first()`` construct, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
 
 Find Multiple
 -------------
@@ -96,7 +97,8 @@ Find Multiple
    :language: java
    :copyable:
 
-To learn more about the ``find()`` method, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+.. TODO:
+.. To learn more about the ``find()`` method, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
 
 Count Documents in a Collection
 -------------------------------
@@ -107,7 +109,8 @@ Count Documents in a Collection
    :language: java
    :copyable:
 
-To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+.. TODO:
+.. To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Count Documents Returned from a Query
 -------------------------------------
@@ -118,7 +121,8 @@ Count Documents Returned from a Query
    :language: java
    :copyable:
 
-To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+.. TODO:
+.. To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Estimated Document Count
 ------------------------
@@ -129,7 +133,8 @@ Estimated Document Count
    :language: java
    :copyable:
 
-To learn more about the ``estimatedDocumentCount()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+.. TODO:
+.. To learn more about the ``estimatedDocumentCount()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Retrieve Distinct Values
 ------------------------
