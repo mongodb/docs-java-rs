@@ -129,7 +129,8 @@ The following example returns the number of documents in the specified collectio
 Count Documents Returned from a Query
 -------------------------------------
 
-The following example returns the number of documents that match the criteria specified by
+The following example returns the number of documents in the specified
+collection that match the criteria specified by
 the given filter:
 
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
