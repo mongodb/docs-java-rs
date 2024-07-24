@@ -100,7 +100,7 @@ method and pass your query filter and update operators. Then, pass the
 ``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
 the driver methods return cold ``Publishers``, which means that the
 corresponding operation does not happen unless you subscribe to the returned
-``Publisher``. This guide uses the Project Reactor library to consume them.To learn more
+``Publisher``. This guide uses the Project Reactor library to consume them. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
