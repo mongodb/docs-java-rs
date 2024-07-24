@@ -1,0 +1,156 @@
+.. _java-rs-read:
+
+======================
+Read Data From MongoDB
+======================
+
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 2
+   :class: singlecol
+
+.. facet::
+   :name: genre
+   :values: reference
+ 
+.. meta::
+   :description: Learn how to use the {+driver-short+} to read data from MongoDB.
+   :keywords: usage examples, see, crud, access, code example
+
+.. TODO: change toctree links when other pages are merged in.
+.. .. toctree::
+..    :titlesonly:
+..    :maxdepth: 1
+
+..    /read/specify-query
+..    /read/retrieve-data
+..    /read/specify-fields
+..    /read/specify-documents
+..    /read/count-documents
+
+Overview
+--------
+
+This page contains copyable code examples of {+driver-short+} methods that you can use to
+read data from MongoDB.
+
+.. tip::
+
+  To learn more about any of the methods shown on this page, see the link
+  provided in each section.
+
+To use an example from this page, copy the code example into the
+:ref:`sample application <java-rs-read-sample>` or your own application.
+Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
+the relevant values for your MongoDB deployment.
+
+This guide uses the Project Reactor library to consume ``Publishers`` returned
+by the {+driver-short+} methods. To learn more about the Project Reactor library
+and how to use it, see `Getting Started <https://projectreactor.io/docs/core/release/reference/#getting-started>`__
+in the Reactor documentation. 
+
+There are also other ways to consume ``Publishers``. You can use one of many alternative libraries such as
+`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publishers``, or consume ``Publishers``
+by calling ``Publisher.subscribe()`` directly and passing your own
+implementation of a ``Subscriber``.
+
+This guide uses the ``Flux.block()`` and ``Flux.blockLast()`` methods from Reactor to subscribe to a ``Publisher`` and block the current
+thread until the ``Publisher`` reaches its terminal state. To learn more about the Reactive Streams initiative, see `Reactive Streams <https://www.reactive-streams.org/>`__.
+
+.. important:: Publishers Returned are Cold
+
+   All ``Publishers`` returned by the {+driver-short+} methods are cold,
+   which means that the corresponding operation does not happen unless you
+   subscribe to the returned ``Publisher``. We recommend only subscribing to 
+   the returned ``Publisher`` once, because subscribing more than once can lead
+   to errors. 
+   
+.. _java-rs-read-sample:
+
+.. include:: /includes/usage-examples/sample-read-app-intro.rst
+
+.. literalinclude:: /includes/usage-examples/sample-read-application.java
+   :language: java
+   :copyable:
+   :linenos:
+   :emphasize-lines: 41-43
+
+Find One
+--------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-find-one
+   :end-before: end-find-one
+   :language: java
+   :copyable:
+
+To learn more about the ``find().first()`` construct, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+
+Find Multiple
+-------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-find-multiple
+   :end-before: end-find-multiple
+   :language: java
+   :copyable:
+
+To learn more about the ``find()`` method, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+
+Count Documents in a Collection
+-------------------------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-count-collection
+   :end-before: end-count-collection
+   :language: java
+   :copyable:
+
+To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+
+Count Documents Returned from a Query
+-------------------------------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-count-documents
+   :end-before: end-count-documents
+   :language: java
+   :copyable:
+
+To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+
+Estimated Document Count
+------------------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-estimate-count
+   :end-before: end-estimate-count
+   :language: java
+   :copyable:
+
+To learn more about the ``estimatedDocumentCount()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+
+Retrieve Distinct Values
+------------------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-retrieve-distinct
+   :end-before: end-retrieve-distinct
+   :language: java
+   :copyable:
+
+.. TODO:
+.. To learn more about the ``distinct()`` method, see the :ref:`Retrieve Distinct Values of a Field <java-rs-retrieve-distinct>` guide.
+
+Monitor Data Changes
+--------------------
+
+.. literalinclude:: /includes/usage-examples/read-code-examples.java
+   :start-after: start-monitor-changes
+   :end-before: end-monitor-changes
+   :language: java
+   :copyable:
+
+.. TODO:
+.. To learn more about the ``watch()`` method, see the :ref:`Watch For Changes <java-rs-watch-changes>` guide.
