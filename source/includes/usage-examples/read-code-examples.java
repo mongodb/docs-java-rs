@@ -43,7 +43,7 @@ Flux.from(countPublisher)
 
 // start-retrieve-distinct
 DistinctPublisher<String> distinctPublisher = collection.distinct(
-           "<field name>", "<type.class>");
+           "<field name>", <type>.class);
 
 Flux.from(distinctPublisher)
         .doOnNext(System.out::println)

@@ -15,7 +15,7 @@ Read Data From MongoDB
    :values: reference
  
 .. meta::
-   :description: Learn how to use the {+driver-short+} to read data from MongoDB.
+   :description: Learn how to use the Java Reactive Streams driver to read data from MongoDB.
    :keywords: usage examples, see, crud, access, code example
 
 .. TODO: change toctree links when other pages are merged in.
@@ -45,22 +45,25 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
 the relevant values for your MongoDB deployment.
 
-This guide uses the Project Reactor library to consume ``Publishers`` returned
+Project Reactor Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This guide uses the Project Reactor library to consume ``Publisher`` instances returned
 by the {+driver-short+} methods. To learn more about the Project Reactor library
 and how to use it, see `Getting Started <https://projectreactor.io/docs/core/release/reference/#getting-started>`__
 in the Reactor documentation. 
 
-There are also other ways to consume ``Publishers``. You can use one of many alternative libraries such as
-`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publishers``, or consume ``Publishers``
-by calling ``Publisher.subscribe()`` directly and passing your own
+There are also other ways to consume ``Publisher`` instances. You can use one of many alternative libraries such as
+`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publisher``
+instances, or consume ``Publisher`` instances by calling ``Publisher.subscribe()`` directly and passing your own
 implementation of a ``Subscriber``.
 
-This guide uses the ``Flux.blockLast()`` method from Reactor to subscribe to a ``Publisher`` and block the current
+The examples in this guide use the ``Flux.blockLast()`` method from Reactor to subscribe to a ``Publisher`` and block the current
 thread until the ``Publisher`` reaches its terminal state. To learn more about the Reactive Streams initiative, see `Reactive Streams <https://www.reactive-streams.org/>`__.
 
 .. important:: Publishers Returned are Cold
 
-   All ``Publishers`` returned by the {+driver-short+} methods are cold,
+   All ``Publisher`` instances returned by the {+driver-short+} methods are cold,
    which means that the corresponding operation does not happen unless you
    subscribe to the returned ``Publisher``. We recommend only subscribing to 
    the returned ``Publisher`` once, because subscribing more than once can lead
@@ -68,16 +71,22 @@ thread until the ``Publisher`` reaches its terminal state. To learn more about t
    
 .. _java-rs-read-sample:
 
+Sample Application
+~~~~~~~~~~~~~~~~~~
+
 .. include:: /includes/usage-examples/sample-read-app-intro.rst
 
 .. literalinclude:: /includes/usage-examples/sample-read-application.java
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 44-46
+   :emphasize-lines: 45-47
 
 Find One
 --------
+
+The following example retrieves a document that matches the criteria specified by the
+given filter:
 
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-find-one
@@ -91,6 +100,9 @@ Find One
 Find Multiple
 -------------
 
+The following example retrieves all documents that match the criteria specified by the
+given filter:
+
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-find-multiple
    :end-before: end-find-multiple
@@ -102,6 +114,8 @@ Find Multiple
 
 Count Documents in a Collection
 -------------------------------
+
+The following example returns the number of documents in the specified collection:
 
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-count-collection
@@ -115,6 +129,9 @@ Count Documents in a Collection
 Count Documents Returned from a Query
 -------------------------------------
 
+The following example returns the number of documents that match the criteria specified by
+the given filter:
+
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-count-documents
    :end-before: end-count-documents
@@ -126,6 +143,9 @@ Count Documents Returned from a Query
 
 Estimated Document Count
 ------------------------
+
+The following example returns an approximate number of documents in the specified
+collection based on collection metadata:
 
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-estimate-count
@@ -139,6 +159,9 @@ Estimated Document Count
 Retrieve Distinct Values
 ------------------------
 
+The following example returns all distinct values of the specified field name in a given
+collection:
+
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-retrieve-distinct
    :end-before: end-retrieve-distinct
@@ -150,6 +173,9 @@ Retrieve Distinct Values
 
 Monitor Data Changes
 --------------------
+
+The following example creates a change stream for a given collection and prints out
+subsequent change events in that collection:
 
 .. literalinclude:: /includes/usage-examples/read-code-examples.java
    :start-after: start-monitor-changes

@@ -41,6 +41,7 @@ class ReadOperations {
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             MongoDatabase database = mongoClient.getDatabase("<database name>");
             MongoCollection<Document> collection = database.getCollection("<collection name>");
+
             // Start example code here
 
             // End example code here
