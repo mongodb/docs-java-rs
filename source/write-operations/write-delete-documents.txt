@@ -65,7 +65,7 @@ about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference
 {+pr+} documentation.
 
 The following example deletes a document from the ``restaurants`` collection
-that have a ``name`` value of ``"Ready Penny Inn"``:
+that has a ``name`` value of ``"Ready Penny Inn"``:
 
 .. code-block:: java
    :copyable: true
