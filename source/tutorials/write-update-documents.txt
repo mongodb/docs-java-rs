@@ -15,13 +15,13 @@ Update Documents
    :values: reference
 
 .. meta::
-   :keywords: code examples, write, change, edit
+   :keywords: code examples, write, change, edit, new
 
 Overview
 --------
 
-In this guide, you can learn how to use the {+driver-short+} to delete
-documents from a MongoDB collection by performing update operations.
+In this guide, you can learn how to use the {+driver-short+} to update
+documents in a MongoDB collection by performing update operations.
 
 An update operation updates one or more documents in a MongoDB collection.
 You can perform an update operation by using the ``updateOne()`` or
@@ -33,17 +33,10 @@ Sample Data
 The examples in this guide use the ``restaurants`` collection
 from the ``sample_restaurants`` database in the :atlas:`Atlas sample datasets </sample-data>`. 
 
-.. TODO:
-.. Once get started ticket merged in, link the get started tutorial below
+To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
+:ref:`<java-rs-getting-started>` tutorial.
 
-.. To learn how to create a
-.. free MongoDB Atlas cluster and load the sample datasets, see the
-.. :ref:`<java-rs-getting-started>` tutorial.
-
-.. TODO: When write insert methods merged in, add subscriber methods section includes within subscriber methods section
-
-.. Subscriber Methods
-.. ~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/reactor-note.rst
 
 Update Operations
 -----------------
@@ -55,11 +48,11 @@ You can perform update operations in MongoDB by using the following methods:
 
 Each update method requires the following parameters:
 
-- A query filter document, which determines the documents to update. For more
+- **Query filter** document, which determines the documents to update. For more
   information about using query filters, see the :ref:`Filters
   <java-rs-update-filters>` section.
 
-- An update document, which specifies the update operator (the kind of update to
+- **Update** document, which specifies the update operator (the kind of update to
   perform) and the fields and values to change. For more information
   about update operators, see the :ref:`Update Operators
   <java-rs-update-operators>` section.
@@ -101,42 +94,50 @@ To learn more about update operators, see
 Update One Document
 -------------------
 
-To update a single document from a MongoDB collection, call the ``updateOne()``
-method and pass your query filter as the first argument. Then, pass your
-update operators as the second argument to the ``updateOne()`` method. After you call the
-``updateOne()`` method, chain the ``subscribe()`` method and pass a subscriber
-as an argument.
+To update a single document in a MongoDB collection, call the ``updateOne()``
+method and pass your query filter and update operators. Then, pass the
+``updateOne()`` result to the static ``Mono.from()`` method from
+``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
+the driver methods return cold ``Publishers``, which means that the
+corresponding operation does not happen unless you subscribe to the returned
+``Publisher``. This guide uses the Project Reactor library to consume them. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
-The following example uses ``Updates.set()`` to update the ``name``
+The following example uses the ``updateOne()`` method to update the ``name``
 value of a matching document from ``"Bagels N Buns"`` to ``"2 Bagels 2 Buns"``:
 
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber<UpdateResult> updateOneSubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.updateOne(eq("name", "Bagels N Buns"), set("name", "2
-    Bagels 2 Buns")).subscribe(updateOneSubscriber);
-    updateOneSubscriber.await();
+    Publisher<UpdateResult> updatePublisher = 
+            restaurants.updateOne(eq("name", "Bagels N Buns"),
+                    set("name", "2 Bagels 2 Buns"));
+    Mono.from(updatePublisher).block();
 
 Update Multiple Documents
 -------------------------
 
-To update multiple documents from a MongoDB collection, call the ``updateMany()``
-method and pass your query filter. Then, pass your
-update operators as the second argument to the ``updateMany()`` method. After you call the
-``updateMany()`` method, chain the ``subscribe()`` method and pass a subscriber
-as an argument.
+To update multiple documents in a MongoDB collection, call the ``updateMany()``
+method and pass your query filter and update operators. Then, pass the ``updateMany()`` result to the static ``Mono.from()`` method from
+``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
+the driver methods return cold ``Publishers``, which means that the
+corresponding operation does not happen unless you subscribe to the returned
+``Publisher``. This guide uses the Project Reactor library to consume them. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
+Reactor documentation.
 
-The following example updates all documents that have a ``cuisine`` value of
+The following example uses the ``updateMany()`` method to update all documents that have a ``cuisine`` value of
 ``"Pizza"`` to have a ``cuisine`` value of ``"Pasta"``:
 
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber<UpdateResult> updateManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.updateMany(eq("cuisine", "Pizza"), set("cuisine", "Pasta")).subscribe(updateManySubscriber);
-    updateManySubscriber.await();
-
+    Publisher<UpdateResult> updatePublisher = 
+            restaurants.updateMany(eq("cuisine", "Pizza"),
+                    set("cuisine", "Pasta"));
+    Mono.from(updatePublisher).block();
+    
 Customize the Update Operation
 ------------------------------
 
@@ -216,14 +217,15 @@ value in these documents to ``"Manhattan (north)"``. Because the ``upsert`` opti
 set to ``true``, the {+driver-short+} inserts a new document if the query filter doesn't 
 match any existing documents.
 
-
 .. code-block:: java
    :copyable: true
 
-    ObservableSubscriber <UpdateResult> updateManySubscriber = new SubscriberHelpers.OperationSubscriber<>();
-    restaurants.updateMany(eq("borough", "Manhattan"), set("borough", "Manhattan
-    (north)"), new UpdateOptions().upsert(true)).subscribe(updateManySubscriber);
-    updateManySubscriber.await();
+    Publisher<UpdateResult> updatePublisher = restaurants.updateMany(
+            eq("borough", "Manhattan"),
+            set("borough", "Manhattan (north)"),
+            new UpdateOptions().upsert(true));
+    Mono.from(updatePublisher).block();
+
 
 Return Value
 ------------
@@ -280,19 +282,3 @@ guide, see the following API documentation:
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/bson/org/bson/BsonValue.html>`__
 - `Collation
   <https://mongodb.github.io/mongo-java-driver/5.1/apidocs/mongodb-driver-core/com/mongodb/client/model/Collation.html>`__
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
