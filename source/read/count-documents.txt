@@ -26,7 +26,7 @@ number of documents in a collection.
 .. _java-rs-accurate-count:
 
 Retrieve an Exact Count
---------------------------
+-----------------------
 
 Use the ``countDocuments()`` method to count the number of documents in a
 collection. To count the number of documents that match specific search
@@ -71,8 +71,6 @@ to modify the count operation. You can chain these method calls together.
 
 To modify the behavior of the count operation, pass the class instance and
 chained method calls as the last argument to the ``countDocuments()`` method. 
-If you don't specify any options, the driver executes the count operation
-without any modified behavior.
 
 The following table describes the methods in the ``CountOptions`` class:
 
@@ -121,7 +119,7 @@ The following table describes the methods in the ``CountOptions`` class:
    * - ``skip(int skip)``
      - | Sets the number of documents the query skips before returning results.
          For more information, see :manual:`skip </reference/method/cursor.skip/#cursor.skip>` in the
-         {+mdb-server+} manual
+         {+mdb-server+} manual.
 
 
 Modify Count Example
@@ -171,8 +169,6 @@ to modify the count operation. You can chain these method calls together.
 
 To modify the behavior of the count operation, pass the class instance and
 chained method calls as the only argument to the ``estimatedDocumentCount()`` method. 
-If you don't specify any options, the driver executes the count operation
-without any modified behavior.
 
 The following table describes the options you can set to customize ``estimatedDocumentCount()``:
 
