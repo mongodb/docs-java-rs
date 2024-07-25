@@ -27,8 +27,6 @@ A replace operation replaces one document in a MongoDB collection with new
 fields and values that you specify. You can perform a replace operation by using
 the ``replaceOne()`` method.
 
-.. include:: /includes/reactor-note.rst
-
 Sample Data
 ~~~~~~~~~~~
 
@@ -37,6 +35,8 @@ from the :atlas:`Atlas sample datasets </sample-data>`.
 
 To learn how to create a free MongoDB Atlas cluster and load the sample
 datasets, see the :ref:`<java-rs-getting-started>` tutorial.
+
+.. include:: /includes/reactor-note.rst
 
 Replace Operation
 -----------------
@@ -53,7 +53,6 @@ The ``replaceOne()`` method requires the following parameters:
 
 - **Query filter** document, which determines which documents to replace.
 
-
 .. TODO: add link to read query filters 
 .. For more information about query filters, see :ref: <java-rs-query-filters>.
 
@@ -64,11 +63,14 @@ Replace Example
 ---------------
 
 To replace a single document in a MongoDB collection, call the ``replaceOne()`` method
-and pass the query filter document and the replace document as parameters. Then, pass the ``replaceOne()`` result to the static
-``Mono.from()`` method from the ``Mono Publisher`` class. The ``Mono Publisher`` is a
-``Publisher`` implementation from the {+pr+} library. In {+java-rs+}, you must use
-``Publisher`` implementations to control how data is transmitted in your
-application. To learn more about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the {+pr+} documentation.
+and pass the query filter document and the replace document as parameters. Then, 
+pass the ``replaceOne()`` result to the static ``Mono.from()`` method from
+``Mono``. ``Mono`` is a class from the {+pr+} library. In {+java-rs+}, 
+the driver methods return cold ``Publisher`` instances, which means that the
+corresponding operation does not happen unless you subscribe to the returned
+``Publisher``. This guide uses the {+pr+} library to consume them. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the
+{+pr+} documentation.
 
 The following example uses the ``replaceOne()`` method to replace the fields and values of a
 document with a ``name`` field value of ``"Pizza Town"``. The ``replaceOne()``

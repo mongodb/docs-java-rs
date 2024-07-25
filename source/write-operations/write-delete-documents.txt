@@ -33,19 +33,10 @@ Sample Data
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. 
 
-.. include:: /includes/reactor-note.rst
+To learn how to create a free MongoDB Atlas cluster and load the sample datasets, see the
+:ref:`<java-rs-getting-started>` tutorial.
 
-.. TODO:
-.. Once get started ticket merged in, link the get started tutorial below
-
-.. To learn how to create a
-.. free MongoDB Atlas cluster and load the sample datasets, see the
-.. :ref:`<java-rs-getting-started>` tutorial.
-
-.. TODO: When write insert methods merged in, add subscriber methods section includes within subscriber methods section
-
-.. Subscriber Methods
-.. ~~~~~~~~~~~~~~~~~~~
+.. include:: /includes/reactor-note.rst 
 
 Delete Operations
 -----------------
@@ -66,13 +57,15 @@ Delete One Document
 
 To delete a single document from a MongoDB collection, call the ``deleteOne()``
 method and pass in your query filter. Then, pass the ``deleteOne()`` result to the static
-``Mono.from`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
-``Publisher`` implementation from the Project Reactor library. To learn more
-about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
-Reactor documentation.
+``Mono.from`` method from ``Mono``. ``Mono`` is a class from the {+pr+} library. In {+java-rs+}, 
+the driver methods return cold ``Publisher`` instances, which means that the
+corresponding operation does not happen unless you subscribe to the returned
+``Publisher``. This guide uses the {+pr+} library to consume them. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the
+{+pr+} documentation.
 
 The following example deletes a document from the ``restaurants`` collection
-that have a ``name`` value of ``"Ready Penny Inn"``:
+that has a ``name`` value of ``"Ready Penny Inn"``:
 
 .. code-block:: java
    :copyable: true
@@ -86,10 +79,12 @@ Delete Multiple Documents
 
 To delete multiple documents from a MongoDB collection, call the ``deleteMany()``
 method and pass in your query filter. Then, pass the ``deleteMany()`` result to the static
-``Mono.from`` method from the ``Mono Publisher``. The ``Mono Publisher`` is a
-``Publisher`` implementation from the Project Reactor library. To learn more
-about the ``Mono`` class, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
-Reactor documentation.
+``Mono.from`` method from ``Mono``. ``Mono`` is a class from the {+pr+} library. In {+java-rs+}, 
+the driver methods return cold ``Publisher`` instances, which means that the
+corresponding operation does not happen unless you subscribe to the returned
+``Publisher``. This guide uses the {+pr+} library to consume them. To learn more
+about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the
+{+pr+} documentation.
 
 The following example removes all documents in the ``restaurants`` collection
 that have a ``borough`` value of ``"Brooklyn"``:
@@ -159,7 +154,7 @@ Example
 
 The following code uses the ``deleteMany()`` method to delete all documents in
 the ``restaurants`` collection with a ``name`` value that includes the string ``"Mongo"``.
-It also uses the ``comment`` method to add a comment to the operation:
+It also uses the ``comment`` method to add a comment to the operation.
 
 .. code-block:: java
    :copyable: true
