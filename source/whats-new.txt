@@ -4,6 +4,12 @@
 What's New
 ==========
 
+.. contents:: On this page
+   :local:
+   :backlinks: none
+   :depth: 1
+   :class: singlecol
+
 .. facet::
    :name: genre
    :values: reference
@@ -11,16 +17,11 @@ What's New
 .. meta::
    :keywords: update, new feature, deprecation, upgrade
 
-.. contents:: On this page
-   :local:
-   :backlinks: none
-   :depth: 1
-   :class: singlecol
-
-Learn about new features, improvements, and fixes introduced in the
-following versions of the {+driver-long+}:
+Learn what's new in:
 
 * :ref:`Version 5.1 <javars-version-5.1>`
+
+.. _upcoming-breaking-changes:
 
 .. _javars-version-5.1:
 
