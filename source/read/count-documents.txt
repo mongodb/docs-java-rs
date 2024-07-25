@@ -53,7 +53,7 @@ method and pass in no parameters, as shown in the following example:
 .. code-block:: java
 
    Publisher<Long> countPublisher = restaurants.countDocuments();
-   Flux.from(countPublisher).doOnNext(System.out::println).blockLast();
+   Mono.from(countPublisher).doOnNext(System.out::println).blockLast();
 
 Count Specific Documents
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +66,7 @@ learn more about how to specify a query, see :ref:`java-rs-specify-query`.
    
    Publisher<Long> countPublisher = restaurants.countDocuments(
            eq("cuisine", "Italian"));
-   Flux.from(countPublisher)
+   Mono.from(countPublisher)
            .doOnNext(System.out::println)
            .blockLast();
 
@@ -145,7 +145,7 @@ attaches the comment ``"Count all Italian restaurants"`` to the operation as a `
            eq("cuisine", "Italian"),
           new CountOptions().comment("Count all Italian restaurants"));
 
-   Flux.from(countPublisher)
+   Mono.from(countPublisher)
            .doOnNext(System.out::println)
            .blockLast();
 
@@ -164,7 +164,7 @@ The following example estimates the number of documents in a collection:
 .. code-block:: java
    
    Publisher<Long> countPublisher = restaurants.estimatedDocumentCount();
-   Flux.from(countPublisher)
+   Mono.from(countPublisher)
            .doOnNext(System.out::println)
            .blockLast();
 
@@ -217,7 +217,7 @@ count of documents in the ``restaurants`` collection. It also attaches
            new EstimatedDocumentCountOptions()
                    .comment("Estimated count of all documents"));
 
-   Flux.from(countPublisher)
+   Mono.from(countPublisher)
            .doOnNext(System.out::println)
            .blockLast();
 
