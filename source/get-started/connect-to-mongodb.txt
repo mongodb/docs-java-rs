@@ -77,6 +77,3 @@ uses the driver to connect to your MongoDB deployment, queries the database,
 and prints out the result.
 
 .. include:: /includes/get-started/quickstart-troubleshoot.rst
-
-.. button:: Next Steps
-   :uri: /get-started/next-steps

@@ -108,6 +108,3 @@ After you complete these steps, you have a new project
 and the driver dependencies installed.
 
 .. include:: /includes/get-started/quickstart-troubleshoot.rst
-
-.. button:: Create a MongoDB Deployment
-   :uri: /get-started/create-a-deployment/
