@@ -270,10 +270,10 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
    * - Property
      - Description
 
-   * - ``acknowledged(int insertedCount, int matchedCount, 
-                      int removedCount, Integer modifiedCount, 
-                      List<BulkWriteUpsert> upserts,
-                      List<BulkWriteInsert> inserts))``
+   * - ``acknowledged(int insertedCount, int matchedCount,`` 
+                      ``int removedCount, Integer modifiedCount,``
+                      ``List<BulkWriteUpsert> upserts,``
+                      ``List<BulkWriteInsert> inserts))``
      - | Indicates if the server acknowledged the write operation.
          
    * - ``getDeletedCount()``
