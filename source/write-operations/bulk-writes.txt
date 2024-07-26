@@ -277,7 +277,7 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
            int matchedCount,
            int removedCount, Integer modifiedCount,
            List<BulkWriteUpsert> upserts,
-           List<BulkWriteInsert> inserts))
+           List<BulkWriteInsert> inserts)
 
      - | Indicates if the server acknowledged the write operation.
          
