@@ -264,7 +264,7 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
 ``BulkWriteResult`` object contains the following properties.
 
 .. list-table::
-   :widths: 30 70
+   :widths: 50 50
    :header-rows: 1
 
    * - Property
@@ -273,10 +273,11 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
    * - .. code-block:: none
           :copyable: false
 
-          ``acknowledged(int insertedCount, int matchedCount,
-                      int removedCount, Integer modifiedCount,
-                      List<BulkWriteUpsert> upserts,
-                      List<BulkWriteInsert> inserts))``
+           acknowledged(int insertedCount,
+           int matchedCount,
+           int removedCount, Integer modifiedCount,
+           List<BulkWriteUpsert> upserts,
+           List<BulkWriteInsert> inserts))
 
      - | Indicates if the server acknowledged the write operation.
          
