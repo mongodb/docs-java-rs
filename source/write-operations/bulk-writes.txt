@@ -280,6 +280,19 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
            List<BulkWriteInsert> inserts)
 
      - | Indicates if the server acknowledged the write operation.
+   
+   * - .. code-block:: none
+          :copyable: false
+
+           acknowledged(com.mongodb
+           .internal.bulk
+           .WriteRequest.Type type,
+           int count,
+           Integer modifiedCount,
+           List<BulkWriteUpsert> upserts,
+           List<BulkWriteInsert> inserts)
+
+     - | Indicates if the server acknowledged the write operation.
          
    * - ``getDeletedCount()``
      - | Gets the number of documents deleted, if any.
