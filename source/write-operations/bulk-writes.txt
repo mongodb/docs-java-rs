@@ -77,7 +77,7 @@ To update a document, create an instance of ``UpdateOneModel`` and pass in
 the following arguments:
 
 - **Query filter** that specifies the criteria used to match documents in your collection
--  **Update operation** you want to perform. For more information about update
+- **Update operation** you want to perform. For more information about update
   operations, see the :manual:`Field Update Operators
   </reference/operator/update-field/>` guide in the {+mdb-server+} manual.
 
@@ -343,5 +343,5 @@ guide, see the following API Documentation:
 - `ReplaceOneModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/ReplaceOneModel.html>`__
 - `DeleteOneModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/DeleteOneModel.html>`__
 - `DeleteManyModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/DeleteManyModel.html>`__
-- `BulkWriteResult <{+api}/mongodb-driver-core/com/mongodb/bulk/BulkWriteResult.html>`__
+- `BulkWriteResult <{+api+}/mongodb-driver-core/com/mongodb/bulk/BulkWriteResult.html>`__
 - `BulkWriteError <{+api+}/mongodb-driver-core/com/mongodb/bulk/BulkWriteError.html>`__
