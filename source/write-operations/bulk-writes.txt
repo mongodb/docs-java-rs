@@ -24,8 +24,7 @@ In this guide, you can learn how to perform multiple write operations in a singl
 Consider a scenario in which you want to insert a document into a collection,
 update multiple other documents, then delete a document. If you use
 individual methods, each operation requires its own database call. This guide
-shows you how to use bulk write operations to perform multiple write operations
-in a single database call.
+shows you how to use bulk write operations to reduce the number of calls to the database.
 
 Sample Data
 ~~~~~~~~~~~

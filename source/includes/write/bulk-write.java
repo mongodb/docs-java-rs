@@ -60,7 +60,7 @@ class BulkWrite {
             // end-bulk-update-one
 
             // start-bulk-update-many
-            UpdateOneModel<Document> operation = new UpdateManyModel<>(
+            UpdateManyModel<Document> operation = new UpdateManyModel<>(
                     eq("name", "Mongo's Deli"),
                     set("cuisine", "Sandwiches and Salads"));
             // end-bulk-update-many
