@@ -19,6 +19,7 @@ Bulk Write Operations
 
 Overview
 --------
+In this guide, you can learn how to perform multiple write operations in a single database call by using **bulk write operations**.
 
 Consider a scenario in which you want to insert a document into a collection,
 update multiple other documents, then delete a document. If you use
@@ -76,7 +77,7 @@ Update Operations
 To update a document, create an instance of ``UpdateOneModel`` and pass in
 the following arguments:
 
-- **Query filter** that specifies the criteria used to match documents in your collection
+- **Query filter** that specifies the criteria used to match documents in your collection.
 - **Update operation** you want to perform. For more information about update
   operations, see the :manual:`Field Update Operators
   </reference/operator/update-field/>` guide in the {+mdb-server+} manual.
@@ -122,7 +123,7 @@ The following example creates an instance of ``ReplaceOneModel``:
    :copyable:
    :dedent:
 
-To replace multiple documents, you must create an instance of ``ReplaceOneModel`` for each document.
+To replace multiple documents, create an instance of ``ReplaceOneModel`` for each document.
 
 Delete Operations
 ~~~~~~~~~~~~~~~~~
@@ -141,7 +142,7 @@ The following example creates an instance of ``DeleteOneModel``:
    :dedent:
 
 To delete multiple documents, create an instance of ``DeleteManyModel`` and pass in a
-query filter specifying the document you want to delete. ``DeleteManyModel`` removes
+query filter specifying the documents you want to delete. ``DeleteManyModel`` removes
 *all* documents that match your query filter.
 
 The following example creates an instance of ``DeleteManyModel``:
@@ -165,27 +166,27 @@ The following example performs multiple write operations by using the
 ``bulkWrite()`` method:
 
 .. io-code-block::
+   :copyable: 
 
    .. input:: /includes/write/bulk-write.java
       :start-after: start-bulk-write-mixed
       :end-before: end-bulk-write-mixed
       :language: java
-      :copyable:
       :dedent:
 
    .. output::
       
-      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=2, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a3cebad6d5d5070c7883e3}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a3cebad6d5d5070c7883e4}}]}
+      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=5, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e0a6c08025218b657208}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e0a6c08025218b657209}}]}
 
 If any of the write operations fail, the {+driver-short+} raises a
 ``BulkWriteError`` and does not perform any further operations.
 ``BulkWriteError`` provides a ``details`` attribute that includes the operation
-that failed, and details about the exception.
+that failed and details about the exception.
 
 .. note::
 
    When the {+driver-short+} runs a bulk operation, it uses the ``writeConcern`` of the
-   collection in which the operation is running. The driver reports all write
+   collection on which the operation is running. The driver reports all write
    concern errors after attempting all operations, regardless of execution order. 
 
 Customize Bulk Write Operations
@@ -194,19 +195,19 @@ Customize Bulk Write Operations
 The ``BulkWriteOptions`` class contains methods that modify
 the behavior of the ``bulkWrite()`` method. To use the ``BulkWriteOptions``
 class, construct a new instance of the class, then call one or more of its methods
-to modify the delete operation. You can chain these method calls together.
-To modify the behavior of the delete operation, pass the class instance and
+to modify the write operation. You can chain these method calls together.
+To modify the behavior of the write operation, pass the class instance and
 chained method calls as the last argument to the
 ``bulkWrite()`` method.
 
 You can use the following methods in the ``BulkWriteOptions`` class
-to modify a delete method. All methods are optional.
+to modify a write method. All methods are optional.
 
 .. list-table::
    :widths: 30 70
    :header-rows: 1
 
-   * - Property
+   * - Method
      - Description
 
    * - ``bypassDocumentValidation(Boolean bypassDocumentValidation)``
@@ -239,15 +240,21 @@ to modify a delete method. All methods are optional.
          and server cancel all remaining write operations.
        | Defaults to ``True``. 
 
-The following example calls the ``bulkWrite()`` method from the preceding example, with the ``ordered`` option set
-to ``False``:
+The following example calls the ``bulkWrite()`` method from the preceding
+example but sets the ``ordered`` option to ``False``:
 
-.. literalinclude:: /includes/write/bulk-write.java
-   :start-after: start-bulk-write-unordered
-   :end-before: end-bulk-write-unordered
-   :language: java
-   :copyable:
-   :dedent:
+.. io-code-block::
+   :copyable: 
+
+   .. input:: /includes/write/bulk-write.java
+      :start-after: start-bulk-write-unordered
+      :end-before: end-bulk-write-unordered
+      :language: java
+      :dedent:
+
+   .. output::
+
+      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=4, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e03cce430c5854b6caf9}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e03cce430c5854b6cafa}}]}
 
 If any of the write operations in an unordered bulk write fail, the {+driver-short+}
 reports the errors only after attempting all operations.
@@ -261,13 +268,13 @@ Return Value
 ------------
 
 The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
-``BulkWriteResult`` object contains the following properties.
+``BulkWriteResult`` object contains the following methods:
 
 .. list-table::
    :widths: 50 50
    :header-rows: 1
 
-   * - Property
+   * - Method
      - Description
 
    * - .. code-block:: none
@@ -305,7 +312,7 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
          were no items inserted.
 
    * - ``getMatchedCount()``
-     - | Returns the number of documents matched by updates or replacements in the write operation..
+     - | Returns the number of documents matched by updates or replacements in the write operation.
 
    * - ``getModifiedCount()``
      - | Returns the number of documents modified by the write operation.
@@ -315,7 +322,7 @@ The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
          were no items upserted.
 
    * - ``unacknowledged()``
-     - | Creates an unacknowledged BulkWriteResult.
+     - | Creates an unacknowledged ``BulkWriteResult``.
 
    * - ``wasAcknowledged()``
      - | Returns true if the write was acknowledged.
@@ -334,7 +341,7 @@ API Documentation
 ~~~~~~~~~~~~~~~~~
 
 To learn more about any of the methods or types discussed in this
-guide, see the following API Documentation:
+guide, see the following API documentation:
 
 - `bulkWrite() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoCollection.html#bulkWrite(com.mongodb.reactivestreams.client.ClientSession,java.util.List)>`__
 - `InsertOneModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/InsertOneModel.html>`__
