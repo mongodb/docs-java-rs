@@ -176,7 +176,7 @@ The following example performs multiple write operations by using the
 
    .. output::
       
-      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=5, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e0a6c08025218b657208}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e0a6c08025218b657209}}]}
+      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=2, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e0a6c08025218b657208}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e0a6c08025218b657209}}]}
 
 If any of the write operations fail, the {+driver-short+} raises a
 ``BulkWriteError`` and does not perform any further operations.
@@ -254,7 +254,7 @@ example but sets the ``ordered`` option to ``False``:
 
    .. output::
 
-      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=4, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e03cce430c5854b6caf9}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e03cce430c5854b6cafa}}]}
+      AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=2, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e03cce430c5854b6caf9}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e03cce430c5854b6cafa}}]}
 
 If any of the write operations in an unordered bulk write fail, the {+driver-short+}
 reports the errors only after attempting all operations.
