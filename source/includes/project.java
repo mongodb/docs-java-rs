@@ -49,9 +49,9 @@ class QueryDatabase {
                         eq("name", "Emerald Pub"))
                 .projection(fields(include("name", "cuisine", "borough")));
 
-        Document findResults = Flux.from(findProjectionPublisher)
-                 .doOnNext(System.out::println)
-                 .blockLast();
+        Flux.from(findProjectionPublisher)
+                .doOnNext(System.out::println)
+                .blockLast();
         //  end-project-include
 
         //  start-project-include-without-id
@@ -59,19 +59,19 @@ class QueryDatabase {
                         eq("name", "Emerald Pub"))
                 .projection(fields(include("name", "cuisine", "borough"), excludeId()));
 
-        Document findResults = Flux.from(findProjectionPublisher)
-                 .doOnNext(System.out::println)
-                 .blockLast();
+        Flux.from(findProjectionPublisher)
+                .doOnNext(System.out::println)
+                .blockLast();
         //  end-project-include-without-id
 
         //  start-project-exclude
         FindPublisher<Document> findProjectionPublisher = restaurants.find(
                         eq("name", "Emerald Pub"))
                 .projection(fields(exclude("grades", "address")));
-                
-        Document findResults = Flux.from(findProjectionPublisher)
-                 .doOnNext(System.out::println)
-                 .blockLast();
+
+        Flux.from(findProjectionPublisher)
+                .doOnNext(System.out::println)
+                .blockLast();
         //  end-project-exclude
 
         }
