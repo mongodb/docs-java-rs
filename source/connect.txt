@@ -19,8 +19,6 @@ Connect to MongoDB
    :keywords: client, deploy, replica
 
 .. toctree::
-   :titlesonly:
-   :maxdepth: 1
 
    /connect-to-mongo/create-a-mongo-client
    /connect-to-mongo/choose-connection-target
