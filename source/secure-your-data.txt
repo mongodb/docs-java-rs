@@ -19,8 +19,8 @@ Secure Your Data
    :description: Learn how to use the Java Reactive Streams driver to secure your data.
 
 .. toctree::
-    :titlesonly:
-    :maxdepth: 1
+     :titlesonly:
+     :maxdepth: 1
 
      /security/auth
      /security/encrypt
