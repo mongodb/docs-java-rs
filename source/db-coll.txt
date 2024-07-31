@@ -1,4 +1,4 @@
-.. _javars-db-coll:
+.. _java-rs-databases-coll:
 
 =========================
 Databases and Collections

@@ -1,8 +1,8 @@
 .. _javars-pojo-qs:
 
-===========================
-Quick Start (POJO Examples)
-===========================
+============================
+POJO CRUD Operation Examples
+============================
 
 .. facet::
    :name: genre

@@ -1,4 +1,4 @@
-.. _javars-gridfs:
+.. _java-rs-store-large-docs:
 
 ======
 GridFS

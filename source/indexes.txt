@@ -1,4 +1,4 @@
-.. _javars-indexes:
+.. _java-rs-indexes:
 
 ==============
 Create Indexes

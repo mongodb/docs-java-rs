@@ -1,8 +1,8 @@
-.. _javars-changestream:
+.. _java-rs-monitor-changes:
 
-==============
-Change Streams
-==============
+====================
+Monitor Data Changes
+====================
 
 .. facet::
    :name: genre

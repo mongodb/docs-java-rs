@@ -18,17 +18,18 @@ Write Data to MongoDB
    :description: Learn how to use the {+driver-short+} to write data to MongoDB.
    :keywords: usage examples, save, crud, create, code example
 
-.. TODO: change toctree links when other pages are merged in.
-.. .. toctree::
-..    :titlesonly:
-..    :maxdepth: 1
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
 
-..    /write/insert
-..    /write/update
-..    /write/replace
-..    /write/delete
-..    /write/bulk-write
-..    /write/gridfs
+    /write/insert-documents
+    /write/write-update-documents
+    /write/replace-documents
+    /write/write-delete-documents
+    /write/bulk-writes
+    /write/store-large-docs
+    /write/write-concern
+    /write/command
 
 Overview
 --------

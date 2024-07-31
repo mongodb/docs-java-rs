@@ -18,13 +18,12 @@ Secure Your Data
    :keywords: ldap, encryption, principal, tls, authorize, ecs, aws
    :description: Learn how to use the Java Reactive Streams driver to secure your data.
 
-.. TODO: change when pages moved
-.. .. toctree::
-..    :titlesonly:
-..    :maxdepth: 1
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
 
-..    /security/auth.txt
-..    /security/encrypt.txt
+    /security/auth.txt
+    /security/encrypt.txt
 
 Overview
 --------
