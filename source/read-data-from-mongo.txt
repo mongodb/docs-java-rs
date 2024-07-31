@@ -19,18 +19,18 @@ Read Data From MongoDB
    :keywords: usage examples, see, crud, access, code example
 
 .. toctree::
-     :titlesonly:
-     :maxdepth: 1   
-     
-     /read/specify-query
-     /read/retrieve-data
-     /read/specify-fields-return
-     /read/specify-documents-to-return
-     /read/count-documents
-     /read/read-preference
-     /read/text-search
-     /read/geo
-     /read/change-stream
+    :titlesonly:
+    :maxdepth: 1   
+
+    /read/specify-query
+    /read/retrieve-data
+    /read/specify-fields-return
+    /read/specify-documents-to-return
+    /read/count-documents
+    /read/read-preference
+    /read/text-search
+    /read/geo
+    /read/change-stream
     
 Overview
 --------
