@@ -21,14 +21,11 @@
    :titlesonly:
    :maxdepth: 1
 
-   /getting-started/
-   /issues-and-help/
-   /compatibility/
    Get Started </getting-started>
    /connect
    /db-coll
    /write-data-to-mongo
-   /read-data-to-mongo
+   /read-data-from-mongo
    /indexes
    /aggregation
    /secure-your-data
