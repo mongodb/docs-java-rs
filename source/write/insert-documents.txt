@@ -189,12 +189,11 @@ to bypass document-level validation.
   
    Mono.from(insertPublisher).block();
 
-.. Additional Information
+Additional Information
 ----------------------
 
-.. TODO:
-.. For runnable code examples of inserting documents with {+driver-short+}, see
-.. :ref: ADD HERE
+For runnable code examples of inserting documents with {+driver-short+}, see
+:ref:`<java-rs-write>`.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

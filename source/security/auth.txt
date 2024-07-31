@@ -1,4 +1,4 @@
-.. _javars-auth:
+.. _java-rs-auth:
 
 ==============
 Authentication
