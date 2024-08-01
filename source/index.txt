@@ -1,8 +1,8 @@
 .. _java-rs-index:
 
-=============================
-{+driver-long+} Documentation
-=============================
+===========================================
+MongoDB Java Reactive Streams Documentation
+===========================================
 
 .. facet::
    :name: programming_language

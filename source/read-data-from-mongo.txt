@@ -48,8 +48,8 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
 the relevant values for your MongoDB deployment.
 
-{+pr+} Implementation
-~~~~~~~~~~~~~~~~~~~~~
+Project Reactor Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This guide uses the {+pr+} library to consume ``Publisher`` instances returned
 by the {+driver-short+} methods. To learn more about the {+pr+} library
