@@ -529,4 +529,4 @@ Write Concern Configuration
        | **Connection URI Example**: ``wtimeoutMS=6000``
 
 For more information about the connection options in this section, see the
-:ref:`java-rs-database-coll` guide.
+:ref:`<java-rs-database-coll>` guide.

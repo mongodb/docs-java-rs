@@ -22,7 +22,7 @@ Read Data From MongoDB
     :titlesonly:
     :maxdepth: 1   
 
-    /read/specify-query
+    /read/specify-a-query
     /read/retrieve-data
     /read/specify-fields-return
     /read/specify-documents-to-return

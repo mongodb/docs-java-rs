@@ -14,7 +14,7 @@ port of your deployment, the authentication mechanism, user credentials
 when applicable, and connection options.
 
 To connect to an instance or deployment not hosted on Atlas, see the
-:ref:`<javars-connection-targets>` guide.
+:ref:`<java-rs-connection-targets>` guide.
 
 .. procedure::
    :style: connected

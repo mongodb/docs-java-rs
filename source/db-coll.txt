@@ -53,7 +53,7 @@ on ``localhost`` on port ``27017``:
    MongoClient mongoClient = MongoClients.create();
 
 To learn more about connecting to MongoDB deployments,
-see the :ref:`javars-connect` tutorial.
+see the :ref:`java-rs-connect` tutorial.
 
 Access a Database
 -----------------
@@ -197,8 +197,8 @@ properties, such as different :manual:`read concerns
 - ``MongoCollection.withReadPreference()``
 - ``MongoCollection.withWriteConcern()``
 
-To learn more, see the :ref:`javars-read-operations` and
-:ref:`javars-write-ops` tutorials.
+To learn more, see the :ref:`java-rs-read` and
+:ref:`java-rs-write` tutorials.
 
 CodecRegistry
 -------------

@@ -40,7 +40,7 @@ driver.
 .. note::
 
    For instructions about how to install the {+driver-short+},
-   see the :ref:`installation guide <javars-install>`.
+   see the :ref:`Get Started tutorial <java-rs-getting-started>`.
 
 libmongocrypt
 ~~~~~~~~~~~~~

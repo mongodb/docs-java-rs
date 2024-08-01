@@ -33,6 +33,6 @@ application. To learn more about how to secure your application, see the
 following sections:
 
 - Learn how to use different authentication mechanisms to secure your data in
-  the :ref:`Authentication Mechanisms <javars-auth>` guide.
+  the :ref:`Authentication Mechanisms <java-rs-auth>` guide.
 - Learn how to encrypt specific data fields in the :ref:`Client-Side Encryption
   <javars-encrypt>` guide.

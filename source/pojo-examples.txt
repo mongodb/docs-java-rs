@@ -339,8 +339,3 @@ The following example deletes all ``Person`` instances that have an
 
    collection.deleteMany(eq("address.city", "London"))
        .subscribe(new OperationSubscriber<>());
-
-Additional Information
-~~~~~~~~~~~~~~~~~~~~~~
-
-To find additional tutorials, see the :ref:`javars-tutorials` section.
