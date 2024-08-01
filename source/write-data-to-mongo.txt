@@ -18,17 +18,18 @@ Write Data to MongoDB
    :description: Learn how to use the {+driver-short+} to write data to MongoDB.
    :keywords: usage examples, save, crud, create, code example
 
-.. TODO: change toctree links when other pages are merged in.
-.. .. toctree::
-..    :titlesonly:
-..    :maxdepth: 1
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
 
-..    /write/insert
-..    /write/update
-..    /write/replace
-..    /write/delete
-..    /write/bulk-write
-..    /write/gridfs
+    /write/insert-documents
+    /write/write-update-documents
+    /write/replace-documents
+    /write/write-delete-documents
+    /write/bulk-writes
+    /write/store-large-docs
+    /write/write-concern
+    /write/command
 
 Overview
 --------
@@ -48,14 +49,13 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
 the relevant values for your MongoDB deployment.
 
-This guide uses the Project Reactor library to consume ``Publishers`` returned
-by the {+driver-short+} methods. To learn more about the Project Reactor library
+This guide uses the {+pr+} library to consume ``Publisher`` instances returned
+by the {+driver-short+} methods. To learn more about the {+pr+} library
 and how to use it, see `Getting Started <https://projectreactor.io/docs/core/release/reference/#getting-started>`__
 in the Reactor documentation. 
 
-There are also other ways to consume ``Publishers``. You can use one of many alternative libraries such as
-`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publishers``, or consume ``Publishers``
-by calling ``Publisher.subscribe()`` directly and passing your own
+There are also other ways to consume ``Publisher`` instances. You can use one of many alternative libraries such as
+`RxJava <https://github.com/ReactiveX/RxJava>`__ or call``Publisher.subscribe()`` directly and pass your own
 implementation of a ``Subscriber``.
 
 This guide uses the ``Mono.block()`` method from Reactor to subscribe to a ``Publisher`` and block the current
@@ -63,7 +63,7 @@ thread until the ``Publisher`` reaches its terminal state. To learn more about t
 
 .. important:: Publishers Returned are Cold
 
-   All ``Publishers`` returned by the {+driver-short+} methods are cold,
+   All ``Publisher`` instances returned by the {+driver-short+} methods are cold,
    which means that the corresponding operation does not happen unless you
    subscribe to the returned ``Publisher``. We recommend only subscribing to 
    the returned ``Publisher`` once, because subscribing more than once can lead
@@ -133,9 +133,8 @@ Replace One
    :language: java
    :copyable:
 
-.. TODO: replace link
-.. To learn more about the ``replaceOne()`` method, see the
-   :ref:`Replace Documents <java-rs-write-replace>` guide.
+
+To learn more about the ``replaceOne()`` method, see the :ref:`Replace Documents <java-rs-write-replace>` guide.
 
 Delete One
 ----------

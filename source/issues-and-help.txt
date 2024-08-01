@@ -10,8 +10,8 @@ Issues & Help
    :depth: 1
    :class: singlecol
 
-We are lucky to have a vibrant MongoDB Java Reactive Streams community that includes users
-with varying levels of experience using the Java Reactive Streams driver. We find the quickest 
+We are lucky to have a vibrant MongoDB {+java-rs+} community that includes users
+with varying levels of experience using the {+java-rs+} driver. We find the quickest 
 way to get support for general questions is through the `MongoDB Community Forums <https://community.mongodb.com>`_.
 
 Refer to our `support channels <https://www.mongodb.org/about/support>`_

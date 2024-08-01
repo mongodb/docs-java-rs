@@ -57,9 +57,8 @@ A standard connection string includes the following components:
      - Optional. Authentication credentials. If you include these, the client
        authenticates the user against the database specified in ``authSource``.
 
-        .. TODO: uncomment out when java-rs-auth page made
-        .. For more information about the ``authSource`` connection option, see
-        .. :ref:`java-rs-auth`. 
+       For more information about the ``authSource`` connection option, see the
+       :ref:`java-rs-auth` guide. 
 
    * - ``host[:port]``
 
@@ -77,9 +76,8 @@ A standard connection string includes the following components:
 
      - Optional. A query string that specifies connection-specific
        options as ``<name>=<value>`` pairs. 
-        ..    TODO: uncomment out when connection options page made
-        ..    See :ref:`java-rs-connection-options` for a full description of
-        ..    these options.
+        
+       For a full description of these options, see the :ref:`java-rs-connection-options` guide.
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the
@@ -112,8 +110,6 @@ instance on port ``27017`` of ``localhost``:
    Because each ``MongoClient`` instance pools connections to the
    database, most applications require only a single instance of
    ``MongoClient``, even across multiple requests. 
-.. TODO: comment out when java-rs-faq page is created
-.. To learn more about connection pools, see the :ref:`FAQ <java-rs-faq>` page.
 
 API Documentation
 -----------------

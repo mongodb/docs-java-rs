@@ -54,7 +54,7 @@ defines the ``database`` variable to refer to the ``test`` database:
    MongoDatabase database = mongoClient.getDatabase("test");
 
 To learn more about connecting to MongoDB deployments,
-see the :ref:`javars-connect` tutorial.
+see the :ref:`java-rs-connect` tutorial.
 
 Run the buildInfo Command
 -------------------------

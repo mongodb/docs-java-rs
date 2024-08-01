@@ -1,8 +1,8 @@
-.. _javars-primer:
+.. _java-rs-custom-implementations:
 
-======
-Primer
-======
+========================================
+Sample Custom Subscriber Implementations
+========================================
 
 .. facet::
    :name: genre
@@ -18,13 +18,12 @@ Primer
    :class: singlecol
 
 This guide provides background about the {+driver-short+} and its
-asynchronous API before showing you how to use the driver and MongoDB in
-the :ref:`Quick Start guide <javars-quickstart>`.
+asynchronous API. The guide also lists and explains sample custom subscriber implementations.
 
 .. note::
 
-   See the :ref:`Installation guide <javars-install>`
-   for instructions on how to install the driver.
+   For instructions on how to install the driver, see the :ref:`Get Started
+   <java-rs-getting-started>` guide.
 
 Reactive Streams
 ----------------
@@ -86,14 +85,16 @@ for the operation.
    operation, and the ``Publisher`` instance's ``Subscriber`` receives its
    own specific set of results.
 
-Subscribers in the Quick Start
-------------------------------
+Custom Subscriber Implementations
+---------------------------------
 
-In the Quick Start, we have implemented a couple of
-different ``Subscriber`` types. Although this is an
+In the {+java-rs+} documentation, we have implemented different ``Subscriber`` types. Although this is an
 artificial scenario for reactive streams, we do
 block on the results of one example before starting
-the next, to ensure the state of the database.
+the next to ensure the state of the database. To see the source code for all
+the custom subscriber implementations, see `SubscriberHelpers.java
+<{+driver-source-gh+}/blob/master/driver-reactive-streams/src/examples/reactivestreams/helpers/SubscriberHelpers.java>`__
+in the driver source code.
 
 - ``ObservableSubscriber``
     The base subscriber class is the

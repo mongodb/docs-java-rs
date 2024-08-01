@@ -1,6 +1,15 @@
-====================================
-{+driver-long+}
-====================================
+.. _java-rs-index:
+
+===========================================
+MongoDB Java Reactive Streams Documentation
+===========================================
+
+.. facet::
+   :name: programming_language
+   :values: java
+
+.. meta::
+   :keywords: home
 
 .. contents:: On this page
    :local:
@@ -12,45 +21,100 @@
    :titlesonly:
    :maxdepth: 1
 
-   .. /installation/
-   .. /get-started/
-   .. /whats-new/
-   .. /tutorials/
-   .. /reference/
-   /getting-started/
-   /issues-and-help/
-   /compatibility/
-   View the Source <https://github.com/mongodb/mongo-java-driver>
+   Get Started </getting-started>
+   /connect
+   /db-coll
+   /write-data-to-mongo
+   /read-data-from-mongo
+   /indexes
+   /aggregation
+   /secure-your-data
+   /logging
+   /monitoring
+   /validate-signatures
+   /pojo-examples
+   /custom-implementations
+   /whats-new
+   /issues-and-help
+   /compatibility  
    API Documentation <{+api+}/mongodb-driver-reactivestreams/>
-   Previous Versions <https://mongodb.github.io/mongo-java-driver/>
 
-Introduction
-------------
+Overview
+--------
 
-Welcome to the documentation site for the {+driver-long+}, the
-official driver for asynchronous Java applications. Download
-the driver by following the :ref:`javars-install` guide, then set up a
-runnable project by following one of the tutorials.
+Welcome to the documentation site for the {+driver-short+}, the official MongoDB
+driver for asynchronous Java applications.
 
-.. - :ref:`javars-install`
+Get Started
+-----------
 
-.. - :ref:`javars-get-started`
+Learn how to install the driver, establish a connection to MongoDB, and begin
+working with data in the :ref:`java-rs-getting-started` tutorial.
 
-.. - :ref:`javars-whats-new`
+Connect to MongoDB
+------------------
 
-.. - :ref:`javars-tutorials`
+Learn how to create and configure a connection to a MongoDB deployment
+in the :ref:`java-rs-connect` section.
 
-.. - :ref:`javars-reference`
+Databases and Collections
+-------------------------
 
-- :ref:`java-rs-write-insert`
+Learn how to use the {+driver-short+} to work with MongoDB databases and collections
+in the :ref:`java-rs-databases-coll` section.
 
-- :ref:`java-rs-getting-started`
+Write Data to MongoDB
+---------------------
 
-- `Source Code <https://github.com/mongodb/mongo-java-driver>`__
+Learn how you can write data to MongoDB in the :ref:`java-rs-write` section.
 
-- `API Documentation <{+api+}/mongodb-driver-reactivestreams/>`__
+Read Data from MongoDB
+----------------------
 
-- `Previous Versions Documentation <https://mongodb.github.io/mongo-java-driver/>`__
+Learn how you can retrieve data from MongoDB in the :ref:`java-rs-read` section.
+
+Optimize Queries with Indexes
+-----------------------------
+
+Learn how to work with common types of indexes in the :ref:`java-rs-indexes`
+section.
+
+Transform Your Data with Aggregation
+------------------------------------
+
+Learn how to use the {+driver-short+} to perform aggregation operations in the
+:ref:`java-rs-aggregation` section.
+
+Secure Your Data
+----------------
+
+Learn about ways you can authenticate your application and encrypt your data in
+the :ref:`java-rs-security` section.
+
+What's New
+----------
+
+For a list of new features and changes in each version, see the :ref:`<java-rs-whats-new>`
+section.
+
+Issues & Help
+-------------
+
+Learn how to report bugs, contribute to the driver, and find help in the
+:ref:`<java-rs-issues-and-help>` section.
+
+Compatibility
+-------------
+
+For compatibility tables that show the recommended {+driver-short+}
+version to use for specific Java and {+mdb-server+} versions, see the
+:ref:`java-rs-compatibility` section.
+
+API Documentation
+-----------------
+
+For detailed information about types and methods in the {+driver-short+}, see
+the `API documentation <{+api+}/mongodb-driver-reactivestreams/>`__.
 
 If you need to make synchronous calls between your application and MongoDB, use
 the :driver:`MongoDB Java Driver </java/sync/current/>` instead of the

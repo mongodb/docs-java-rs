@@ -8,9 +8,11 @@ intersphinx = [ "https://www.mongodb.com/docs/manual/objects.inv",
 sharedinclude_root = "https://raw.githubusercontent.com/10gen/docs-shared/main/"
 
 toc_landing_pages = [
-    "/tutorials/connect/",
-    "/tutorials/write-ops/",
-    "/getting-started/"
+    "/connect/",
+    "/read-data-from-mongo/",
+    "/write-data-to-mongo/",
+    "/getting-started/",
+    "/secure-your-data/"
     ]
 
 [constants]

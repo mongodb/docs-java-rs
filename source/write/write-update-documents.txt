@@ -97,10 +97,10 @@ Update One Document
 To update a single document in a MongoDB collection, call the ``updateOne()``
 method and pass your query filter and update operators. Then, pass the
 ``updateOne()`` result to the static ``Mono.from()`` method from
-``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
+``Mono``. ``Mono`` is a class from the {+pr+} library. In {+java-rs+}, 
 the driver methods return cold ``Publisher`` instances, which means that the
 corresponding operation does not happen unless you subscribe to the returned
-``Publisher``. This guide uses the Project Reactor library to consume them. To learn more
+``Publisher``. This guide uses the {+pr+} library to consume them. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
@@ -120,10 +120,10 @@ Update Multiple Documents
 
 To update multiple documents in a MongoDB collection, call the ``updateMany()``
 method and pass your query filter and update operators. Then, pass the ``updateMany()`` result to the static ``Mono.from()`` method from
-``Mono``. ``Mono`` is a class from the Project Reactor library. In {+java-rs+}, 
+``Mono``. ``Mono`` is a class from the {+pr+} library. In {+java-rs+}, 
 the driver methods return cold ``Publisher`` instances, which means that the
 corresponding operation does not happen unless you subscribe to the returned
-``Publisher``. This guide uses the Project Reactor library to consume them. To learn more
+``Publisher``. This guide uses the {+pr+} library to consume them. To learn more
 about ``Mono``, see `Mono <https://projectreactor.io/docs/core/release/reference/#mono>`__ in the Project
 Reactor documentation.
 
@@ -262,9 +262,8 @@ Additional Information
 For additional information about update operators, see :manual:`Update Operators
 </reference/operator/update>` in the MongoDB Server manual.
 
-.. TODO:
-.. For runnable code examples of inserting documents with {+driver-short+}, see
-.. :ref: ADD HERE
+For runnable code examples of inserting documents with the {+driver-short+}, see the
+:ref:`java-rs-write` guide. 
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

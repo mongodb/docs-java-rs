@@ -1,8 +1,8 @@
 .. _java-rs-get-started-create-deployment:
 
-======================
+===================
 Create a Deployment
-======================
+===================
 
 You can create a free tier MongoDB deployment on MongoDB Atlas
 to store and manage your data. MongoDB Atlas hosts and manages

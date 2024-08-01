@@ -1,4 +1,4 @@
-.. _javars-geo:
+.. _java-rs-geo:
 
 =================
 Geospatial Search

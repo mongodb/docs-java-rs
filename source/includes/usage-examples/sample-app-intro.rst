@@ -1,5 +1,3 @@
-.. TODO: change link from quick start primer to subscriber implementation page
-
 You can use the following sample application to test the code examples on this
 page. To use the sample application, perform the following steps:
 

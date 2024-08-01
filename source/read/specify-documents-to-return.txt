@@ -161,10 +161,11 @@ skipping the first ``10`` documents.
 Additional Information
 ----------------------
 
-.. TODO: uncomment when merged in.
-.. For more information about specifying a query, see :ref:`java-rs-specify-query`.
+For more information about specifying a query, see the
+:ref:`java-rs-specify-query` guide.
 
-.. For more information about retrieving documents, see :ref:`java-rs-retrieve`.
+For more information about retrieving documents, see the :ref:`java-rs-retrieve`
+guide.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

@@ -18,17 +18,20 @@ Read Data From MongoDB
    :description: Learn how to use the Java Reactive Streams driver to read data from MongoDB.
    :keywords: usage examples, see, crud, access, code example
 
-.. TODO: change toctree links when other pages are merged in.
-.. .. toctree::
-..    :titlesonly:
-..    :maxdepth: 1
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1   
 
-..    /read/specify-query
-..    /read/retrieve-data
-..    /read/specify-fields
-..    /read/specify-documents
-..    /read/count-documents
-
+    /read/specify-a-query
+    /read/retrieve-data
+    /read/specify-fields-return
+    /read/specify-documents-to-return
+    /read/count-documents
+    /read/read-preference
+    /read/text-search
+    /read/geo
+    /read/change-stream
+    
 Overview
 --------
 
@@ -45,8 +48,8 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string>``, with
 the relevant values for your MongoDB deployment.
 
-{+pr+} Implementation
-~~~~~~~~~~~~~~~~~~~~~
+Project Reactor Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This guide uses the {+pr+} library to consume ``Publisher`` instances returned
 by the {+driver-short+} methods. To learn more about the {+pr+} library
@@ -54,8 +57,7 @@ and how to use it, see `Getting Started <https://projectreactor.io/docs/core/rel
 in the Reactor documentation. 
 
 There are also other ways to consume ``Publisher`` instances. You can use one of many alternative libraries such as
-`RxJava <https://github.com/ReactiveX/RxJava>`__ to consume ``Publisher``
-instances, or consume ``Publisher`` instances by calling ``Publisher.subscribe()`` directly and passing your own
+`RxJava <https://github.com/ReactiveX/RxJava>`__ or call``Publisher.subscribe()`` directly and pass your own
 implementation of a ``Subscriber``.
 
 The examples in this guide use the ``Flux.blockLast()`` method from Reactor to subscribe to a ``Publisher`` and block the current
@@ -94,8 +96,7 @@ given filter:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``find().first()`` construct, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+To learn more about the ``find().first()`` construct, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
 
 Find Multiple
 -------------
@@ -109,8 +110,7 @@ given filter:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``find()`` method, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
+To learn more about the ``find()`` method, see the :ref:`Retrieve Data <java-rs-retrieve>` guide.
 
 Count Documents in a Collection
 -------------------------------
@@ -123,8 +123,7 @@ The following example returns the number of documents in the specified collectio
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Count Documents Returned from a Query
 -------------------------------------
@@ -139,8 +138,7 @@ the given filter:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+To learn more about the ``countDocuments()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Estimated Document Count
 ------------------------
@@ -154,8 +152,7 @@ collection based on collection metadata:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``estimatedDocumentCount()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
+To learn more about the ``estimatedDocumentCount()`` method, see the :ref:`Count Documents <java-rs-count>` guide.
 
 Retrieve Distinct Values
 ------------------------
@@ -169,8 +166,8 @@ collection:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``distinct()`` method, see the :ref:`Retrieve Distinct Values of a Field <java-rs-retrieve-distinct>` guide.
+To learn more about the ``distinct()`` method, see :manual:`distinct()
+<reference/method/db.collection.distinct/>` in the {+mdb-server+} manual.
 
 Monitor Data Changes
 --------------------
@@ -184,5 +181,4 @@ subsequent change events in that collection:
    :language: java
    :copyable:
 
-.. TODO:
-.. To learn more about the ``watch()`` method, see the :ref:`Watch For Changes <java-rs-watch-changes>` guide.
+To learn more about the ``watch()`` method, see the :ref:`Monitor Data Changes <java-rs-monitor-changes>` guide.

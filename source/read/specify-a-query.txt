@@ -26,7 +26,7 @@ In this guide, you can learn how to specify a query by using the
 .. include:: /includes/reactor-note.rst
 
 This guide uses the ``Flux Publisher``, which is a ``Publisher`` implementation
-from the Project Reactor library. In {+java-rs+}, you must use
+from the {+pr+} library. In {+java-rs+}, you must use
 ``Publisher`` implementations to control how data is transmitted in your
 application. To learn more about the ``Flux`` class, see `Flux <https://projectreactor.io/docs/core/release/reference/#flux>`__ in the Project
 Reactor documentation. 

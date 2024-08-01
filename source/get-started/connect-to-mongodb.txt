@@ -4,10 +4,6 @@
 Connect to MongoDB
 ==================
 
-.. TODO: 
-.. Add this sentence after the last sentence in the paragraph for implementing reactive streams subscribers. 
-.. To learn more about the Java Reactive Streams API, see link here.
-
 The {+driver-short+} is an implementation of the Reactive Streams API, which consists of three components: 
 
 - ``Publisher``
@@ -30,7 +26,7 @@ based on the Reactive Streams specification to implement {+java-rs+}
 
 To learn more about the Reactor library, see `Getting Started
 <https://projectreactor.io/docs/core/release/reference/#getting-started>`__ in the
-Project Reactor documentation.
+{+pr+} documentation.
 
 .. procedure::
    :style: connected

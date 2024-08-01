@@ -1,4 +1,4 @@
-.. _javars-aggregation:
+.. _java-rs-aggregation:
 
 =====================
 Aggregation Framework
