@@ -38,19 +38,19 @@ ways:
 
 - By creating a ``MongoClientSettings`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
-            .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
-            .writeConcern(WriteConcern.MAJORITY)
-            .build());
+     MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
+           .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
+           .writeConcern(WriteConcern.MAJORITY)
+           .build());
 
 - By creating a ``ConnectionString`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient =
-        MongoClients.create("mongodb://host1:27017,host2:27017/?w=majority");
+     MongoClient mongoClient =
+     MongoClients.create("mongodb://host1:27017,host2:27017/?w=majority");
 
 Configure Write Concern at the Database or Collection Level
 -----------------------------------------------------------

@@ -39,19 +39,19 @@ You can configure the read preference at the deployment level in the following w
   
 - By creating a ``MongoClientSettings`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
-            .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
-            .readPreference(ReadPreference.secondary())
-            .build());
+     MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
+         .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
+         .readPreference(ReadPreference.secondary())
+         .build());
 
 - By creating a ``ConnectionString`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient =
-        MongoClients.create("mongodb://host1:27017,host2:27017/?readPreference=secondary");
+     MongoClient mongoClient =
+     MongoClients.create("mongodb://host1:27017,host2:27017/?readPreference=secondary");
 
 Configure the Read Preference at the Database or Collection Level
 -----------------------------------------------------------------
@@ -61,18 +61,18 @@ ways:
 
 - In a ``MongoDatabase`` by using the ``withReadPreference()`` method, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoDatabase database = mongoClient.getDatabase("test")
-            .withReadPreference(ReadPreference.secondary());
+     MongoDatabase database = mongoClient.getDatabase("test")
+         .withReadPreference(ReadPreference.secondary());
 
 - In a ``MongoCollection`` by using the ``withReadPreference()`` method, as
   shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
     
-        MongoCollection<Document> collection = database.getCollection("restaurants")
-            .withReadPreference(ReadPreference.secondary());
+     MongoCollection<Document> collection = database.getCollection("restaurants")
+         .withReadPreference(ReadPreference.secondary());
 
 ``MongoDatabase`` and ``MongoCollection`` instances are immutable. Calling
 ``withReadPreference()`` on an existing ``MongoDatabase`` or
@@ -95,20 +95,20 @@ ways:
 
 - By creating a ``MongoClientSettings`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
-            .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
-            .readConcern(ReadConcern.MAJORITY)
-            .build());
+     MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
+         .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
+         .readConcern(ReadConcern.MAJORITY)
+         .build());
 
 - By creating a ``ConnectionString`` instance, as shown in the following code:
 
-    .. code-block:: java
+  .. code-block:: java
 
-        MongoClient mongoClient =
-        MongoClients.create("mongodb://host1:27017,host2:27017/?readConcernLevel=majority");
-    
+     MongoClient mongoClient =
+     MongoClients.create("mongodb://host1:27017,host2:27017/?readConcernLevel=majority");
+
 Configure the Read Concern at the Database or Collection Level
 --------------------------------------------------------------
 

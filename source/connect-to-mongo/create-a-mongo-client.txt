@@ -77,7 +77,7 @@ A standard connection string includes the following components:
      - Optional. A query string that specifies connection-specific
        options as ``<name>=<value>`` pairs. 
         
-        For a full description of these options, see the :ref:`java-rs-connection-options` guide.
+       For a full description of these options, see the :ref:`java-rs-connection-options` guide.
 
 For more information about creating a connection string, see
 :manual:`Connection Strings </reference/connection-string>` in the
