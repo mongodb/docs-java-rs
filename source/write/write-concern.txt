@@ -17,36 +17,56 @@ Write Concern
    :depth: 2
    :class: singlecol
 
+Overview
+--------
+
 Write concern describes the level of acknowledgment requested from
 MongoDB for write operations. To learn more about write concern, see
 :manual:`Write Concern </reference/write-concern/>` in the {+mbd-server+} manual.
 
 You can configure a write concern at the following levels:
 
-- In a ``MongoClient`` in the following ways:
+- For your MongoDB deployment
+- For your database
+- For your collection
 
-  - By creating a ``MongoClientSettings`` instance:
+Configure Write Concern at the Deployment Level
+-----------------------------------------------
 
-    .. code-block:: java
+You can configure the write concern at the deployment level in the following
+ways:
 
-       MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
-           .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
-           .writeConcern(WriteConcern.MAJORITY)
-           .build());
+- By creating a ``MongoClientSettings`` instance, as shown in the following code:
 
-  - By creating a ``ConnectionString`` instance:
+.. code-block:: java
 
-    .. code-block:: java
+    MongoClient mongoClient = MongoClients.create(MongoClientSettings.builder()
+        .applyConnectionString(new ConnectionString("mongodb://host1,host2"))
+        .writeConcern(WriteConcern.MAJORITY)
+        .build());
 
-       MongoClient mongoClient = MongoClients.create("mongodb://host1:27017,host2:27017/?w=majority");
+- By creating a ``ConnectionString`` instance, as shown in the following code:
 
-- In a ``MongoDatabase`` by using the ``withWriteConcern()`` method:
+.. code-block:: java
+
+    MongoClient mongoClient =
+    MongoClients.create("mongodb://host1:27017,host2:27017/?w=majority");
+
+Configure Write Concern at the Database or Collection Level
+-----------------------------------------------------------
+
+You can configure the write concern at the database or collection level in the following
+ways:
+
+- In a ``MongoDatabase`` by using the ``withWriteConcern()`` method, as shown in
+  the following code:
 
   .. code-block:: java
 
      MongoDatabase database = mongoClient.getDatabase("test").withWriteConcern(WriteConcern.MAJORITY);
 
-- In a ``MongoCollection`` by using the ``withWriteConcern()`` method:
+- In a ``MongoCollection`` by using the ``withWriteConcern()`` method, as shown
+  in the following code:
 
   .. code-block:: java
 

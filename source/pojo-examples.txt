@@ -17,8 +17,7 @@ POJO CRUD Operation Examples
    :depth: 2
    :class: singlecol
 
-This guide is similar to the :ref:`Quick Start guide
-<javars-quickstart>` but uses Plain Old Java Objects, or POJOs, to
+This guide uses Plain Old Java Objects, or POJOs, to
 model documents instead of the generic ``Document`` class.
 
 The code examples in this guide come from the `PojoQuickTour.java

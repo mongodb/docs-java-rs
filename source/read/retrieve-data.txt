@@ -45,7 +45,7 @@ This method takes a **query filter** and returns one or more matching documents.
 A query filter is an object that specifies the documents you want to retrieve in
 your query. 
 
-To learn more about query filters, see :ref:`java-rs-specify-query`.
+To learn more about query filters, see the :ref:`java-rs-specify-query` guide.
 
 .. _java-rs-retrieve-find-one:
 
@@ -172,10 +172,10 @@ for the ``FindPublisher`` interface.
 Additional Information
 ----------------------
 
-To learn more about query filters, see :ref:`java-rs-specify-query`.
+To learn more about query filters, see the :ref:`java-rs-specify-query` guide.
 
-For runnable code examples of retrieving documents with the {+driver-short+}, see
-:ref:`java-rs-read`.
+For runnable code examples of retrieving documents by using the {+driver-short+},
+see the :ref:`java-rs-read` guide.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

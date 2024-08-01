@@ -167,8 +167,8 @@ It also uses the ``comment`` method to add a comment to the operation.
 Additional Information
 ----------------------
 
-For runnable code examples of inserting documents with {+driver-short+}, see
-:ref:`<java-rs-write>`.
+For runnable code examples of inserting documents with the {+driver-short+}, see the
+:ref:`<java-rs-write>` guide.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

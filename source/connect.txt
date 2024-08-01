@@ -21,7 +21,7 @@ Connect to MongoDB
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   
+
    /connect-to-mongo/create-a-mongo-client/
    /connect-to-mongo/choose-connection-target/
    /connect-to-mongo/connection-options/
@@ -64,7 +64,7 @@ Local Deployment
 
 .. code-block:: java
 
-   String uri = "mongodb://localhost:27017/";
+   String uri = "mongodb://<hostname>:<port>/";
 
    try (MongoClient mongoClient = MongoClients.create(uri))
 
@@ -106,14 +106,15 @@ manual.
 
 You can connect to a single ``mongos`` instance in the following ways:
 
-- Specify the hostname and the port in a ``ConnectionString``:
+- Specify the hostname and the port in a connection string, as shown in the
+  following code:
 
   .. code-block:: java
      
-     MongoClient mongoClient = MongoClients.create( "mongodb://localhost:27017" );
+     MongoClient mongoClient = MongoClients.create( "mongodb://<hostname>:<port>" );
 
 - Exclude connection string if the ``mongos`` is running on
-  ``localhost:27017``:
+  ``localhost:27017``, as shown in the following code:
 
   .. code-block:: java
      
@@ -121,14 +122,15 @@ You can connect to a single ``mongos`` instance in the following ways:
 
 You can connect to multiple ``mongos`` instances in the following ways:
 
-- Specify the ``ConnectionString`` to contain their hostnames and ports:
+- Specify the connection string to contain their hostnames and ports, as shown in the
+  following code:
 
   .. code-block:: java
      
-     MongoClient mongoClient = MongoClients.create("mongodb://host1:27017,host2:27017");
+     MongoClient mongoClient = MongoClients.create("mongodb://<first hostname>:<first port>,<second hostname>:<second port>");
 
 - Specify a list of the ``ServerAddress`` objects corresponding to
-  each instance:
+  each instance, as shown in the following code:
 
   .. code-block:: java
      
@@ -136,25 +138,26 @@ You can connect to multiple ``mongos`` instances in the following ways:
          MongoClientSettings.builder()
              .applyToClusterSettings(builder ->
                  builder.hosts(Arrays.asList(
-                     new ServerAddress("host1", 27017),
-                     new ServerAddress("host2", 27017))))
+                     new ServerAddress("<first hostname>", <first port>),
+                     new ServerAddress("<second hostname", <second port>))))
              .build());
 
 Connection Options
 ~~~~~~~~~~~~~~~~~~
 
 You can specify connection settings by using either the
-``ConnectionString`` or ``MongoClientSettings`` types, or both.
+connection string or ``MongoClientSettings`` types, or both.
 
 For example, you can specify TLS/SSL and authentication settings in the
-connection string:
+connection string, as shown in the following code:
 
 .. code-block:: java
      
    MongoClient mongoClient = MongoClients.create("mongodb://user1:pwd1@host1/?authSource=db1&ssl=true");
 
 You can also use a ``MongoClientSettings`` instance to specify TLS/SSL
-and the ``MongoCredential`` type to store the authentication information:
+and the ``MongoCredential`` type to store the authentication information, as shown in the
+following code:
 
 .. code-block:: java
      
@@ -175,7 +178,7 @@ and the ``MongoCredential`` type to store the authentication information:
    MongoClient mongoClient = MongoClients.create(settings);
 
 In some cases, you might need to combine a connection string
-with programmatic configuration:
+with programmatic configuration, as shown in the following code:
 
 .. code-block:: java
      

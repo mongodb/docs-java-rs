@@ -53,7 +53,8 @@ The ``replaceOne()`` method requires the following parameters:
 
 - **Query filter** document, which determines which documents to replace.
 
-For more information about query filters, see :ref:`<java-rs-specify-query>`.
+For more information about query filters, see the :ref:`<java-rs-specify-query>`
+guide.
 
 - **Replace** document, which specifies the fields and values to insert in the new 
   document.
@@ -202,8 +203,8 @@ the corresponding information:
 Additional Information
 ----------------------
 
-For runnable code examples of replacing documents with {+driver-short+}, see
-:ref:`<java-rs-write>`
+For runnable code examples of replacing documents with the {+driver-short+}, see the
+:ref:`<java-rs-write>` guide.
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

@@ -12,5 +12,5 @@ and retrieves a document that matches a query.
 
 Learn more about {+driver-short+} from the following resources:
 
-- Learn how to perform read operations in the :ref:`<java-rs-read>` section.
-- Learn how to perform write operations in the :ref:`<java-rs-write>` section.
+- Learn how to perform read operations in the :ref:`<java-rs-read>` guide.
+- Learn how to perform write operations in the :ref:`<java-rs-write>` guide.

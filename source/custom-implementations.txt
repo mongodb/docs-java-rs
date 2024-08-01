@@ -86,13 +86,15 @@ for the operation.
    own specific set of results.
 
 Custom Subscriber Implementations
-------------------------------
+---------------------------------
 
 In the {+java-rs+} documentation, we have implemented different ``Subscriber`` types. Although this is an
 artificial scenario for reactive streams, we do
 block on the results of one example before starting
-the next, to ensure the state of the database. To see the source code for all
-the custom subscriber implementations, see `SubscriberHelpers.java <{+driver-source-gh+}/blob/master/driver-reactive-streams/src/examples/reactivestreams/helpers/SubscriberHelpers.java>`__.
+the next to ensure the state of the database. To see the source code for all
+the custom subscriber implementations, see `SubscriberHelpers.java
+<{+driver-source-gh+}/blob/master/driver-reactive-streams/src/examples/reactivestreams/helpers/SubscriberHelpers.java>`__
+in the driver source code.
 
 - ``ObservableSubscriber``
     The base subscriber class is the

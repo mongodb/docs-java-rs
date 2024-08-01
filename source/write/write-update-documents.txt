@@ -262,8 +262,8 @@ Additional Information
 For additional information about update operators, see :manual:`Update Operators
 </reference/operator/update>` in the MongoDB Server manual.
 
-For runnable code examples of inserting documents with {+driver-short+}, see
-:ref:`java-rs-write`. 
+For runnable code examples of inserting documents with the {+driver-short+}, see the
+:ref:`java-rs-write` guide. 
 
 API Documentation
 ~~~~~~~~~~~~~~~~~

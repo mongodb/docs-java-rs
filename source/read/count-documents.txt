@@ -60,7 +60,7 @@ Count Specific Documents
 
 To return a count of documents that match specific search criteria, specify your
 query in the ``countDocuments()`` method, as shown in the following example. To
-learn more about how to specify a query, see :ref:`java-rs-specify-query`.
+learn more about how to specify a query, see the :ref:`java-rs-specify-query` guide.
 
 .. code-block:: java
    

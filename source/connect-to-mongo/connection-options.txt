@@ -528,5 +528,5 @@ Write Concern Configuration
        | **Default**: ``null``
        | **Connection URI Example**: ``wtimeoutMS=6000``
 
-
-For more information about the connection options in this section, see :ref:`java-rs-database-coll`.
+For more information about the connection options in this section, see the
+:ref:`java-rs-database-coll` guide.
