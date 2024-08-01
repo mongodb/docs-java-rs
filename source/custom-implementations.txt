@@ -22,8 +22,8 @@ asynchronous API. The guide also lists and explains sample custom subscriber imp
 
 .. note::
 
-   See :ref:`Get Started <java-rs-getting-started>`
-   for instructions on how to install the driver.
+   For instructions on how to install the driver, see the :ref:`Get Started
+   <java-rs-getting-started>` guide.
 
 Reactive Streams
 ----------------

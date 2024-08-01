@@ -113,8 +113,8 @@ version to use for specific Java and {+mdb-server+} versions, see the
 API Documentation
 -----------------
 
-For detailed information about types and methods in {+driver-short+}, see
-the `API Documentation <{+api+}/mongodb-driver-reactivestreams/>`__.
+For detailed information about types and methods in the {+driver-short+}, see
+the `API documentation <{+api+}/mongodb-driver-reactivestreams/>`__.
 
 If you need to make synchronous calls between your application and MongoDB, use
 the :driver:`MongoDB Java Driver </java/sync/current/>` instead of the
