@@ -54,7 +54,7 @@ Download and Install
 
       Then, add the following to your ``pom.xml`` dependencies list:
 
-        .. code-block:: xml
+      .. code-block:: xml
 
           <dependencies>
               <dependency>
