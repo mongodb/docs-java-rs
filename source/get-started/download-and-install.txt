@@ -30,7 +30,7 @@ Download and Install
       to download the driver
       and dependencies directly from Maven.
 
-  .. step:: Install the Project Reactor Library
+   .. step:: Install the Project Reactor Library
 
       This guide uses methods from the Reactor library, a library based on the
       Reactive Streams specification. 
@@ -76,7 +76,7 @@ Download and Install
       project by running your dependency manager and refreshing
       the project in your IDE.
 
-  .. step:: Install the {+driver-short+}
+   .. step:: Install the {+driver-short+}
 
       In your project, if you are using `Maven <https://maven.apache.org/>`__, add the following to
       your ``pom.xml`` dependencies list:
