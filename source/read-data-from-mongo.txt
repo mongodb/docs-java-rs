@@ -27,6 +27,7 @@ Read Data From MongoDB
     /read/specify-fields-return
     /read/specify-documents-to-return
     /read/count-documents
+    /read/cursors
     /read/read-preference
     /read/text-search
     /read/geo
