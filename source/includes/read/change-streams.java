@@ -27,7 +27,9 @@ List<Bson> pipeline = Arrays.asList(
 
 // Opens a change stream and prints the changes as they're received including the full
 // document after the update
-ChangeStreamPublisher<Document> changeStreamPublisher = restaurants.watch(pipeline).fullDocument(FullDocument.UPDATE_LOOKUP);
+ChangeStreamPublisher<Document> changeStreamPublisher = restaurants.watch(pipeline)
+        .fullDocument(FullDocument.UPDATE_LOOKUP);
+
 Flux.from(changeStreamPublisher)
         .doOnNext(change -> System.out.println("Received change: " + change))
         .blockLast();

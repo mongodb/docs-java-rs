@@ -31,7 +31,7 @@ Sample Data
 The examples in this guide use the ``sample_restaurants.restaurants`` collection
 from the :atlas:`Atlas sample datasets </sample-data>`. To learn how to create a
 free MongoDB Atlas cluster and load the sample datasets, see the
-:ref:`<java-rs-getting-started>`.
+:ref:`<java-rs-getting-started>` guide.
 
 .. include:: includes/reactor-note.rst
 
@@ -44,8 +44,8 @@ stream listens for. You can call the ``watch()`` method on the following
 classes:
 
 - ``MongoClient``: To monitor all changes in the MongoDB deployment
-- ``Database``: To monitor changes in all collections in the database
-- ``Collection``: To monitor changes in the collection
+- ``MongoDatabase``: To monitor changes in all collections in the database
+- ``MongoCollection``: To monitor changes in the collection
 
 The following example opens a change stream on the ``restaurants`` collection
 and outputs the changes as they occur:
@@ -65,7 +65,10 @@ change stream output:
 
    Received change: ChangeStreamDocument{ operationType=update, resumeToken={"_data": "..."}, 
    namespace=sample_restaurants.restaurants, destinationNamespace=null, fullDocument=null, 
-   fullDocumentBeforeChange=null, documentKey={"_id": {"$oid": "..."}}, clusterTime=Timestamp{...}, updateDescription=UpdateDescription{removedFields=[], updatedFields={"cuisine": "Traditional Irish"}, truncatedArrays=[], disambiguatedPaths=null}, txnNumber=null, lsid=null, splitEvent=null, wallTime=BsonDateTime{value=...}}
+   fullDocumentBeforeChange=null, documentKey={"_id": {"$oid": "..."}}, clusterTime=Timestamp{...}, 
+   updateDescription=UpdateDescription{removedFields=[], updatedFields={"cuisine": "Traditional Irish"}, 
+   truncatedArrays=[], disambiguatedPaths=null}, txnNumber=null, lsid=null, 
+   splitEvent=null, wallTime=BsonDateTime{value=...}}
 
 Modify the Change Stream Output
 -------------------------------
@@ -89,8 +92,8 @@ The following example passes an aggregation pipeline to a change stream
 to record only update operations:
 
 .. literalinclude:: /includes/read/change-streams.java
-   :start-after: start-open-change-stream
-   :end-before: end-open-change-stream
+   :start-after: start-change-stream-pipeline
+   :end-before: end-change-stream-pipeline
    :language: java
 
 To learn more about modifying your change stream output, see the
@@ -101,9 +104,9 @@ manual.
 Modify ``watch()`` Behavior
 ---------------------------
 
-You can chain methods to the ``watch()`` method, which represent
-options you can use to configure the operation. If you don't specify any
-options, the driver does not customize the operation.
+You can chain methods to the ``watch()`` method that represent
+options you can use to configure the change stream operation. If you don't
+specify any options, the driver does not customize the operation.
 
 The following table describes the methods that you can chain to ``watch()`` to
 customize its behavior:
@@ -155,8 +158,8 @@ customize its behavior:
    * - ``showExpandedEvents()``
      - | Starting in {+mdb-server+} v6.0, change streams support change notifications
          for Data Definition Language (DDL) events, such as the ``createIndexes`` and ``dropIndexes`` events. To
-         include expanded events in a change stream, create the change stream
-         cursor and set this parameter to ``True``.
+         include expanded events in a change stream, call this method and pass
+         in the value, ``true``.
 
    * - ``batchSize()``
      - | Specifies the maximum number of change events to return in each batch of the
@@ -215,6 +218,7 @@ of updated documents by chaining the ``fullDocument()`` method to the
 .. literalinclude:: /includes/read/change-streams.java
    :start-after: start-change-stream-post-image
    :end-before: end-change-stream-post-image
+   :emphasize-lines: 9
    :language: java
 
 To learn more about pre-images and post-images, see 
