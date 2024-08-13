@@ -30,7 +30,7 @@ Read Data From MongoDB
     /read/read-preference
     /read/text-search
     /read/geo
-    /read/change-stream
+    /read/change-streams
     
 Overview
 --------
