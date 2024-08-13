@@ -1,4 +1,4 @@
-.. _java-rs-retrieve:
+.. _java-rs-change-streams:
 
 ====================
 Monitor Data Changes
