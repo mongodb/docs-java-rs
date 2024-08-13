@@ -181,4 +181,4 @@ subsequent change events in that collection:
    :language: java
    :copyable:
 
-To learn more about the ``watch()`` method, see the :ref:`Monitor Data Changes <java-rs-monitor-changes>` guide.
+To learn more about the ``watch()`` method, see the :ref:`Monitor Data Changes <java-rs-change-streams>` guide.
