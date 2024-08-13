@@ -40,7 +40,7 @@ Open a Change Stream
 
 To open a change stream, call the ``watch()`` method. The instance on which you
 call the method determines the scope of events that the change
-stream listens for. You can call the ``watch()`` method on the following
+stream listens for. You can call the ``watch()`` method on instances of the following
 classes:
 
 - ``MongoClient``: To monitor all changes in the MongoDB deployment
@@ -56,9 +56,9 @@ and outputs the changes as they occur:
    :language: java
 
 To begin watching for changes, run the application. Then, in a separate
-application or shell, modify the ``restaurants`` collection. Updating a document
-that has a ``"name"`` value of ``"Blarney Castle"`` results in the following
-change stream output:
+application or shell, perform a write operation on the ``restaurants``
+collection. Updating a document that has a ``"name"`` field value of ``"Blarney
+Castle"`` results in the following change stream output:
 
 .. code-block:: sh
    :copyable: false
