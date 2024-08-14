@@ -37,7 +37,7 @@ New features of the 5.2 driver release include:
 
    .. replacement:: avs-index-link
 
-      the `SearchIndexModel <{+api+}/mongodb-driver-core/com/mongodb/ConnectionString.html>`__
+      the `SearchIndexModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/SearchIndexModel.html>`__
       API documentation
 
 .. _javars-version-5.1.3:
