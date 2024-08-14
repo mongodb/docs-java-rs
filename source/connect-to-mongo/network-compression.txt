@@ -47,7 +47,9 @@ Specify Compression Algorithms
 ------------------------------
 
 You can enable compression for the connection to your MongoDB instance
-by specifying the algorithms in one of two ways: 
+by specifying the algorithms in one of two ways. Select the
+:guilabel:`Connection String` or :guilabel:`MongoClient Settings` tab to
+see the corresponding syntax:
 
 - In the ``compressors`` parameter of your connection string
 - In the ``compressorList`` method chained to the ``MongoClientSettings.builder()`` method
@@ -56,7 +58,7 @@ The following example shows how to specify all compression algorithms:
 
 .. tabs::
 
-   .. tab:: ConnectionString
+   .. tab:: Connection String
       :tabid: connectionstring
 
       .. literalinclude:: /includes/connect/network-compression.java
@@ -64,7 +66,7 @@ The following example shows how to specify all compression algorithms:
          :end-before: end-specify-connection-string
          :language: java
 
-   .. tab:: MongoClientSettings
+   .. tab:: MongoClient Settings
       :tabid: mongoclientsettings
 
       .. literalinclude:: /includes/connect/network-compression.java
