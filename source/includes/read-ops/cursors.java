@@ -23,7 +23,6 @@ public class Cursors {
 
             // start-cursor-iterate
             FindPublisher<Document> findPublisher = collection.find();
-
             Flux.from(findPublisher)
                     .doOnNext(x -> System.out.println(x.getString("name")))
                     .blockLast();
