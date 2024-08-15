@@ -20,7 +20,7 @@ Access Data From a Cursor
 Overview
 --------
 
-In this guide, you can learn how to access data from a **cursor** with the
+In this guide, you can learn how to access data from a **cursor** by using the
 {+driver-short+}.
 
 A cursor is a mechanism that returns the results of a read operation in iterable
@@ -62,7 +62,7 @@ Retrieve All Documents
    application memory, your program will crash. If you expect a large result
    set, :ref:`access your cursor iteratively <kotlin-sync-cursors-iterate>`.
 
-To retrieve all documents from a cursor, convert the cursor into a ``List`` as
+To retrieve all documents from a cursor, convert the cursor into a ``List``, as
 shown in the following example:
 
 .. literalinclude:: /includes/read-ops/cursors.java
@@ -77,11 +77,11 @@ Tailable Cursors
 
 When querying on a :manual:`capped collection </core/capped-collections/>`, you
 can use a **tailable cursor** that remains open after the client exhausts the
-results in a cursor. To create a tailable cursor with capped collection,
-specify ``CursorType.TailableAwait`` to the ``cursorType`` method of a
+results in a cursor. To create a tailable cursor on a capped collection,
+pass a value of ``CursorType.TailableAwait`` to the ``cursorType()`` method of a
 ``FindPublisher`` object.
 
-The following example creates a tailable cursor on a collection:
+The following example creates a tailable cursor on a collection and prints its contents:
 
 .. literalinclude:: /includes/read-ops/cursors.java
    :start-after: start-tailable-cursor
