@@ -101,9 +101,9 @@ transaction, and insert documents into multiple collections in one transaction.
 The code executes the following steps:
 
 1. Creates a session from the client by using the ``startSession()`` method
-* Starts a transaction by using the ``startTransaction()`` method
-* Inserts documents into the ``restaurants`` and ``movies`` collections
-* Commits the transaction by using the ``commitTransaction()`` method
+#. Starts a transaction by using the ``startTransaction()`` method
+#. Inserts documents into the ``restaurants`` and ``movies`` collections
+#. Commits the transaction by using the ``commitTransaction()`` method
 
 .. literalinclude:: /includes/write/transactions/transactions.java
    :language: java
