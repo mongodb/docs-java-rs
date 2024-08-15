@@ -7,7 +7,7 @@ Transactions
 .. contents:: On this page
    :local:
    :backlinks: none
-   :depth: 1
+   :depth: 2
    :class: singlecol
 
 .. facet::
@@ -98,12 +98,12 @@ Transaction Example
 
 The following example demonstrates how to create a session, create a
 transaction, and insert documents into multiple collections in one transaction.
-The code completes the following steps:
+The code executes the following steps:
 
-- Creates a session from the client by using the ``startSession()`` method
-- Starts a transaction by using the ``startTransaction()`` method
-- Inserts documents into the ``restaurants`` and ``movies`` collections
-- Commits the transaction by using the ``commitTransaction()`` method
+1. Creates a session from the client by using the ``startSession()`` method
+* Starts a transaction by using the ``startTransaction()`` method
+* Inserts documents into the ``restaurants`` and ``movies`` collections
+* Commits the transaction by using the ``commitTransaction()`` method
 
 .. literalinclude:: /includes/write/transactions/transactions.java
    :language: java
