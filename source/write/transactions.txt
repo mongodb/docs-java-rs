@@ -118,7 +118,7 @@ following pages in the Server manual:
 
 - :manual:`Transactions </core/transactions/>`
 - :manual:`Server Sessions </reference/server-sessions/>`
-- :manual:`Read Isolation, Consistency, and Recency </core/read-isolation-consistency-recency/#causal-consistency>`
+- :manual:`Causal Consistency </core/read-isolation-consistency-recency/#causal-consistency>`
 
 API Documentation
 ~~~~~~~~~~~~~~~~~
@@ -126,8 +126,8 @@ API Documentation
 To learn more about any of the types or methods discussed in this
 guide, see the following API Documentation:
 
-- `MongoClient <{+api+}mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClient.html>`__
+- `MongoClient <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClient.html>`__
 - `startSession() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClient.html#startSession()>`__
 - `startTransaction() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/ClientSession.html#startTransaction()>`__
 - `abortTransaction() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/ClientSession.html#abortTransaction()>`__
-- `commitTransaction() <{{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/ClientSession.html#commitTransaction()>`__
+- `commitTransaction() <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/ClientSession.html#commitTransaction()>`__
