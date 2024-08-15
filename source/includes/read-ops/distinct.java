@@ -20,7 +20,8 @@ public class Distinct {
             MongoCollection<Document> collection = database.getCollection("restaurants");
 
             // start-distinct
-            DistinctPublisher<String> distinctPublisher = collection.distinct("borough", String.class);
+            DistinctPublisher<String> distinctPublisher = collection
+                    .distinct("borough", String.class);
 
             Flux.from(distinctPublisher)
                     .doOnNext(System.out::println)
@@ -30,7 +31,9 @@ public class Distinct {
             // start-distinct-query
             Bson filter = Filters.eq("cuisine", "Italian");
 
-            DistinctPublisher<String> distinctPublisher = collection.distinct("borough", filter, String.class);
+            DistinctPublisher<String> distinctPublisher = collection
+                    .distinct("borough", String.class)
+                    .filter(filter);
 
             Flux.from(distinctPublisher)
                     .doOnNext(System.out::println)
@@ -43,7 +46,10 @@ public class Distinct {
                     Filters.eq("cuisine", "Pizza")
             );
 
-            DistinctPublisher<String> distinctPublisher = collection.distinct("name", filter, String.class).comment("Bronx pizza restaurants");
+            DistinctPublisher<String> distinctPublisher = collection
+                    .distinct("name", String.class)
+                    .filter(filter)
+                    .comment("Bronx pizza restaurants");
 
             Flux.from(distinctPublisher)
                     .doOnNext(System.out::println)

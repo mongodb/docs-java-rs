@@ -57,7 +57,6 @@ the ``restaurants`` collection:
       :dedent:
 
    .. output::
-      :visible: false
 
       Bronx
       Brooklyn
@@ -90,7 +89,6 @@ all documents that have a ``cuisine`` field value of ``"Italian"``:
       :dedent:
 
    .. output::
-      :visible: false
 
       Bronx
       Brooklyn
@@ -148,7 +146,6 @@ the ``comment`` option to add a comment to the operation.
       :dedent:
 
    .. output:: 
-      :visible: false
 
       $1.25 Pizza
       18 East Gunhill Pizza
