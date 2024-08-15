@@ -15,7 +15,7 @@ Transactions
    :values: reference
 
 .. meta::
-   :keywords: ACID, bulk write, code example
+   :keywords: ACID, write, consistency, code example
 
 Overview
 --------
