@@ -57,7 +57,7 @@ The following example creates an ascending index on the specified field:
    :copyable:
    :dedent:
 
-To learn more about single field indexes, see the :ref:`java-rs-single-field-index` guide.
+.. TODO: To learn more about single field indexes, see the :ref:`java-rs-single-field-index` guide.
 
 Compound Index
 --------------

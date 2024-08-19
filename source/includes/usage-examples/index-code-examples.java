@@ -16,7 +16,7 @@ import reactor.core.publisher.Flux;
 public class IndexOperations {
     public static void main(String[] args) {
         // Replace the placeholder with your Atlas connection string
-        String uri = "<connection>";
+        String uri = "<connection string URI>";
 
         // Construct a ServerApi instance using the ServerApi.builder() method
         ServerApi serverApi = ServerApi.builder()
