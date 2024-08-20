@@ -92,7 +92,7 @@ The following example creates a multikey index on the specified array-valued fie
 Geospatial Index
 ----------------
 
-The following example creates a 2dsphere index on the specified field that contains
+The following example creates a ``2dsphere`` index on the specified field that contains
 GeoJSON objects:
 
 .. literalinclude:: /includes/usage-examples/index-code-examples.java
@@ -157,13 +157,13 @@ Atlas Search Index Management
 The following sections contain code examples that describe how to manage Atlas Search
 indexes.
 
-.. TODO: To learn more about Atlas search indexes, see the :ref:`java-rs-atlas-search-index`
+.. TODO: To learn more about Atlas Search indexes, see the :ref:`java-rs-atlas-search-index`
 .. guide.
 
 Create Search Index
 ~~~~~~~~~~~~~~~~~~~
 
-The following example creates an Atlas search index on the specified field:
+The following example creates an Atlas Search index on the specified field:
 
 .. literalinclude:: /includes/usage-examples/index-code-examples.java
    :start-after: start-search-create
@@ -172,13 +172,13 @@ The following example creates an Atlas search index on the specified field:
    :copyable:
    :dedent:
 
-.. TODO: To learn more about creating serach indexes, see the :ref:`java-rs-atlas-search-index-create`
+.. TODO: To learn more about creating search indexes, see the :ref:`java-rs-atlas-search-index-create`
 .. guide.
 
 List Search Indexes
 ~~~~~~~~~~~~~~~~~~~
 
-The following example prints a list of Atlas search indexes in the specified collection:
+The following example prints a list of Atlas Search indexes in the specified collection:
 
 .. literalinclude:: /includes/usage-examples/index-code-examples.java
    :start-after: start-search-list
@@ -193,7 +193,7 @@ The following example prints a list of Atlas search indexes in the specified col
 Update Search Indexes
 ~~~~~~~~~~~~~~~~~~~~~
 
-The following example updates an existing Atlas search index with the specified
+The following example updates an existing Atlas Search index with the specified
 new index definition:
 
 .. literalinclude:: /includes/usage-examples/index-code-examples.java
@@ -209,7 +209,7 @@ new index definition:
 Delete Search Indexes
 ~~~~~~~~~~~~~~~~~~~~~
 
-The following example deletes an Atlas search index with the specified name:
+The following example deletes an Atlas Search index with the specified name:
 
 .. literalinclude:: /includes/usage-examples/index-code-examples.java
    :start-after: start-search-delete

@@ -93,7 +93,7 @@ public class IndexOperations {
             CreateCollectionOptions createCollectionOptions= new CreateCollectionOptions()
                     .clusteredIndexOptions(clusteredIndexOptions);
 
-            MongoCollection<Document> collection = database.createCollection("<collection name",
+            MongoCollection<Document> collection = database.createCollection("<collection name>",
                     createCollectionOptions);
             // end-clustered
 
