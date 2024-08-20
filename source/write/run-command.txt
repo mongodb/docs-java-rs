@@ -52,6 +52,7 @@ no-op command used to test if a server is responsive.
 
    .. input:: /includes/write/run-command.java
       :language:  Java
+      :emphasize-lines: 2, 4
 
    .. output::
       :visible: false
