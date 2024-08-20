@@ -80,18 +80,18 @@ you can use to customize the behavior of the {+stable-api+}.
      - Description
 
    * - ``strict()``
-     - | **Optional**. When ``True``, if you call a command that isn't part of 
+     - | **Optional**. When ``true``, if you call a command that isn't part of 
          the declared API version, the driver raises an exception.
        |
-       | Default: **False**
+       | Default: **false**
 
    * -  ``deprecationErrors()``
-     - | **Optional**. When ``True``, if you call a command that is deprecated in the 
+     - | **Optional**. When ``true``, if you call a command that is deprecated in the 
          declared API version, the driver raises an exception.
        |
-       | Default: **False**
+       | Default: **false**
 
-The following code example shows how you can set configurations on an instance of ``ServerApi``
+The following code example shows how you can configure an instance of ``ServerApi``
 by chaining methods on the ``ServerApi.Builder``:
 
 .. literalinclude:: /includes/connect/stable-api.java
@@ -111,8 +111,8 @@ The {+driver-short+} raises this exception if you specify an API version and con
 MongoDB server that doesn't support the {+stable-api+}. Ensure you're connecting to a
 deployment running {+mdb-server+} v5.0 or later.
 
-Provided apiStrict:true, but the command count is not in API Version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provided apiStrict:true, but the command <operation> is not in API Version
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The {+driver-short+} raises this exception if your ``MongoClient`` runs an operation that
 isn't in the {+stable-api+} version you specified. To avoid this error, use an alternative
