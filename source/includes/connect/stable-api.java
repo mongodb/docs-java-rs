@@ -22,7 +22,6 @@ public class Main {
                 .serverApi(serverApi)
                 .build();
 
-        // Create a new client and connect to the server
         try (MongoClient mongoClient = MongoClients.create(settings)) {
             // Perform client operations here
         }

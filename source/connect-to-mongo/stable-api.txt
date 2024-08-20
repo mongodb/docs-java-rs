@@ -94,10 +94,10 @@ you can use to customize the behavior of the {+stable-api+}.
 The following code example shows how you can set configurations on an instance of ``ServerApi``
 by chaining methods on the ``ServerApi.Builder``:
 
-.. literalinclude:: /includes/connect/stable-api-options.kt
+.. literalinclude:: /includes/connect/stable-api-options.java
    :start-after: start-stable-api-options
    :end-before: end-stable-api-options
-   :language: kotlin
+   :language: java
    :copyable:
    :dedent:
 
@@ -131,4 +131,4 @@ following API documentation:
 - `ServerAddress <{+api+}/mongodb-driver-core/com/mongodb/ServerAddress.html>`__
 - `MongoClientSettings <{+api+}/mongodb-driver-core/com/mongodb/MongoClientSettings.html>`__
 - `MongoClientSettings.Builder <{+api+}/mongodb-driver-core/com/mongodb/MongoClientSettings.Builder.html>`__
-- `MongoClient <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClients.html>`__
+- `MongoClients <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClients.html>`__
