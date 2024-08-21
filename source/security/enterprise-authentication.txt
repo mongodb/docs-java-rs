@@ -32,8 +32,8 @@ Specify an Authentication Mechanism
 You can specify your authentication mechanism and credentials when connecting
 to MongoDB by using either of the following:
 
-- A connection string
-- A ``MongoCredential`` factory method
+- Connection string
+- ``MongoCredential`` factory method
 
 A **connection string** (also known as a **connection URI**) specifies how to
 connect and authenticate to your MongoDB cluster.
@@ -137,7 +137,7 @@ You might need to specify one or more of the following additional
 
       To specify the GSSAPI additional properties, include the property in the
       connection string as a URL parameter in the format:
-      ``<PROPERTY_NAME>:<value>``
+      ``<PROPERTY_NAME>:<value>``.
 
       The following example authenticates to GSSAPI and specifies additional properties:
 
