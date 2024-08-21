@@ -23,8 +23,8 @@ Overview
 MongoDB Enterprise Edition includes authentication mechanisms that aren't
 available in MongoDB Community Edition. In this guide, you can learn how to
 authenticate to MongoDB by using these authentication mechanisms. To learn about
-the other authentication mechanisms available in MongoDB, see
-:ref:`Authentication Mechanisms <java-rs-auth>`.
+the other authentication mechanisms available in MongoDB, see the
+:ref:`Authentication Mechanisms <java-rs-auth>` guide.
 
 Specify an Authentication Mechanism
 -----------------------------------
@@ -35,13 +35,13 @@ to MongoDB by using either of the following:
 - A connection string
 - A ``MongoCredential`` factory method
 
-A **connection string** (also known as a **connection uri**) specifies how to
+A **connection string** (also known as a **connection URI**) specifies how to
 connect and authenticate to your MongoDB cluster.
 
 To authenticate by using a connection string, include your settings in your
 connection string, then pass it to the ``MongoClients.create()`` method to
 instantiate your ``MongoClient``. Select the :guilabel:`Connection String`
-tab in the following sections to see the syntax for authenticating with a connection string.
+tab in the following sections to see the syntax for authenticating by using a connection string.
 
 You can also use the ``MongoCredential`` class to specify your
 authentication details. The ``MongoCredential`` class contains static factory
@@ -60,7 +60,7 @@ Mechanisms
 Kerberos (GSSAPI)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-The Generic Security Services API (``GSSAPI``) authentication mechanism
+The Generic Security Services API (GSSAPI) authentication mechanism
 allows you to authenticate to a Kerberos service by using your
 principal name.
 
@@ -181,7 +181,7 @@ You might need to specify one or more of the following additional
                :end-before: // end-gssapi-subject-key
                :language: java
 
-By default, the Java driver caches Kerberos tickets by ``MongoClient`` instance.
+By default, the {+driver-short+} caches Kerberos tickets by ``MongoClient`` instance.
 If your deployment frequently creates and destroys ``MongoClient`` instances,
 you can change the default Kerberos ticket caching behavior to cache by process
 to improve performance.
@@ -216,7 +216,7 @@ to improve performance.
    rather than `SSPI <https://docs.microsoft.com/en-us/windows/win32/secauthn/sspi>`__
    in its implementation of GSSAPI, which limits interoperability with
    Windows Active Directory and implementations of single sign-on. See the
-   following articles for more information:
+   following resources for more information:
 
    - `JDK-8054026 <https://bugs.openjdk.java.net/browse/JDK-8054026>`__
    - `JDK-6722928 <https://bugs.openjdk.java.net/browse/JDK-6722928>`__
@@ -308,8 +308,9 @@ see the corresponding syntax.
    .. tab:: Connection String
       :tabid: mongodb-azure-imds-connection-string
     
-      Replace the ``<percent-encoded audience>`` placeholder in the
-      following code with the percent-encoded value of the audience server
+      Replace the ``<username>`` placeholder with the client ID or application ID of the
+      Azure managed identity or enterprise application. Replace the ``<percent-encoded audience>`` 
+      placeholder in the following code with the percent-encoded value of the audience server
       parameter configured on your MongoDB deployment.
 
       The comma (``,``) character and its encoding (``%2C``) are
@@ -343,11 +344,17 @@ GCP IMDS
 
 If your application runs on a Google Compute Engine VM, or otherwise uses the
 `GCP Instance Metadata Service <https://cloud.google.com/compute/docs/metadata/querying-metadata>`__,
-you can authenticate to MongoDB by using {+driver-short+}'s built-in GCP
+you can authenticate to MongoDB by using the {+driver-short+}'s built-in GCP
 support.
 
 You can specify GCP IMDS OIDC authentication either by 
 using a ``MongoCredential`` or as part of the connection string.
+
+The following sections contain code examples that use the following
+placeholders:
+
+- ``hostname``: network address of your MongoDB deployment that your client can access
+- ``port``: port number of your MongoDB deployment
 
 Select the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
 see the corresponding syntax.

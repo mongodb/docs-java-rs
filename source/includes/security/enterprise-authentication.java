@@ -1,10 +1,10 @@
 // start-gssapi-connection-string
 MongoClient mongoClient = MongoClients
-    .create("<db_username>@<hostname>:<port>/?authSource=$external&authMechanism=GSSAPI");
+    .create("<username>@<hostname>:<port>/?authSource=$external&authMechanism=GSSAPI");
 // end-gssapi-connection-string
 
 // start-gssapi-mongocredential
-MongoCredential credential = MongoCredential.createGSSAPICredential(<db_username>);
+MongoCredential credential = MongoCredential.createGSSAPICredential("<username>");
 
 MongoClient mongoClient = MongoClients.create(
     MongoClientSettings.builder()
@@ -16,14 +16,14 @@ MongoClient mongoClient = MongoClients.create(
 
 // start-gssapi-connection-string-properties
 MongoClient mongoClient = MongoClients
-    .create("<db_username>@<hostname>:<port>/?authSource=$external&authMechanism=GSSAPI&authMechanismProperties=SERVICE_NAME:myService");
+    .create("<username>@<hostname>:<port>/?authSource=$external&authMechanism=GSSAPI&authMechanismProperties=SERVICE_NAME:myService");
 // end-gssapi-connection-string-properties
 
 // start-gssapi-service-key
 MongoCredential credential = MongoCredential
-    .createGSSAPICredential(<db_username>);
+    .createGSSAPICredential("<username>");
 credential = credential
-    .withMechanismProperty(MongoCredential.SERVICE_NAME_KEY, "myService");
+    .withMechanismProperty(MongoCredential.SERVICE_NAME_KEY, "<myService>");
 // end-gssapi-service-key
 
 // start-gssapi-subject-key
@@ -32,7 +32,7 @@ loginContext.login();
 Subject subject = loginContext.getSubject();
 
 MongoCredential credential = MongoCredential
-    .createGSSAPICredential(<db_username>);
+    .createGSSAPICredential("<username>");
 credential = credential
     .withMechanismProperty(MongoCredential.JAVA_SUBJECT_KEY, subject);
 // end-gssapi-subject-key
@@ -42,7 +42,7 @@ credential = credential
 will share a Kerberos ticket cache */
 String myLoginContext = "myContext";
 MongoCredential credential = MongoCredential
-    .createGSSAPICredential(<db_username>);
+    .createGSSAPICredential(<username>);
 
 /* Login context defaults to "com.sun.security.jgss.krb5.initiate"
 if unspecified in KerberosSubjectProvider */
@@ -70,7 +70,7 @@ MongoClient mongoClient = MongoClients.create(
 
 // start-azure-oidc-connection-string
 MongoClient mongoClient = MongoClients.create(
-            "mongodb://<db_username>@<hostname>:<port>/?" + 
+            "mongodb://<username>@<hostname>:<port>/?" + 
             "?authMechanism=MONGODB-OIDC" +
             "&authMechanismProperties=ENVIRONMENT:azure,TOKEN_RESOURCE:<percent-encoded audience>");
 // end-azure-oidc-connection-string
