@@ -4,6 +4,13 @@
 Time Series Data
 ================
 
+.. facet::
+   :name: genre
+   :values: reference
+
+.. meta::
+   :keywords: code example, measurement, weather
+
 .. contents:: On this page
    :local:
    :backlinks: none
@@ -64,14 +71,11 @@ To create a time series collection, pass the following parameters to the
 
 - A `CreateCollectionOptions <{+api+}/mongodb-driver-core/com/mongodb/client/model/CreateCollectionOptions.html>`__
   object with the `TimeSeriesOptions <{+api+}/mongodb-driver-core/com/mongodb/client/model/TimeSeriesOptions.html>`__ set
-  using the ``timeSeriesOptions()`` method
+  with the ``timeSeriesOptions()`` method
 
 .. _java-rs-time-series-create-example:
 
-Example
-~~~~~~~
-
-This example creates the ``october2024`` time series collection in the
+The following example creates a time series collection named ``october2024`` in the
 ``fall_weather`` database with the ``timeField`` option set to the ``"timestamp"`` field:
 
 .. literalinclude:: /includes/data-formats/time-series.java
@@ -114,7 +118,7 @@ in each inserted document.
 Example
 ~~~~~~~
 
-This example inserts New York City temperature data into the ``october2024``
+The following example inserts New York City temperature data into the ``october2024``
 time series collection created in the :ref:`Create a Time Series Collection example
 <java-rs-time-series-create-example>`. Each document contains the following fields:
 
