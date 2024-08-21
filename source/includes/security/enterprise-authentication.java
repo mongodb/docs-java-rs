@@ -20,8 +20,10 @@ MongoClient mongoClient = MongoClients
 // end-gssapi-connection-string-properties
 
 // start-gssapi-service-key
-MongoCredential credential = MongoCredential.createGSSAPICredential(<db_username>);
-credential = credential.withMechanismProperty(MongoCredential.SERVICE_NAME_KEY, "myService");
+MongoCredential credential = MongoCredential
+    .createGSSAPICredential(<db_username>);
+credential = credential
+    .withMechanismProperty(MongoCredential.SERVICE_NAME_KEY, "myService");
 // end-gssapi-service-key
 
 // start-gssapi-subject-key
@@ -29,17 +31,20 @@ LoginContext loginContext = new LoginContext(<LoginModule implementation from JA
 loginContext.login();
 Subject subject = loginContext.getSubject();
 
-MongoCredential credential = MongoCredential.createGSSAPICredential(<db_username>);
-credential = credential.withMechanismProperty(MongoCredential.JAVA_SUBJECT_KEY, subject);
+MongoCredential credential = MongoCredential
+    .createGSSAPICredential(<db_username>);
+credential = credential
+    .withMechanismProperty(MongoCredential.JAVA_SUBJECT_KEY, subject);
 // end-gssapi-subject-key
 
 // start-gssapi-ticket-cache
-/* all MongoClient instances sharing this instance of KerberosSubjectProvider
+/* All MongoClient instances sharing this instance of KerberosSubjectProvider
 will share a Kerberos ticket cache */
 String myLoginContext = "myContext";
-MongoCredential credential = MongoCredential.createGSSAPICredential(<db_username>);
+MongoCredential credential = MongoCredential
+    .createGSSAPICredential(<db_username>);
 
-/* login context defaults to "com.sun.security.jgss.krb5.initiate"
+/* Login context defaults to "com.sun.security.jgss.krb5.initiate"
 if unspecified in KerberosSubjectProvider */
 credential = credential
     .withMechanismProperty(MongoCredential.JAVA_SUBJECT_PROVIDER_KEY, 

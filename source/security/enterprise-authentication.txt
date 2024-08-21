@@ -41,9 +41,9 @@ connect and authenticate to your MongoDB cluster.
 To authenticate by using a connection string, include your settings in your
 connection string, then pass it to the ``MongoClients.create()`` method to
 instantiate your ``MongoClient``. Select the :guilabel:`Connection String`
-tab in the following sections to see the syntax for authenticating with a **connection string**.
+tab in the following sections to see the syntax for authenticating with a connection string.
 
-You can use the ``MongoCredential`` class to specify your
+You can also use the ``MongoCredential`` class to specify your
 authentication details. The ``MongoCredential`` class contains static factory
 methods that construct instances containing your authentication mechanism and
 credentials. When you use the ``MongoCredential`` helper class,
@@ -61,35 +61,23 @@ Kerberos (GSSAPI)
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The Generic Security Services API (``GSSAPI``) authentication mechanism
-allows you to authenticate to a Kerberos service using your
+allows you to authenticate to a Kerberos service by using your
 principal name.
 
-The following example specifies the Kerberos authentication mechanism,
-using the following placeholders:
+The following sections contain code examples that use the following placeholders:
 
 - ``username``: your URL-encoded principal name, such as ``"username%40REALM.ME"``
 - ``hostname``: network address of your MongoDB deployment that your
   client can access
 - ``port``: port number of your MongoDB deployment
 
-Select from the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
+Select the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
 see the corresponding syntax.
 
 .. tabs::
 
    .. tab::
       :tabid: Connection String
-
-      Perform the following actions to specify the GSSAPI authentication mechanism in a connection
-      string:
-
-      - Assign the ``authMechanism`` URL parameter to the value ``GSSAPI``
-      - (*optional*) Assign the ``authSource`` URL parameter to the value ``$external``
-
-      .. note::
-
-         If you specify the ``GSSAPI`` mechanism, you cannot assign
-         ``authSource`` to any value other than ``$external``.
 
       The following example authenticates to GSSAPI by using a connection string:
 
@@ -205,7 +193,7 @@ to improve performance.
       :tabid: Connection String
 
       To cache Kerberos tickets by process, you must use the ``MongoCredential`` authentication
-      mechanism, as the connection string authentication mechanism does not support the ``JAVA_SUBJECT_PROVIDER``
+      mechanism, because the connection string authentication mechanism does not support the ``JAVA_SUBJECT_PROVIDER``
       mechanism property. Select the :guilabel:`MongoCredential`
       tab to learn how to cache Kerberos tickets by process.
 
@@ -256,7 +244,7 @@ The following sections contain code examples that use the following placeholders
   client can access
 - ``port``: port number of your MongoDB deployment
 
-Select from the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
+Select the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
 see the corresponding syntax.
 
 .. tabs::
@@ -312,7 +300,7 @@ support.
 You can specify Azure IMDS OIDC authentication either by 
 using a ``MongoCredential`` or as part of the connection string.
 
-Select from the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
+Select the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
 see the corresponding syntax.
 
 .. tabs::
@@ -361,7 +349,7 @@ support.
 You can specify GCP IMDS OIDC authentication either by 
 using a ``MongoCredential`` or as part of the connection string.
 
-Select from the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
+Select the :guilabel:`Connection String` or :guilabel:`MongoCredential` tabs to
 see the corresponding syntax.
 
 .. tabs::

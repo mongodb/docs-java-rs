@@ -17,8 +17,10 @@ Authentication
    :depth: 2
    :class: singlecol
 
-The driver supports all MongoDB authentication mechanisms,
-including those available only in the MongoDB Enterprise Edition.
+In this guide, you can learn how to authenticate with MongoDB using the
+authentication mechanisms available in the MongoDB Community Edition.
+Authentication mechanisms are processes by which the driver and server confirm
+the identity of a client to ensure security before connecting.
 
 MongoCredential
 ---------------
