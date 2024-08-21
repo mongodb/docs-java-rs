@@ -15,7 +15,7 @@ Enterprise Authentication Mechanisms
    :values: reference
  
 .. meta::
-   :keywords: ldap, encryption, principal, tls
+   :keywords: ldap, encryption, principal, tls, oidc
 
 Overview
 --------
