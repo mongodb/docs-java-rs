@@ -58,7 +58,7 @@ The following code example shows how to specify {+stable-api+} version 1:
 
 Once you create a ``MongoClient`` instance with the {+stable-api+}, all commands you
 run with the client use the specified {+stable-api+} configuration. If you must run
-{+stable-api+} commands using alternative configurations, create a new ``MongoClient``.
+commands using alternative configurations, create a new ``MongoClient``.
 
 .. _java-rs-stable-api-options:
 
