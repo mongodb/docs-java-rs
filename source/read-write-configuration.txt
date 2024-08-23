@@ -52,28 +52,29 @@ The ``writeConcern()`` and ``withWriteConcern()`` methods accept a
 ``WriteConcern`` instance as a parameter. You can specify the write concern by 
 using one of the following values:
 
-- ``WriteConcern.ACKNOWLEDGED``: The write operation returns after the primary
-  node acknowledges the write operation.
+- ``WriteConcern.ACKNOWLEDGED``: The write operation returns after the operation
+  is written to memory.
 - ``WriteConcern.W1``: The write operation returns after only the primary node acknowledges
-  the write operation.
+  the write operation, without waiting for acknowledgement from secondary nodes.
 - ``WriteConcern.W2``: The write operation returns after the primary node and
   at least one secondary node acknowledge the write operation.
 - ``WriteConcern.W3``: The write operation returns after the primary node and
-   at least two secondary nodes acknowledge the write operation.
+  at least two secondary nodes acknowledge the write operation.
 - ``WriteConcern.MAJORITY``: The write operation returns after a majority of the
-   replica set members acknowledge the write operation.
+  replica set members acknowledge the write operation.
 - ``WriteConcern.UNACKNOWLEDGED``: The write operation returns after the primary
-   node processes the write operation.
+  node processes the write operation.
 - ``WriteConcern.JOURNALED``: The write operation returns after the primary node
-   writes the data to the on-disk journal.
+  writes the data to the on-disk journal.
 
-The following example sets the write concern to ``"majority"`` for on a client
-instance:
+The following example sets the write concern to ``"majority"`` for an instance of
+``MongoClient``:
 
 .. literalinclude:: /includes/read-write-configuration.java
    :start-after: // start-write-concern-client
    :end-before: // end-write-concern-client
    :language: java
+   :emphasize-lines: 3
 
 The following example sets the write concern to ``"majority"`` for a collection:
 
@@ -109,7 +110,7 @@ methods accept a single parameter that specifies the read concern level.
 You can set the following read concern levels:
 
 - ``ReadConcern.LOCAL``: The query returns the instance's most recent data. Provides no guarantee
-       that the data has been written to a majority of the replica set members.
+  that the data has been written to a majority of the replica set members.
 - ``ReadConern.AVAILABLE``: The query returns the instance's most recent data.
   Provides no guarantee that the data has been written to a majority of the
   replica set members. ``ReadConcern.AVAILABLE`` is not available for use with
@@ -120,7 +121,7 @@ You can set the following read concern levels:
   successful writes that completed prior to the start of the read operation.
   ``ReadConcern.LINEARIZABLE`` is not available for use with causally consistent
   sessions and transactions.
-- ``ReadConcern.SNAPSHOT``: The query returns majority-committed data as it appears across shards from a
+- ``ReadConcern.SNAPSHOT``: The query returns majority-committed data as it appears across shards, from a
   specific single point in the recent past.
 
 For more information about the read concern levels, see :manual:`Read Concern
@@ -134,6 +135,7 @@ The following example sets the read concern to ``ReadConcern.MAJORITY`` for an i
    :start-after: // start-read-concern-client
    :end-before: // end-read-concern-client
    :language: java
+   :emphasize-lines: 3
 
 The following example sets the read concern to ``ReadConcern.MAJORITY`` for a
 collection:
@@ -150,8 +152,7 @@ Read Preference
 ---------------
 
 Read preference determines which member of a replica set MongoDB reads when
-running a query. You can also customize how the server evaluates a replica set
-member. You can set the read preference by using the ``readPreference()`` method
+running a query. You can set the read preference by using the ``readPreference()`` method
 on a client or transaction, or by using the ``withReadPreference()``
 method on a database or collection.
 
@@ -175,6 +176,7 @@ for an instance of ``MongoClient``:
    :start-after: // start-read-preference-client
    :end-before: // end-read-preference-client
    :language: java
+   :emphasize-lines: 3
 
 The following example sets the read preference to ``ReadPreference.secondary()``
 for a collection:
