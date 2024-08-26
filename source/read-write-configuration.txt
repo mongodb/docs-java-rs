@@ -99,7 +99,7 @@ Read concern specifies the following behaviors:
 
 - Level of :manual:`causal consistency
   </core/causal-consistency-read-write-concerns>` across replica sets
-- :manual:`Isolation Guarantees </core/read-isolation-consistency-recency/>` maintained
+- :manual:`Isolation guarantees </core/read-isolation-consistency-recency/>` maintained
   during a query
 
 You can specify the read concern by using the ``readConcern()`` method on a
