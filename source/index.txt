@@ -36,7 +36,8 @@ MongoDB Java Reactive Streams Documentation
    /custom-implementations
    /whats-new
    /issues-and-help
-   /compatibility  
+   /compatibility
+   /upgrade
    API Documentation <{+api+}/mongodb-driver-reactivestreams/>
 
 Overview
