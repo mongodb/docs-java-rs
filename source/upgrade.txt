@@ -20,7 +20,7 @@ Upgrade Driver Versions
 Overview
 --------
 
-In this section, you can identify the changes you might need to
+In this section, you can identify the changes you must
 make to your application to upgrade your driver to a new version.
 
 Before you upgrade, perform the following actions:
@@ -346,7 +346,7 @@ Version 4.7 Breaking Changes
   `Aggregates API documentation <https://mongodb.github.io/mongo-java-driver/4.7/apidocs/mongodb-driver-core/com/mongodb/client/model/Aggregates.html>`__
   for information the new ``setWindowFields()`` method signatures.
 
-  If your application uses this builder in a version prior to v4.7, update
+  If your application uses this builder in a version earlier than v4.7, update
   your source code to use the new method signature and rebuild your binary.
 
 .. _java-rs-breaking-changes-v4.2:
