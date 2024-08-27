@@ -1,15 +1,18 @@
-package org.example;
-
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerApi;
 import com.mongodb.ServerApiVersion;
 
+import com.mongodb.client.model.ClusteredIndexOptions;
+import com.mongodb.client.model.CreateCollectionOptions;
+import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.model.Indexes;
 import com.mongodb.reactivestreams.client.*;
 import org.bson.Document;
-import org.bson.conversions.Bson;
+import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 
 public class IndexOperations {
     public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package org.example;
-
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.ServerApi;
@@ -11,9 +9,11 @@ import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.model.Indexes;
 import com.mongodb.reactivestreams.client.*;
 import org.bson.Document;
+import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
-public class IndexOperations {
+public class IndexExamples {
     public static void main(String[] args) {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string URI>";
@@ -33,21 +33,28 @@ public class IndexOperations {
             MongoDatabase database = mongoClient.getDatabase("sample_mflix");
             MongoCollection<Document> collection = database.getCollection("movies");
 
+            Publisher<Void> dropAllResult = collection.dropIndexes();
+            Mono.from(dropAllResult).block();
+
             // start-single-field
-            collection.createIndex(Indexes.ascending("<field name>"));
+            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name>"));
+            Mono.from(result).block();
             // end-single-field
 
             // start-compound
-            collection.createIndex(Indexes.ascending("<field name 1>", "<field name 2>"));
+            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name 1>", "<field name 2>"));
+            Mono.from(result).block();
             // end-compound
 
             // start-multikey
-            collection.createIndex(Indexes.ascending("<array field name>"));
+            Publisher<String> result = collection.createIndex(Indexes.ascending("<array field name>"));
+            Mono.from(result).block();
             // end-multikey
 
             // start-search-create
             Document index = new Document("mappings", new Document("dynamic", true));
-            collection.createSearchIndex("<index name>", index);
+            Publisher<String> result = collection.createSearchIndex("<index name>", index);
+            Mono.from(result).block();
             // end-search-create
 
             // start-search-list
@@ -60,28 +67,34 @@ public class IndexOperations {
 
             // start-search-update
             Document newIndex = new Document("mappings", new Document("dynamic", true));
-            collection.updateSearchIndex("<index name>", newIndex);
+            Publisher<Void> result = collection.updateSearchIndex("<index name>", newIndex);
+            Mono.from(result).block();
             // end-search-update
 
             // start-search-delete
-            collection.dropIndex("<index name>");
+            Publisher<Void> result = collection.dropIndex("<index name>");
+            Mono.from(result).block();
             // end-search-delete
 
             // start-text
-            collection.createIndex(Indexes.text("<field name>"));
+            Publisher<String> result = collection.createIndex(Indexes.text("<field name>"));
+            Mono.from(result).block();
             // end-text
 
             // start-geo
-            collection.createIndex(Indexes.geo2dsphere("<GeoJSON object field>"));
+            Publisher<String> result = collection.createIndex(Indexes.geo2dsphere("<GeoJSON object field>"));
+            Mono.from(result).block();
             // end-geo
 
             // start-unique
             IndexOptions indexOptions = new IndexOptions().unique(true);
-            collection.createIndex(Indexes.ascending("<field name>"), indexOptions);
+            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name>"), indexOptions);
+            Mono.from(result).block();
             // end-unique
 
             // start-wildcard
-            collection.createIndex(Indexes.ascending("$**"));
+            Publisher<String> result = collection.createIndex(Indexes.ascending("$**"));
+            Mono.from(result).block();
             // end-wildcard
 
             // start-clustered
@@ -93,12 +106,14 @@ public class IndexOperations {
             CreateCollectionOptions createCollectionOptions= new CreateCollectionOptions()
                     .clusteredIndexOptions(clusteredIndexOptions);
 
-            MongoCollection<Document> collection = database.createCollection("<collection name>",
+            Publisher<Void> clusteredCollection = database.createCollection("<collection name>",
                     createCollectionOptions);
+            Mono.from(clusteredCollection).block();
             // end-clustered
 
             // start-remove
-            collection.dropIndex("<index name>");
+            Publisher<Void> result = collection.dropIndex("<index name>");
+            Mono.from(result).block();
             // end-remove
         }
     }
