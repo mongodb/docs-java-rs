@@ -37,13 +37,13 @@ the relevant values for your MongoDB deployment.
 
 .. _java-rs-index-sample:
 
-.. include:: /includes/usage-examples/sample-app-intro.rst
+.. include:: /includes/usage-examples/sample-index-app-intro.rst
 
 .. literalinclude:: /includes/usage-examples/sample-index-application.java
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 34-36
+   :emphasize-lines: 37-39
 
 Single Field Index
 ------------------
