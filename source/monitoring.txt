@@ -81,7 +81,7 @@ To monitor command events, create a class that implements the
 ``CommandListener`` interface and register an instance of that class with your
 ``MongoClient`` instance.
 
-For more information about MongoDB database commands, see :manual:`</reference/command/>`
+For more information about MongoDB database commands, see :manual:`Database Commands </reference/command/>`
 in the {+mdb-server+} manual.
 
 .. note:: Internal Commands
@@ -135,9 +135,11 @@ counter.
       :language: java
       :start-after: start-monitor-command-example
       :end-before: end-monitor-command-example
+      :dedent:
 
    .. output::
-      
+      :visible: false
+
       {find=1}
       {find=2}
       {find=2, endSessions=1}
@@ -153,10 +155,10 @@ The driver defines nine SDAM events. The driver divides these nine events
 between three separate listener interfaces which each listen for three of the
 nine events. Here are the three interfaces and the events they listen for:
 
-- ``ClusterListener``: :spec:`topology </server-discovery-and-monitoring/server-discovery-and-monitoring.md#topology>`
-  related events
+- ``ClusterListener``: :spec:`topology </server-discovery-and-monitoring/server-discovery-and-monitoring.md#topology>`-related
+  events
 - ``ServerListener``: events related to ``mongod`` or ``mongos`` processes
-- ``ServerMonitorListener``: heartbeat related events
+- ``ServerMonitorListener``: heartbeat-related events
 
 To monitor a type of SDAM event, write a class that
 implements one of the three preceding interfaces and register an instance of that
@@ -172,7 +174,7 @@ For a detailed description of each SDAM event in the driver, see the
 Example
 ^^^^^^^
 
-This example shows how to make a listener class that prints a message that lets
+The following example shows how to make a listener class that prints a message that lets
 you know if the driver can write to your MongoDB instance.
 
 The following code defines the ``IsWritable`` class which implements the
@@ -199,15 +201,9 @@ The following code adds an instance of the ``IsWritable`` class to a
       :dedent:
 
    .. output::
+      :visible: false
 
       Able to write to server
-
-- `ClusterListener <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ClusterListener.html>`__
-- `ServerListener <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ServerListener.html>`__
-- `ServerMonitorListener <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ServerMonitorListener.html>`__
-- `MongoClientSettings <{+api+}/apidocs/mongodb-driver-core/com/mongodb/MongoClientSettings.html>`__
-- `MongoClient <{+api+}/apidocs/mongodb-driver-sync/com/mongodb/client/MongoClient.html>`__
-- `ClusterDescriptionChangedEvent <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ClusterDescriptionChangedEvent.html>`__
 
 Connection Pool Events
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -252,6 +248,7 @@ librarian.
       :dedent:
 
    .. output::
+      :visible: false
 
       Let me get you the connection with id 21...
 
@@ -324,8 +321,8 @@ following resources from Oracle:
 JMX and JConsole Example
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This example shows how you can monitor the driver's connection pools using JMX
-and **JConsole**. JConsole is a JMX compliant GUI monitoring tool that comes with
+The following example shows how you can monitor the driver's connection pools using JMX
+and **JConsole**. JConsole is a JMX-compliant GUI monitoring tool that comes with
 the Java Platform.
 
 .. tip:: Consult the Official JMX and JConsole Documentation
@@ -334,7 +331,7 @@ the Java Platform.
    rather than a source of truth. For guaranteed up to date information, consult
    the following official Oracle resources:
 
-   - `JConsole documentation <https://www.oracle.com/technical-resources/articles/java/jconsole.html>`__.
+   - `JConsole documentation <https://www.oracle.com/technical-resources/articles/java/jconsole.html>`__
    - `JMX documentation <https://docs.oracle.com/javase/tutorial/jmx/index.html>`__
 
 The following code snippet adds a ``JMXConnectionPoolListener`` to a
@@ -351,6 +348,7 @@ navigate to JConsole and inspect your connection pools.
       :dedent:
 
    .. output::
+      :visible: false
 
       Navigate to JConsole to see your connection pools...
 
@@ -377,7 +375,7 @@ following:
 For more information about JMX and JConsole, see the following resources from
 Oracle:
 
-- `JConsole Documentation <https://www.oracle.com/technical-resources/articles/java/jconsole.html>`__.
+- `JConsole Documentation <https://www.oracle.com/technical-resources/articles/java/jconsole.html>`__
 - `Monitoring and Management Guide <https://docs.oracle.com/en/java/javase/16/management/monitoring-and-management-using-jmx-technology.html>`__
 
 For more information about the ``JMXConnectionPoolListener`` class, see
@@ -420,14 +418,14 @@ API Documentation
 For more information about the classes and methods mentioned in this document, see
 the following API Documentation:
 
-- `MongoClient <{+api+}/mongodb-driver-sync/com/mongodb/client/MongoClient.html>`__
+- `MongoClients <{+api+}/mongodb-driver-reactivestreams/com/mongodb/reactivestreams/client/MongoClients.html>`__
 - `MongoClientSettings <{+api+}/mongodb-driver-core/com/mongodb/MongoClientSettings.html>`__
 - `CommandListener <{+api+}/mongodb-driver-core/com/mongodb/event/CommandListener.html>`__
 - `CommandStartedEvent <{+api+}/mongodb-driver-core/com/mongodb/event/CommandStartedEvent.html>`__
 - `CommandSucceededEvent <{+api+}/mongodb-driver-core/com/mongodb/event/CommandSucceededEvent.html>`__
 - `CommandFailedEvent <{+api+}/mongodb-driver-core/com/mongodb/event/CommandFailedEvent.html>`__
-- `ClusterListener <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ClusterListener.html>`__
-- `ClusterDescriptionChangedEvent <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ClusterDescriptionChangedEvent.html>`__
-- `ConnectionPoolListener <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ConnectionPoolListener.html>`__
-- `ConnectionCheckedOutEvent <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ConnectionCheckedOutEvent.html>`__
-- `ConnectionCheckOutFailedEvent <{+api+}/apidocs/mongodb-driver-core/com/mongodb/event/ConnectionCheckOutFailedEvent.html>`__
+- `ClusterListener <{+api+}/mongodb-driver-core/com/mongodb/event/ClusterListener.html>`__
+- `ClusterDescriptionChangedEvent <{+api+}/mongodb-driver-core/com/mongodb/event/ClusterDescriptionChangedEvent.html>`__
+- `ConnectionPoolListener <{+api+}/mongodb-driver-core/com/mongodb/event/ConnectionPoolListener.html>`__
+- `ConnectionCheckedOutEvent <{+api+}/mongodb-driver-core/com/mongodb/event/ConnectionCheckedOutEvent.html>`__
+- `ConnectionCheckOutFailedEvent <{+api+}/mongodb-driver-core/com/mongodb/event/ConnectionCheckOutFailedEvent.html>`__
