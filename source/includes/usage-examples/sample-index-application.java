@@ -13,7 +13,7 @@ import org.reactivestreams.Publisher;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class IndexOperations {
+public class IndexApp {
     public static void main(String[] args) {
         // Replace the placeholder with your Atlas connection string
         String uri = "<connection string URI>";
