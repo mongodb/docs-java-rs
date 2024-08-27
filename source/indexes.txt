@@ -43,7 +43,7 @@ the relevant values for your MongoDB deployment.
    :language: java
    :copyable:
    :linenos:
-   :emphasize-lines: 37-39
+   :emphasize-lines: 36-38
 
 Single Field Index
 ------------------
