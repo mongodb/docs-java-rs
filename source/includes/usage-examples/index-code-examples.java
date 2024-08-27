@@ -33,9 +33,6 @@ public class IndexExamples {
             MongoDatabase database = mongoClient.getDatabase("sample_mflix");
             MongoCollection<Document> collection = database.getCollection("movies");
 
-            Publisher<Void> dropAllResult = collection.dropIndexes();
-            Mono.from(dropAllResult).block();
-
             // start-single-field
             Publisher<String> result = collection.createIndex(Indexes.ascending("<field name>"));
             Mono.from(result).block();
