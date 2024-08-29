@@ -27,9 +27,6 @@ A cursor is a mechanism that returns the results of a read operation in iterable
 batches. Because a cursor holds only a subset of documents at any given time,
 cursors reduce both memory consumption and network bandwidth usage.
 
-Whenever the {+driver-short+} performs a read operation that returns multiple
-documents, it automatically returns those documents in a cursor.
-
 In the {+driver-short+}, some streams are backed by cursors. The size of batches used
 in these underlying cursors depends on the demand requested on the ``Subscription`` for the
 ``Publisher``. The batch size of data contained by each underlying cursor can be set by
