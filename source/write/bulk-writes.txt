@@ -109,7 +109,7 @@ Replace Operations
 ~~~~~~~~~~~~~~~~~~
 
 A replace operation removes all fields and values of a specified document, aside from
-the ``_id field``, and replaces them with new ones. To perform a replace operation, create
+the ``_id`` field, and replaces them with new ones. To perform a replace operation, create
 an instance of ``ReplaceOneModel`` and pass in a query filter and the fields and values
 you want to store in the matching document.
 
