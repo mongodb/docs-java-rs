@@ -12,7 +12,8 @@ toc_landing_pages = [
     "/read-data-from-mongo/",
     "/write-data-to-mongo/",
     "/getting-started/",
-    "/secure-your-data/"
+    "/secure-your-data/",
+    "/upgrade/"
     ]
 
 [constants]
@@ -28,3 +29,4 @@ string-data-type = "``String``"
 bool = "``boolean``"
 pr = "Project Reactor"
 mdb-server = "MongoDB Server"
+stable-api = "Stable API"
