@@ -30,6 +30,11 @@ cursors reduce both memory consumption and network bandwidth usage.
 Whenever the {+driver-short+} performs a read operation that returns multiple
 documents, it automatically returns those documents in a cursor.
 
+In the {+driver-short+}, some streams are backed by cursors. The size of batches used
+in these underlying cursors depends on the demand requested on the ``Subscription`` for the
+``Publisher``. The batch size of data contained by each underlying cursor can be set by
+using the ``FindPublisher.batchSize()`` method.
+
 Sample Data
 ~~~~~~~~~~~
 
@@ -39,6 +44,8 @@ free MongoDB Atlas cluster and load the sample datasets, see the
 :ref:`<java-rs-getting-started>` guide.
 
 .. include:: includes/reactor-note.rst
+
+.. _java-rs-cursors-iterate:
 
 Access Cursor Contents Iteratively
 ----------------------------------
@@ -60,7 +67,7 @@ Retrieve All Documents
 
    If the number and size of documents returned by your query exceeds available
    application memory, your program will crash. If you expect a large result
-   set, :ref:`access your cursor iteratively <kotlin-sync-cursors-iterate>`.
+   set, :ref:`access your cursor iteratively <java-rs-cursors-iterate>`.
 
 To retrieve all documents from a cursor, convert the cursor into a ``List``, as
 shown in the following example:
