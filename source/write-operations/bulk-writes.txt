@@ -108,10 +108,10 @@ The following example creates an instance of ``UpdateManyModel``:
 Replace Operations
 ~~~~~~~~~~~~~~~~~~
 
-A replace operation removes all fields and values of a specified document and
-replaces them with new ones. To perform a replace operation, create an instance
-of ``ReplaceOneModel`` and pass in a query filter and the fields and values you want
-to store in the matching document.
+A replace operation removes all fields and values of a specified document, aside from
+the ``_id field``, and replaces them with new ones. To perform a replace operation, create
+an instance of ``ReplaceOneModel`` and pass in a query filter and the fields and values
+you want to store in the matching document.
 
 The following example creates an instance of ``ReplaceOneModel``:
 
@@ -177,10 +177,11 @@ The following example performs multiple write operations by using the
       
       AcknowledgedBulkWriteResult{insertedCount=2, matchedCount=2, removedCount=1, modifiedCount=2, upserts=[], inserts=[BulkWriteInsert{index=0, id=BsonObjectId{value=66a7e0a6c08025218b657208}}, BulkWriteInsert{index=1, id=BsonObjectId{value=66a7e0a6c08025218b657209}}]}
 
-If any of the write operations fail, the {+driver-short+} raises a
-``BulkWriteError`` and does not perform any further operations.
-``BulkWriteError`` provides a ``details`` attribute that includes the operation
-that failed and details about the exception.
+If any of the write operations fail, the {+driver-short+} signals a
+``MongoBulkWriteException`` and does not perform any further individual operations.
+``MongoBulkWriteException`` includes a ``BulkWriteError`` that can be accessed by using the
+``MongoBulkWriteException.getWriteErrors()`` method, which provides details of the
+individual failure.
 
 .. note::
 
@@ -195,9 +196,8 @@ The ``BulkWriteOptions`` class contains methods that modify
 the behavior of the ``bulkWrite()`` method. To use the ``BulkWriteOptions``
 class, construct a new instance of the class, then call one or more of its methods
 to modify the write operation. You can chain these method calls together.
-To modify the behavior of the write operation, pass the class instance and
-chained method calls as the last argument to the
-``bulkWrite()`` method.
+To modify the behavior of the write operation, pass the class instance as the last
+argument to the ``bulkWrite()`` method.
 
 You can use the following methods in the ``BulkWriteOptions`` class
 to modify a write method. All methods are optional.
@@ -234,9 +234,9 @@ to modify a write method. All methods are optional.
          MongoDB Server manual.
 
    * - ``ordered(Boolean ordered)``
-     - | If set to ``True``, the driver sends documents to the
-         server in the order provided. If an error occurs, the driver
-         and server cancel all remaining write operations.
+     - | If set to ``True``, the driver performs the individual operations in the order
+         provided. If an individual operation fails, the driver will not execute any
+         subsequent individual operations.
        | Defaults to ``True``. 
 
 The following example calls the ``bulkWrite()`` method from the preceding
@@ -263,69 +263,6 @@ reports the errors only after attempting all operations.
    Unordered bulk operations do not guarantee order of execution. The order can
    differ from the way you list them to optimize the runtime.
 
-Return Value
-------------
-
-The ``bulkWrite()`` method returns a ``BulkWriteResult`` object. The
-``BulkWriteResult`` object contains the following methods:
-
-.. list-table::
-   :widths: 50 50
-   :header-rows: 1
-
-   * - Method
-     - Description
-
-   * - .. code-block:: none
-          :copyable: false
-
-           acknowledged(int insertedCount,
-           int matchedCount,
-           int removedCount, Integer modifiedCount,
-           List<BulkWriteUpsert> upserts,
-           List<BulkWriteInsert> inserts)
-
-     - | Indicates if the server acknowledged the write operation.
-   
-   * - .. code-block:: none
-          :copyable: false
-
-           acknowledged(com.mongodb
-           .internal.bulk
-           .WriteRequest.Type type,
-           int count,
-           Integer modifiedCount,
-           List<BulkWriteUpsert> upserts,
-           List<BulkWriteInsert> inserts)
-
-     - | Indicates if the server acknowledged the write operation.
-         
-   * - ``getDeletedCount()``
-     - | Gets the number of documents deleted, if any.
-
-   * - ``getInsertedCount()``
-     - | Gets the number of documents inserted, if any.
-
-   * - ``getInserts()``
-     - | Gets an unmodifiable list of inserted items, or an empty list if there
-         were no items inserted.
-
-   * - ``getMatchedCount()``
-     - | Returns the number of documents matched by updates or replacements in the write operation.
-
-   * - ``getModifiedCount()``
-     - | Returns the number of documents modified by the write operation.
-
-   * - ``getUpserts()``
-     - | Gets an unmodifiable list of upserted items, or an empty list if there
-         were no items upserted.
-
-   * - ``unacknowledged()``
-     - | Creates an unacknowledged ``BulkWriteResult``.
-
-   * - ``wasAcknowledged()``
-     - | Returns true if the write was acknowledged.
-
 Additional Information
 ----------------------
 
@@ -351,3 +288,4 @@ guide, see the following API documentation:
 - `DeleteManyModel <{+api+}/mongodb-driver-core/com/mongodb/client/model/DeleteManyModel.html>`__
 - `BulkWriteResult <{+api+}/mongodb-driver-core/com/mongodb/bulk/BulkWriteResult.html>`__
 - `BulkWriteError <{+api+}/mongodb-driver-core/com/mongodb/bulk/BulkWriteError.html>`__
+- `MongoBulkWriteException <{+api+}/mongodb-driver-core/com/mongodb/MongoBulkWriteException.html>`__
