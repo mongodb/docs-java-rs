@@ -14,7 +14,8 @@ toc_landing_pages = [
     "/write-data-to-mongo/",
     "/getting-started/",
     "/secure-your-data/",
-]
+    "/upgrade/"
+    ]
 
 [constants]
 driver-short = "Java Reactive Streams driver"
@@ -31,3 +32,4 @@ pr = "Project Reactor"
 mdb-server = "MongoDB Server"
 snappyVersion = "org.xerial.snappy:snappy-java:1.1.10.3"
 zstdVersion = "com.github.luben:zstd-jni:1.5.5-3"
+stable-api = "Stable API"

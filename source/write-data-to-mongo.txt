@@ -27,9 +27,10 @@ Write Data to MongoDB
     /write/replace-documents
     /write/write-delete-documents
     /write/bulk-writes
+    /write/transactions
     /write/store-large-docs
     /write/write-concern
-    /write/command
+    /write/run-command
 
 Overview
 --------

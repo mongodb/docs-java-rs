@@ -27,10 +27,12 @@ Read Data From MongoDB
     /read/specify-fields-return
     /read/specify-documents-to-return
     /read/count-documents
+    /read/distinct
+    /read/cursors
     /read/read-preference
     /read/text-search
     /read/geo
-    /read/change-stream
+    /read/change-streams
     
 Overview
 --------
@@ -166,8 +168,7 @@ collection:
    :language: java
    :copyable:
 
-To learn more about the ``distinct()`` method, see :manual:`distinct()
-<reference/method/db.collection.distinct/>` in the {+mdb-server+} manual.
+To learn more about the ``distinct()`` method, see the :ref:`<java-rs-distinct>` guide.
 
 Monitor Data Changes
 --------------------
@@ -181,4 +182,4 @@ subsequent change events in that collection:
    :language: java
    :copyable:
 
-To learn more about the ``watch()`` method, see the :ref:`Monitor Data Changes <java-rs-monitor-changes>` guide.
+To learn more about the ``watch()`` method, see the :ref:`Monitor Data Changes <java-rs-change-streams>` guide.
