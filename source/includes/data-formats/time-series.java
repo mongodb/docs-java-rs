@@ -5,6 +5,7 @@ import com.mongodb.MongoClientSettings;
 
 import com.mongodb.client.model.CreateCollectionOptions;
 import com.mongodb.client.model.TimeSeriesOptions;
+import com.mongodb.client.result.InsertManyResult;
 import com.mongodb.reactivestreams.client.*;
 import org.bson.Document;
 import reactor.core.publisher.Flux;
@@ -54,7 +55,9 @@ public class Main {
                     .append("location", "New York City")
                     .append("timestamp", new Date(1727841600000L));
 
-            collection.insertMany(Arrays.asList(temperature1, temperature2));
+            Publisher<InsertManyResult> insertPublisher =
+                    collection.insertMany(Arrays.asList(temperature1, temperature2));
+            Mono.from(insertPublisher).block();
             // end-insert-time-series-data
         }
     }
