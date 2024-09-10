@@ -35,6 +35,32 @@ To use an example from this page, copy the code example into the
 Be sure to replace all placeholders in the code examples, such as ``<connection string URI>``, with
 the relevant values for your MongoDB deployment.
 
+Project Reactor Implementation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This guide uses the {+pr+} library to consume ``Publisher`` instances returned
+by the {+driver-short+} methods. To learn more about the {+pr+} library
+and how to use it, see `Getting Started <https://projectreactor.io/docs/core/release/reference/#getting-started>`__
+in the Reactor documentation.
+
+There are also other ways to consume ``Publisher`` instances. You can use one of many alternative libraries such as
+`RxJava <https://github.com/ReactiveX/RxJava>`__ or call ``Publisher.subscribe()`` directly and pass your own
+implementation of a ``Subscriber``.
+
+This guide uses the ``Mono.block()`` method from Reactor to subscribe to a ``Publisher`` and block the current
+thread until the ``Publisher`` reaches its terminal state. To learn more about the Reactive Streams initiative, see `Reactive Streams <https://www.reactive-streams.org/>`__.
+
+.. important:: Publishers Returned are Cold
+
+   All ``Publisher`` instances returned by the {+driver-short+} methods are cold,
+   which means that the corresponding operation does not happen unless you
+   subscribe to the returned ``Publisher``. We recommend only subscribing to 
+   the returned ``Publisher`` once, because subscribing more than once can lead
+   to errors. 
+
+Sample Application
+~~~~~~~~~~~~~~~~~~
+
 .. _java-rs-index-sample:
 
 .. include:: /includes/usage-examples/sample-index-app-intro.rst

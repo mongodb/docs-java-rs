@@ -34,24 +34,24 @@ public class IndexExamples {
             MongoCollection<Document> collection = database.getCollection("movies");
 
             // start-single-field
-            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name>"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.ascending("<field name>"));
+            Mono.from(publisher).block();
             // end-single-field
 
             // start-compound
-            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name 1>", "<field name 2>"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.ascending("<field name 1>", "<field name 2>"));
+            Mono.from(publisher).block();
             // end-compound
 
             // start-multikey
-            Publisher<String> result = collection.createIndex(Indexes.ascending("<array field name>"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.ascending("<array field name>"));
+            Mono.from(publisher).block();
             // end-multikey
 
             // start-search-create
             Document index = new Document("mappings", new Document("dynamic", true));
-            Publisher<String> result = collection.createSearchIndex("<index name>", index);
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createSearchIndex("<index name>", index);
+            Mono.from(publisher).block();
             // end-search-create
 
             // start-search-list
@@ -64,34 +64,34 @@ public class IndexExamples {
 
             // start-search-update
             Document newIndex = new Document("mappings", new Document("dynamic", true));
-            Publisher<Void> result = collection.updateSearchIndex("<index name>", newIndex);
-            Mono.from(result).block();
+            Publisher<Void> publisher = collection.updateSearchIndex("<index name>", newIndex);
+            Mono.from(publisher).block();
             // end-search-update
 
             // start-search-delete
-            Publisher<Void> result = collection.dropIndex("<index name>");
-            Mono.from(result).block();
+            Publisher<Void> publisher = collection.dropIndex("<index name>");
+            Mono.from(publisher).block();
             // end-search-delete
 
             // start-text
-            Publisher<String> result = collection.createIndex(Indexes.text("<field name>"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.text("<field name>"));
+            Mono.from(publisher).block();
             // end-text
 
             // start-geo
-            Publisher<String> result = collection.createIndex(Indexes.geo2dsphere("<GeoJSON object field>"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.geo2dsphere("<GeoJSON object field>"));
+            Mono.from(publisher).block();
             // end-geo
 
             // start-unique
             IndexOptions indexOptions = new IndexOptions().unique(true);
-            Publisher<String> result = collection.createIndex(Indexes.ascending("<field name>"), indexOptions);
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.ascending("<field name>"), indexOptions);
+            Mono.from(publisher).block();
             // end-unique
 
             // start-wildcard
-            Publisher<String> result = collection.createIndex(Indexes.ascending("$**"));
-            Mono.from(result).block();
+            Publisher<String> publisher = collection.createIndex(Indexes.ascending("$**"));
+            Mono.from(publisher).block();
             // end-wildcard
 
             // start-clustered
@@ -109,8 +109,8 @@ public class IndexExamples {
             // end-clustered
 
             // start-remove
-            Publisher<Void> result = collection.dropIndex("<index name>");
-            Mono.from(result).block();
+            Publisher<Void> publisher = collection.dropIndex("<index name>");
+            Mono.from(publisher).block();
             // end-remove
         }
     }
