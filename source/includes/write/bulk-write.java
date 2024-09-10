@@ -67,8 +67,9 @@ class BulkWrite {
 
             // start-bulk-replace-one
             ReplaceOneModel<Document> operation = new ReplaceOneModel<>(
-                    eq("restaurant_id", "1234"),
-                    new Document("name", "Mongo's Pizza"));
+                    eq("name", "Original Pizza"),
+                    new Document("name", "Mongo's Pizza")
+                            .append("borough", "Manhattan"));
             // end-bulk-replace-one
 
             // start-bulk-delete-one
@@ -98,7 +99,7 @@ class BulkWrite {
 
             BulkWriteResult bulkResult = Mono.from(bulkWritePublisher).block();
 
-            System.out.printf(bulkResult.toString());
+            System.out.println(bulkResult.toString());
             // end-bulk-write-mixed
 
             // start-bulk-write-unordered
@@ -119,7 +120,7 @@ class BulkWrite {
 
             BulkWriteResult bulkResult = Mono.from(bulkWritePublisher).block();
 
-            System.out.printf(bulkResult.toString());
+            System.out.println(bulkResult.toString());
             // end-bulk-write-unordered
 
             }
