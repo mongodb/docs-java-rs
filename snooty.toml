@@ -14,7 +14,7 @@ toc_landing_pages = [
     "/write-data-to-mongo/",
     "/getting-started/",
     "/secure-your-data/",
-    "/data-formats/"
+    "/data-formats/",
     "/upgrade/"
     ]
 
