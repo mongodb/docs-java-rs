@@ -3,7 +3,7 @@
    :stub-columns: 1
    :class: compatibility-large
 
-   * - Java Reactive Streams Driver Version
+   * - {+java-rs+} Driver Version
      - Java 21
      - Java 17
      - Java 11 [#backwards-compatible-rs]_
