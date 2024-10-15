@@ -1,4 +1,4 @@
-.. _javars-issues-and-help:
+.. _java-rs-issues-and-help:
 
 =============
 Issues & Help
