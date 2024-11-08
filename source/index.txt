@@ -37,7 +37,7 @@ MongoDB Java Reactive Streams Documentation
    POJO CRUD Examples </pojo-examples>
    Custom Subscribers </custom-implementations>
    What's New </whats-new>
-   Issues and Help </issues-and-help>
+   Issues & Help </issues-and-help>
    Compatibility </compatibility>
    Upgrade </upgrade>
    API Documentation <{+api+}/mongodb-driver-reactivestreams/>
