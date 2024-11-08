@@ -35,7 +35,7 @@ MongoDB Java Reactive Streams Documentation
    Monitor Your Deployment </monitoring>
    Validate Driver Signatures </validate-signatures>
    POJO CRUD Examples </pojo-examples>
-   Custom Subscriber Implementations </custom-implementations>
+   Custom Subscribers </custom-implementations>
    What's New </whats-new>
    Issues and Help </issues-and-help>
    Compatibility </compatibility>
