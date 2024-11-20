@@ -28,7 +28,7 @@ Read Data From MongoDB
     Specify Documents to Return </read/specify-documents-to-return>
     Count Documents </read/count-documents>
     Distinct Field Values </read/distinct>
-    Access Data from a Cursor </read/cursors>
+    Data Cursors </read/cursors>
     Read Preference </read/read-preference>
     Text Search </read/text-search>
     Geospatial Search </read/geo>
