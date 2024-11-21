@@ -29,7 +29,7 @@ MongoDB Java Reactive Streams Documentation
    Indexes </indexes>
    Aggregation </aggregation>
    Security </secure-your-data>
-   Operations on Replica Sets </read-write-configuration>
+   Replica Set Operations </read-write-configuration>
    Data Formats </data-formats>
    Logging </logging>
    Monitor Your Deployment </monitoring>
