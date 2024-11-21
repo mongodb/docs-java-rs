@@ -22,7 +22,7 @@ MongoDB Java Reactive Streams Documentation
    :maxdepth: 1
 
    Get Started </getting-started>
-   Connect to MongoDB </connect>
+   Connect </connect>
    Databases & Collections </db-coll>
    Write Data </write-data-to-mongo>
    Read Data </read-data-from-mongo>
