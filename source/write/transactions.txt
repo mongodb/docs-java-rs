@@ -110,6 +110,8 @@ The code executes the following steps:
    :copyable:
    :emphasize-lines: 26, 29, 33-36, 38
 
+.. sharedinclude:: dbx/transactions-parallelism.rst
+
 Additional Information
 ----------------------
 
