@@ -354,7 +354,7 @@ in the table below.
 
        ``updatePipeline``: Update pipeline to apply to matching document
 
-       ``options``: (*optional*) Options to apply when updating document
+       ``options``: *(optional)* Options to apply when updating document
 
        You must pass a value for either the ``update`` or ``updatePipeline`` 
        parameter.
@@ -371,7 +371,7 @@ in the table below.
 
        ``updatePipeline``: Update pipeline to apply to matching documents
 
-       ``options``: (*optional*) Options to apply when updating documents
+       ``options``: *(optional)* Options to apply when updating documents
 
        You must pass a value for either the ``update`` or ``updatePipeline`` 
        parameter.
@@ -386,7 +386,7 @@ in the table below.
 
        ``replacement``: Replacement document
 
-       ``options``: (*optional*) Options to apply when replacing documents
+       ``options``: *(optional)* Options to apply when replacing documents
 
    * - ``ClientNamespacedDeleteOneModel``
      - ``deleteOne()``
@@ -396,7 +396,7 @@ in the table below.
 
        ``filter``: Filter that selects which document to delete
 
-       ``option``: (*optional*) Options to apply when deleting document
+       ``option``: *(optional)* Options to apply when deleting document
 
    * - ``ClientNamespacedDeleteManyModel``
      - ``deleteMany()``
@@ -406,10 +406,10 @@ in the table below.
 
        ``filter``: Filter that selects which documents to delete
 
-       ``option``: (*optional*) Options to apply when deleting documents
+       ``option``: *(optional)* Options to apply when deleting documents
 
-The following sections provide examples of how to use the client ``bulkWrite()`` 
-method.
+The following sections provide some examples of how to create models and use
+the client ``bulkWrite()``  method.
 
 Insert Operations
 ~~~~~~~~~~~~~~~~~
@@ -462,6 +462,7 @@ The following example performs multiple write operations by using the
    .. input:: /includes/write/client-bulk-write.java
       :start-after: start-perform
       :end-before: end-perform
+      :emphasize-lines: 18-19
       :language: java
       :dedent:
 
@@ -507,6 +508,7 @@ insert multiple documents.
 .. literalinclude:: /includes/write/client-bulk-write.java
    :start-after: start-options
    :end-before: end-options
+   :emphasize-lines: 3-5, 23-24
    :language: java
    :copyable:
    :dedent:
@@ -533,7 +535,8 @@ guide, see the following API documentation:
 
 - Collection Bulk Write
 
-  - `bulkWrite() <{+rs-driver-api+}/MongoCollection.html#bulkWrite(com.mongodb.reactivestreams.client.ClientSession,java.util.List)>`__
+  - `bulkWrite()
+    <{+rs-driver-api+}/MongoCollection.html#bulkWrite(com.mongodb.reactivestreams.client.ClientSession,java.util.List)>`__
   - `InsertOneModel <{+core-api+}/client/model/InsertOneModel.html>`__
   - `UpdateOneModel <{+core-api+}/client/model/UpdateOneModel.html>`__
   - `UpdateManyModel <{+core-api+}/client/model/UpdateManyModel.html>`__
@@ -546,5 +549,9 @@ guide, see the following API documentation:
 
 - Client Bulk Write
 
-  - 
-  - 
+  - `bulkWrite()
+    <{+rs-driver-api+}/MongoCluster.html#bulkWrite(java.util.List,com.mongodb.client.model.bulk.ClientBulkWriteOptions)>`__
+  - `ClientNamespacedWriteModel <{+core-api+}/client/model/bulk/ClientNamespacedWriteModel.html>`__
+  - `MongoNamespace <{+core-api+}/MongoNamespace.html>`__
+  - `ClientBulkWriteOptions <{+core-api+}/client/model/bulk/ClientBulkWriteOptions.html>`__
+  - `ClientBulkWriteResult <{+core-api+}/client/model/bulk/ClientBulkWriteResult.html>`__
