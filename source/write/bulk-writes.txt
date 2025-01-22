@@ -468,16 +468,13 @@ The following example performs multiple write operations by using the
 
    .. output::
       
-      TODO... waiting on resolution of
-      https://jira.mongodb.org/browse/CLOUDP-288992 to test
+      AcknowledgedSummaryClientBulkWriteResult{insertedCount=1, matchedCount=1, ...}
 
-.. 
-   TODO testing...
-   If any of the write operations fail, the driver raises a
-   ``MongoBulkWriteException`` and does not perform any further individual operations.
-   ``MongoBulkWriteException`` includes a ``BulkWriteError`` that can be accessed by using the
-   ``MongoBulkWriteException.getWriteErrors()`` method, which provides details of the
-   individual failure.
+If any of the write operations fail, the driver raises a
+``ClientBulkWriteException`` and does not perform any further individual operations.
+``ClientBulkWriteException`` includes a ``BulkWriteError`` that can be accessed by using the
+``ClientBulkWriteException.getWriteErrors()`` method, which provides details of the
+individual failure.
 
 .. _java-rs-client-bulk-write-options:
 
