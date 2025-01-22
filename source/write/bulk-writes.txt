@@ -471,7 +471,7 @@ The following example performs multiple write operations by using the
       https://jira.mongodb.org/browse/CLOUDP-288992 to test
 
 .. 
-   TODO need to test
+   TODO testing...
    If any of the write operations fail, the driver raises a
    ``MongoBulkWriteException`` and does not perform any further individual operations.
    ``MongoBulkWriteException`` includes a ``BulkWriteError`` that can be accessed by using the
