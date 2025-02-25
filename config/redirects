@@ -6,5 +6,6 @@ symlink: current -> main
 
 raw: ${prefix}/ -> ${base}/current/
 raw: ${prefix}/stable -> ${base}/current/
+raw: ${base}/get-started/connect-to-mongodb -> ${base}/get-started/run-sample-query
 
 [*-v5.1]: ${prefix}/${version}/compatibility -> ${base}/v5.2/compatibility
