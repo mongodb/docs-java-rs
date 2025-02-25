@@ -1,4 +1,4 @@
-.. _java-rs-get-started-connect-to-mongodb:
+.. _java-rs-get-started-sample-query:
 
 ==================
 Run a Sample Query
