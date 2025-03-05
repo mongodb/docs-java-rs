@@ -1,16 +1,16 @@
+eol = true
+
 name = "java-rs"
 title = "Java Reactive Streams Driver"
 
-intersphinx = [ "https://www.mongodb.com/docs/manual/objects.inv",
-                "https://www.mongodb.com/docs/atlas/objects.inv"
-              ]
+intersphinx = [
+    "https://www.mongodb.com/docs/manual/objects.inv",
+    "https://www.mongodb.com/docs/atlas/objects.inv",
+]
 
 sharedinclude_root = "https://raw.githubusercontent.com/10gen/docs-shared/main/"
 
-toc_landing_pages = [
-    "/tutorials/connect/",
-    "/tutorials/write-ops/",
-    ]
+toc_landing_pages = ["/tutorials/connect/", "/tutorials/write-ops/"]
 
 [constants]
 driver-short = "Java Reactive Streams driver"
@@ -20,3 +20,11 @@ full-version = "{+version+}.4"
 api = "https://mongodb.github.io/mongo-java-driver/{+version+}/apidocs"
 rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/reactivestreams"
 driver-source-gh = "https://github.com/mongodb/mongo-java-driver"
+current-url = "https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current"
+
+[[banners]]
+targets = ["*"]
+variant = "info"
+value = """\
+    This version of the documentation is archived and no longer supported. View the `current documentation <{+current-url+}>`__ to learn how to `upgrade your version of the {+driver-short+} <{+current-url+}/upgrade>`__.\
+    """
