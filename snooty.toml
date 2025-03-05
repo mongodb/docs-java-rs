@@ -20,7 +20,7 @@ full-version = "{+version+}.4"
 api = "https://mongodb.github.io/mongo-java-driver/{+version+}/apidocs"
 rs-docs = "https://www.reactive-streams.org/reactive-streams-1.0.4-javadoc/org/reactivestreams"
 driver-source-gh = "https://github.com/mongodb/mongo-java-driver"
-current-url = "https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current/"
+current-url = "https://www.mongodb.com/docs/languages/java/reactive-streams-driver/current"
 
 [[banners]]
 targets = ["*"]
