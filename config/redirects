@@ -9,3 +9,4 @@ raw: ${prefix}/stable -> ${base}/current/
 
 [*-v5.1]: ${prefix}/${version}/compatibility -> ${base}/v5.2/compatibility
 [v5.2-*]: ${prefix}/${version}/get-started/connect-to-mongodb -> ${base}/get-started/run-sample-query
+[*-v5.3]: ${prefix}/${version}/installation -> ${base}/get-started/download-and-install
