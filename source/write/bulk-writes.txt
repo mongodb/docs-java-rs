@@ -430,8 +430,8 @@ each write operation applies to.
 
 .. _java-rs-client-bulk-write-update:
 
-Update Operation
-~~~~~~~~~~~~~~~~
+Update Operations
+~~~~~~~~~~~~~~~~~
 
 The following example shows how to use the ``bulkWrite()`` method to update
 existing documents in the ``db.people`` and
