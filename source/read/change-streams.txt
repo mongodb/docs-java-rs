@@ -169,6 +169,9 @@ customize its behavior:
          ``batchSize`` to a limit that results in batches larger than 16 MiB, this 
          option has no effect.
 
+       | A ``batchSize`` of ``0`` means that the cursor will be established, but no documents 
+         will be returned in the first batch.
+
    * - ``collation()``
      - | Specifies the collation to use for the change stream cursor.
 
