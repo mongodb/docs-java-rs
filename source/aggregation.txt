@@ -124,3 +124,35 @@ To ``$explain`` an aggregation pipeline, call the
            Aggregates.group("$stars", Accumulators.sum("count", 1))))
        .explain()
        .subscribe(new PrintDocumentSubscriber());
+
+.. _java-rs-atlas-search-stage:
+
+Pipelines Stages for Atlas Search
+---------------------------------
+
+:atlas:`Atlas Search </atlas-search>` queries take the form of an aggregation pipeline stage. Atlas
+Search provides ``$search`` and ``$searchMeta`` stages, both of which must be the first
+stage in any query pipeline. For more information about Atlas pipeline stages,
+see the :atlas:`Choose the Aggregation Pipeline Stage
+</atlas-search/query-syntax/>` page in the Atlas
+manual. 
+
+.. sharedinclude:: dbx/jvm/atlas-search-operator-helpers.rst
+
+   .. replacement:: atlas-query-operators-example
+
+    .. code-block:: java
+
+        Bson searchStageFilters = Aggregates.search(
+            SearchOperator.compound()
+                .filter(
+                    List.of(
+                        SearchOperator.text(fieldPath("genres"), "Drama"),
+                        SearchOperator.phrase(fieldPath("cast"), "sylvester stallone"),
+                        SearchOperator.numberRange(fieldPath("year")).gtLt(1980, 1989),
+                        SearchOperator.wildcard(fieldPath("title"),"Rocky *")
+                        )));
+
+   .. replacement:: searchoperator-interface-api-docs
+
+    the `SearchOperator Interface API documentation <{+core-api+}/com/mongodb/client/model/search/SearchOperator.html>`__
