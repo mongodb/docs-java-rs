@@ -127,8 +127,8 @@ To ``$explain`` an aggregation pipeline, call the
 
 .. _java-rs-atlas-search-stage:
 
-Pipelines Stages for Atlas Search
----------------------------------
+Pipeline Stages for Atlas Search
+--------------------------------
 
 :atlas:`Atlas Search </atlas-search>` queries take the form of an aggregation pipeline stage. Atlas
 Search provides ``$search`` and ``$searchMeta`` stages, both of which must be the first
@@ -147,7 +147,6 @@ manual.
             :language: java
             :start-after: // begin atlasHelperMethods
             :end-before: // end atlasHelperMethods
-            :language: java
             :dedent:
 
          .. output::
@@ -159,4 +158,4 @@ manual.
 
    .. replacement:: searchoperator-interface-api-docs
 
-    the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
+      the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
