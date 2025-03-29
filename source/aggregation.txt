@@ -143,7 +143,7 @@ manual.
 
       .. io-code-block::
 
-         .. input:: source/includes/aggregation/atlas-search-examples.java
+         .. input:: /includes/aggregation/atlas-search-examples.java
             :language: java
             :start-after: // begin atlasHelperMethods
             :end-before: // end atlasHelperMethods
