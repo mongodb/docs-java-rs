@@ -124,3 +124,38 @@ To ``$explain`` an aggregation pipeline, call the
            Aggregates.group("$stars", Accumulators.sum("count", 1))))
        .explain()
        .subscribe(new PrintDocumentSubscriber());
+
+.. _java-rs-atlas-search-stage:
+
+Pipeline Stages for Atlas Search
+--------------------------------
+
+:atlas:`Atlas Search </atlas-search>` queries take the form of an aggregation pipeline stage. Atlas
+Search provides ``$search`` and ``$searchMeta`` stages, both of which must be the first
+stage in any query pipeline. For more information about Atlas pipeline stages,
+see the :atlas:`Choose the Aggregation Pipeline Stage
+</atlas-search/query-syntax/>` page in the Atlas
+manual. 
+
+.. sharedinclude:: dbx/jvm/atlas-search-operator-helpers.rst
+
+   .. replacement:: atlas-query-operators-example
+
+      .. io-code-block::
+
+         .. input:: /includes/aggregation/atlas-search-examples.java
+            :language: java
+            :start-after: // start atlasHelperMethods
+            :end-before: // end atlasHelperMethods
+            :dedent:
+
+         .. output::
+            :language: console
+            :visible: false
+
+            {"_id": {"$oid": "573a1397f29313caabce86db"}, "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky III", "year": 1982}
+            {"_id": {"$oid": "573a1398f29313caabce9af0"}, "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky IV", "year": 1985}
+
+   .. replacement:: searchoperator-interface-api-docs
+
+      the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
