@@ -145,7 +145,7 @@ manual.
 
          .. input:: /includes/aggregation/atlas-search-examples.java
             :language: java
-            :start-after: // begin atlasHelperMethods
+            :start-after: // start atlasHelperMethods
             :end-before: // end atlasHelperMethods
             :dedent:
 
