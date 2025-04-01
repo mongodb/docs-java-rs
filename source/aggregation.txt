@@ -127,17 +127,36 @@ To ``$explain`` an aggregation pipeline, call the
 
 .. _java-rs-atlas-search-stage:
 
-Pipeline Stages for Atlas Search
---------------------------------
+Atlas Search
+------------
 
-:atlas:`Atlas Search </atlas-search>` queries take the form of an aggregation pipeline stage. Atlas
-Search provides ``$search`` and ``$searchMeta`` stages, both of which must be the first
-stage in any query pipeline. For more information about Atlas pipeline stages,
-see the :atlas:`Choose the Aggregation Pipeline Stage
-</atlas-search/query-syntax/>` page in the Atlas
-manual. 
+You can perform an :atlas:`Atlas Search </atlas-search>` query by creating and running
+an aggregation pipeline that contains one of the following pipeline stages: 
+
+- ``$search``
+- ``$searchMeta``
+
+The {+driver-short+} provides the `Aggregates.search()
+<{+core-api+}/client/model/Aggregates.html#search(com.mongodb.client.model.search.SearchOperator)>`__
+and `Aggregates.searchMeta()
+<{+core-api+}/client/model/Aggregates.html#searchMeta(com.mongodb.client.model.search.SearchOperator)>`__
+methods to perform Atlas Search queries.
+
+To learn more about Atlas Search pipeline stages, see :atlas:`Choose the
+Aggregation Pipeline Stage </atlas-search/query-syntax/>` in the Atlas
+documentation.
+
+Create Pipeline Search Stages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can create the search criteria in your Atlas Search pipeline stage
+by using Search operators.
 
 .. sharedinclude:: dbx/jvm/atlas-search-operator-helpers.rst
+
+   .. replacement:: as-idx-link
+
+      the :ref:`java-rs-atlas-search-idx-mgmt` section of the Indexes guide
 
    .. replacement:: atlas-query-operators-example
 
@@ -153,9 +172,33 @@ manual.
             :language: console
             :visible: false
 
-            {"_id": {"$oid": "573a1397f29313caabce86db"}, "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky III", "year": 1982}
-            {"_id": {"$oid": "573a1398f29313caabce9af0"}, "genres": ["Drama", "Sport"], "cast": ["Sylvester Stallone", "Talia Shire", "Burt Young", "Carl Weathers"], "title": "Rocky IV", "year": 1985}
+            {"_id": ..., "genres": ["Comedy", "Romance"], "title": "Love at First Bite", "year": 1979}
+            {"_id": ..., "genres": ["Comedy", "Drama"], "title": "Love Affair", "year": 1994}
 
-   .. replacement:: searchoperator-interface-api-docs
+Additional Information
+----------------------
 
-      the `SearchOperator Interface API documentation <{+core-api+}/client/model/search/SearchOperator.html>`__
+To view a full list of expression operators, see :manual:`Aggregation
+Operators </reference/operator/aggregation/>` in the {+mdb-server+} manual.
+
+To learn about assembling an aggregation pipeline and view examples, see
+:manual:`Aggregation Pipeline </core/aggregation-pipeline/>` in the {+mdb-server+} manual.
+
+To learn more about creating pipeline stages, see :manual:`Aggregation
+Stages </reference/operator/aggregation-pipeline/>` in the {+mdb-server+} manual.
+
+To learn more about explaining MongoDB operations, see
+:manual:`Explain Output </reference/explain-results/>` and
+:manual:`Query Plans </core/query-plans/>` in the {+mdb-server+} manual.
+
+API Documentation
+~~~~~~~~~~~~~~~~~
+
+To learn more about the classes and methods mentioned in this guide, see
+the following API documentation:
+
+- `aggregate() <{+driver-api+}/MongoCollection.html#aggregate(java.util.List)>`__
+- `Aggregates <{+core-api+}/client/model/Aggregates.html>`__
+- `AggregatePublisher <{+driver-api+}/AggregatePublisher.html>`__
+- `search() <{+core-api+}/client/model/Aggregates#search(com.mongodb.client.model.search.SearchOperator)>`__
+- `project() <{+core-api+}/client/model/Aggregates#project(org.bson.conversions.Bson)>`__

@@ -57,8 +57,8 @@ and features:
 
    .. replacement:: atlas-query-operators
 
-      the :ref:`Pipelines Stages for Atlas Search <java-rs-atlas-search-stage>`
-      section of the Aggregation page
+      the :ref:`java-rs-atlas-search-stage` section of the Aggregation
+      guide
 
 .. _javars-version-5.3:
 
