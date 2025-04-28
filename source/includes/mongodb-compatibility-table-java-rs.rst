@@ -3,7 +3,7 @@
    :stub-columns: 1
    :class: compatibility-large
 
-   * - {+java-rs} Driver Version
+   * - {+java-rs+} Driver Version
      - MongoDB 8.1
      - MongoDB 8.0
      - MongoDB 7.0
