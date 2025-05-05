@@ -45,7 +45,7 @@ The 5.5 driver release includes the following changes, fixes,
 and features:
 
 - Adds support for the ``connectTimeoutMS`` option when using the
-  default reactive streams TLS transport layer. 
+  default {+java-rs+} TLS transport layer. 
 
 .. _javars-version-5.4:
 
