@@ -136,7 +136,7 @@ API Documentation
 -----------------
 
 For detailed information about types and methods in the {+driver-short+}, see
-the `API documentation <{+api-root+}/mongodb-driver-reactivestreams/>`__.
+the `API documentation <{+api-root+}/driver-reactive-streams/>`__.
 
 If you need to make synchronous calls between your application and MongoDB, use
 the :driver:`MongoDB Java Driver </java/sync/current/>` instead of the
