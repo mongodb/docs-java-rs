@@ -43,7 +43,7 @@ Default Authentication Mechanism
 --------------------------------
 
 To create a credential that authenticates by using the default
-authentication mechanism (``SCRAM-SHA-256``), create a
+authentication mechanism, ``SCRAM-SHA-256``, create a
 credential by using the ``createCredential()`` static factory method:
 
 .. code-block:: java
