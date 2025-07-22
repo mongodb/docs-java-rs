@@ -1,7 +1,7 @@
 .. _java-rs-index:
 
 ====================================
-MongoDB Java Reactive Streams Driver
+MongoDB Java RS Driver
 ====================================
 
 .. facet::
